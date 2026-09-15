@@ -1,0 +1,15 @@
+/*******************************************************************
+	FILE:		MacFire_Prefix.pch
+	
+	COPYRIGHT:
+		Copyright 2007-2008, the MacFire.org team.
+		Use of this software is governed by the license terms
+		indicated in the License.txt file (a BSD license).
+	
+	DESCRIPTION:
+		Prefix header (precompiled) for the MacFire project.
+*******************************************************************/
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
