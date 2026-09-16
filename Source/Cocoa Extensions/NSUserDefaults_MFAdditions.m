@@ -23,7 +23,7 @@
 	NSFont		*font;
 	
 	data = [self objectForKey:key];
-	font = [NSUnarchiver unarchiveObjectWithData:data];
+	font = [NSKeyedUnarchiver unarchivedObjectOfClass:[NSFont class] fromData:data error:nil];
 	if( ! [font isKindOfClass:[NSFont class]] )
 	{
 		font = nil;
@@ -35,7 +35,7 @@
 - (void)setFont:(NSFont *)font forKey:(NSString *)key
 {
 	NSData		*data;
-	data = [NSArchiver archivedDataWithRootObject:font];
+	data = [NSKeyedArchiver archivedDataWithRootObject:font requiringSecureCoding:NO error:nil];
 	[self setObject:data forKey:key];
 }
 
@@ -46,7 +46,7 @@
 	NSColor		*color;
 	
 	data = [self objectForKey:key];
-	color= [NSUnarchiver unarchiveObjectWithData:data];
+	color = [NSKeyedUnarchiver unarchivedObjectOfClass:[NSColor class] fromData:data error:nil];
 	if( ! [color isKindOfClass:[NSColor class]] )
 	{
 		color = nil;
@@ -59,7 +59,7 @@
 - (void)setColor:(NSColor *)color forKey:(NSString *)key
 {
 	NSData		*data;
-	data = [NSArchiver archivedDataWithRootObject:color];
+	data = [NSKeyedArchiver archivedDataWithRootObject:color requiringSecureCoding:NO error:nil];
 	[self setObject:data forKey:key];
 }
 
