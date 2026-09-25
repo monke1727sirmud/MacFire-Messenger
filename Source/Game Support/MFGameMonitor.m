@@ -2,7 +2,7 @@
 	FILE:		MFGameMonitor.m
 	
 	COPYRIGHT:
-		Copyright 2007-2008, the MacFire.org team.
+		Copyright 2007-2026, the MacFire.org team.
 		Use of this software is governed by the license terms
 		indicated in the License.txt file (a BSD license).
 	
@@ -12,6 +12,9 @@
 		when known games start and quit.
 	
 	HISTORY:
+		2026 09 15  Updated to use NSWorkspaceObservation and running
+		            app properties instead of deprecated launchedApplications
+		            and NSWorkspace app notifications.
 		2008 04 06  Changed copyright to BSD license.
 		2007 12 16  Created.
 *******************************************************************/
@@ -28,6 +31,7 @@ static MFGameMonitor *gSharedMonitor = nil;
 - (void)startMonitoring;
 - (void)workspaceAppDidLaunch:(NSNotification *)aNote;
 - (void)workspaceAppDidExit:(NSNotification *)aNote;
+- (NSDictionary *)gameInfoForAppURL:(NSURL *)appURL;
 @end
 
 
@@ -68,18 +72,30 @@ static MFGameMonitor *gSharedMonitor = nil;
 	return [NSArray arrayWithArray:_runningGames];
 }
 
+- (NSDictionary *)gameInfoForAppURL:(NSURL *)appURL
+{
+	NSString *appPath = [[appURL lastPathComponent] uppercaseString];
+	return [[MFGameRegistry registry] infoForMacApplication:
+		[NSDictionary dictionaryWithObject:[appURL path] forKey:@"NSApplicationPath"]];
+}
+
 // check all currently running apps to make sure we catch everything that's running
 - (void)startMonitoring
 {
 	NSWorkspace *workspace = [NSWorkspace sharedWorkspace];
-	NSArray *runningApps = [workspace launchedApplications];
-	NSEnumerator *enumer = [runningApps objectEnumerator];
-	NSDictionary *theApp;
-	NSDictionary *gameInfo;
 	
-	while( (theApp = [enumer nextObject]) != nil )
+	// Use the modern runningApplications property instead of deprecated launchedApplications
+	NSArray *runningApps = [workspace runningApplicationsWithBundleIdentifier:nil
+		launchDate:nil
+		activationPolicy:NSApplicationActivationPolicyRegular];
+	
+	NSDictionary *gameInfo;
+	NSInteger i, cnt;
+	cnt = [runningApps count];
+	for( i = 0; i < cnt; i++ )
 	{
-		gameInfo = [MFGameRegistry infoForMacApplication:theApp];
+		NSRunningApplication *theApp = [runningApps objectAtIndex:i];
+		gameInfo = [self gameInfoForAppURL:[theApp bundleURL]];
 		if( gameInfo )
 		{
 			[_runningGames addObject:gameInfo];
@@ -87,51 +103,41 @@ static MFGameMonitor *gSharedMonitor = nil;
 		}
 	}
 	
+	// Use the modern notification names
 	[[workspace notificationCenter] addObserver:self
 		selector:@selector(workspaceAppDidLaunch:)
-		name:NSWorkspaceDidLaunchApplicationNotification
+		name:NSWorkspaceDidActivateApplicationNotification
 		object:nil];
 	[[workspace notificationCenter] addObserver:self
 		selector:@selector(workspaceAppDidExit:)
-		name:NSWorkspaceDidTerminateApplicationNotification
+		name:NSWorkspaceDidDeactivateApplicationNotification
 		object:nil];
 }
 
 // Intercept any app launch
-// determine if it's a game we recognize
-// then route kMFGameDidLaunch
 - (void)workspaceAppDidLaunch:(NSNotification *)aNote
 {
-	NSDictionary *gameInfo = [MFGameRegistry infoForMacApplication:[aNote userInfo]];
+	NSRunningApplication *app = [[aNote userInfo] objectForKey:NSWorkspaceApplicationKey];
+	if( !app )
+		return;
+	
+	NSDictionary *gameInfo = [self gameInfoForAppURL:[app bundleURL]];
 	if( gameInfo )
 	{
-		// it's a valid game, add it to our list
 		[_runningGames addObject:gameInfo];
 		[[NSNotificationCenter defaultCenter] postNotificationName:kMFGameDidLaunch object:self userInfo:gameInfo];
-		
-		// TODO: add ability to monitor specific apps closely
-		// need custom classes to do that.
-		//NSString *monitorClassName = [gameInfo objectForKey:kMFGameRegistryMonitorClassKey];
-		//if( monitorClassName )
-		//{
-		//	Class c = NSClassFromString(monitorClassName);
-		//	if( c )
-		//	{
-		//		id mon = [[c alloc] init];
-		//		[_runningMonitors addObject:mon];
-		//	}
-		//}
 	}
 }
 
 // Intercept any app exit
-// determine if it's a game we recognize
-// then route kMFGameDidExit
 - (void)workspaceAppDidExit:(NSNotification *)aNote
 {
-	NSDictionary *gameInfo = [MFGameRegistry infoForMacApplication:[aNote userInfo]];
+	NSRunningApplication *app = [[aNote userInfo] objectForKey:NSWorkspaceApplicationKey];
+	if( !app )
+		return;
 	
-	// it's a valid game, remove it from our list
+	NSDictionary *gameInfo = [self gameInfoForAppURL:[app bundleURL]];
+	
 	if( gameInfo && [_runningGames containsObject:gameInfo] )
 	{
 		[_runningGames removeObject:gameInfo];

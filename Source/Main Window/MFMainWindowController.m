@@ -754,8 +754,6 @@ static NSString *kMFXfireFriendDragType = @"MFXfireFriendDragType";
 	
 	if( [reason isEqualToString:kXfireVersionTooOldReason] )
 	{
-		int result;
-		
 		// SCR 36 - added new client version # to the pose-as dialog
 		NSString *fmtStr = MF_UISTR_VERSIONOLD;
 		NSString *alertPanelDetail = [NSString stringWithFormat:fmtStr, [xfSession latestClientVersion]];
