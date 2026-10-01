@@ -43,7 +43,6 @@ static NSColor *gDateColor = nil;
 		// see http://developer.apple.com/documentation/Cocoa/Conceptual/DataFormatting/Articles/dfDateFormatting10_4.html#//apple_ref/doc/uid/TP40002369
 		
 		gChatTimeStampFormatter = [[NSDateFormatter alloc] init];
-		[gChatTimeStampFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
 		[gChatTimeStampFormatter setDateFormat:@"[hh:mm:ss aa] "];
 	}
 	

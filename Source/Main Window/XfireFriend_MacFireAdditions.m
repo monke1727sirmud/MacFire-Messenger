@@ -126,7 +126,7 @@
 	NSString *username = [self userName];
 	NSString *xfirePath = [NSString stringWithFormat: MF_UISTR_PROFILEURL, username];
 	NSURL    *xfireUrl  = [NSURL URLWithString:xfirePath];
-	[[NSWorkspace sharedWorkspace] openURL:xfireUrl];
+	[[NSWorkspace sharedWorkspace] openURL:xfireUrl configuration:[NSWorkspaceOpenConfiguration configuration] completionHandler:nil];
 }
 
 - (NSString *)toolTip
@@ -174,7 +174,6 @@
 			if( seenOnline )
 			{
 				NSDateFormatter *dfmt = [[[NSDateFormatter alloc] init] autorelease];
-				[dfmt setFormatterBehavior:NSDateFormatterBehavior10_4];
 				[dfmt setDateStyle:NSDateFormatterShortStyle];
 				[dfmt setTimeStyle:NSDateFormatterMediumStyle];
 				

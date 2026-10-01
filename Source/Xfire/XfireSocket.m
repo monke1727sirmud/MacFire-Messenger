@@ -64,7 +64,7 @@ static void _XfireSocketCallback(CFSocketRef sock, CFSocketCallBackType cbType, 
 	iaddr.s_addr = htonl(addrInt);
 	if( inet_ntop( PF_INET, &iaddr, bfr, 64 ) )
 	{
-		return [NSString stringWithCString:bfr];
+		return [NSString stringWithUTF8String:bfr];
 	}
 	return nil;
 }
@@ -202,14 +202,10 @@ static void _XfireSocketCallback(CFSocketRef sock, CFSocketCallBackType cbType, 
 		_runLoopSource = NULL;
 		_runLoop = nil;
 		
-		CFSocketSignature sig;
 		CFSocketContext cxt;
 		struct sockaddr_in addr;
 		
-		// Set up address and signature records
-		sig.protocolFamily = PF_INET;
-		sig.socketType = SOCK_STREAM;
-		sig.protocol = IPPROTO_TCP;
+		// Set up address record
 		memset( &addr, 0, sizeof(struct sockaddr_in) );
 		addr.sin_len = sizeof(struct sockaddr_in);
 		addr.sin_family = AF_INET;
@@ -220,7 +216,7 @@ static void _XfireSocketCallback(CFSocketRef sock, CFSocketCallBackType cbType, 
 			[self release];
 			return nil;
 		}
-		sig.address = (CFDataRef)[NSData dataWithBytes:&addr length:sizeof(addr)];
+		NSData *addrData = [NSData dataWithBytes:&addr length:sizeof(addr)];
 		
 		// Set up socket context (callbacks)
 		cxt.version = 0;
@@ -229,15 +225,28 @@ static void _XfireSocketCallback(CFSocketRef sock, CFSocketCallBackType cbType, 
 		cxt.release = nil;
 		cxt.copyDescription = nil;
 		
-		// Open the connection
-		_sock = CFSocketCreateConnectedToSocketSignature( NULL,
-			&sig, kCFSocketDataCallBack,
+		// Create the socket
+		_sock = CFSocketCreate( NULL,
+			PF_INET,
+			SOCK_STREAM,
+			IPPROTO_TCP,
+			kCFSocketDataCallBack,
 			_XfireSocketCallback,
-			&cxt,
-			0.0);
-		if( _sock == nil )
+			&cxt);
+		if( _sock == NULL )
 		{
 			NSLog(@"failed to create socket");
+			[self release];
+			return nil;
+		}
+		
+		// Connect to the address
+		CFSocketError connectErr = CFSocketConnectToAddress( _sock, (CFDataRef)addrData, 5.0 );
+		if( connectErr != kCFSocketSuccess )
+		{
+			NSLog(@"failed to connect socket");
+			CFRelease(_sock);
+			_sock = NULL;
 			[self release];
 			return nil;
 		}
@@ -278,7 +287,7 @@ static void _XfireSocketCallback(CFSocketRef sock, CFSocketCallBackType cbType, 
 	iaddr.s_addr = htonl(addrInt);
 	if( inet_ntop( PF_INET, &iaddr, bfr, 64 ) )
 	{
-		return [NSString stringWithCString:bfr];
+		return [NSString stringWithUTF8String:bfr];
 	}
 	return nil;
 }

@@ -20,7 +20,7 @@
 *******************************************************************/
 
 #import "MFGameMonitor.h"
-#import "MFGAmeRegistry.h"
+#import "MFGameRegistry.h"
 
 NSString *kMFGameDidLaunch = @"MFGameDidLaunch";
 NSString *kMFGameDidExit = @"MFGameDidExit";
@@ -74,8 +74,7 @@ static MFGameMonitor *gSharedMonitor = nil;
 
 - (NSDictionary *)gameInfoForAppURL:(NSURL *)appURL
 {
-	NSString *appPath = [[appURL lastPathComponent] uppercaseString];
-	return [[MFGameRegistry registry] infoForMacApplication:
+	return [MFGameRegistry infoForMacApplication:
 		[NSDictionary dictionaryWithObject:[appURL path] forKey:@"NSApplicationPath"]];
 }
 
@@ -85,9 +84,7 @@ static MFGameMonitor *gSharedMonitor = nil;
 	NSWorkspace *workspace = [NSWorkspace sharedWorkspace];
 	
 	// Use the modern runningApplications property instead of deprecated launchedApplications
-	NSArray *runningApps = [workspace runningApplicationsWithBundleIdentifier:nil
-		launchDate:nil
-		activationPolicy:NSApplicationActivationPolicyRegular];
+	NSArray *runningApps = [workspace runningApplications];
 	
 	NSDictionary *gameInfo;
 	NSInteger i, cnt;

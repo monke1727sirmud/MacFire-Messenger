@@ -111,12 +111,12 @@
 	[_resultsTable reloadData];
 }
 
-- (int)numberOfRowsInTableView:(NSTableView *)tableView
+- (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
 {
 	return [_results count];
 }
 
-- (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(int)row
+- (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
 	if( [[tableColumn identifier] isEqualToString:@"Name"] )
 	{
@@ -177,7 +177,7 @@
 			NSString *username = [fr userName];
 			NSString *xfirePath = [NSString stringWithFormat: MF_UISTR_PROFILEURL, username];
 			NSURL    *xfireUrl  = [NSURL URLWithString:xfirePath];
-			[[NSWorkspace sharedWorkspace] openURL:xfireUrl];
+			[[NSWorkspace sharedWorkspace] openURL:xfireUrl configuration:[NSWorkspaceOpenConfiguration configuration] completionHandler:nil];
 		}
 	}
 }

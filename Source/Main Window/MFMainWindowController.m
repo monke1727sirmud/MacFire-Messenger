@@ -445,9 +445,9 @@ static NSString *kMFXfireFriendDragType = @"MFXfireFriendDragType";
 }
 
 // in the friend outline view
-- (int)activeRow
+- (NSInteger)activeRow
 {
-	int selRow, clickRow, row;
+	NSInteger selRow, clickRow, row;
 	
 	// first check the selected row
 	selRow = [friendOutline selectedRow];
@@ -980,7 +980,7 @@ static NSString *kMFXfireFriendDragType = @"MFXfireFriendDragType";
 #pragma mark Friends Outline View Delegation/DataSource
 /***********************************************************************************************************************/
 
-- (id)outlineView:(NSOutlineView *)olView child:(int)index ofItem:(id)item
+- (id)outlineView:(NSOutlineView *)olView child:(NSInteger)index ofItem:(id)item
 {
 	if( currentMode != kMacFireUIModeFriendList )
 		return @"";
@@ -1017,7 +1017,7 @@ static NSString *kMFXfireFriendDragType = @"MFXfireFriendDragType";
 	return NO;
 }
 
-- (int)outlineView:(NSOutlineView *)outlineView numberOfChildrenOfItem:(id)item
+- (NSInteger)outlineView:(NSOutlineView *)outlineView numberOfChildrenOfItem:(id)item
 {
 	if( currentMode != kMacFireUIModeFriendList )
 		return 0;
@@ -1099,7 +1099,7 @@ static NSString *kMFXfireFriendDragType = @"MFXfireFriendDragType";
 				}
 			}
 			
-			[dispImg setScalesWhenResized:YES]; // for some reason most of the .ICOs default to NO
+			[dispImg setSize:NSMakeSize(24.0f,24.0f)]; // scale to icon size
 			[ic setImage:dispImg];
 		}
 #if 0 /* 10.5 ONLY */
@@ -1118,7 +1118,7 @@ static NSString *kMFXfireFriendDragType = @"MFXfireFriendDragType";
 	}
 }
 
-- (float)outlineView:(NSOutlineView *)outlineView heightOfRowByItem:(id)item
+- (CGFloat)outlineView:(NSOutlineView *)outlineView heightOfRowByItem:(id)item
 {
 	return 26.0f; // icon is 24x24, want 1px margin around it
 }
@@ -1133,7 +1133,7 @@ static NSString *kMFXfireFriendDragType = @"MFXfireFriendDragType";
 	NSTableColumn *col = [[aNotification userInfo] objectForKey:@"NSTableColumn"];
 	
 	// only change the preference setting if the width actually changed
-	float oldWidth;
+	CGFloat oldWidth;
 	
 	if( [[col identifier] isEqualTo:kMFNameColID] )
 	{
@@ -1196,7 +1196,7 @@ static NSString *kMFXfireFriendDragType = @"MFXfireFriendDragType";
 }
 
 // Check that we can recieve this drop, retarget as necessary
-- (NSDragOperation)outlineView:(NSOutlineView *)ov validateDrop:(id <NSDraggingInfo>)info proposedItem:(id)proposedItem proposedChildIndex:(int)index
+- (NSDragOperation)outlineView:(NSOutlineView *)ov validateDrop:(id <NSDraggingInfo>)info proposedItem:(id)proposedItem proposedChildIndex:(NSInteger)index
 {
 	if( proposedItem == nil )
 	{
@@ -1216,7 +1216,7 @@ static NSString *kMFXfireFriendDragType = @"MFXfireFriendDragType";
 	return NSDragOperationNone;
 }
 
-- (BOOL)outlineView:(NSOutlineView *)ov acceptDrop:(id <NSDraggingInfo>)info item:(id)item childIndex:(int)index
+- (BOOL)outlineView:(NSOutlineView *)ov acceptDrop:(id <NSDraggingInfo>)info item:(id)item childIndex:(NSInteger)index
 {
 	NSPasteboard *pboard = [info draggingPasteboard];
 	NSData       *d = [pboard dataForType:kMFXfireFriendDragType];

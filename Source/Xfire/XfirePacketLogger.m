@@ -46,7 +46,6 @@
 	
 	NSDateFormatter *dateFormatter;
 	dateFormatter = [[NSDateFormatter alloc] init];
-	[dateFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
 	[dateFormatter setTimeStyle:NSDateFormatterNoStyle];// NSDateFormatterShortStyle];
 	[dateFormatter setDateFormat:@"yyyyMMdd"];
 	str = [dateFormatter stringFromDate:[NSDate date]];
