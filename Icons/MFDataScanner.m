@@ -1,7 +1,7 @@
 
 #import "MFDataScanner.h"
 
-#define CHECK_LENGTH_EX( _need, _desc ) if( (_cur + (_need)) > _end ) [NSException raise:@"ScannerException" format:@"Not enough bytes to scan %@ (%u)", (_desc), (_end-_cur)]
+#define CHECK_LENGTH_EX( _need, _desc ) if( (_cur + (_need)) > _end ) [NSException raise:@"ScannerException" format:@"Not enough bytes to scan %@ (%lu)", (_desc), (unsigned long)(_end-_cur)]
 
 @implementation MFDataScanner
 
@@ -123,6 +123,7 @@
 			(len*2),
 			kCFStringEncodingUTF16LE,
 			YES);
+		[s autorelease];
 		_cur += len;
 	}
 	else

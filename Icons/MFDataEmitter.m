@@ -65,7 +65,7 @@
 - (void)emitString:(NSString *)str
 {
 	NSData *utf8str = [str dataUsingEncoding:NSUTF8StringEncoding];
-	unsigned int strLen = [utf8str length];
+	NSUInteger strLen = [utf8str length];
 	if( strLen >= 65536 )
 		[NSException raise:@"MFDataEmitterException" format:@"String too long to emit"];
 	[self emitUInt16:strLen];

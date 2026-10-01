@@ -37,10 +37,10 @@
 	}
 	
 	compressionState.next_in = (unsigned char*)[self bytes];
-	compressionState.avail_in = [self length];
+	compressionState.avail_in = (uInt)[self length];
 	
 	//outputBufferSize = [self length]*2;
-	outputBufferSize = 12+(unsigned)(1.2*(double)[self length]);
+	outputBufferSize = 12+(unsigned)(1.2*(double)[self length]);	// avail_out is uInt
 	//outputBufferSize = (1024*1024);
 	outputBuffer = malloc(outputBufferSize);
 	while(1)
@@ -88,7 +88,7 @@
 	}
 	
 	compressionState.next_in = (unsigned char*)[self bytes];
-	compressionState.avail_in = [self length];
+	compressionState.avail_in = (uInt)[self length];
 	outputBufferSize = (1024*1024);
 	outputBuffer = malloc(outputBufferSize);
 	while(1)
@@ -238,7 +238,7 @@ without reading all the data.
 	// third step scans each file in the decompressed block
 	scanner = [MFDataScanner scannerWithData:coreData];
 	NSMutableArray *files = [NSMutableArray array];
-	unsigned int i, cnt;
+	NSUInteger i, cnt;
 	
 	if( [scanner scanUInt32] != 0x64686400 )
 	{
@@ -294,6 +294,6 @@ without reading all the data.
 - (NSData *)data { return _data; }
 - (NSString *)description
 {
-	return [NSString stringWithFormat:@"ArchiveFile{ path = %@, length = %u }", _path, [_data length]];
+	return [NSString stringWithFormat:@"ArchiveFile{ path = %@, length = %lu }", _path, (unsigned long)[_data length]];
 }
 @end

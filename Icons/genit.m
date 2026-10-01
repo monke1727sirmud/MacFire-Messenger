@@ -14,7 +14,7 @@ int main(int argc, const char **argv)
 		int i;
 		for( i = 1; i < argc; i++ )
 		{
-			[args addObject:[NSString stringWithCString:argv[i]]];
+			[args addObject:[NSString stringWithUTF8String:argv[i]]];
 		}
 		rv = MyMain(args);
 		[pool release];
@@ -34,7 +34,7 @@ int MyMain(NSArray *args)
 	if( coreData == nil )
 		return -1;
 	
-	[coreData writeToFile:@"icons.mar" atomically:NO];
+	[coreData writeToFile:@"icons.mar" options:0 error:nil];
 	
 	return 0;
 }

@@ -14,7 +14,7 @@ int main(int argc, const char **argv)
 		int i;
 		for( i = 1; i < argc; i++ )
 		{
-			[args addObject:[NSString stringWithCString:argv[i]]];
+			[args addObject:[NSString stringWithUTF8String:argv[i]]];
 		}
 		rv = MyMain(args);
 		[pool release];
@@ -50,9 +50,9 @@ int MyMain(NSArray *args)
 	if( [manager fileExistsAtPath:folderPath] )
 	{
 		NSLog(@"deleting existing folder %@",folderPath);
-		[manager removeFileAtPath:folderPath handler:nil];
+		[manager removeItemAtPath:folderPath error:nil];
 	}
-	[manager createDirectoryAtPath:folderPath attributes:nil];
+	[manager createDirectoryAtPath:folderPath withIntermediateDirectories:YES attributes:nil error:nil];
 	
 	// Walk through all ICONS data and write them to files
 	NSArray *icons = [f resourcesOfType:@"ICONS"];
@@ -66,7 +66,7 @@ int MyMain(NSArray *args)
 		NSImage *img = [[NSImage alloc] initWithData:iconData];
 		if( img )
 		{
-			[iconData writeToFile:filePath atomically:NO];
+			[iconData writeToFile:filePath options:0 error:nil];
 		}
 		else
 		{

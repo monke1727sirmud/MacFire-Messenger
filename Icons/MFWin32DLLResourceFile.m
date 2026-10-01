@@ -146,7 +146,7 @@
 }
 - (NSString *)description
 {
-	return [NSString stringWithFormat:@"MFWin32DLLResource(%@:%@, %d langs)",type,identifier,[languages count]];
+	return [NSString stringWithFormat:@"MFWin32DLLResource(%@:%@, %lu langs)",type,identifier,(unsigned long)[languages count]];
 }
 @end
 
@@ -353,7 +353,7 @@ Scan PE formatted (Win32) executable
 */
 - (BOOL)scan:(MFWin32DLLResourceFile *)destObj
 {
-	int i, j, k;
+	NSInteger i, j, k;
 	
 	// Scan DOS header
 	IMAGE_DOS_HEADER dosHeader = [self scanDOSHeader];
@@ -468,7 +468,7 @@ Scan PE formatted (Win32) executable
 - (IMAGE_DOS_HEADER)scanDOSHeader
 {
 	IMAGE_DOS_HEADER h;
-	int i;
+	NSInteger i;
 	h.e_magic    = [_scanner scanUInt16];
 	h.e_cblp     = [_scanner scanUInt16];
 	h.e_cp       = [_scanner scanUInt16];
@@ -497,7 +497,7 @@ Scan PE formatted (Win32) executable
 - (IMAGE_NT_HEADERS32)scanNTHeader
 {
 	IMAGE_NT_HEADERS32 h;
-	int i;
+	NSInteger i;
 	
 	h.Signature = [_scanner scanUInt32];
 	
@@ -543,7 +543,7 @@ Scan PE formatted (Win32) executable
 	h.OptionalHeader.LoaderFlags = [_scanner scanUInt32];
 	h.OptionalHeader.NumberOfRvaAndSizes = [_scanner scanUInt32];
 	if( h.OptionalHeader.NumberOfRvaAndSizes > IMAGE_NUMBEROF_DIRECTORY_ENTRIES )
-		[NSException raise:@"DLLScanner" format:@"Too many DataDirectory entries (%d)",h.OptionalHeader.NumberOfRvaAndSizes];
+		[NSException raise:@"DLLScanner" format:@"Too many DataDirectory entries (%u)",h.OptionalHeader.NumberOfRvaAndSizes];
 	for( i = 0; i < h.OptionalHeader.NumberOfRvaAndSizes; i++ )
 	{
 		h.OptionalHeader.DataDirectory[i].VirtualAddress = [_scanner scanUInt32];
@@ -556,7 +556,7 @@ Scan PE formatted (Win32) executable
 - (IMAGE_SECTION_HEADER)scanSectionHeader
 {
 	IMAGE_SECTION_HEADER h;
-	int i;
+	NSInteger i;
 	
 	for( i = 0; i < IMAGE_SIZEOF_SHORT_NAME; i++ )
 		h.Name[i] = [_scanner scanUInt8];
