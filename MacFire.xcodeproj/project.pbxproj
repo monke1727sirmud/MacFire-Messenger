@@ -37,9 +37,6 @@
 		249C0A640E947764000B902E /* XfireFriendGroup_MacFireAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 249C0A630E947764000B902E /* XfireFriendGroup_MacFireAdditions.m */; };
 		24AAF6B00D090C65002996AB /* PreferencesWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = 24AAF6AE0D090C65002996AB /* PreferencesWindow.nib */; };
 		24AB3D420D038A0A00049A5C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 24AB3D410D038A0A00049A5C /* libz.dylib */; };
-		24AB3D440D038A1D00049A5C /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 24AB3D430D038A1D00049A5C /* libcrypto.dylib */; };
-		24AB3D4B0D038A6400049A5C /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24AB3D4A0D038A6400049A5C /* Growl.framework */; };
-		24AB3D540D038A6A00049A5C /* Growl.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 24AB3D4A0D038A6400049A5C /* Growl.framework */; };
 		24AB3D5A0D038AB600049A5C /* icons.mar in Resources */ = {isa = PBXBuildFile; fileRef = 24AB3D570D038AB600049A5C /* icons.mar */; };
 		24AB3D870D038B6E00049A5C /* ui.strings in Resources */ = {isa = PBXBuildFile; fileRef = 24AB3D860D038B6E00049A5C /* ui.strings */; };
 		24AB3DE70D0390A500049A5C /* MFMainWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = 24AB3DE50D0390A500049A5C /* MFMainWindow.nib */; };
@@ -71,20 +68,6 @@
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		24AB3D470D038A2D00049A5C /* Copy Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				24AB3D540D038A6A00049A5C /* Growl.framework in Copy Frameworks */,
-			);
-			name = "Copy Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -148,8 +131,6 @@
 		249C0A630E947764000B902E /* XfireFriendGroup_MacFireAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XfireFriendGroup_MacFireAdditions.m; path = "Source/Main Window/XfireFriendGroup_MacFireAdditions.m"; sourceTree = "<group>"; };
 		24AAF6AF0D090C65002996AB /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/PreferencesWindow.nib; sourceTree = "<group>"; };
 		24AB3D410D038A0A00049A5C /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = /usr/lib/libz.dylib; sourceTree = "<absolute>"; };
-		24AB3D430D038A1D00049A5C /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = /usr/lib/libcrypto.dylib; sourceTree = "<absolute>"; };
-		24AB3D4A0D038A6400049A5C /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = Frameworks/Growl.framework; sourceTree = "<group>"; };
 		24AB3D570D038AB600049A5C /* icons.mar */ = {isa = PBXFileReference; comments = "Custom archive of Xfire icons.  Retrieved from XBlaze (all except XF_EVILG.ICO which appears corrupted).  I don't know where they got them, but I suspect from Xfire's Icons.dll."; lastKnownFileType = file; name = icons.mar; path = Games/icons.mar; sourceTree = "<group>"; };
 		24AB3D7D0D038B5200049A5C /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/ui.strings; sourceTree = "<group>"; };
 		24AB3DE60D0390A500049A5C /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MFMainWindow.nib; sourceTree = "<group>"; };
@@ -213,9 +194,7 @@
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				24AB3D420D038A0A00049A5C /* libz.dylib in Frameworks */,
-				24AB3D440D038A1D00049A5C /* libcrypto.dylib in Frameworks */,
-				24AB3D4B0D038A6400049A5C /* Growl.framework in Frameworks */,
-				240ACC160D0FB5ED0073B151 /* IOKit.framework in Frameworks */,
+				240ACC160D0FB5ED0073B151 /* IOKit.framework in Frameworks *,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,18 +289,9 @@
 		24AB3D400D0389F300049A5C /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				24AB3D430D038A1D00049A5C /* libcrypto.dylib */,
 				24AB3D410D038A0A00049A5C /* libz.dylib */,
 			);
 			name = Libraries;
-			sourceTree = "<group>";
-		};
-		24AB3D490D038A4F00049A5C /* Private Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				24AB3D4A0D038A6400049A5C /* Growl.framework */,
-			);
-			name = "Private Frameworks";
 			sourceTree = "<group>";
 		};
 		24AB3D560D038AA600049A5C /* Games */ = {
@@ -589,7 +559,6 @@
 			isa = PBXGroup;
 			children = (
 				24AB3D400D0389F300049A5C /* Libraries */,
-				24AB3D490D038A4F00049A5C /* Private Frameworks */,
 				1058C7A0FEA54F0111CA2CBB /* System Frameworks */,
 			);
 			name = "Frameworks & Libraries";
@@ -603,7 +572,6 @@
 			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "MacFire" */;
 			buildPhases = (
 				8D1107290486CEB800E47090 /* Resources */,
-				24AB3D470D038A2D00049A5C /* Copy Frameworks */,
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
 			);
@@ -799,39 +767,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_1)",
-				);
-				FRAMEWORK_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/Frameworks\"";
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_NAME = MacFire;
 				WRAPPER_EXTENSION = app;
-				ZERO_LINK = YES;
 			};
 			name = Debug;
 		};
 		C01FCF4C08A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_1)",
-				);
-				FRAMEWORK_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/Frameworks\"";
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_MODEL_TUNING = G5;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_NAME = MacFire;
@@ -844,8 +794,11 @@
 			buildSettings = {
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				PREBINDING = NO;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				OTHER_LDFLAGS = (
+					"-framework",
+					UserNotifications,
+				);
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -854,8 +807,11 @@
 			buildSettings = {
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				PREBINDING = NO;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				OTHER_LDFLAGS = (
+					"-framework",
+					UserNotifications,
+				);
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
