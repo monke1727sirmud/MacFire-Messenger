@@ -473,7 +473,7 @@ static void _XfireCopyPreference( NSString *pktKey, NSString *dictKey, XfirePack
 	if( (username == nil) || (password == nil) )
 	{
 		// TODO: abort
-		NSLog(@"Either username or password not provided!!!");
+		NSLog(@"Login credentials not provided");
 		return;
 	}
 	

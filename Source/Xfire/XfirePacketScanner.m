@@ -23,7 +23,7 @@
 
 #define CHECK_LENGTH_EX(_need,_what)				\
 	if( (_idx + (_need)) > _len ) {		\
-		[self raiseException:[NSString stringWithFormat:@"Not enough bytes (%d,%d) to scan %@",(_len - (_idx)), (_need),(_what)]];	\
+		[self raiseException:[NSString stringWithFormat:@"Not enough bytes (%lu,%lu) to scan %@",(unsigned long)(_len - (_idx)), (unsigned long)(_need),(_what)]];	\
 	}
 
 // use to debug the scanner

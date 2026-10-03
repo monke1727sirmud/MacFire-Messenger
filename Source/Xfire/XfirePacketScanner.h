@@ -25,8 +25,8 @@
 @interface XfirePacketScanner : NSObject
 {
 	NSData *_dat;
-	unsigned int _idx;
-	unsigned int _len;
+	NSUInteger _idx;
+	NSUInteger _len;
 	const unsigned char *_bytes;
 }
 
