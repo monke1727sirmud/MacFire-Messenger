@@ -23,6 +23,7 @@
 
 #import "MFPreferences.h"
 #import "NSUserDefaults_MFAdditions.h"
+#import "MessengerSession.h"
 
 // This is the preferences-changed notification name
 NSString *MFPreferencesChangedNotificationName = @"MFPreferencesChangedNotificationName";
@@ -423,6 +424,103 @@ static MFPreferences *gPrefs = nil;
 - (unsigned int)xfireServerPortNumber
 {
 	return [[NSUserDefaults standardUserDefaults] integerForKey:kMFXfireServerPortNumberPrefKey];
+}
+
+// --- Multi-service preferences ---
+
+static NSString *kMFServiceEnabledPrefix     = @"ServiceEnabled_";
+static NSString *kMFServiceUserNamePrefix     = @"ServiceUserName_";
+static NSString *kMFServiceHostPrefix         = @"ServiceHost_";
+static NSString *kMFServicePortPrefix         = @"ServicePort_";
+static NSString *kMFDefaultServicePrefKey     = @"DefaultService";
+
+static NSString *serviceKey(NSString *prefix, MessengerService service)
+{
+    return [NSString stringWithFormat:@"%@%d", prefix, (int)service];
+}
+
+- (BOOL)isServiceEnabled:(MessengerService)service
+{
+    if( service == kMessengerServiceXfire )
+        return YES; // Xfire is always enabled
+    return [[NSUserDefaults standardUserDefaults] boolForKey:serviceKey(kMFServiceEnabledPrefix, service)];
+}
+
+- (void)setServiceEnabled:(MessengerService)service enabled:(BOOL)enabled
+{
+    [[NSUserDefaults standardUserDefaults] setBool:enabled
+                                          forKey:serviceKey(kMFServiceEnabledPrefix, service)];
+}
+
+- (NSString *)userNameForService:(MessengerService)service
+{
+    if( service == kMessengerServiceXfire )
+        return [self defaultUserName];
+    return [[NSUserDefaults standardUserDefaults] stringForKey:serviceKey(kMFServiceUserNamePrefix, service)];
+}
+
+- (void)setUserName:(NSString *)name forService:(MessengerService)service
+{
+    if( service == kMessengerServiceXfire )
+    {
+        [self setDefaultUserName:name];
+        return;
+    }
+    [[NSUserDefaults standardUserDefaults] setObject:name
+                                            forKey:serviceKey(kMFServiceUserNamePrefix, service)];
+}
+
+- (NSString *)serverHostNameForService:(MessengerService)service
+{
+    if( service == kMessengerServiceXfire )
+        return [self xfireServerHostName];
+    NSString *host = [[NSUserDefaults standardUserDefaults] stringForKey:serviceKey(kMFServiceHostPrefix, service)];
+    if( host == nil || [host length] == 0 )
+        return [MessengerSession defaultHostNameForService:service];
+    return host;
+}
+
+- (void)setServerHostName:(NSString *)host forService:(MessengerService)service
+{
+    if( service == kMessengerServiceXfire )
+    {
+        [[NSUserDefaults standardUserDefaults] setObject:host forKey:kMFXfireServerHostNamePrefKey];
+        return;
+    }
+    [[NSUserDefaults standardUserDefaults] setObject:host
+                                            forKey:serviceKey(kMFServiceHostPrefix, service)];
+}
+
+- (unsigned short)serverPortForService:(MessengerService)service
+{
+    if( service == kMessengerServiceXfire )
+        return (unsigned short)[self xfireServerPortNumber];
+    NSInteger port = [[NSUserDefaults standardUserDefaults] integerForKey:serviceKey(kMFServicePortPrefix, service)];
+    if( port == 0 )
+        return [MessengerSession defaultPortForService:service];
+    return (unsigned short)port;
+}
+
+- (void)setServerPort:(unsigned short)port forService:(MessengerService)service
+{
+    if( service == kMessengerServiceXfire )
+    {
+        [[NSUserDefaults standardUserDefaults] setInteger:port forKey:kMFXfireServerPortNumberPrefKey];
+        return;
+    }
+    [[NSUserDefaults standardUserDefaults] setInteger:port
+                                            forKey:serviceKey(kMFServicePortPrefix, service)];
+}
+
+- (MessengerService)defaultService
+{
+    NSInteger val = [[NSUserDefaults standardUserDefaults] integerForKey:kMFDefaultServicePrefKey];
+    return (MessengerService)val;
+}
+
+- (void)setDefaultService:(MessengerService)service
+{
+    [[NSUserDefaults standardUserDefaults] setInteger:(NSInteger)service forKey:kMFDefaultServicePrefKey];
 }
 
 @end

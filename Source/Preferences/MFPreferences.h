@@ -21,6 +21,7 @@
 *******************************************************************/
 
 #import <Cocoa/Cocoa.h>
+#import "MessengerTypes.h"
 
 // This notification is generated when the user clicks the OK
 // button on the preference window to accept changes.
@@ -78,6 +79,22 @@ extern NSString *MFPreferencesChangedNotificationName;
 - (NSString *)xfireServerHostName;
 - (unsigned int)xfireServerPortNumber;
 
+// multi-service: which services the user has enabled
+- (BOOL)isServiceEnabled:(MessengerService)service;
+- (void)setServiceEnabled:(MessengerService)service enabled:(BOOL)enabled;
+
+// multi-service: per-service account credentials
+- (NSString *)userNameForService:(MessengerService)service;
+- (void)setUserName:(NSString *)name forService:(MessengerService)service;
+- (NSString *)serverHostNameForService:(MessengerService)service;
+- (void)setServerHostName:(NSString *)host forService:(MessengerService)service;
+- (unsigned short)serverPortForService:(MessengerService)service;
+- (void)setServerPort:(unsigned short)port forService:(MessengerService)service;
+
+// multi-service: default service to show at login
+- (MessengerService)defaultService;
+- (void)setDefaultService:(MessengerService)service;
+
 
 // local game settings
 // TBD
@@ -110,5 +127,12 @@ extern NSString *MFPreferencesChangedNotificationName;
 - (void)setPosingXfireClientVersion:(unsigned int)version;
 - (void)setDefaultChatColorForFriendsName:(NSColor *)aColor; // JA ( http://xblaze.co.uk ) Allow user to choose colours for the names shown in the chat history
 - (void)setChatColorForMyName:(NSColor *)aColor; // JA ( http://xblaze.co.uk ) Allow user to choose colours for the names shown in the chat history
+
+// multi-service setters
+- (void)setServiceEnabled:(MessengerService)service enabled:(BOOL)enabled;
+- (void)setUserName:(NSString *)name forService:(MessengerService)service;
+- (void)setServerHostName:(NSString *)host forService:(MessengerService)service;
+- (void)setServerPort:(unsigned short)port forService:(MessengerService)service;
+- (void)setDefaultService:(MessengerService)service;
 
 @end
