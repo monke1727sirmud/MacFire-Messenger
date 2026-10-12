@@ -39,6 +39,10 @@
 #import "MFUIStrings.h"
 #import "MFXfirePrefsWindowController.h"
 #import "MFApplicationSupportController.h"
+#import "MFMultiServiceController.h"
+#import "MessengerSession.h"
+#import "MessengerContact.h"
+#import "MessengerChat.h"
 
 static NSString *kMFNameColID = @"MacFireName";
 static NSString *kMFStatusColID = @"MacFireStatus";
@@ -54,6 +58,8 @@ static NSString *kMFXfireFriendDragType = @"MFXfireFriendDragType";
 	if( self )
 	{
 		xfSession = nil;
+		multiService = nil;
+		messengerChatWindows = nil;
 		currentMode = kMacFireUIModeUninitialized;
 		growlSuppressionTimer = nil;
 		chatWindows = nil;
@@ -96,11 +102,15 @@ static NSString *kMFXfireFriendDragType = @"MFXfireFriendDragType";
 	
 	[chatWindows release];
 	[xfSession release];
+	[multiService release];
+	[messengerChatWindows release];
 	if( growlSuppressionTimer )
 		[growlSuppressionTimer invalidate];
 	
 	chatWindows = nil;
 	xfSession = nil;
+	multiService = nil;
+	messengerChatWindows = nil;
 	growlSuppressionTimer = nil;
 	
 	[super dealloc];
@@ -1554,6 +1564,181 @@ static NSString *kMFXfireFriendDragType = @"MFXfireFriendDragType";
 {
 	outlineReloadQueued = NO;
 	[friendOutline reloadData];
+}
+
+@end
+
+// --- Multi-service support ---
+
+@implementation MFMainWindowController (MultiService)
+
+- (IBAction)servicePopUpChanged:(id)sender
+{
+    MessengerService svc = (MessengerService)[[sender selectedItem] tag];
+    MFPreferences *prefs = [MFPreferences preferences];
+    [prefs setDefaultService:svc];
+
+    NSString *savedName = [prefs userNameForService:svc];
+    if( savedName && [savedName length] > 0 )
+        [usernameBox setStringValue:savedName];
+    else
+        [usernameBox setStringValue:@""];
+}
+
+- (IBAction)beginMultiServiceLogin:(id)sender
+{
+    if( currentMode != kMacFireUIModeLoginEntry )
+        return;
+
+    if( [[usernameBox stringValue] length] == 0 )
+    {
+        NSAlert *alert = [[[NSAlert alloc] init] autorelease];
+        [alert setMessageText:MF_UISTR_NEED_UNAME];
+        [alert setInformativeText:MF_UISTR_PROVIDE_UN];
+        [alert addButtonWithTitle:MF_UISTR_OK];
+        [alert runModal];
+        return;
+    }
+    if( [[passwordField stringValue] length] == 0 )
+    {
+        NSAlert *alert = [[[NSAlert alloc] init] autorelease];
+        [alert setMessageText:MF_UISTR_NEED_PWORD];
+        [alert setInformativeText:MF_UISTR_PROVIDE_PW];
+        [alert addButtonWithTitle:MF_UISTR_OK];
+        [alert runModal];
+        return;
+    }
+
+    MessengerService svc = (MessengerService)[[servicePopUpButton selectedItem] tag];
+    NSString *username = [usernameBox stringValue];
+    NSString *password = [passwordField stringValue];
+
+    MFPreferences *prefs = [MFPreferences preferences];
+    [prefs setUserName:username forService:svc];
+    [prefs setDefaultService:svc];
+
+    // Always start the Xfire session (the app's primary protocol)
+    [self startSession];
+
+    // If the selected service is not Xfire, also connect to it
+    if( svc != kMessengerServiceXfire )
+    {
+        if( !multiService )
+        {
+            multiService = [[MFMultiServiceController sharedController] retain];
+            [multiService setDelegate:self];
+        }
+
+        [multiService connectService:svc];
+        MessengerSession *session = [multiService sessionForService:svc];
+        if( session )
+        {
+            [session setUsername:username];
+            [session setPassword:password];
+        }
+    }
+
+    // Connect all other enabled services with saved credentials
+    MessengerService allServices[] = {
+        kMessengerServiceMSN, kMessengerServiceYahoo,
+        kMessengerServiceAIM, kMessengerServiceICQ
+    };
+    for( int i = 0; i < 4; i++ )
+    {
+        MessengerService other = allServices[i];
+        if( other == svc )
+            continue;
+        if( [prefs isServiceEnabled:other] )
+        {
+            NSString *otherUser = [prefs userNameForService:other];
+            if( otherUser && [otherUser length] > 0 )
+            {
+                if( !multiService )
+                {
+                    multiService = [[MFMultiServiceController sharedController] retain];
+                    [multiService setDelegate:self];
+                }
+                [multiService connectService:other];
+            }
+        }
+    }
+
+    if( !messengerChatWindows )
+        messengerChatWindows = [[NSMutableDictionary alloc] init];
+}
+
+- (void)startChatWithMessengerContact:(MessengerContact *)contact
+{
+    if( [contact isOnline] )
+    {
+        MFChatWindowController *chatWin = [self chatWindowForMessengerContact:contact];
+        if( chatWin )
+        {
+            [chatWin showWindow:nil];
+        }
+        else
+        {
+            [[contact session] beginChatWithContact:contact];
+        }
+    }
+}
+
+- (MFChatWindowController *)chatWindowForMessengerContact:(MessengerContact *)contact
+{
+    NSString *key = [contact accountID];
+    return [messengerChatWindows objectForKey:key];
+}
+
+- (void)multiServiceController:(MFMultiServiceController *)controller
+            sessionDidConnect:(MessengerService)service
+{
+    [self queueReloadData];
+}
+
+- (void)multiServiceController:(MFMultiServiceController *)controller
+           sessionDidDisconnect:(MessengerService)service
+{
+    [self queueReloadData];
+}
+
+- (void)multiServiceController:(MFMultiServiceController *)controller
+            sessionLoginFailed:(MessengerService)service reason:(NSString *)reason
+{
+    NSString *svcName = [NSString displayNameForService:service];
+    NSAlert *alert = [[[NSAlert alloc] init] autorelease];
+    [alert setMessageText:[NSString stringWithFormat:@"%@ login failed", svcName]];
+    [alert setInformativeText:reason];
+    [alert addButtonWithTitle:MF_UISTR_OK];
+    [alert runModal];
+}
+
+- (void)multiServiceController:(MFMultiServiceController *)controller
+              contactListDidChange
+{
+    [self queueReloadData];
+}
+
+- (void)multiServiceController:(MFMultiServiceController *)controller
+           didBeginMessengerChat:(MessengerChat *)chat
+{
+    MessengerContact *contact = [chat remoteContact];
+    NSString *key = [contact accountID];
+
+    if( ![messengerChatWindows objectForKey:key] )
+    {
+        // The existing chat window controller is designed for XfireChat.
+        // A full implementation would generalize MFChatWindowController
+        // to support both XfireChat and MessengerChat. For now, incoming
+        // messages from non-Xfire services are logged.
+        NSLog(@"Incoming chat from %@ on %@", [contact displayName],
+              [NSString displayNameForService:[contact service]]);
+    }
+}
+
+- (void)multiServiceController:(MFMultiServiceController *)controller
+            didBeginXfireChat:(XfireChat *)chat
+{
+    // Handled by existing xireSession:didBeginChat: delegate
 }
 
 @end

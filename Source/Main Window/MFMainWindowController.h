@@ -19,6 +19,7 @@
 *******************************************************************/
 
 #import <Cocoa/Cocoa.h>
+#import "MessengerTypes.h"
 
 typedef enum
 {
@@ -35,6 +36,10 @@ typedef enum
 @class MFUserSearchWindowController;
 @class MFXfirePrefsWindowController;
 @class MFChatWindowController;
+@class MFMultiServiceController;
+@class MessengerSession;
+@class MessengerContact;
+@class MessengerChat;
 
 @interface MFMainWindowController : NSWindowController
 {
@@ -54,6 +59,7 @@ typedef enum
 	IBOutlet NSSecureTextField *passwordField;
 	IBOutlet NSButton *loginButton;
 	IBOutlet NSProgressIndicator *progressIndicator;
+	IBOutlet NSPopUpButton *servicePopUpButton; // multi-service selector
 	
 	// friend list view
 	IBOutlet NSOutlineView *friendOutline;
@@ -69,6 +75,8 @@ typedef enum
 	MFXfirePrefsWindowController        *xfireOptionsController;
 	
 	XfireSession   *xfSession;
+	MFMultiServiceController *multiService;
+	NSMutableDictionary      *messengerChatWindows; // contactID -> MFChatWindowController
 	NSTimer        *growlSuppressionTimer;
 	MacFireUIMode  currentMode;
 	NSMutableArray *outstandingFriendRequests;
@@ -92,6 +100,12 @@ typedef enum
 - (void)startChatWithFriend:(XfireFriend *)fr;
 - (MFChatWindowController *)chatWindowForFriend:(XfireFriend *)fr;
 - (MFChatWindowController *)chatWindowForChat:(XfireChat *)chat;
+
+// multi-service support
+- (void)startChatWithMessengerContact:(MessengerContact *)contact;
+- (MFChatWindowController *)chatWindowForMessengerContact:(MessengerContact *)contact;
+- (IBAction)servicePopUpChanged:(id)sender;
+- (IBAction)beginMultiServiceLogin:(id)sender;
 
 - (int)activeRow; // in the friend outline view
 - (XfireFriend *)selectedFriend; // get the selected friend (if any), or nil
