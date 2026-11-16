@@ -67,6 +67,15 @@
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		7FCD00000000000000000001 /* MessengerTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAB00000000000000000002 /* MessengerTypes.m */; };
+		7FCD00000000000000000002 /* MessengerSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAB00000000000000000004 /* MessengerSession.m */; };
+		7FCD00000000000000000003 /* MessengerContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAB00000000000000000006 /* MessengerContact.m */; };
+		7FCD00000000000000000004 /* MessengerChat.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAB00000000000000000008 /* MessengerChat.m */; };
+		7FCD00000000000000000005 /* MessengerSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAB0000000000000000000A /* MessengerSocket.m */; };
+		7FCD00000000000000000006 /* MSNPSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAB0000000000000000000C /* MSNPSession.m */; };
+		7FCD00000000000000000007 /* YMSGSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAB0000000000000000000E /* YMSGSession.m */; };
+		7FCD00000000000000000008 /* TOCSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAB00000000000000000010 /* TOCSession.m */; };
+		7FCD00000000000000000009 /* MFMultiServiceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAB00000000000000000012 /* MFMultiServiceController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -185,6 +194,24 @@
 		32CA4F630368D1EE00C91783 /* MacFire_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacFire_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* MacFire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacFire.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FAB00000000000000000001 /* MessengerTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessengerTypes.h; path = Source/Messenger/MessengerTypes.h; sourceTree = "<group>"; };
+		7FAB00000000000000000002 /* MessengerTypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessengerTypes.m; path = Source/Messenger/MessengerTypes.m; sourceTree = "<group>"; };
+		7FAB00000000000000000003 /* MessengerSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessengerSession.h; path = Source/Messenger/MessengerSession.h; sourceTree = "<group>"; };
+		7FAB00000000000000000004 /* MessengerSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessengerSession.m; path = Source/Messenger/MessengerSession.m; sourceTree = "<group>"; };
+		7FAB00000000000000000005 /* MessengerContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessengerContact.h; path = Source/Messenger/MessengerContact.h; sourceTree = "<group>"; };
+		7FAB00000000000000000006 /* MessengerContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessengerContact.m; path = Source/Messenger/MessengerContact.m; sourceTree = "<group>"; };
+		7FAB00000000000000000007 /* MessengerChat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessengerChat.h; path = Source/Messenger/MessengerChat.h; sourceTree = "<group>"; };
+		7FAB00000000000000000008 /* MessengerChat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessengerChat.m; path = Source/Messenger/MessengerChat.m; sourceTree = "<group>"; };
+		7FAB00000000000000000009 /* MessengerSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessengerSocket.h; path = Source/Messenger/MessengerSocket.h; sourceTree = "<group>"; };
+		7FAB0000000000000000000A /* MessengerSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessengerSocket.m; path = Source/Messenger/MessengerSocket.m; sourceTree = "<group>"; };
+		7FAB0000000000000000000B /* MSNPSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSNPSession.h; path = Source/Messenger/MSNPSession.h; sourceTree = "<group>"; };
+		7FAB0000000000000000000C /* MSNPSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSNPSession.m; path = Source/Messenger/MSNPSession.m; sourceTree = "<group>"; };
+		7FAB0000000000000000000D /* YMSGSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YMSGSession.h; path = Source/Messenger/YMSGSession.h; sourceTree = "<group>"; };
+		7FAB0000000000000000000E /* YMSGSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YMSGSession.m; path = Source/Messenger/YMSGSession.m; sourceTree = "<group>"; };
+		7FAB0000000000000000000F /* TOCSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TOCSession.h; path = Source/Messenger/TOCSession.h; sourceTree = "<group>"; };
+		7FAB00000000000000000010 /* TOCSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TOCSession.m; path = Source/Messenger/TOCSession.m; sourceTree = "<group>"; };
+		7FAB00000000000000000011 /* MFMultiServiceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MFMultiServiceController.h; path = Source/Messenger/MFMultiServiceController.h; sourceTree = "<group>"; };
+		7FAB00000000000000000012 /* MFMultiServiceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MFMultiServiceController.m; path = Source/Messenger/MFMultiServiceController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,7 +221,7 @@
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				24AB3D420D038A0A00049A5C /* libz.dylib in Frameworks */,
-				240ACC160D0FB5ED0073B151 /* IOKit.framework in Frameworks *,
+				240ACC160D0FB5ED0073B151 /* IOKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,11 +459,37 @@
 			name = Preferences;
 			sourceTree = "<group>";
 		};
+		7FAB00000000000000000100 /* Messenger */ = {
+			isa = PBXGroup;
+			children = (
+				7FAB00000000000000000001 /* MessengerTypes.h */,
+				7FAB00000000000000000002 /* MessengerTypes.m */,
+				7FAB00000000000000000003 /* MessengerSession.h */,
+				7FAB00000000000000000004 /* MessengerSession.m */,
+				7FAB00000000000000000005 /* MessengerContact.h */,
+				7FAB00000000000000000006 /* MessengerContact.m */,
+				7FAB00000000000000000007 /* MessengerChat.h */,
+				7FAB00000000000000000008 /* MessengerChat.m */,
+				7FAB00000000000000000009 /* MessengerSocket.h */,
+				7FAB0000000000000000000A /* MessengerSocket.m */,
+				7FAB0000000000000000000B /* MSNPSession.h */,
+				7FAB0000000000000000000C /* MSNPSession.m */,
+				7FAB0000000000000000000D /* YMSGSession.h */,
+				7FAB0000000000000000000E /* YMSGSession.m */,
+				7FAB0000000000000000000F /* TOCSession.h */,
+				7FAB00000000000000000010 /* TOCSession.m */,
+				7FAB00000000000000000011 /* MFMultiServiceController.h */,
+				7FAB00000000000000000012 /* MFMultiServiceController.m */,
+			);
+			name = Messenger;
+			sourceTree = "<group>";
+		};
 		24AB3DDF0D038E3200049A5C /* Source */ = {
 			isa = PBXGroup;
 			children = (
 				242E696C0EA1A75E00D97FB6 /* MacFire GUI */,
 				24AB3DBE0D038CB400049A5C /* Xfire Service */,
+				7FAB00000000000000000100 /* Messenger */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 			);
 			name = Source;
@@ -674,6 +727,15 @@
 				24E3EBE00F07312F00071C3F /* MFSoundManager.m in Sources */,
 				242C38F40F0DAFCB006F174B /* NSUserDefaults_MFAdditions.m in Sources */,
 				2457B5180F105FE700607753 /* MFChatLog.m in Sources */,
+				7FCD00000000000000000001 /* MessengerTypes.m in Sources */,
+				7FCD00000000000000000002 /* MessengerSession.m in Sources */,
+				7FCD00000000000000000003 /* MessengerContact.m in Sources */,
+				7FCD00000000000000000004 /* MessengerChat.m in Sources */,
+				7FCD00000000000000000005 /* MessengerSocket.m in Sources */,
+				7FCD00000000000000000006 /* MSNPSession.m in Sources */,
+				7FCD00000000000000000007 /* YMSGSession.m in Sources */,
+				7FCD00000000000000000008 /* TOCSession.m in Sources */,
+				7FCD00000000000000000009 /* MFMultiServiceController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

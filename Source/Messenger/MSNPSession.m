@@ -914,7 +914,7 @@
     [_socket scheduleInRunLoop:[NSRunLoop currentRunLoop]];
     // USR <trid> <email> <auth>
     [self sendCommand:@"USR" withParams:[NSString stringWithFormat:@"%@ %@",
-        [[_session username] stringByDeletingEscapesForURL], authStr]];
+        [[_session username], authStr]];
     _isIncoming = NO;
 }
 
