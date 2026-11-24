@@ -29,3 +29,11 @@
 - **Unresolved**: Which direction does the user want — web-app revival, blind Objective-C, or something else?
 - Assumption: `MacFire.todo` is the authoritative feature spec for remaining work.
 - Assumption: If web-app path chosen, core scope starts with friends list (groups) + chat.
+
+## Handoff — web revival started (24 Nov 2026)
+
+- Direction taken: web client at the repo root (Vite + React + TypeScript + `@supabase/supabase-js`) over the existing Supabase schema. Native ObjC still cannot be compiled in this Linux environment.
+- Schema gaps closed in `supabase/migrations/20261124120000_macfire_realtime_and_bootstrap.sql`: replaced the self-referencing `chat_room_members` RLS policy (Postgres raised "infinite recursion detected in policy") with SECURITY DEFINER helpers, tightened `friends` inserts, added `accept_friend_request()` RPC, added the `auth.users` bootstrap trigger plus backfill, added `updated_at` triggers, and enabled Realtime on the subscribed tables.
+- Client scope: email/password auth, profile + status + current game, friend requests, grouped friend list, 1:1 chat with realtime messages, typing state and read flags. Group rooms and the game-server browser have schema but no UI yet.
+- Verification: `npm run build` (tsc + vite) passes; dev server answers on 0.0.0.0:3000 through the preview proxy. Runtime was not exercised — there are no Supabase credentials in this environment.
+- Next: apply migrations to a Supabase project, set `VITE_SUPABASE_URL` / `VITE_SUPABASE_ANON_KEY`, then test signup → add friend → chat end to end.
