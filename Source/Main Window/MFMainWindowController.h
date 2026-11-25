@@ -40,9 +40,8 @@ typedef enum
 @interface MFMainWindowController : NSWindowController
 {
 	// main views
-	IBOutlet NSView *modeView; // subview either loginView or usersView
+	IBOutlet NSView *modeView; // container for the current mode's view
 	IBOutlet NSView *loginView;
-	IBOutlet NSView *usersView;
 	IBOutlet NSView *userOutlineView;
 	IBOutlet NSBox  *separatorBoxView;
 	
