@@ -141,6 +141,7 @@ jobs:
             test 2>&1 | tee test.log
 
           xcrun xcresulttool get test-results summary --path test.xcresult > test-summary.json
+          xcrun xcresulttool get test-results tests --path test.xcresult > test-results-tests.json
           cat test-summary.json
           python3 - <<'PY'
           import json, sys
@@ -153,6 +154,44 @@ jobs:
           print(f"executed {total} test(s): {passed} passed, {failed} failed, {skipped} skipped")
           if total == 0:
               print("::error::No tests ran. MacFireTests built but no test case was loaded; failing the job instead of reporting a green run.")
+              sys.exit(1)
+
+          required = ("MacFirePacketTests", "MacFireDataTests")
+          report = json.load(open("test-results-tests.json"))
+          counts = {name: 0 for name in required}
+
+          def test_cases(node):
+              cases = []
+              if str(node.get("nodeType", "")).lower() == "test case":
+                  cases.append(node)
+              for child in node.get("children") or []:
+                  cases.extend(test_cases(child))
+              return cases
+
+          def walk(node):
+              if node.get("name") in counts:
+                  counts[node["name"]] = max(counts[node["name"]], len(test_cases(node)))
+              for child in node.get("children") or []:
+                  walk(child)
+
+          roots = report.get("testNodes") or []
+          for root in roots:
+              walk(root)
+
+          # XCTest node names can vary; nodeIdentifier is "<Class>/<test>()", so it
+          # is a reliable fallback for attributing test cases to their suite.
+          for name in required:
+              if counts[name] == 0:
+                  for root in roots:
+                      counts[name] += sum(
+                          1 for case in test_cases(root)
+                          if str(case.get("nodeIdentifier", "")).startswith(name + "/")
+                      )
+              print(f"{name}: {counts[name]} test case(s) recorded")
+
+          missing = [name for name in required if counts[name] == 0]
+          if missing:
+              print("::error::xcresult has no executed test cases for: " + ", ".join(missing) + ". The bundle was only partially loaded; failing the job.")
               sys.exit(1)
           PY
 
@@ -192,4 +231,5 @@ jobs:
             test.log
             test-summary.json
             test.xcresult
+            test-results-tests.json
           if-no-files-found: ignore
