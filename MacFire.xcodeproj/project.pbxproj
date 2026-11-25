@@ -66,6 +66,17 @@
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		AA00000000000000000010 /* MacFirePacketTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000A /* MacFirePacketTests.m */; };
+		AA00000000000000000011 /* MacFireDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000B /* MacFireDataTests.m */; };
+		AA00000000000000000012 /* XfirePacket.m in Sources */ = {isa = PBXBuildFile; fileRef = 2469AB060D39761300A902CB /* XfirePacket.m */; };
+		AA00000000000000000013 /* XfirePacketScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 2469AB0E0D39761300A902CB /* XfirePacketScanner.m */; };
+		AA00000000000000000014 /* XfirePacketGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2469AB0C0D39761300A902CB /* XfirePacketGenerator.m */; };
+		AA00000000000000000015 /* XfirePacketAttributeValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 2469AB0A0D39761300A902CB /* XfirePacketAttributeValue.m */; };
+		AA00000000000000000016 /* XfirePacketAttributeMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 2469AB080D39761300A902CB /* XfirePacketAttributeMap.m */; };
+		AA00000000000000000017 /* MFDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 24AB3E300D0393AA00049A5C /* MFDataScanner.m */; };
+		AA00000000000000000018 /* MFDataEmitter.m in Sources */ = {isa = PBXBuildFile; fileRef = 24AB3E350D0393AA00049A5C /* MFDataEmitter.m */; };
+		AA00000000000000000019 /* NSData_MFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 24AB3E330D0393AA00049A5C /* NSData_MFAdditions.m */; };
+		AA0000000000000000001A /* NSMutableData_XfireAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2469AB3B0D39770900A902CB /* NSMutableData_XfireAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -182,6 +193,9 @@
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* MacFire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacFire.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA0000000000000000000A /* MacFirePacketTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MacFirePacketTests.m; path = Source/Tests/MacFirePacketTests.m; sourceTree = "<group>"; };
+		AA0000000000000000000B /* MacFireDataTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MacFireDataTests.m; path = Source/Tests/MacFireDataTests.m; sourceTree = "<group>"; };
+		AA00000000000000000008 /* MacFireTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacFireTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +205,13 @@
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				240ACC160D0FB5ED0073B151 /* IOKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA00000000000000000006 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				8D1107320486CEB800E47090 /* MacFire.app */,
+				AA00000000000000000008 /* MacFireTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -426,6 +448,7 @@
 				242E696C0EA1A75E00D97FB6 /* MacFire GUI */,
 				24AB3DBE0D038CB400049A5C /* Xfire Service */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				AA00000000000000000009 /* Tests */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -550,6 +573,15 @@
 			name = "Frameworks & Libraries";
 			sourceTree = "<group>";
 		};
+		AA00000000000000000009 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				AA0000000000000000000A /* MacFirePacketTests.m */,
+				AA0000000000000000000B /* MacFireDataTests.m */,
+			);
+			name = Tests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -571,6 +603,23 @@
 			productReference = 8D1107320486CEB800E47090 /* MacFire.app */;
 			productType = "com.apple.product-type.application";
 		};
+		AA00000000000000000001 /* MacFireTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA00000000000000000002 /* Build configuration list for PBXNativeTarget "MacFireTests" */;
+			buildPhases = (
+				AA00000000000000000005 /* Sources */,
+				AA00000000000000000006 /* Frameworks */,
+				AA00000000000000000007 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MacFireTests;
+			productName = MacFireTests;
+			productReference = AA00000000000000000008 /* MacFireTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -585,6 +634,7 @@
 			projectRoot = "";
 			targets = (
 				8D1107260486CEB800E47090 /* MacFire */,
+				AA00000000000000000001 /* MacFireTests */,
 			);
 		};
 /* End PBXProject section */
@@ -607,6 +657,13 @@
 				24E3D4DF0EA43FD4009A80EB /* XfirePrefsWindow.nib in Resources */,
 				24BA2FE60EFDC36900CD90F3 /* Games.plist in Resources */,
 				2457B4FF0F10322D00607753 /* Credits.rtf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA00000000000000000007 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -661,6 +718,24 @@
 				24E3EBE00F07312F00071C3F /* MFSoundManager.m in Sources */,
 				242C38F40F0DAFCB006F174B /* NSUserDefaults_MFAdditions.m in Sources */,
 				2457B5180F105FE700607753 /* MFChatLog.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA00000000000000000005 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA00000000000000000010 /* MacFirePacketTests.m in Sources */,
+				AA00000000000000000011 /* MacFireDataTests.m in Sources */,
+				AA00000000000000000012 /* XfirePacket.m in Sources */,
+				AA00000000000000000013 /* XfirePacketScanner.m in Sources */,
+				AA00000000000000000014 /* XfirePacketGenerator.m in Sources */,
+				AA00000000000000000015 /* XfirePacketAttributeValue.m in Sources */,
+				AA00000000000000000016 /* XfirePacketAttributeMap.m in Sources */,
+				AA00000000000000000017 /* MFDataScanner.m in Sources */,
+				AA00000000000000000018 /* MFDataEmitter.m in Sources */,
+				AA00000000000000000019 /* NSData_MFAdditions.m in Sources */,
+				AA0000000000000000001A /* NSMutableData_XfireAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -879,6 +954,80 @@
 			};
 			name = Release;
 		};
+		AA00000000000000000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/Source/Cocoa Extensions",
+					"$(SRCROOT)/Source/Tests",
+					"$(SRCROOT)/Source/Xfire",
+				);
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@loader_path/../Frameworks",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				OTHER_LDFLAGS = (
+					"-lz",
+					"-framework",
+					XCTest,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.MacFire.MacFireTests;
+				PRODUCT_NAME = MacFireTests;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		AA00000000000000000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/Source/Cocoa Extensions",
+					"$(SRCROOT)/Source/Tests",
+					"$(SRCROOT)/Source/Xfire",
+				);
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@loader_path/../Frameworks",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				OTHER_LDFLAGS = (
+					"-lz",
+					"-framework",
+					XCTest,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.MacFire.MacFireTests;
+				PRODUCT_NAME = MacFireTests;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -896,6 +1045,15 @@
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
 				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA00000000000000000002 /* Build configuration list for PBXNativeTarget "MacFireTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA00000000000000000003 /* Debug */,
+				AA00000000000000000004 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

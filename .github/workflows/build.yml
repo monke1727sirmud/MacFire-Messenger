@@ -125,6 +125,19 @@ jobs:
           fi
           echo "bundle verification passed"
 
+      - name: Test MacFire
+        if: matrix.configuration == 'Debug'
+        run: |
+          set -o pipefail
+          xcodebuild \
+            -project MacFire.xcodeproj \
+            -scheme MacFire \
+            -configuration Debug \
+            -destination 'platform=macOS' \
+            -derivedDataPath build-Debug \
+            CODE_SIGNING_ALLOWED=NO \
+            test 2>&1 | tee test.log
+
       - name: Analyze MacFire
         if: matrix.configuration == 'Debug'
         run: |
@@ -158,4 +171,5 @@ jobs:
             build-${{ matrix.configuration }}.log
             analyze.log
             analyzer-findings.txt
+            test.log
           if-no-files-found: ignore
