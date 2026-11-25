@@ -13,6 +13,10 @@ jobs:
     name: xcodebuild (${{ matrix.configuration }})
     runs-on: macos-15
     timeout-minutes: 45
+    env:
+      # Pinned so CI results don't change when the runner image's default
+      # Xcode moves. Must be one of the Xcode versions installed on macos-15.
+      XCODE_VERSION: "16.4"
     strategy:
       fail-fast: false
       matrix:
@@ -20,6 +24,18 @@ jobs:
     steps:
       - name: Check out
         uses: actions/checkout@v4
+
+      - name: Select Xcode ${{ env.XCODE_VERSION }}
+        run: |
+          set -euo pipefail
+          xcode_app="/Applications/Xcode_${XCODE_VERSION}.app"
+          if [ ! -d "$xcode_app" ]; then
+            echo "::error::Xcode ${XCODE_VERSION} is not installed on this runner. Installed versions:"
+            ls -d /Applications/Xcode*.app || true
+            exit 1
+          fi
+          sudo xcode-select -s "$xcode_app"
+          xcodebuild -version
 
       - name: Show toolchain and schemes
         run: |
@@ -38,6 +54,76 @@ jobs:
             -derivedDataPath build-${{ matrix.configuration }} \
             CODE_SIGNING_ALLOWED=NO \
             build 2>&1 | tee build-${{ matrix.configuration }}.log
+
+      - name: Verify app bundle
+        run: |
+          set -euo pipefail
+          app="build-${{ matrix.configuration }}/Build/Products/${{ matrix.configuration }}/MacFire.app"
+          resources="$app/Contents/Resources"
+          fail=0
+
+          check_file() {
+            if [ -e "$1" ]; then
+              echo "ok: $1"
+            else
+              echo "::error::missing $1"
+              fail=1
+            fi
+          }
+
+          has_resource() {
+            find "$resources" -name "$1" -print -quit | grep -q .
+          }
+
+          check_file "$app/Contents/MacOS/MacFire"
+          if [ -x "$app/Contents/MacOS/MacFire" ]; then
+            echo "ok: executable bit set"
+          else
+            echo "::error::Contents/MacOS/MacFire is not executable"
+            fail=1
+          fi
+
+          check_file "$app/Contents/Info.plist"
+          if plutil -lint "$app/Contents/Info.plist"; then
+            echo "ok: Info.plist parses"
+          else
+            echo "::error::Info.plist is not a valid plist"
+            fail=1
+          fi
+
+          for nib in MainMenu ChatWindow MFMainWindow PreferencesWindow \
+                     FriendshipRequestWindow UserSearchWindow XfirePrefsWindow; do
+            if has_resource "$nib.nib"; then
+              echo "ok: $nib.nib"
+            else
+              echo "::error::missing $nib.nib in Contents/Resources"
+              fail=1
+            fi
+          done
+
+          if has_resource "MacFire.icns"; then
+            echo "ok: MacFire.icns"
+          else
+            echo "::error::missing MacFire.icns in Contents/Resources"
+            fail=1
+          fi
+
+          echo "---- otool -L ----"
+          links=$(otool -L "$app/Contents/MacOS/MacFire")
+          printf '%s\n' "$links"
+          if printf '%s\n' "$links" | grep -iq 'growl'; then
+            echo "::error::MacFire still links Growl"
+            fail=1
+          fi
+          if printf '%s\n' "$links" | grep -q 'libcrypto'; then
+            echo "::error::MacFire still links libcrypto"
+            fail=1
+          fi
+
+          if [ "$fail" -ne 0 ]; then
+            exit 1
+          fi
+          echo "bundle verification passed"
 
       - name: Analyze MacFire
         if: matrix.configuration == 'Debug'
