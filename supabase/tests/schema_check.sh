@@ -106,6 +106,18 @@ rejects() {
   fi
 }
 
+# SQL that must be permitted; the mirror of rejects.
+succeeds() {
+  local label=$1 sql=$2
+  if PSQL -tA -d "$DB" -v ON_ERROR_STOP=1 -c "$sql" > "$WORK/last.log" 2>&1; then
+    echo "PASS  $label"
+  else
+    echo "FAIL  $label: statement was refused"
+    tail -5 "$WORK/last.log"
+    FAILED=1
+  fi
+}
+
 check() {
   local expected=$1 actual=$2 label=$3
   if [ "$expected" = "$actual" ]; then
@@ -168,6 +180,15 @@ rejects "friend request already handled" "an accepted request cannot be accepted
 # receiver check.
 rejects "only the receiver can accept this request" "a session without a JWT claim cannot accept" \
   "begin; insert into friend_requests (id, sender_id, receiver_id) values ('eeeeeeee-1111-4111-8111-eeeeeeeeeeee', '$SENDER', '$BYSTANDER'); set local role authenticated; select accept_friend_request('eeeeeeee-1111-4111-8111-eeeeeeeeeeee'); commit;"
+
+# friends_insert has to allow a user's own side of a friendship and refuse the
+# other user's side; the old permissive policy allowed the latter, which is why
+# accepting a request goes through the RPC.
+echo "--- friends_insert policy (one-way inserts only) ---"
+rejects "new row violates row-level security policy" "a user cannot write the other side of a friendship" \
+  "begin; set local role authenticated; select set_config('request.jwt.claim.sub', '$SENDER', true); insert into friends (user_id, friend_id) values ('$BYSTANDER', '$SENDER'); commit;"
+succeeds "a user can write their own side of a friendship" \
+  "begin; set local role authenticated; select set_config('request.jwt.claim.sub', '$SENDER', true); insert into friends (user_id, friend_id) values ('$SENDER', '$BYSTANDER'); commit;"
 
 if [ "$FAILED" -eq 0 ]; then echo "RESULT: all checks passed"; else echo "RESULT: failures present"; fi
 exit "$FAILED"
