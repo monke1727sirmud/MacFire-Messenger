@@ -7,6 +7,7 @@
 #import "XfirePacketScanner.h"
 
 @interface MacFirePacketTests : XCTestCase
+- (XfirePacket *)packetByDecoding:(NSData *)raw;
 @end
 
 @implementation MacFirePacketTests
