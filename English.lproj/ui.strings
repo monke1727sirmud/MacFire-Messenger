@@ -1,0 +1,94 @@
+/*******************************************************************
+	FILE:		ui.strings
+	
+	COPYRIGHT:
+		Copyright 2007-2008, the MacFire.org team.
+		Use of this software is governed by the license terms
+		indicated in the License.txt file (a BSD license).
+	
+	DESCRIPTION:
+		Localized MacFire UI strings (English US).
+	
+	HISTORY:
+		2008 04 06  Comment created.
+*******************************************************************/
+
+/* General */
+
+OK                            = "OK";
+Cancel                        = "Cancel";
+XfireProfileURL               = "http://www.xfire.com/profile/%@";
+
+/* Log in */
+
+MFLogInFailed                 = "Log in failed";
+MFBadPassword                 = "Username/password combination was not valid.";
+MFVersionTooOld               =
+"There is a newer Xfire client version (1.%d).  Do you wish to pose as the latest version?
+
+WARNING: This may cause unexpected results if the Xfire protocol has changed.";
+
+Pose                          = "Pose";
+MFNeedUsername                = "No user name";
+MFProvideUserName             = "A user name must be provided.";
+MFNeedPassword                = "No password";
+MFProvidePassword             = "A password must be provided";
+
+MFDisconnected                = "You have been disconnected";
+MFLoggedInOnAnotherPC         = "You are now logged in on another computer.";
+MFServerHungUp                = "The Xfire server closed the connection.";
+MFServerStoppedResponding     = "The Xfire server stopped responding.";
+MFUnknownReason               = "An unexpected error occurred.";
+
+/* Friend group names */
+
+MFFriendsOnlineGroupName      = "Friends Online";
+MFFriendsOfflineGroupName     = "Friends Offline";
+MFFriendsOfFriendsGroupName   = "Friends of Friends Playing";
+MFUnknownFriendsGroupName     = "<Unknown>";
+
+/* Friend tooltips */
+
+MFToolTipUserName             = "Username: %@";
+MFToolTipUserID               = "User ID: %u";
+MFToolTipNickName             = "Nickname: %@";
+MFToolTipPlaying              = "Playing: %@";
+MFToolTipGameServer           = "Game Server: %@";
+MFToolTipCommonFriends        = "Common Friends:";
+MFToolTipLastSeenOnline       = "Last Seen Online: %@";
+MFToolTipNow                  = "Now";
+
+/* Friend status */
+
+MFFriendStatusOffline         = "(Offline)";
+MFFriendStatusAFK             = "(AFK) Away From Keyboard";
+
+/* Chat window title */
+
+MFChatWindowTitle             = "%@ - Chat";
+
+/* Growl notification strings */
+
+MFGrowlFriendCameOnlineMajor  = "Xfire friend came online";
+MFGrowlFriendCameOnlineMinor  = "%@ came online";
+MFGrowlFriendWentOfflineMajor = "Xfire friend went offline";
+MFGrowlFriendWentOfflineMinor = "%@ went offline";
+MFGrowlFriendSentMessageMajor = "%@ sent a message";
+MFGrowlFriendSentMessageMinor = "Message: %@";
+
+/* String prompt UI items */
+
+MFChangeNickPrompt            = "Enter your new nickname:";
+MFChangeNickButton            = "Accept";
+MFAddFriendGroupPrompt        = "Enter the new friend group's name:";
+MFAddFriendGroupButton        = "Add";
+MFRenameFriendGroupPrompt     = "Friend group's new name:";
+MFRenameFriendGroupButton     = "Change";
+
+/* Remove Friend, Group */
+
+MFRemoveFriendGroupPrompt     = "Do you want to remove friend group \"%@\"?";
+MFRemoveFriendGroupButton     = "Remove Group";
+MFRemoveFriendPrompt          = "Do you want to remove friend \"%@\"?";
+MFRemoveFriendButton          = "Remove Friend";
+

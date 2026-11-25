@@ -1,0 +1,19 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {beginSearch = id; cancel = id; sendAddRequest = id; }; 
+            CLASS = MFUserSearchWindowController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                "_beginSearchButton" = NSButton; 
+                "_progressIndicator" = NSProgressIndicator; 
+                "_requestStringField" = NSTextField; 
+                "_resultsTable" = NSTableView; 
+                "_searchTextField" = NSTextField; 
+                "_sendRequestButton" = NSButton; 
+            }; 
+            SUPERCLASS = NSWindowController; 
+        }
+    ); 
+    IBVersion = 1; 
+}
