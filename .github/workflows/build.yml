@@ -128,15 +128,33 @@ jobs:
       - name: Test MacFire
         if: matrix.configuration == 'Debug'
         run: |
-          set -o pipefail
+          set -euo pipefail
+          rm -rf test.xcresult
           xcodebuild \
             -project MacFire.xcodeproj \
             -scheme MacFire \
             -configuration Debug \
             -destination 'platform=macOS' \
             -derivedDataPath build-Debug \
+            -resultBundlePath test.xcresult \
             CODE_SIGNING_ALLOWED=NO \
             test 2>&1 | tee test.log
+
+          xcrun xcresulttool get test-results summary --path test.xcresult > test-summary.json
+          cat test-summary.json
+          python3 - <<'PY'
+          import json, sys
+
+          summary = json.load(open("test-summary.json"))
+          total = summary.get("totalTestCount", 0)
+          passed = summary.get("passedTests", 0)
+          failed = summary.get("failedTests", 0)
+          skipped = summary.get("skippedTests", 0)
+          print(f"executed {total} test(s): {passed} passed, {failed} failed, {skipped} skipped")
+          if total == 0:
+              print("::error::No tests ran. MacFireTests built but no test case was loaded; failing the job instead of reporting a green run.")
+              sys.exit(1)
+          PY
 
       - name: Analyze MacFire
         if: matrix.configuration == 'Debug'
@@ -172,4 +190,6 @@ jobs:
             analyze.log
             analyzer-findings.txt
             test.log
+            test-summary.json
+            test.xcresult
           if-no-files-found: ignore
