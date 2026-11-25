@@ -1,15 +1,15 @@
 /*******************************************************************
 	FILE:		NSData_XfireAdditions.m
-	
+
 	COPYRIGHT:
 		Copyright 2007-2008, the MacFire.org team.
 		Use of this software is governed by the license terms
 		indicated in the License.txt file (a BSD license).
-	
+
 	DESCRIPTION:
 		Adds items to NSData that are useful for implementing the
 		Xfire protocol.
-	
+
 	HISTORY:
 		2008 04 06  Changed copyright to BSD license.
 		2008 01 12  Added copyright notice.
@@ -24,9 +24,9 @@
 - (NSData*)sha1Hash
 {
 	unsigned char hash[CC_SHA1_DIGEST_LENGTH];
-	
+
 	CC_SHA1([self bytes], (CC_LONG)[self length], hash);
-	
+
 	return [NSData dataWithBytes:hash length:CC_SHA1_DIGEST_LENGTH];
 }
 
@@ -36,17 +36,17 @@
 	const char *rawBytes;
 	unsigned int len;
 	unsigned int i;
-	
+
 	len = [self length];
 	rawBytes = [self bytes];
-	
+
 	NSMutableString *str = [NSMutableString stringWithCapacity:(len*2)];
-	
+
 	for( i = 0; i < len; i++ )
 	{
 		[str appendFormat:@"%02x", (unsigned char)rawBytes[i]];
 	}
-	
+
 	return str;
 }
 
@@ -55,19 +55,19 @@
 {
 	NSMutableString *str   = [NSMutableString string]; // full string result
 	NSMutableString *hrStr = [NSMutableString string]; // "human readable" string
-	
+
 	int i, len;
 	const unsigned char *b;
 	len = [self length];
 	b = [self bytes];
-	
+
 	if( len == 0 )
 	{
 		return @"<empty>";
 	}
-	
+
 	[str appendString:@"\n   "];
-	
+
 	int linelen = 16;
 	for( i = 0; i < len; i++ )
 	{
@@ -80,19 +80,19 @@
 		{
 			[hrStr appendString:@"."];
 		}
-		
+
 		if( (i % linelen) == (linelen-1) ) // new line every linelen bytes
 		{
 			[str appendFormat:@"    %@\n", hrStr];
 			hrStr = [NSMutableString string];
-			
+
 			if( i < (len-1) )
 			{
 				[str appendString:@"   "];
 			}
 		}
 	}
-	
+
 	// make sure to print out the remaining hrStr part, aligned of course
 	if( (len % linelen) != 0 )
 	{
@@ -103,7 +103,7 @@
 		}
 		[str appendFormat:@"    %@\n", hrStr];
 	}
-	
+
 	return str;
 }
 
@@ -128,21 +128,18 @@
 	return YES;
 }
 
+// The "new" prefix means the caller owns the returned object, so this
+// must return a retained (not autoreleased) NSData.
 + (NSData *)newUUID
 {
-	CFUUIDRef uuid;
-	NSData    *dat = nil;
-	
-	uuid = CFUUIDCreate(nil);
-	if( uuid != nil )
-	{
-		CFUUIDBytes bytes;
-		
-		bytes = CFUUIDGetUUIDBytes(uuid);
-		dat = [NSData dataWithBytes:&bytes length:16];
-		
-		CFRelease(uuid);
-	}
+	CFUUIDRef uuid = CFUUIDCreate(nil);
+	if( uuid == nil )
+		return nil;
+
+	CFUUIDBytes bytes = CFUUIDGetUUIDBytes(uuid);
+	NSData *dat = [[NSData alloc] initWithBytes:&bytes length:sizeof(bytes)];
+
+	CFRelease(uuid);
 	return dat;
 }
 
@@ -152,12 +149,12 @@
 	CFUUIDRef		uuid;
 	CFStringRef		cfstr;
 	NSString		*nstr;
-	
+
 	uuid = CFUUIDCreate(nil);
 	cfstr = CFUUIDCreateString(nil, uuid);
 	nstr = (NSString *)cfstr;
 	CFRelease(uuid);
-	
+
 	return nstr;
 }
 #endif

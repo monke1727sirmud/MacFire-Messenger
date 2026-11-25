@@ -87,7 +87,6 @@ static MFUserIdleMonitor *gSharedMonitor = nil;
 {
 	if( _hidEntry )
 		IOObjectRelease(_hidEntry);
-	_hidEntry = nil;
 	[_monitorTimer invalidate];
 }
 

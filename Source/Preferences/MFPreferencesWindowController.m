@@ -78,6 +78,7 @@
 	[_myNameColorWell setColor:[prefs myNameChatColor]];
 	
 	NSFont *f = [prefs chatTextFont];
+	_selectedFont = f;
 	[_chatFontField setStringValue:[NSString stringWithFormat:@"%@ - %.0f", [f displayName], [f pointSize]]];
 	[_idleDelayField setStringValue:[NSString stringWithFormat:@"%d", [prefs idleStatusDelay]]];
 	

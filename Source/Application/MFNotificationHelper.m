@@ -51,8 +51,6 @@ static NSString * const kMFNotificationFriendSentMessageIdentifier = @"MFNotific
 	if( self )
 	{
 		_suspendNotifications = NO;
-		_postsWhileActive = NO;
-		[self requestAuthorizationIfNeeded];
 	}
 	return self;
 }
@@ -85,12 +83,6 @@ static NSString * const kMFNotificationFriendSentMessageIdentifier = @"MFNotific
 - (void)setSuspendsNotifications:(BOOL)suspends
 {
 	_suspendNotifications = suspends;
-}
-
-// Suspends notifications when the application is in the foreground (the active app)
-- (void)setPostsWhileActive:(BOOL)posts
-{
-	_postsWhileActive = posts;
 }
 
 // Helper

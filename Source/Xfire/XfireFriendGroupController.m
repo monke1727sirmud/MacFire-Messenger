@@ -44,13 +44,6 @@
 	return self;
 }
 
-- (void)dealloc
-{
-	_groups = nil;
-	_session = nil;
-	
-}
-
 - (NSArray*)groups
 {
 	return _groups;

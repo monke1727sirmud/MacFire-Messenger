@@ -58,7 +58,6 @@ static MFGameMonitor *gSharedMonitor = nil;
 - (void)dealloc
 {
 	[[[NSWorkspace sharedWorkspace] notificationCenter] removeObserver:self];
-	_runningGames = nil;
 }
 
 - (NSArray *)runningGames

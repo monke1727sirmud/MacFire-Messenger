@@ -61,9 +61,6 @@
 		[_socket close];
 		_socket = nil;
 	}
-	_packetLogger = nil;
-	_hostName = nil;
-	_session = nil;
 }
 
 // Start a connection

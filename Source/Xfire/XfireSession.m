@@ -625,17 +625,6 @@ static inline void _SetDeltaOption( NSDictionary *defaults, NSDictionary *curren
 	[center removeObserver:self];
 	
 	[_keepAliveTimer invalidate];
-	_keepAliveTimer = nil;
-	_connections = nil;
-	_loginConnection = nil;
-	_xfireHostName = nil;
-	_friends = nil;
-	_pendingFriends = nil;
-	_loginIdent = nil;
-	_chats = nil;
-	_friendGroupController = nil;
-	_userOptions = nil;
-	_delegate = nil;
 }
 
 - (void)workspaceWillPowerOff:(NSNotification *)aNote

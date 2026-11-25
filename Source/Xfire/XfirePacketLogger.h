@@ -35,7 +35,7 @@
 // This creates a new cache folder at the specified path (if it does not exist)
 // and creates a new, uniquely-named file in that folder.  Suggested location is a
 // folder under ~/Library/Caches (e.g. ~/Library/Caches/Xfire).
-- (id)initWithCacheFolderName:(NSString *)aName;
+- (instancetype)initWithCacheFolderName:(NSString *)aName;
 
 - (void)logOutbound:(XfirePacket *)aPacket;
 - (void)logInbound:(XfirePacket *)aPacket;

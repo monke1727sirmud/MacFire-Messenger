@@ -25,7 +25,6 @@
 @interface MFNotificationHelper : NSObject <UNUserNotificationCenterDelegate>
 {
 	BOOL _suspendNotifications;
-	BOOL _postsWhileActive;
 }
 
 // Shared object
@@ -39,9 +38,6 @@
 
 // Suspend notifications (useful when logging on)
 - (void)setSuspendsNotifications:(BOOL)suspends;
-
-// Suspends notifications when the application is in the foreground (the active app)
-- (void)setPostsWhileActive:(BOOL)posts;
 
 // Post notifications we support
 - (void)postFriendCameOnline:(XfireFriend *)fr;

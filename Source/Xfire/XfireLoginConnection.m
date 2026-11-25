@@ -55,9 +55,7 @@ static void _XfireCopyPreference( NSString *pktKey, NSString *dictKey, XfirePack
 
 - (void)dealloc
 {
-	_availableData = nil;
 	[_keepAliveResponseTimer invalidate];
-	_keepAliveResponseTimer = nil;
 }
 
 - (void)disconnect

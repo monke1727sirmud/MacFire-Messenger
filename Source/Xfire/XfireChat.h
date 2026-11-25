@@ -22,8 +22,8 @@
 
 @interface XfireChat : NSObject
 {
-	XfireFriend			*remoteFriend;
-	XfireConnection		*conn;
+	__weak XfireFriend		*remoteFriend; // owned by the controlling XfireSession
+	__weak XfireConnection	*conn; // owned by the controlling XfireSession
 	unsigned int		sendSeqNo;
 	__weak id				_delegate;
 }

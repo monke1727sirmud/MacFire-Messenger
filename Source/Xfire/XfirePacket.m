@@ -136,13 +136,6 @@ withheld
 	return self;
 }
 
-- (void)dealloc
-{
-	_attributes = nil;
-	_raw = nil;
-	
-}
-
 - (XfirePacketID)packetID
 {
 	return _packetID;

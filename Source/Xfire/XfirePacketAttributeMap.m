@@ -40,12 +40,6 @@
 	return self;
 }
 
-- (void)dealloc
-{
-	_orderedKeys = nil;
-	_data = nil;
-}
-
 - (void)setObject:(XfirePacketAttributeValue *)value forKey:(id)aKey
 {
 	if( (aKey == nil) || (value == nil) )

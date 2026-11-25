@@ -73,13 +73,6 @@
 	return self;
 }
 
-- (void)dealloc
-{
-	_name = nil;
-	_members = nil;
-	_pendingMembers = nil;
-}
-
 - (XfireFriendGroupType)groupType
 {
 	return _groupType;

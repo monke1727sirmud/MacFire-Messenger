@@ -96,16 +96,6 @@ NSString *kMFGameRegistryMacAppPathsKey = @"MacAppPaths";
 	return self;
 }
 
-// This should never get called, but just in case...
-- (void)dealloc
-{
-	
-	_games = nil;
-	_macGames = nil;
-	_defaultImage = nil;
-	
-}
-
 /*
 The Games.plist file is a dictionary with two top level keys:
 	Games							NSArray(NSDictionary)

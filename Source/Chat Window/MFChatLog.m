@@ -34,14 +34,6 @@ NSString *kMFOutgoingKey = @"Outgoing";
 	return self;
 }
 
-- (void)dealloc
-{
-	
-	_log = nil;
-	_path = nil;
-	
-}
-
 - (void)addMessage:(NSString *)msg fromFriend:(XfireFriend *)fr outgoing:(BOOL)outgoing
 {
 	NSMutableDictionary *logEnt = [NSMutableDictionary dictionary];

@@ -94,13 +94,7 @@ static NSString *kMFXfireFriendDragType = @"MFXfireFriendDragType";
 - (void)dealloc
 {
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
-	
 	[notificationSuppressionTimer invalidate];
-	notificationSuppressionTimer = nil;
-	
-	chatWindows = nil;
-	xfSession = nil;
-	friendRequestControllers = nil;
 }
 
 - (void)windowDidLoad
