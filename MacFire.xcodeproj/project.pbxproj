@@ -1,0 +1,886 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		240ACB340D0FA79B0073B151 /* MFUserIdleMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 240ACB320D0FA79B0073B151 /* MFUserIdleMonitor.m */; };
+		240ACB7C0D0FAC460073B151 /* MFPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 240ACB780D0FAC460073B151 /* MFPreferences.m */; };
+		240ACB7E0D0FAC460073B151 /* MFPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 240ACB7A0D0FAC460073B151 /* MFPreferencesWindowController.m */; };
+		240ACC160D0FB5ED0073B151 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 240ACC150D0FB5ED0073B151 /* IOKit.framework */; };
+		240E8ADA0E905D0A00D57B93 /* XfireFriendGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 240E8AD90E905D0A00D57B93 /* XfireFriendGroup.m */; };
+		241BE6E40D3322BF00685916 /* XfireChat.m in Sources */ = {isa = PBXBuildFile; fileRef = 241BE6E20D3322BF00685916 /* XfireChat.m */; };
+		242C38F40F0DAFCB006F174B /* NSUserDefaults_MFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 242C38F30F0DAFCB006F174B /* NSUserDefaults_MFAdditions.m */; };
+		243142570D7A3F8B00E34143 /* MFUserSearchWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 243142550D7A3F8B00E34143 /* MFUserSearchWindowController.m */; };
+		2455C9060DB1A02800CE8885 /* XfireFriend_MacFireAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2455C9050DB1A02800CE8885 /* XfireFriend_MacFireAdditions.m */; };
+		2457B4FF0F10322D00607753 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2457B4FD0F10322D00607753 /* Credits.rtf */; };
+		2457B5180F105FE700607753 /* MFChatLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 2457B5170F105FE700607753 /* MFChatLog.m */; };
+		246771D30D384F3400ED8BAF /* XfireSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 246771D10D384F3400ED8BAF /* XfireSocket.m */; };
+		2467C1220D6548A5000CE936 /* UserSearchWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = 2467C1200D6548A5000CE936 /* UserSearchWindow.nib */; };
+		2469AB100D39761300A902CB /* XfirePacket.m in Sources */ = {isa = PBXBuildFile; fileRef = 2469AB060D39761300A902CB /* XfirePacket.m */; };
+		2469AB120D39761300A902CB /* XfirePacketAttributeMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 2469AB080D39761300A902CB /* XfirePacketAttributeMap.m */; };
+		2469AB140D39761300A902CB /* XfirePacketAttributeValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 2469AB0A0D39761300A902CB /* XfirePacketAttributeValue.m */; };
+		2469AB160D39761300A902CB /* XfirePacketGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2469AB0C0D39761300A902CB /* XfirePacketGenerator.m */; };
+		2469AB180D39761300A902CB /* XfirePacketScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 2469AB0E0D39761300A902CB /* XfirePacketScanner.m */; };
+		2469AB280D39768A00A902CB /* XfireConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 2469AB250D39768A00A902CB /* XfireConnection.m */; };
+		2469AB2C0D3976B000A902CB /* XfireLoginConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 2469AB2A0D3976B000A902CB /* XfireLoginConnection.m */; };
+		2469AB3D0D39770900A902CB /* NSData_XfireAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2469AB390D39770900A902CB /* NSData_XfireAdditions.m */; };
+		2469AB3F0D39770900A902CB /* NSMutableData_XfireAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2469AB3B0D39770900A902CB /* NSMutableData_XfireAdditions.m */; };
+		2469AB8D0D3977A500A902CB /* XfirePacketLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 2469AB8B0D3977A500A902CB /* XfirePacketLogger.m */; };
+		2478E1FE0D15EC4F003C9CA9 /* MFGameMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2478E1FC0D15EC4F003C9CA9 /* MFGameMonitor.m */; };
+		2478E42D0D1622AF003C9CA9 /* NSScreen_MFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2478E42B0D1622AF003C9CA9 /* NSScreen_MFAdditions.m */; };
+		248A246E0DED263A00D7B43E /* MacFire.icns in Resources */ = {isa = PBXBuildFile; fileRef = 248A246D0DED263A00D7B43E /* MacFire.icns */; };
+		249B65CA0E9310C000DA2654 /* XfireFriendGroupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 249B65C90E9310C000DA2654 /* XfireFriendGroupController.m */; };
+		249C0A640E947764000B902E /* XfireFriendGroup_MacFireAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 249C0A630E947764000B902E /* XfireFriendGroup_MacFireAdditions.m */; };
+		24AAF6B00D090C65002996AB /* PreferencesWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = 24AAF6AE0D090C65002996AB /* PreferencesWindow.nib */; };
+		24AB3D420D038A0A00049A5C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 24AB3D410D038A0A00049A5C /* libz.dylib */; };
+		24AB3D440D038A1D00049A5C /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 24AB3D430D038A1D00049A5C /* libcrypto.dylib */; };
+		24AB3D4B0D038A6400049A5C /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24AB3D4A0D038A6400049A5C /* Growl.framework */; };
+		24AB3D540D038A6A00049A5C /* Growl.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 24AB3D4A0D038A6400049A5C /* Growl.framework */; };
+		24AB3D5A0D038AB600049A5C /* icons.mar in Resources */ = {isa = PBXBuildFile; fileRef = 24AB3D570D038AB600049A5C /* icons.mar */; };
+		24AB3D870D038B6E00049A5C /* ui.strings in Resources */ = {isa = PBXBuildFile; fileRef = 24AB3D860D038B6E00049A5C /* ui.strings */; };
+		24AB3DE70D0390A500049A5C /* MFMainWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = 24AB3DE50D0390A500049A5C /* MFMainWindow.nib */; };
+		24AB3DF30D0390FD00049A5C /* NSView_MFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 24AB3DF10D0390FD00049A5C /* NSView_MFAdditions.m */; };
+		24AB3E360D0393AA00049A5C /* MFDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 24AB3E300D0393AA00049A5C /* MFDataScanner.m */; };
+		24AB3E390D0393AA00049A5C /* NSData_MFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 24AB3E330D0393AA00049A5C /* NSData_MFAdditions.m */; };
+		24AB3E3B0D0393AA00049A5C /* MFDataEmitter.m in Sources */ = {isa = PBXBuildFile; fileRef = 24AB3E350D0393AA00049A5C /* MFDataEmitter.m */; };
+		24AB3E960D03A27000049A5C /* MFGameRegistry.m in Sources */ = {isa = PBXBuildFile; fileRef = 24AB3E940D03A27000049A5C /* MFGameRegistry.m */; };
+		24AB3EE70D03A7B700049A5C /* XfireFriend.m in Sources */ = {isa = PBXBuildFile; fileRef = 24AB3EE10D03A7B700049A5C /* XfireFriend.m */; };
+		24AB3EE90D03A7B700049A5C /* XfireSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 24AB3EE30D03A7B700049A5C /* XfireSession.m */; };
+		24AB3EEB0D03A7B700049A5C /* XfireSkin.m in Sources */ = {isa = PBXBuildFile; fileRef = 24AB3EE50D03A7B700049A5C /* XfireSkin.m */; };
+		24AB3F700D03AE7900049A5C /* MFMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24AB3F6E0D03AE7900049A5C /* MFMainWindowController.m */; };
+		24AB3FA90D03AF9100049A5C /* MFImageAndTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 24AB3FA70D03AF9100049A5C /* MFImageAndTextCell.m */; };
+		24AB40040D03B12400049A5C /* MFApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 24AB40020D03B12400049A5C /* MFApplicationDelegate.m */; };
+		24AB40EB0D03BF3C00049A5C /* MFGrowlHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 24AB40E90D03BF3C00049A5C /* MFGrowlHelper.m */; };
+		24AD74070D7BA32D0071C794 /* FriendshipRequestWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = 24AD74050D7BA32D0071C794 /* FriendshipRequestWindow.nib */; };
+		24AD740D0D7BA3570071C794 /* MFFriendshipRequestWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24AD740B0D7BA3570071C794 /* MFFriendshipRequestWindowController.m */; };
+		24BA2FE60EFDC36900CD90F3 /* Games.plist in Resources */ = {isa = PBXBuildFile; fileRef = 24BA2FE50EFDC36900CD90F3 /* Games.plist */; };
+		24C27BFE0D30BCC60005DAD2 /* ChatWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = 24C27BFC0D30BCC60005DAD2 /* ChatWindow.nib */; };
+		24C27C040D30BD170005DAD2 /* MFChatWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C27C020D30BD170005DAD2 /* MFChatWindowController.m */; };
+		24C3E93A0DDFC8E000F2B239 /* MFImageAndTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C3E9390DDFC8E000F2B239 /* MFImageAndTextView.m */; };
+		24E3D4DF0EA43FD4009A80EB /* XfirePrefsWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = 24E3D4DD0EA43FD4009A80EB /* XfirePrefsWindow.nib */; };
+		24E3D4E60EA4404F009A80EB /* MFXfirePrefsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E3D4E50EA4404F009A80EB /* MFXfirePrefsWindowController.m */; };
+		24E3EB970F0720F500071C3F /* MFApplicationSupportController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E3EB960F0720F500071C3F /* MFApplicationSupportController.m */; };
+		24E3EB9D0F07253700071C3F /* NSFileManager_MFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E3EB9C0F07253700071C3F /* NSFileManager_MFAdditions.m */; };
+		24E3EBE00F07312F00071C3F /* MFSoundManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E3EBDF0F07312F00071C3F /* MFSoundManager.m */; };
+		8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.nib */; };
+		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
+		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
+		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		24AB3D470D038A2D00049A5C /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				24AB3D540D038A6A00049A5C /* Growl.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		240ACB310D0FA79B0073B151 /* MFUserIdleMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MFUserIdleMonitor.h; path = Source/Application/MFUserIdleMonitor.h; sourceTree = "<group>"; };
+		240ACB320D0FA79B0073B151 /* MFUserIdleMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MFUserIdleMonitor.m; path = Source/Application/MFUserIdleMonitor.m; sourceTree = "<group>"; };
+		240ACB770D0FAC460073B151 /* MFPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MFPreferences.h; path = Source/Preferences/MFPreferences.h; sourceTree = "<group>"; };
+		240ACB780D0FAC460073B151 /* MFPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MFPreferences.m; path = Source/Preferences/MFPreferences.m; sourceTree = "<group>"; };
+		240ACB790D0FAC460073B151 /* MFPreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MFPreferencesWindowController.h; path = Source/Preferences/MFPreferencesWindowController.h; sourceTree = "<group>"; };
+		240ACB7A0D0FAC460073B151 /* MFPreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MFPreferencesWindowController.m; path = Source/Preferences/MFPreferencesWindowController.m; sourceTree = "<group>"; };
+		240ACC150D0FB5ED0073B151 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
+		240E8AD80E905D0A00D57B93 /* XfireFriendGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XfireFriendGroup.h; path = Source/Xfire/XfireFriendGroup.h; sourceTree = "<group>"; };
+		240E8AD90E905D0A00D57B93 /* XfireFriendGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XfireFriendGroup.m; path = Source/Xfire/XfireFriendGroup.m; sourceTree = "<group>"; };
+		241BE6E10D3322BF00685916 /* XfireChat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XfireChat.h; path = Source/Xfire/XfireChat.h; sourceTree = "<group>"; };
+		241BE6E20D3322BF00685916 /* XfireChat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XfireChat.m; path = Source/Xfire/XfireChat.m; sourceTree = "<group>"; };
+		242C38F20F0DAFCB006F174B /* NSUserDefaults_MFAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSUserDefaults_MFAdditions.h; path = "Source/Cocoa Extensions/NSUserDefaults_MFAdditions.h"; sourceTree = "<group>"; };
+		242C38F30F0DAFCB006F174B /* NSUserDefaults_MFAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSUserDefaults_MFAdditions.m; path = "Source/Cocoa Extensions/NSUserDefaults_MFAdditions.m"; sourceTree = "<group>"; };
+		243142540D7A3F8B00E34143 /* MFUserSearchWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MFUserSearchWindowController.h; path = "Source/Main Window/MFUserSearchWindowController.h"; sourceTree = "<group>"; };
+		243142550D7A3F8B00E34143 /* MFUserSearchWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MFUserSearchWindowController.m; path = "Source/Main Window/MFUserSearchWindowController.m"; sourceTree = "<group>"; };
+		2455C9040DB1A02800CE8885 /* XfireFriend_MacFireAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XfireFriend_MacFireAdditions.h; path = "Source/Main Window/XfireFriend_MacFireAdditions.h"; sourceTree = "<group>"; };
+		2455C9050DB1A02800CE8885 /* XfireFriend_MacFireAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XfireFriend_MacFireAdditions.m; path = "Source/Main Window/XfireFriend_MacFireAdditions.m"; sourceTree = "<group>"; };
+		2457B4FE0F10322D00607753 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = English; path = English.lproj/Credits.rtf; sourceTree = "<group>"; };
+		2457B5160F105FE700607753 /* MFChatLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MFChatLog.h; path = "Source/Chat Window/MFChatLog.h"; sourceTree = "<group>"; };
+		2457B5170F105FE700607753 /* MFChatLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MFChatLog.m; path = "Source/Chat Window/MFChatLog.m"; sourceTree = "<group>"; };
+		246771D00D384F3400ED8BAF /* XfireSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XfireSocket.h; path = Source/Xfire/XfireSocket.h; sourceTree = "<group>"; };
+		246771D10D384F3400ED8BAF /* XfireSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XfireSocket.m; path = Source/Xfire/XfireSocket.m; sourceTree = "<group>"; };
+		2467BFE00D62A6BD000CE936 /* MFMenuItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MFMenuItems.h; path = Source/Application/MFMenuItems.h; sourceTree = "<group>"; };
+		2467C1210D6548A5000CE936 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/UserSearchWindow.nib; sourceTree = "<group>"; };
+		2469AB050D39761300A902CB /* XfirePacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XfirePacket.h; path = Source/Xfire/XfirePacket.h; sourceTree = "<group>"; };
+		2469AB060D39761300A902CB /* XfirePacket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XfirePacket.m; path = Source/Xfire/XfirePacket.m; sourceTree = "<group>"; };
+		2469AB070D39761300A902CB /* XfirePacketAttributeMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XfirePacketAttributeMap.h; path = Source/Xfire/XfirePacketAttributeMap.h; sourceTree = "<group>"; };
+		2469AB080D39761300A902CB /* XfirePacketAttributeMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XfirePacketAttributeMap.m; path = Source/Xfire/XfirePacketAttributeMap.m; sourceTree = "<group>"; };
+		2469AB090D39761300A902CB /* XfirePacketAttributeValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XfirePacketAttributeValue.h; path = Source/Xfire/XfirePacketAttributeValue.h; sourceTree = "<group>"; };
+		2469AB0A0D39761300A902CB /* XfirePacketAttributeValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XfirePacketAttributeValue.m; path = Source/Xfire/XfirePacketAttributeValue.m; sourceTree = "<group>"; };
+		2469AB0B0D39761300A902CB /* XfirePacketGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XfirePacketGenerator.h; path = Source/Xfire/XfirePacketGenerator.h; sourceTree = "<group>"; };
+		2469AB0C0D39761300A902CB /* XfirePacketGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XfirePacketGenerator.m; path = Source/Xfire/XfirePacketGenerator.m; sourceTree = "<group>"; };
+		2469AB0D0D39761300A902CB /* XfirePacketScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XfirePacketScanner.h; path = Source/Xfire/XfirePacketScanner.h; sourceTree = "<group>"; };
+		2469AB0E0D39761300A902CB /* XfirePacketScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XfirePacketScanner.m; path = Source/Xfire/XfirePacketScanner.m; sourceTree = "<group>"; };
+		2469AB230D39768A00A902CB /* XfireConnection_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XfireConnection_Private.h; path = Source/Xfire/XfireConnection_Private.h; sourceTree = "<group>"; };
+		2469AB240D39768A00A902CB /* XfireConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XfireConnection.h; path = Source/Xfire/XfireConnection.h; sourceTree = "<group>"; };
+		2469AB250D39768A00A902CB /* XfireConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XfireConnection.m; path = Source/Xfire/XfireConnection.m; sourceTree = "<group>"; };
+		2469AB290D3976B000A902CB /* XfireLoginConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XfireLoginConnection.h; path = Source/Xfire/XfireLoginConnection.h; sourceTree = "<group>"; };
+		2469AB2A0D3976B000A902CB /* XfireLoginConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XfireLoginConnection.m; path = Source/Xfire/XfireLoginConnection.m; sourceTree = "<group>"; };
+		2469AB380D39770900A902CB /* NSData_XfireAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSData_XfireAdditions.h; path = Source/Xfire/NSData_XfireAdditions.h; sourceTree = "<group>"; };
+		2469AB390D39770900A902CB /* NSData_XfireAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSData_XfireAdditions.m; path = Source/Xfire/NSData_XfireAdditions.m; sourceTree = "<group>"; };
+		2469AB3A0D39770900A902CB /* NSMutableData_XfireAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSMutableData_XfireAdditions.h; path = Source/Xfire/NSMutableData_XfireAdditions.h; sourceTree = "<group>"; };
+		2469AB3B0D39770900A902CB /* NSMutableData_XfireAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSMutableData_XfireAdditions.m; path = Source/Xfire/NSMutableData_XfireAdditions.m; sourceTree = "<group>"; };
+		2469AB880D39778700A902CB /* XfireSession_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XfireSession_Private.h; path = Source/Xfire/XfireSession_Private.h; sourceTree = "<group>"; };
+		2469AB8A0D3977A500A902CB /* XfirePacketLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XfirePacketLogger.h; path = Source/Xfire/XfirePacketLogger.h; sourceTree = "<group>"; };
+		2469AB8B0D3977A500A902CB /* XfirePacketLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XfirePacketLogger.m; path = Source/Xfire/XfirePacketLogger.m; sourceTree = "<group>"; };
+		2478E1FB0D15EC4F003C9CA9 /* MFGameMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MFGameMonitor.h; path = "Source/Game Support/MFGameMonitor.h"; sourceTree = "<group>"; };
+		2478E1FC0D15EC4F003C9CA9 /* MFGameMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MFGameMonitor.m; path = "Source/Game Support/MFGameMonitor.m"; sourceTree = "<group>"; };
+		2478E42A0D1622AF003C9CA9 /* NSScreen_MFAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSScreen_MFAdditions.h; path = "Source/Cocoa Extensions/NSScreen_MFAdditions.h"; sourceTree = "<group>"; };
+		2478E42B0D1622AF003C9CA9 /* NSScreen_MFAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSScreen_MFAdditions.m; path = "Source/Cocoa Extensions/NSScreen_MFAdditions.m"; sourceTree = "<group>"; };
+		248A246D0DED263A00D7B43E /* MacFire.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = MacFire.icns; sourceTree = "<group>"; };
+		249B65C80E9310C000DA2654 /* XfireFriendGroupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XfireFriendGroupController.h; path = Source/Xfire/XfireFriendGroupController.h; sourceTree = "<group>"; };
+		249B65C90E9310C000DA2654 /* XfireFriendGroupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XfireFriendGroupController.m; path = Source/Xfire/XfireFriendGroupController.m; sourceTree = "<group>"; };
+		249B66280E931BCE00DA2654 /* XfireFriendGroup_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XfireFriendGroup_Private.h; path = Source/Xfire/XfireFriendGroup_Private.h; sourceTree = "<group>"; };
+		249C0A620E947764000B902E /* XfireFriendGroup_MacFireAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XfireFriendGroup_MacFireAdditions.h; path = "Source/Main Window/XfireFriendGroup_MacFireAdditions.h"; sourceTree = "<group>"; };
+		249C0A630E947764000B902E /* XfireFriendGroup_MacFireAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XfireFriendGroup_MacFireAdditions.m; path = "Source/Main Window/XfireFriendGroup_MacFireAdditions.m"; sourceTree = "<group>"; };
+		24AAF6AF0D090C65002996AB /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/PreferencesWindow.nib; sourceTree = "<group>"; };
+		24AB3D410D038A0A00049A5C /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = /usr/lib/libz.dylib; sourceTree = "<absolute>"; };
+		24AB3D430D038A1D00049A5C /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = /usr/lib/libcrypto.dylib; sourceTree = "<absolute>"; };
+		24AB3D4A0D038A6400049A5C /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = Frameworks/Growl.framework; sourceTree = "<group>"; };
+		24AB3D570D038AB600049A5C /* icons.mar */ = {isa = PBXFileReference; comments = "Custom archive of Xfire icons.  Retrieved from XBlaze (all except XF_EVILG.ICO which appears corrupted).  I don't know where they got them, but I suspect from Xfire's Icons.dll."; lastKnownFileType = file; name = icons.mar; path = Games/icons.mar; sourceTree = "<group>"; };
+		24AB3D7D0D038B5200049A5C /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/ui.strings; sourceTree = "<group>"; };
+		24AB3DE60D0390A500049A5C /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MFMainWindow.nib; sourceTree = "<group>"; };
+		24AB3DF00D0390FD00049A5C /* NSView_MFAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSView_MFAdditions.h; path = "Source/Cocoa Extensions/NSView_MFAdditions.h"; sourceTree = "<group>"; };
+		24AB3DF10D0390FD00049A5C /* NSView_MFAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSView_MFAdditions.m; path = "Source/Cocoa Extensions/NSView_MFAdditions.m"; sourceTree = "<group>"; };
+		24AB3E300D0393AA00049A5C /* MFDataScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MFDataScanner.m; path = "Source/Cocoa Extensions/MFDataScanner.m"; sourceTree = "<group>"; };
+		24AB3E310D0393AA00049A5C /* NSData_MFAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSData_MFAdditions.h; path = "Source/Cocoa Extensions/NSData_MFAdditions.h"; sourceTree = "<group>"; };
+		24AB3E320D0393AA00049A5C /* MFDataScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MFDataScanner.h; path = "Source/Cocoa Extensions/MFDataScanner.h"; sourceTree = "<group>"; };
+		24AB3E330D0393AA00049A5C /* NSData_MFAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSData_MFAdditions.m; path = "Source/Cocoa Extensions/NSData_MFAdditions.m"; sourceTree = "<group>"; };
+		24AB3E340D0393AA00049A5C /* MFDataEmitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MFDataEmitter.h; path = "Source/Cocoa Extensions/MFDataEmitter.h"; sourceTree = "<group>"; };
+		24AB3E350D0393AA00049A5C /* MFDataEmitter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MFDataEmitter.m; path = "Source/Cocoa Extensions/MFDataEmitter.m"; sourceTree = "<group>"; };
+		24AB3E930D03A27000049A5C /* MFGameRegistry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MFGameRegistry.h; path = "Source/Game Support/MFGameRegistry.h"; sourceTree = "<group>"; };
+		24AB3E940D03A27000049A5C /* MFGameRegistry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MFGameRegistry.m; path = "Source/Game Support/MFGameRegistry.m"; sourceTree = "<group>"; };
+		24AB3EE00D03A7B700049A5C /* XfireFriend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XfireFriend.h; path = Source/Xfire/XfireFriend.h; sourceTree = "<group>"; };
+		24AB3EE10D03A7B700049A5C /* XfireFriend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XfireFriend.m; path = Source/Xfire/XfireFriend.m; sourceTree = "<group>"; };
+		24AB3EE20D03A7B700049A5C /* XfireSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XfireSession.h; path = Source/Xfire/XfireSession.h; sourceTree = "<group>"; };
+		24AB3EE30D03A7B700049A5C /* XfireSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XfireSession.m; path = Source/Xfire/XfireSession.m; sourceTree = "<group>"; };
+		24AB3EE40D03A7B700049A5C /* XfireSkin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XfireSkin.h; path = Source/Xfire/XfireSkin.h; sourceTree = "<group>"; };
+		24AB3EE50D03A7B700049A5C /* XfireSkin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XfireSkin.m; path = Source/Xfire/XfireSkin.m; sourceTree = "<group>"; };
+		24AB3F6D0D03AE7900049A5C /* MFMainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MFMainWindowController.h; path = "Source/Main Window/MFMainWindowController.h"; sourceTree = "<group>"; };
+		24AB3F6E0D03AE7900049A5C /* MFMainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MFMainWindowController.m; path = "Source/Main Window/MFMainWindowController.m"; sourceTree = "<group>"; };
+		24AB3FA60D03AF9100049A5C /* MFImageAndTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MFImageAndTextCell.h; path = "Source/Custom Views/MFImageAndTextCell.h"; sourceTree = "<group>"; };
+		24AB3FA70D03AF9100049A5C /* MFImageAndTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MFImageAndTextCell.m; path = "Source/Custom Views/MFImageAndTextCell.m"; sourceTree = "<group>"; };
+		24AB40010D03B12400049A5C /* MFApplicationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MFApplicationDelegate.h; path = Source/Application/MFApplicationDelegate.h; sourceTree = "<group>"; };
+		24AB40020D03B12400049A5C /* MFApplicationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MFApplicationDelegate.m; path = Source/Application/MFApplicationDelegate.m; sourceTree = "<group>"; };
+		24AB40E80D03BF3C00049A5C /* MFGrowlHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MFGrowlHelper.h; path = Source/Application/MFGrowlHelper.h; sourceTree = "<group>"; };
+		24AB40E90D03BF3C00049A5C /* MFGrowlHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MFGrowlHelper.m; path = Source/Application/MFGrowlHelper.m; sourceTree = "<group>"; };
+		24AD74060D7BA32D0071C794 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/FriendshipRequestWindow.nib; sourceTree = "<group>"; };
+		24AD740A0D7BA3570071C794 /* MFFriendshipRequestWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MFFriendshipRequestWindowController.h; path = "Source/Main Window/MFFriendshipRequestWindowController.h"; sourceTree = "<group>"; };
+		24AD740B0D7BA3570071C794 /* MFFriendshipRequestWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MFFriendshipRequestWindowController.m; path = "Source/Main Window/MFFriendshipRequestWindowController.m"; sourceTree = "<group>"; };
+		24BA2FE50EFDC36900CD90F3 /* Games.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Games.plist; path = Games/Games.plist; sourceTree = "<group>"; };
+		24C27BFD0D30BCC60005DAD2 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/ChatWindow.nib; sourceTree = "<group>"; };
+		24C27C010D30BD170005DAD2 /* MFChatWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MFChatWindowController.h; path = "Source/Chat Window/MFChatWindowController.h"; sourceTree = "<group>"; };
+		24C27C020D30BD170005DAD2 /* MFChatWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MFChatWindowController.m; path = "Source/Chat Window/MFChatWindowController.m"; sourceTree = "<group>"; };
+		24C3E9380DDFC8E000F2B239 /* MFImageAndTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MFImageAndTextView.h; path = "Source/Custom Views/MFImageAndTextView.h"; sourceTree = "<group>"; };
+		24C3E9390DDFC8E000F2B239 /* MFImageAndTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MFImageAndTextView.m; path = "Source/Custom Views/MFImageAndTextView.m"; sourceTree = "<group>"; };
+		24D9D4F00DEB807B00DD768F /* MFUIStrings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MFUIStrings.h; path = Source/Application/MFUIStrings.h; sourceTree = "<group>"; };
+		24E3D4DE0EA43FD4009A80EB /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/XfirePrefsWindow.nib; sourceTree = "<group>"; };
+		24E3D4E40EA4404F009A80EB /* MFXfirePrefsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MFXfirePrefsWindowController.h; path = Source/Preferences/MFXfirePrefsWindowController.h; sourceTree = "<group>"; };
+		24E3D4E50EA4404F009A80EB /* MFXfirePrefsWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MFXfirePrefsWindowController.m; path = Source/Preferences/MFXfirePrefsWindowController.m; sourceTree = "<group>"; };
+		24E3EB950F0720F500071C3F /* MFApplicationSupportController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MFApplicationSupportController.h; path = Source/Application/MFApplicationSupportController.h; sourceTree = "<group>"; };
+		24E3EB960F0720F500071C3F /* MFApplicationSupportController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MFApplicationSupportController.m; path = Source/Application/MFApplicationSupportController.m; sourceTree = "<group>"; };
+		24E3EB9B0F07253700071C3F /* NSFileManager_MFAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSFileManager_MFAdditions.h; path = "Source/Cocoa Extensions/NSFileManager_MFAdditions.h"; sourceTree = "<group>"; };
+		24E3EB9C0F07253700071C3F /* NSFileManager_MFAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSFileManager_MFAdditions.m; path = "Source/Cocoa Extensions/NSFileManager_MFAdditions.m"; sourceTree = "<group>"; };
+		24E3EBDE0F07312F00071C3F /* MFSoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MFSoundManager.h; path = Source/Application/MFSoundManager.h; sourceTree = "<group>"; };
+		24E3EBDF0F07312F00071C3F /* MFSoundManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MFSoundManager.m; path = Source/Application/MFSoundManager.m; sourceTree = "<group>"; };
+		24E3F1F40DBC1BF600DD1A71 /* XfireChat_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XfireChat_Private.h; path = Source/Xfire/XfireChat_Private.h; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		29B97319FDCFA39411CA2CEA /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MainMenu.nib; sourceTree = "<group>"; };
+		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		32CA4F630368D1EE00C91783 /* MacFire_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacFire_Prefix.pch; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8D1107320486CEB800E47090 /* MacFire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacFire.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D11072E0486CEB800E47090 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				24AB3D420D038A0A00049A5C /* libz.dylib in Frameworks */,
+				24AB3D440D038A1D00049A5C /* libcrypto.dylib in Frameworks */,
+				24AB3D4B0D038A6400049A5C /* Growl.framework in Frameworks */,
+				240ACC160D0FB5ED0073B151 /* IOKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Game Support */ = {
+			isa = PBXGroup;
+			children = (
+				24AB3E930D03A27000049A5C /* MFGameRegistry.h */,
+				24AB3E940D03A27000049A5C /* MFGameRegistry.m */,
+				2478E1FB0D15EC4F003C9CA9 /* MFGameMonitor.h */,
+				2478E1FC0D15EC4F003C9CA9 /* MFGameMonitor.m */,
+			);
+			name = "Game Support";
+			sourceTree = "<group>";
+		};
+		1058C7A0FEA54F0111CA2CBB /* System Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				240ACC150D0FB5ED0073B151 /* IOKit.framework */,
+				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
+				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
+				13E42FB307B3F0F600E4EEF1 /* CoreData.framework */,
+			);
+			name = "System Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D1107320486CEB800E47090 /* MacFire.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		242E696C0EA1A75E00D97FB6 /* MacFire GUI */ = {
+			isa = PBXGroup;
+			children = (
+				24AB3DE00D038FE200049A5C /* Application */,
+				243142520D7A3F0C00E34143 /* Windows */,
+				24AB3DDE0D038E1D00049A5C /* Preferences */,
+				24AB3EC00D03A5AF00049A5C /* Custom Views */,
+				080E96DDFE201D6D7F000001 /* Game Support */,
+				24AB3DE10D038FFC00049A5C /* Cocoa Extensions */,
+			);
+			name = "MacFire GUI";
+			sourceTree = "<group>";
+		};
+		243142510D7A3EF900E34143 /* User Search Window */ = {
+			isa = PBXGroup;
+			children = (
+				243142540D7A3F8B00E34143 /* MFUserSearchWindowController.h */,
+				243142550D7A3F8B00E34143 /* MFUserSearchWindowController.m */,
+			);
+			name = "User Search Window";
+			sourceTree = "<group>";
+		};
+		243142520D7A3F0C00E34143 /* Windows */ = {
+			isa = PBXGroup;
+			children = (
+				24AB3DDD0D038E1100049A5C /* Main Window */,
+				2455C8B60DB196E900CE8885 /* Preferences Windows */,
+				24AB3DE40D03903500049A5C /* Chat Window */,
+				24AD74090D7BA3370071C794 /* Friendship Request Window */,
+				243142510D7A3EF900E34143 /* User Search Window */,
+			);
+			name = Windows;
+			sourceTree = "<group>";
+		};
+		2455C8B60DB196E900CE8885 /* Preferences Windows */ = {
+			isa = PBXGroup;
+			children = (
+				240ACB790D0FAC460073B151 /* MFPreferencesWindowController.h */,
+				240ACB7A0D0FAC460073B151 /* MFPreferencesWindowController.m */,
+				24E3D4E40EA4404F009A80EB /* MFXfirePrefsWindowController.h */,
+				24E3D4E50EA4404F009A80EB /* MFXfirePrefsWindowController.m */,
+			);
+			name = "Preferences Windows";
+			sourceTree = "<group>";
+		};
+		249B65C50E93107600DA2654 /* Groups */ = {
+			isa = PBXGroup;
+			children = (
+				249B65C80E9310C000DA2654 /* XfireFriendGroupController.h */,
+				249B65C90E9310C000DA2654 /* XfireFriendGroupController.m */,
+			);
+			name = Groups;
+			sourceTree = "<group>";
+		};
+		24AB3D400D0389F300049A5C /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				24AB3D430D038A1D00049A5C /* libcrypto.dylib */,
+				24AB3D410D038A0A00049A5C /* libz.dylib */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		24AB3D490D038A4F00049A5C /* Private Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				24AB3D4A0D038A6400049A5C /* Growl.framework */,
+			);
+			name = "Private Frameworks";
+			sourceTree = "<group>";
+		};
+		24AB3D560D038AA600049A5C /* Games */ = {
+			isa = PBXGroup;
+			children = (
+				24BA2FE50EFDC36900CD90F3 /* Games.plist */,
+				24AB3D570D038AB600049A5C /* icons.mar */,
+			);
+			name = Games;
+			sourceTree = "<group>";
+		};
+		24AB3D760D038AD600049A5C /* Nibs */ = {
+			isa = PBXGroup;
+			children = (
+				2467C1200D6548A5000CE936 /* UserSearchWindow.nib */,
+				24AB3DE50D0390A500049A5C /* MFMainWindow.nib */,
+				29B97318FDCFA39411CA2CEA /* MainMenu.nib */,
+				24AAF6AE0D090C65002996AB /* PreferencesWindow.nib */,
+				24C27BFC0D30BCC60005DAD2 /* ChatWindow.nib */,
+				24AD74050D7BA32D0071C794 /* FriendshipRequestWindow.nib */,
+				24E3D4DD0EA43FD4009A80EB /* XfirePrefsWindow.nib */,
+			);
+			name = Nibs;
+			sourceTree = "<group>";
+		};
+		24AB3D7C0D038B2C00049A5C /* Localized Strings */ = {
+			isa = PBXGroup;
+			children = (
+				24AB3D860D038B6E00049A5C /* ui.strings */,
+			);
+			name = "Localized Strings";
+			sourceTree = "<group>";
+		};
+		24AB3DBE0D038CB400049A5C /* Xfire Service */ = {
+			isa = PBXGroup;
+			children = (
+				24AB3DBF0D038CBE00049A5C /* External Interface */,
+				24AB3DC00D038CC900049A5C /* Network Services */,
+				24AB3DC10D038CEE00049A5C /* Packets */,
+				24AB3DC20D038CFF00049A5C /* Connections */,
+				249B65C50E93107600DA2654 /* Groups */,
+				24AB3DC30D038D1200049A5C /* Cocoa Extensions */,
+			);
+			comments = "The core Xfire services.  This is intentionally segregated, such that (for the most part) these files could just be copied into a private .framework.";
+			name = "Xfire Service";
+			sourceTree = "<group>";
+		};
+		24AB3DBF0D038CBE00049A5C /* External Interface */ = {
+			isa = PBXGroup;
+			children = (
+				24AB3EE20D03A7B700049A5C /* XfireSession.h */,
+				2469AB880D39778700A902CB /* XfireSession_Private.h */,
+				24AB3EE30D03A7B700049A5C /* XfireSession.m */,
+				24AB3EE00D03A7B700049A5C /* XfireFriend.h */,
+				24AB3EE10D03A7B700049A5C /* XfireFriend.m */,
+				24AB3EE40D03A7B700049A5C /* XfireSkin.h */,
+				24AB3EE50D03A7B700049A5C /* XfireSkin.m */,
+				241BE6E10D3322BF00685916 /* XfireChat.h */,
+				241BE6E20D3322BF00685916 /* XfireChat.m */,
+				24E3F1F40DBC1BF600DD1A71 /* XfireChat_Private.h */,
+				240E8AD80E905D0A00D57B93 /* XfireFriendGroup.h */,
+				249B66280E931BCE00DA2654 /* XfireFriendGroup_Private.h */,
+				240E8AD90E905D0A00D57B93 /* XfireFriendGroup.m */,
+			);
+			name = "External Interface";
+			sourceTree = "<group>";
+		};
+		24AB3DC00D038CC900049A5C /* Network Services */ = {
+			isa = PBXGroup;
+			children = (
+				246771D00D384F3400ED8BAF /* XfireSocket.h */,
+				246771D10D384F3400ED8BAF /* XfireSocket.m */,
+			);
+			name = "Network Services";
+			sourceTree = "<group>";
+		};
+		24AB3DC10D038CEE00049A5C /* Packets */ = {
+			isa = PBXGroup;
+			children = (
+				2469AB050D39761300A902CB /* XfirePacket.h */,
+				2469AB060D39761300A902CB /* XfirePacket.m */,
+				2469AB070D39761300A902CB /* XfirePacketAttributeMap.h */,
+				2469AB080D39761300A902CB /* XfirePacketAttributeMap.m */,
+				2469AB090D39761300A902CB /* XfirePacketAttributeValue.h */,
+				2469AB0A0D39761300A902CB /* XfirePacketAttributeValue.m */,
+				2469AB0B0D39761300A902CB /* XfirePacketGenerator.h */,
+				2469AB0C0D39761300A902CB /* XfirePacketGenerator.m */,
+				2469AB0D0D39761300A902CB /* XfirePacketScanner.h */,
+				2469AB0E0D39761300A902CB /* XfirePacketScanner.m */,
+				2469AB8A0D3977A500A902CB /* XfirePacketLogger.h */,
+				2469AB8B0D3977A500A902CB /* XfirePacketLogger.m */,
+			);
+			name = Packets;
+			sourceTree = "<group>";
+		};
+		24AB3DC20D038CFF00049A5C /* Connections */ = {
+			isa = PBXGroup;
+			children = (
+				2469AB240D39768A00A902CB /* XfireConnection.h */,
+				2469AB230D39768A00A902CB /* XfireConnection_Private.h */,
+				2469AB250D39768A00A902CB /* XfireConnection.m */,
+				2469AB290D3976B000A902CB /* XfireLoginConnection.h */,
+				2469AB2A0D3976B000A902CB /* XfireLoginConnection.m */,
+			);
+			name = Connections;
+			sourceTree = "<group>";
+		};
+		24AB3DC30D038D1200049A5C /* Cocoa Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2469AB380D39770900A902CB /* NSData_XfireAdditions.h */,
+				2469AB390D39770900A902CB /* NSData_XfireAdditions.m */,
+				2469AB3A0D39770900A902CB /* NSMutableData_XfireAdditions.h */,
+				2469AB3B0D39770900A902CB /* NSMutableData_XfireAdditions.m */,
+			);
+			name = "Cocoa Extensions";
+			sourceTree = "<group>";
+		};
+		24AB3DDD0D038E1100049A5C /* Main Window */ = {
+			isa = PBXGroup;
+			children = (
+				24AB3F6D0D03AE7900049A5C /* MFMainWindowController.h */,
+				24AB3F6E0D03AE7900049A5C /* MFMainWindowController.m */,
+				2455C9040DB1A02800CE8885 /* XfireFriend_MacFireAdditions.h */,
+				2455C9050DB1A02800CE8885 /* XfireFriend_MacFireAdditions.m */,
+				249C0A620E947764000B902E /* XfireFriendGroup_MacFireAdditions.h */,
+				249C0A630E947764000B902E /* XfireFriendGroup_MacFireAdditions.m */,
+			);
+			name = "Main Window";
+			sourceTree = "<group>";
+		};
+		24AB3DDE0D038E1D00049A5C /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				240ACB770D0FAC460073B151 /* MFPreferences.h */,
+				240ACB780D0FAC460073B151 /* MFPreferences.m */,
+			);
+			name = Preferences;
+			sourceTree = "<group>";
+		};
+		24AB3DDF0D038E3200049A5C /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				242E696C0EA1A75E00D97FB6 /* MacFire GUI */,
+				24AB3DBE0D038CB400049A5C /* Xfire Service */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		24AB3DE00D038FE200049A5C /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				24AB40010D03B12400049A5C /* MFApplicationDelegate.h */,
+				24AB40020D03B12400049A5C /* MFApplicationDelegate.m */,
+				24AB40E80D03BF3C00049A5C /* MFGrowlHelper.h */,
+				24AB40E90D03BF3C00049A5C /* MFGrowlHelper.m */,
+				240ACB310D0FA79B0073B151 /* MFUserIdleMonitor.h */,
+				240ACB320D0FA79B0073B151 /* MFUserIdleMonitor.m */,
+				24E3EB950F0720F500071C3F /* MFApplicationSupportController.h */,
+				24E3EB960F0720F500071C3F /* MFApplicationSupportController.m */,
+				2467BFE00D62A6BD000CE936 /* MFMenuItems.h */,
+				24D9D4F00DEB807B00DD768F /* MFUIStrings.h */,
+				24E3EBDE0F07312F00071C3F /* MFSoundManager.h */,
+				24E3EBDF0F07312F00071C3F /* MFSoundManager.m */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		24AB3DE10D038FFC00049A5C /* Cocoa Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				24AB40E50D03BE2700049A5C /* Supporting */,
+				24AB3DF00D0390FD00049A5C /* NSView_MFAdditions.h */,
+				24AB3DF10D0390FD00049A5C /* NSView_MFAdditions.m */,
+				24AB3E310D0393AA00049A5C /* NSData_MFAdditions.h */,
+				24AB3E330D0393AA00049A5C /* NSData_MFAdditions.m */,
+				2478E42A0D1622AF003C9CA9 /* NSScreen_MFAdditions.h */,
+				2478E42B0D1622AF003C9CA9 /* NSScreen_MFAdditions.m */,
+				24E3EB9B0F07253700071C3F /* NSFileManager_MFAdditions.h */,
+				24E3EB9C0F07253700071C3F /* NSFileManager_MFAdditions.m */,
+				242C38F20F0DAFCB006F174B /* NSUserDefaults_MFAdditions.h */,
+				242C38F30F0DAFCB006F174B /* NSUserDefaults_MFAdditions.m */,
+			);
+			name = "Cocoa Extensions";
+			sourceTree = "<group>";
+		};
+		24AB3DE40D03903500049A5C /* Chat Window */ = {
+			isa = PBXGroup;
+			children = (
+				24C27C010D30BD170005DAD2 /* MFChatWindowController.h */,
+				24C27C020D30BD170005DAD2 /* MFChatWindowController.m */,
+				2457B5160F105FE700607753 /* MFChatLog.h */,
+				2457B5170F105FE700607753 /* MFChatLog.m */,
+			);
+			name = "Chat Window";
+			sourceTree = "<group>";
+		};
+		24AB3EC00D03A5AF00049A5C /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				24AB3FA60D03AF9100049A5C /* MFImageAndTextCell.h */,
+				24AB3FA70D03AF9100049A5C /* MFImageAndTextCell.m */,
+				24C3E9380DDFC8E000F2B239 /* MFImageAndTextView.h */,
+				24C3E9390DDFC8E000F2B239 /* MFImageAndTextView.m */,
+			);
+			name = "Custom Views";
+			sourceTree = "<group>";
+		};
+		24AB40E50D03BE2700049A5C /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				24AB3E320D0393AA00049A5C /* MFDataScanner.h */,
+				24AB3E300D0393AA00049A5C /* MFDataScanner.m */,
+				24AB3E340D0393AA00049A5C /* MFDataEmitter.h */,
+				24AB3E350D0393AA00049A5C /* MFDataEmitter.m */,
+			);
+			name = Supporting;
+			sourceTree = "<group>";
+		};
+		24AD74090D7BA3370071C794 /* Friendship Request Window */ = {
+			isa = PBXGroup;
+			children = (
+				24AD740A0D7BA3570071C794 /* MFFriendshipRequestWindowController.h */,
+				24AD740B0D7BA3570071C794 /* MFFriendshipRequestWindowController.m */,
+			);
+			name = "Friendship Request Window";
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* MacFire */ = {
+			isa = PBXGroup;
+			children = (
+				24AB3DDF0D038E3200049A5C /* Source */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks & Libraries */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = MacFire;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32CA4F630368D1EE00C91783 /* MacFire_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2457B4FD0F10322D00607753 /* Credits.rtf */,
+				248A246D0DED263A00D7B43E /* MacFire.icns */,
+				8D1107310486CEB800E47090 /* Info.plist */,
+				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
+				24AB3D560D038AA600049A5C /* Games */,
+				24AB3D760D038AD600049A5C /* Nibs */,
+				24AB3D7C0D038B2C00049A5C /* Localized Strings */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks & Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				24AB3D400D0389F300049A5C /* Libraries */,
+				24AB3D490D038A4F00049A5C /* Private Frameworks */,
+				1058C7A0FEA54F0111CA2CBB /* System Frameworks */,
+			);
+			name = "Frameworks & Libraries";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D1107260486CEB800E47090 /* MacFire */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "MacFire" */;
+			buildPhases = (
+				8D1107290486CEB800E47090 /* Resources */,
+				24AB3D470D038A2D00049A5C /* Copy Frameworks */,
+				8D11072C0486CEB800E47090 /* Sources */,
+				8D11072E0486CEB800E47090 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MacFire;
+			productInstallPath = "$(HOME)/Applications";
+			productName = MacFire;
+			productReference = 8D1107320486CEB800E47090 /* MacFire.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "MacFire" */;
+			compatibilityVersion = "Xcode 2.4";
+			hasScannedForEncodings = 1;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* MacFire */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D1107260486CEB800E47090 /* MacFire */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D1107290486CEB800E47090 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */,
+				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
+				24AB3D5A0D038AB600049A5C /* icons.mar in Resources */,
+				24AB3D870D038B6E00049A5C /* ui.strings in Resources */,
+				24AB3DE70D0390A500049A5C /* MFMainWindow.nib in Resources */,
+				24AAF6B00D090C65002996AB /* PreferencesWindow.nib in Resources */,
+				24C27BFE0D30BCC60005DAD2 /* ChatWindow.nib in Resources */,
+				2467C1220D6548A5000CE936 /* UserSearchWindow.nib in Resources */,
+				24AD74070D7BA32D0071C794 /* FriendshipRequestWindow.nib in Resources */,
+				248A246E0DED263A00D7B43E /* MacFire.icns in Resources */,
+				24E3D4DF0EA43FD4009A80EB /* XfirePrefsWindow.nib in Resources */,
+				24BA2FE60EFDC36900CD90F3 /* Games.plist in Resources */,
+				2457B4FF0F10322D00607753 /* Credits.rtf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D11072C0486CEB800E47090 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072D0486CEB800E47090 /* main.m in Sources */,
+				24AB3DF30D0390FD00049A5C /* NSView_MFAdditions.m in Sources */,
+				24AB3E360D0393AA00049A5C /* MFDataScanner.m in Sources */,
+				24AB3E390D0393AA00049A5C /* NSData_MFAdditions.m in Sources */,
+				24AB3E3B0D0393AA00049A5C /* MFDataEmitter.m in Sources */,
+				24AB3E960D03A27000049A5C /* MFGameRegistry.m in Sources */,
+				24AB3EE70D03A7B700049A5C /* XfireFriend.m in Sources */,
+				24AB3EE90D03A7B700049A5C /* XfireSession.m in Sources */,
+				24AB3EEB0D03A7B700049A5C /* XfireSkin.m in Sources */,
+				24AB3F700D03AE7900049A5C /* MFMainWindowController.m in Sources */,
+				24AB3FA90D03AF9100049A5C /* MFImageAndTextCell.m in Sources */,
+				24AB40040D03B12400049A5C /* MFApplicationDelegate.m in Sources */,
+				24AB40EB0D03BF3C00049A5C /* MFGrowlHelper.m in Sources */,
+				240ACB340D0FA79B0073B151 /* MFUserIdleMonitor.m in Sources */,
+				240ACB7C0D0FAC460073B151 /* MFPreferences.m in Sources */,
+				240ACB7E0D0FAC460073B151 /* MFPreferencesWindowController.m in Sources */,
+				2478E1FE0D15EC4F003C9CA9 /* MFGameMonitor.m in Sources */,
+				2478E42D0D1622AF003C9CA9 /* NSScreen_MFAdditions.m in Sources */,
+				24C27C040D30BD170005DAD2 /* MFChatWindowController.m in Sources */,
+				241BE6E40D3322BF00685916 /* XfireChat.m in Sources */,
+				246771D30D384F3400ED8BAF /* XfireSocket.m in Sources */,
+				2469AB100D39761300A902CB /* XfirePacket.m in Sources */,
+				2469AB120D39761300A902CB /* XfirePacketAttributeMap.m in Sources */,
+				2469AB140D39761300A902CB /* XfirePacketAttributeValue.m in Sources */,
+				2469AB160D39761300A902CB /* XfirePacketGenerator.m in Sources */,
+				2469AB180D39761300A902CB /* XfirePacketScanner.m in Sources */,
+				2469AB280D39768A00A902CB /* XfireConnection.m in Sources */,
+				2469AB2C0D3976B000A902CB /* XfireLoginConnection.m in Sources */,
+				2469AB3D0D39770900A902CB /* NSData_XfireAdditions.m in Sources */,
+				2469AB3F0D39770900A902CB /* NSMutableData_XfireAdditions.m in Sources */,
+				2469AB8D0D3977A500A902CB /* XfirePacketLogger.m in Sources */,
+				243142570D7A3F8B00E34143 /* MFUserSearchWindowController.m in Sources */,
+				24AD740D0D7BA3570071C794 /* MFFriendshipRequestWindowController.m in Sources */,
+				2455C9060DB1A02800CE8885 /* XfireFriend_MacFireAdditions.m in Sources */,
+				24C3E93A0DDFC8E000F2B239 /* MFImageAndTextView.m in Sources */,
+				240E8ADA0E905D0A00D57B93 /* XfireFriendGroup.m in Sources */,
+				249B65CA0E9310C000DA2654 /* XfireFriendGroupController.m in Sources */,
+				249C0A640E947764000B902E /* XfireFriendGroup_MacFireAdditions.m in Sources */,
+				24E3D4E60EA4404F009A80EB /* MFXfirePrefsWindowController.m in Sources */,
+				24E3EB970F0720F500071C3F /* MFApplicationSupportController.m in Sources */,
+				24E3EB9D0F07253700071C3F /* NSFileManager_MFAdditions.m in Sources */,
+				24E3EBE00F07312F00071C3F /* MFSoundManager.m in Sources */,
+				242C38F40F0DAFCB006F174B /* NSUserDefaults_MFAdditions.m in Sources */,
+				2457B5180F105FE700607753 /* MFChatLog.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C165DFE840E0CC02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		2457B4FD0F10322D00607753 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2457B4FE0F10322D00607753 /* English */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		2467C1200D6548A5000CE936 /* UserSearchWindow.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2467C1210D6548A5000CE936 /* English */,
+			);
+			name = UserSearchWindow.nib;
+			sourceTree = "<group>";
+		};
+		24AAF6AE0D090C65002996AB /* PreferencesWindow.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				24AAF6AF0D090C65002996AB /* English */,
+			);
+			name = PreferencesWindow.nib;
+			sourceTree = "<group>";
+		};
+		24AB3D860D038B6E00049A5C /* ui.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				24AB3D7D0D038B5200049A5C /* English */,
+			);
+			name = ui.strings;
+			sourceTree = "<group>";
+		};
+		24AB3DE50D0390A500049A5C /* MFMainWindow.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				24AB3DE60D0390A500049A5C /* English */,
+			);
+			name = MFMainWindow.nib;
+			sourceTree = "<group>";
+		};
+		24AD74050D7BA32D0071C794 /* FriendshipRequestWindow.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				24AD74060D7BA32D0071C794 /* English */,
+			);
+			name = FriendshipRequestWindow.nib;
+			sourceTree = "<group>";
+		};
+		24C27BFC0D30BCC60005DAD2 /* ChatWindow.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				24C27BFD0D30BCC60005DAD2 /* English */,
+			);
+			name = ChatWindow.nib;
+			sourceTree = "<group>";
+		};
+		24E3D4DD0EA43FD4009A80EB /* XfirePrefsWindow.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				24E3D4DE0EA43FD4009A80EB /* English */,
+			);
+			name = XfirePrefsWindow.nib;
+			sourceTree = "<group>";
+		};
+		29B97318FDCFA39411CA2CEA /* MainMenu.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				29B97319FDCFA39411CA2CEA /* English */,
+			);
+			name = MainMenu.nib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C01FCF4B08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/Frameworks\"";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = MacFire;
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		C01FCF4C08A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/Frameworks\"";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = MacFire;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "MacFire" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4B08A954540054247B /* Debug */,
+				C01FCF4C08A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "MacFire" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

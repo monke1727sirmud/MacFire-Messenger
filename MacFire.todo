@@ -1,0 +1,1051 @@
+<?xml version="1.0"?>
+<!DOCTYPE database SYSTEM "file:///System/Library/DTDs/CoreData.dtd">
+
+<database>
+    <databaseInfo>
+        <version>134481920</version>
+        <UUID>85FE1DA3-4834-4621-B60F-C02DBF2A0D6B</UUID>
+        <nextObjectID>187</nextObjectID>
+        <metadata>
+            <plist version="1.0">
+                <dict>
+                    <key>NSPersistenceFrameworkVersion</key>
+                    <integer>186</integer>
+                    <key>NSStoreModelVersionHashes</key>
+                    <dict>
+                        <key>ToDoItem</key>
+                        <data>
+		GDSEFTfwM4SBlzKC02MCYCli6yQujd2fW791kqx48Fw=
+		</data>
+                    </dict>
+                    <key>NSStoreModelVersionHashesVersion</key>
+                    <integer>3</integer>
+                    <key>NSStoreModelVersionIdentifiers</key>
+                    <array></array>
+                    <key>nextItemID</key>
+                    <integer>88</integer>
+                </dict>
+            </plist>
+        </metadata>
+    </databaseInfo>
+    <object type="TODOITEM" id="z106">
+        <attribute name="itemcompletiondate" type="date">236574535.41206899285316467285</attribute>
+        <attribute name="itemcreationdate" type="date">218347735.41206899285316467285</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgUQBhAZbMzI0Y117XHJ0ZjFcbWFjXGFuc2ljcGcxMDAwMFxjb2NvYXJ0ZjgyNFxjb2NvYXN1YnJ0ZjQyMAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0NzcgSGVsdmV0aWNhO30Ke1xjb2xvcnRibDtccmVkMjU1XGdyZWVuMjU1XGJsdWUyNTU7fQpccGFyZFx0eDU2MFx0eDExMjBcdHgxNjgwXHR4MjI0MFx0eDI4MDBcdHgzMzYwXHR4MzkyMFx0eDQ0ODBcdHg1MDQwXHR4NTYwMFx0eDYxNjBcdHg2NzIwXHFsXHFuYXR1cmFsXHBhcmRpcm5hdHVyYWwKClxmMFxmczI0IFxjZjAgSW1wbGVtZW50IHNvbWUga2luZCBvZiBzb3J0aW5nIGxvZ2ljLlwKTUZNYWluV2luZG93Q29udHJvbGxlcn2G
+</attribute>
+        <attribute name="itemdone" type="bool">1</attribute>
+        <attribute name="itemduedate" type="date">218347735.41206899285316467285</attribute>
+        <attribute name="itemnumber" type="int32">5</attribute>
+        <attribute name="itempriority" type="string">Low</attribute>
+        <attribute name="itemtitle" type="string">Add sorting of main friends list</attribute>
+    </object>
+    <object type="TODOITEM" id="z108">
+        <attribute name="itemcompletiondate" type="date">245560257.63472598791122436523</attribute>
+        <attribute name="itemcreationdate" type="date">218347857.63472598791122436523</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgQwChAZbNTI0Y117XHJ0ZjFcYW5zaVxhbnNpY3BnMTI1Mlxjb2NvYXJ0Zjk0OVxjb2NvYXN1YnJ0ZjM1MAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0MCBIZWx2ZXRpY2E7fQp7XGNvbG9ydGJsO1xyZWQyNTVcZ3JlZW4yNTVcYmx1ZTI1NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccWxccW5hdHVyYWxccGFyZGlybmF0dXJhbAoKXGYwXGZzMjQgXGNmMCBJbXBsZW1lbnQgYWJpbGl0eSB0byBjcmVhdGUgY3VzdG9tIGZyaWVuZCBncm91cHMuXApJbiBwbGFjZXMgaW4gTUZNYWluV2luZG93Q29udHJvbGxlciB3aWxsIG5lZWQgdG8gc2VhcmNoIGZvciB0aGUgZ3JvdXBzIGN1cnJlbnRseSBpbiB1c2UuXApcCk1GTWFpbldpbmRvd0NvbnRyb2xsZXIsIE1GRnJpZW5kR3JvdXAsIE1GUHJlZmVyZW5jZXNcClwKMTAvMTIvMDggLSBIYW5kbGVkIHdpdGggbmV3IFhmaXJlRnJpZW5kR3JvdXAgYW5kIFhmaXJlIHN1cHBvcnQufYY=
+</attribute>
+        <attribute name="itemdone" type="bool">1</attribute>
+        <attribute name="itemduedate" type="date">218347857.63472598791122436523</attribute>
+        <attribute name="itemnumber" type="int32">7</attribute>
+        <attribute name="itempriority" type="string">Low</attribute>
+        <attribute name="itemtitle" type="string">Add ability to create custom friend groups</attribute>
+    </object>
+    <object type="TODOITEM" id="z107">
+        <attribute name="itemcompletiondate" type="date">236574586.85862201452255249023</attribute>
+        <attribute name="itemcreationdate" type="date">218347786.85862201452255249023</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgWsBhAZbMzYzY117XHJ0ZjFcbWFjXGFuc2ljcGcxMDAwMFxjb2NvYXJ0ZjgyNFxjb2NvYXN1YnJ0ZjQyMAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0NzcgSGVsdmV0aWNhO30Ke1xjb2xvcnRibDtccmVkMjU1XGdyZWVuMjU1XGJsdWUyNTU7fQpccGFyZFx0eDU2MFx0eDExMjBcdHgxNjgwXHR4MjI0MFx0eDI4MDBcdHgzMzYwXHR4MzkyMFx0eDQ0ODBcdHg1MDQwXHR4NTYwMFx0eDYxNjBcdHg2NzIwXHFsXHFuYXR1cmFsXHBhcmRpcm5hdHVyYWwKClxmMFxmczI0IFxjZjAgQWRkIG1vcmUgaW5mb3JtYXRpb24gZm9yIHRoaW5ncyB3ZSdkIGxpa2UgdG8gcmVtZW1iZXIuXAplLmcuIHdoZW4gd2FzIG9ic2VydmVkIGdvaW5nIEFGSyAoYXMgTlNEYXRlKX2G
+</attribute>
+        <attribute name="itemdone" type="bool">1</attribute>
+        <attribute name="itemduedate" type="date">218347786.85862201452255249023</attribute>
+        <attribute name="itemnumber" type="int32">6</attribute>
+        <attribute name="itempriority" type="string">Low</attribute>
+        <attribute name="itemtitle" type="string">Embellish XfireFriend</attribute>
+    </object>
+    <object type="TODOITEM" id="z109">
+        <attribute name="itemcompletiondate" type="date">218347939.07075700163841247559</attribute>
+        <attribute name="itemcreationdate" type="date">218347939.07075700163841247559</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgZ8BhAZbNDE1Y117XHJ0ZjFcYW5zaVxhbnNpY3BnMTI1Mlxjb2NvYXJ0Zjk0OVxjb2NvYXN1YnJ0ZjM1MAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0MCBIZWx2ZXRpY2E7fQp7XGNvbG9ydGJsO1xyZWQyNTVcZ3JlZW4yNTVcYmx1ZTI1NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccWxccW5hdHVyYWxccGFyZGlybmF0dXJhbAoKXGYwXGZzMjQgXGNmMCBXYW50IHRvIHNhdmU6XAotIENoYXQgaGlzdG9yeVwKLSBMYXN0IHNlZW4gaW5mb1wKLSBGcmllbmQgZ3JvdXBzIChzZWUgIzcpXApcCjEyLzI5LzA4IC0gTm93IHNhdmUgbGFzdCBzZWVuIGluZm8uICBTdGlsbCBuZWVkIGNoYXQgaGlzdG9yeSBhbmQgZ3JvdXAgaW5mby59hg==
+</attribute>
+        <attribute name="itemdone" type="bool">0</attribute>
+        <attribute name="itemduedate" type="date">218347939.07075700163841247559</attribute>
+        <attribute name="itemnumber" type="int32">8</attribute>
+        <attribute name="itempriority" type="string">Medium</attribute>
+        <attribute name="itemtitle" type="string">Implement local cache of friends</attribute>
+    </object>
+    <object type="TODOITEM" id="z110">
+        <attribute name="itemcompletiondate" type="date">218347997.90690299868583679199</attribute>
+        <attribute name="itemcreationdate" type="date">218347997.90690299868583679199</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgTcChAZbNTY3Y117XHJ0ZjFcYW5zaVxhbnNpY3BnMTI1Mlxjb2NvYXJ0Zjk0OVxjb2NvYXN1YnJ0ZjM1MAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0MCBIZWx2ZXRpY2E7fQp7XGNvbG9ydGJsO1xyZWQyNTVcZ3JlZW4yNTVcYmx1ZTI1NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccWxccW5hdHVyYWxccGFyZGlybmF0dXJhbAoKXGYwXGZzMjQgXGNmMCBBZGQgY29kZSB0byBzdXBwb3J0IGRyYWcgYW5kIGRyb3Agb2YgZnJpZW5kcyBpbiB0aGUgVUkuXApOZWVkIHRvIGF1dG8tc2F2ZSB0aGUgYXNzaWdubWVudHMgKHNlZSAjNyBhbmQgIzgpLlwKW01GTWFpbldpbmRvd0NvbnRyb2xsZXIsIE1GRnJpZW5kR3JvdXBdXApcCjEwLzEyLzA4IC0gREVGRVJSRUQuICBGb3Igbm93IHdlJ2xsIHVzZSB0aGUgc29ydGVkIFVJLiAgVGhlIHByZXNlbmNlIG9mIFhmaXJlIGZyaWVuZCBncm91cCBzdXBwb3J0IG1ha2VzIGFyYml0cmFyeSBvcmRlcmluZyBvZiBmcmllbmQgbGlzdHMgYmUgZGlmZmljdWx0Ln2G
+</attribute>
+        <attribute name="itemdone" type="bool">0</attribute>
+        <attribute name="itemduedate" type="date">218347997.90690299868583679199</attribute>
+        <attribute name="itemnumber" type="int32">9</attribute>
+        <attribute name="itempriority" type="string">Low</attribute>
+        <attribute name="itemtitle" type="string">Allow arbitrary ordering of friends in the UI</attribute>
+    </object>
+    <object type="TODOITEM" id="z117">
+        <attribute name="itemcompletiondate" type="date">218348477.02749100327491760254</attribute>
+        <attribute name="itemcreationdate" type="date">218348477.02749100327491760254</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgesBhAZbNDkxY117XHJ0ZjFcbWFjXGFuc2ljcGcxMDAwMFxjb2NvYXJ0ZjgyNFxjb2NvYXN1YnJ0ZjQyMAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0NzcgSGVsdmV0aWNhO30Ke1xjb2xvcnRibDtccmVkMjU1XGdyZWVuMjU1XGJsdWUyNTU7fQpccGFyZFx0eDU2MFx0eDExMjBcdHgxNjgwXHR4MjI0MFx0eDI4MDBcdHgzMzYwXHR4MzkyMFx0eDQ0ODBcdHg1MDQwXHR4NTYwMFx0eDYxNjBcdHg2NzIwXHFsXHFuYXR1cmFsXHBhcmRpcm5hdHVyYWwKClxmMFxmczI0IFxjZjAgV291bGQgbGlrZSB0byBhZGQgc3VwcG9ydCB0byBsaXN0IHNlcnZlcnMuICBIYWxvIGNhbid0IGRvIGEgSm9pbiwgYnV0IHdvdWxkIHN0aWxsIGxpa2UgdG8gYmUgYWJsZSB0byBsaXN0IHdobydzIHBsYXlpbmcgaW4gYSBnaXZlbiBzZXJ2ZXIuXApcCkFkZCBuZXcgbW9kZSB0byBNRk1haW5XaW5kb3dDb250cm9sbGVyICg/KS4gIFhmaXJlIGRvZXMgdGhpcy4gIFdvdWxkIG5lZWQgdG8gYWRkIHRhYnMufYY=
+</attribute>
+        <attribute name="itemdone" type="bool">0</attribute>
+        <attribute name="itemduedate" type="date">218348477.02749100327491760254</attribute>
+        <attribute name="itemnumber" type="int32">16</attribute>
+        <attribute name="itempriority" type="string">Low</attribute>
+        <attribute name="itemtitle" type="string">Servers List</attribute>
+    </object>
+    <object type="TODOITEM" id="z120">
+        <attribute name="itemcompletiondate" type="date">218348647.22550201416015625000</attribute>
+        <attribute name="itemcreationdate" type="date">218348647.22550201416015625000</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgVUBhAZbMzQxY117XHJ0ZjFcbWFjXGFuc2ljcGcxMDAwMFxjb2NvYXJ0ZjgyNFxjb2NvYXN1YnJ0ZjQyMAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0NzcgSGVsdmV0aWNhO30Ke1xjb2xvcnRibDtccmVkMjU1XGdyZWVuMjU1XGJsdWUyNTU7fQpccGFyZFx0eDU2MFx0eDExMjBcdHgxNjgwXHR4MjI0MFx0eDI4MDBcdHgzMzYwXHR4MzkyMFx0eDQ0ODBcdHg1MDQwXHR4NTYwMFx0eDYxNjBcdHg2NzIwXHFsXHFuYXR1cmFsXHBhcmRpcm5hdHVyYWwKClxmMFxmczI0IFxjZjAgTmVlZCBhbiBhYm91dCB3aW5kb3cuICBTb21ldGhpbmcgYSBsaXR0bGUgbW9yZSBjb21wcmVoZW5zaXZlIHRoYW4gdGhlIGRlZmF1bHQufYY=
+</attribute>
+        <attribute name="itemdone" type="bool">0</attribute>
+        <attribute name="itemduedate" type="date">218348647.22550201416015625000</attribute>
+        <attribute name="itemnumber" type="int32">19</attribute>
+        <attribute name="itempriority" type="string">Low</attribute>
+        <attribute name="itemtitle" type="string">About window</attribute>
+    </object>
+    <object type="TODOITEM" id="z121">
+        <attribute name="itemcompletiondate" type="date">218348669.00908800959587097168</attribute>
+        <attribute name="itemcreationdate" type="date">218348669.00908800959587097168</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgTsBhAZbMzE1Y117XHJ0ZjFcbWFjXGFuc2ljcGcxMDAwMFxjb2NvYXJ0ZjgyNFxjb2NvYXN1YnJ0ZjQyMAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0NzcgSGVsdmV0aWNhO30Ke1xjb2xvcnRibDtccmVkMjU1XGdyZWVuMjU1XGJsdWUyNTU7fQpccGFyZFx0eDU2MFx0eDExMjBcdHgxNjgwXHR4MjI0MFx0eDI4MDBcdHgzMzYwXHR4MzkyMFx0eDQ0ODBcdHg1MDQwXHR4NTYwMFx0eDYxNjBcdHg2NzIwXHFsXHFuYXR1cmFsXHBhcmRpcm5hdHVyYWwKClxmMFxmczI0IFxjZjAgTmVlZCB0byB3cml0ZSBzb21lIGhlbHAgZmlsZXMuICBXcml0ZSB0aGUgYXBwIGZpcnN0Ln2G
+</attribute>
+        <attribute name="itemdone" type="bool">0</attribute>
+        <attribute name="itemduedate" type="date">218348669.00908800959587097168</attribute>
+        <attribute name="itemnumber" type="int32">20</attribute>
+        <attribute name="itempriority" type="string">Low</attribute>
+        <attribute name="itemtitle" type="string">Application help</attribute>
+    </object>
+    <object type="TODOITEM" id="z122">
+        <attribute name="itemcompletiondate" type="date">218348819.94031900167465209961</attribute>
+        <attribute name="itemcreationdate" type="date">218348819.94031900167465209961</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgU4BhAZbMzM0Y117XHJ0ZjFcbWFjXGFuc2ljcGcxMDAwMFxjb2NvYXJ0ZjgyNFxjb2NvYXN1YnJ0ZjQyMAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0NzcgSGVsdmV0aWNhO30Ke1xjb2xvcnRibDtccmVkMjU1XGdyZWVuMjU1XGJsdWUyNTU7fQpccGFyZFx0eDU2MFx0eDExMjBcdHgxNjgwXHR4MjI0MFx0eDI4MDBcdHgzMzYwXHR4MzkyMFx0eDQ0ODBcdHg1MDQwXHR4NTYwMFx0eDYxNjBcdHg2NzIwXHFsXHFuYXR1cmFsXHBhcmRpcm5hdHVyYWwKClxmMFxmczI0IFxjZjAgQ3JlYXRlIGEgR3Jvd2wgaGVscGVyIG9iamVjdCBpbiwgc2F5LCAtYXBwbGljYXRpb25XaWxsRmluaXNoTGF1bmNoaW5nOi59hg==
+</attribute>
+        <attribute name="itemdone" type="bool">1</attribute>
+        <attribute name="itemduedate" type="date">218348819.94031900167465209961</attribute>
+        <attribute name="itemnumber" type="int32">21</attribute>
+        <attribute name="itempriority" type="string">High</attribute>
+        <attribute name="itemtitle" type="string">Add Growl support init to MFApplicationDelegate</attribute>
+    </object>
+    <object type="TODOITEM" id="z125">
+        <attribute name="itemcompletiondate" type="date">218862161.22221800684928894043</attribute>
+        <attribute name="itemcreationdate" type="date">218862161.22221800684928894043</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgUQBhAZbMzI0Y117XHJ0ZjFcbWFjXGFuc2ljcGcxMDAwMFxjb2NvYXJ0ZjgyNFxjb2NvYXN1YnJ0ZjQyMAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0NzcgSGVsdmV0aWNhO30Ke1xjb2xvcnRibDtccmVkMjU1XGdyZWVuMjU1XGJsdWUyNTU7fQpccGFyZFx0eDU2MFx0eDExMjBcdHgxNjgwXHR4MjI0MFx0eDI4MDBcdHgzMzYwXHR4MzkyMFx0eDQ0ODBcdHg1MDQwXHR4NTYwMFx0eDYxNjBcdHg2NzIwXHFsXHFuYXR1cmFsXHBhcmRpcm5hdHVyYWwKClxmMFxmczI0IFxjZjAgVGhlcmUgYXJlIHNvbWUgcGFydHMgdGhhdCBhcmVuJ3QgeWV0IGltcGxlbWVudGVkLiAgRmluaXNoIGl0Ln2G
+</attribute>
+        <attribute name="itemdone" type="bool">0</attribute>
+        <attribute name="itemduedate" type="date">218862161.22221800684928894043</attribute>
+        <attribute name="itemnumber" type="int32">24</attribute>
+        <attribute name="itempriority" type="string">Low</attribute>
+        <attribute name="itemtitle" type="string">Flesh out preferences window &amp; support</attribute>
+    </object>
+    <object type="TODOITEM" id="z115">
+        <attribute name="itemcompletiondate" type="date">218866726.00000000000000000000</attribute>
+        <attribute name="itemcreationdate" type="date">218348326.32764801383018493652</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgXIBhAZbMzcwY117XHJ0ZjFcbWFjXGFuc2ljcGcxMDAwMFxjb2NvYXJ0ZjgyNFxjb2NvYXN1YnJ0ZjQyMAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0NzcgSGVsdmV0aWNhO30Ke1xjb2xvcnRibDtccmVkMjU1XGdyZWVuMjU1XGJsdWUyNTU7fQpccGFyZFx0eDU2MFx0eDExMjBcdHgxNjgwXHR4MjI0MFx0eDI4MDBcdHgzMzYwXHR4MzkyMFx0eDQ0ODBcdHg1MDQwXHR4NTYwMFx0eDYxNjBcdHg2NzIwXHFsXHFuYXR1cmFsXHBhcmRpcm5hdHVyYWwKClxmMFxmczI0IFxjZjAgTmVlZCBhbiBlbnRpcmUgcHJlZmVyZW5jZXMgd2luZG93LiAgTmVlZCBOU1VzZXJEZWZhdWx0cyBzdXBwb3J0LiAgTmVlZCBjYWNoZSBmb2xkZXIgYW5kIGFwcCBzdXBwb3J0IGZvbGRlci59hg==
+</attribute>
+        <attribute name="itemdone" type="bool">1</attribute>
+        <attribute name="itemduedate" type="date">218348326.32764801383018493652</attribute>
+        <attribute name="itemnumber" type="int32">14</attribute>
+        <attribute name="itempriority" type="string">High</attribute>
+        <attribute name="itemtitle" type="string">Implement Preferences / NSUserDefaults</attribute>
+    </object>
+    <object type="TODOITEM" id="z104">
+        <attribute name="itemcompletiondate" type="date">218864477.00000000000000000000</attribute>
+        <attribute name="itemcreationdate" type="date">218346077.88453200459480285645</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgTYBhAZbMzEwY117XHJ0ZjFcbWFjXGFuc2ljcGcxMDAwMFxjb2NvYXJ0ZjgyNFxjb2NvYXN1YnJ0ZjQyMAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0NzcgSGVsdmV0aWNhO30Ke1xjb2xvcnRibDtccmVkMjU1XGdyZWVuMjU1XGJsdWUyNTU7fQpccGFyZFx0eDU2MFx0eDExMjBcdHgxNjgwXHR4MjI0MFx0eDI4MDBcdHgzMzYwXHR4MzkyMFx0eDQ0ODBcdHg1MDQwXHR4NTYwMFx0eDYxNjBcdHg2NzIwXHFsXHFuYXR1cmFsXHBhcmRpcm5hdHVyYWwKClxmMFxmczI0IFxjZjAgTmVlZCBwcmVmZXJlbmNlcyBmaXJzdC5cCk1GTWFpbldpbmRvd0NvbnRyb2xsZXJ9hg==
+</attribute>
+        <attribute name="itemdone" type="bool">1</attribute>
+        <attribute name="itemduedate" type="date">218346077.88453200459480285645</attribute>
+        <attribute name="itemnumber" type="int32">3</attribute>
+        <attribute name="itempriority" type="string">Medium</attribute>
+        <attribute name="itemtitle" type="string">Save/restore main window rectangle</attribute>
+    </object>
+    <object type="TODOITEM" id="z105">
+        <attribute name="itemcompletiondate" type="date">218347465.98165699839591979980</attribute>
+        <attribute name="itemcreationdate" type="date">218347465.98165699839591979980</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgV4BhAZbMzUwY117XHJ0ZjFcbWFjXGFuc2ljcGcxMDAwMFxjb2NvYXJ0ZjgyNFxjb2NvYXN1YnJ0ZjQyMAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0NzcgSGVsdmV0aWNhO30Ke1xjb2xvcnRibDtccmVkMjU1XGdyZWVuMjU1XGJsdWUyNTU7fQpccGFyZFx0eDU2MFx0eDExMjBcdHgxNjgwXHR4MjI0MFx0eDI4MDBcdHgzMzYwXHR4MzkyMFx0eDQ0ODBcdHg1MDQwXHR4NTYwMFx0eDYxNjBcdHg2NzIwXHFsXHFuYXR1cmFsXHBhcmRpcm5hdHVyYWwKClxmMFxmczI0IFxjZjAgTmVlZCBhIGNsYXNzIHRvIGNvcnJhbCB0aGUgR3Jvd2wgbm90aWZpY2F0aW9ucy5cCk1GR3Jvd2xOb3RpZmljYXRpb25IZWxwZXIgKG9yIHNpbWlsYXIpfYY=
+</attribute>
+        <attribute name="itemdone" type="bool">1</attribute>
+        <attribute name="itemduedate" type="date">218347465.98165699839591979980</attribute>
+        <attribute name="itemnumber" type="int32">4</attribute>
+        <attribute name="itempriority" type="string">Low</attribute>
+        <attribute name="itemtitle" type="string">Implement Growl notification helper class</attribute>
+    </object>
+    <object type="TODOITEM" id="z124">
+        <attribute name="itemcompletiondate" type="date">218867355.00000000000000000000</attribute>
+        <attribute name="itemcreationdate" type="date">218348955.01686900854110717773</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgU0BhAZbMzMzY117XHJ0ZjFcbWFjXGFuc2ljcGcxMDAwMFxjb2NvYXJ0ZjgyNFxjb2NvYXN1YnJ0ZjQyMAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0NzcgSGVsdmV0aWNhO30Ke1xjb2xvcnRibDtccmVkMjU1XGdyZWVuMjU1XGJsdWUyNTU7fQpccGFyZFx0eDU2MFx0eDExMjBcdHgxNjgwXHR4MjI0MFx0eDI4MDBcdHgzMzYwXHR4MzkyMFx0eDQ0ODBcdHg1MDQwXHR4NTYwMFx0eDYxNjBcdHg2NzIwXHFsXHFuYXR1cmFsXHBhcmRpcm5hdHVyYWwKClxmMFxmczI0IFxjZjAgU2VjdXJpdHkgcHJlY2F1dGlvbiwgZG9uJ3Qga2VlcCB0aGUgcGxhaW50ZXh0IHN0cmluZyBhcm91bmQgaW4gbWVtb3J5Ln2G
+</attribute>
+        <attribute name="itemdone" type="bool">1</attribute>
+        <attribute name="itemduedate" type="date">218348955.01686900854110717773</attribute>
+        <attribute name="itemnumber" type="int32">23</attribute>
+        <attribute name="itempriority" type="string">High</attribute>
+        <attribute name="itemtitle" type="string">Clear password field once logged in</attribute>
+    </object>
+    <object type="TODOITEM" id="z126">
+        <attribute name="itemcompletiondate" type="date">218865613.03824201226234436035</attribute>
+        <attribute name="itemcreationdate" type="date">218865613.03824201226234436035</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgeoBhAZbNDkwY117XHJ0ZjFcYW5zaVxhbnNpY3BnMTI1Mlxjb2NvYXJ0Zjk0OQp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0MCBIZWx2ZXRpY2E7fQp7XGNvbG9ydGJsO1xyZWQyNTVcZ3JlZW4yNTVcYmx1ZTI1NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccWxccW5hdHVyYWxccGFyZGlybmF0dXJhbAoKXGYwXGZzMjQgXGNmMCBUaGUgbG9naW4gZmFpbHVyZSBkaWFsb2cgc2hvdWxkIHByZXNlbnQgMyBvcHRpb25zOlwKMSkgY2FuY2VsXAoyKSBwb3NlIHRoaXMgc2Vzc2lvbiBvbmx5XAozKSBwb3NlIGFsd2F5cyAodW50aWwgYSBuZXcgdmVyc2lvbiBpcyBkZXRlY3RlZClcClwKREVGRVJSRUQgLSBJcyB0aGVyZSBhIHJlYXNvbiB0byBkbyB0aGlzIGFueXdheT8gIFdoeSB3b3VsZCBhIHVzZXIgd2FudCB0byBwb3NlIGZvciB0aGlzIHNlc3Npb24gb25seT99hg==
+</attribute>
+        <attribute name="itemdone" type="bool">0</attribute>
+        <attribute name="itemduedate" type="date">218865613.03824201226234436035</attribute>
+        <attribute name="itemnumber" type="int32">25</attribute>
+        <attribute name="itempriority" type="string">Low</attribute>
+        <attribute name="itemtitle" type="string">Make version posing have 3 options</attribute>
+    </object>
+    <object type="TODOITEM" id="z111">
+        <attribute name="itemcompletiondate" type="date">219212061.00000000000000000000</attribute>
+        <attribute name="itemcreationdate" type="date">218348061.13900300860404968262</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgcgBhAZbNDU2Y117XHJ0ZjFcbWFjXGFuc2ljcGcxMDAwMFxjb2NvYXJ0ZjgyNFxjb2NvYXN1YnJ0ZjQyMAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0NzcgSGVsdmV0aWNhO30Ke1xjb2xvcnRibDtccmVkMjU1XGdyZWVuMjU1XGJsdWUyNTU7fQpccGFyZFx0eDU2MFx0eDExMjBcdHgxNjgwXHR4MjI0MFx0eDI4MDBcdHgzMzYwXHR4MzkyMFx0eDQ0ODBcdHg1MDQwXHR4NTYwMFx0eDYxNjBcdHg2NzIwXHFsXHFuYXR1cmFsXHBhcmRpcm5hdHVyYWwKClxmMFxmczI0IFxjZjAgQWRkIGEgY2xhc3MgdG8gbW9uaXRvciB1c2VyJ3MgaWRsZSBzdGF0ZS4gIE5lZWQgdG8gYWRkIG5vdGlmaWNhdGlvbnMgdG8gdGhlIG1haW4gTWFjRmlyZSBzZXNzaW9uIChNRk1haW5XaW5kb3dDb250cm9sbGVyPykuICBOZWVkIHRvIGFsbG93IGF1dG9tYXRpY2FsbHkgc2V0dGluZyBvdXIgc3RhdHVzIG9uIHRoZSBYZmlyZSBuZXR3b3JrLn2G
+</attribute>
+        <attribute name="itemdone" type="bool">1</attribute>
+        <attribute name="itemduedate" type="date">218348061.13900300860404968262</attribute>
+        <attribute name="itemnumber" type="int32">10</attribute>
+        <attribute name="itempriority" type="string">High</attribute>
+        <attribute name="itemtitle" type="string">Add user idle monitor</attribute>
+    </object>
+    <object type="TODOITEM" id="z112">
+        <attribute name="itemcompletiondate" type="date">218348122.76950100064277648926</attribute>
+        <attribute name="itemcreationdate" type="date">218348122.76950100064277648926</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgZcChAZbNjYzY117XHJ0ZjFcbWFjXGFuc2ljcGcxMDAwMFxjb2NvYXJ0ZjgyNFxjb2NvYXN1YnJ0ZjQyMAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0NzcgSGVsdmV0aWNhO30Ke1xjb2xvcnRibDtccmVkMjU1XGdyZWVuMjU1XGJsdWUyNTU7fQpccGFyZFx0eDU2MFx0eDExMjBcdHgxNjgwXHR4MjI0MFx0eDI4MDBcdHgzMzYwXHR4MzkyMFx0eDQ0ODBcdHg1MDQwXHR4NTYwMFx0eDYxNjBcdHg2NzIwXHFsXHFuYXR1cmFsXHBhcmRpcm5hdHVyYWwKClxmMFxmczI0IFxjZjAgLSBBZGQgbW9uaXRvciB0byBub3RpZnkgd2hlbiBnYW1lcyBhcmUgc3RhcnRlZCBhbmQgc3RvcHBlZC5cCi0gQWRkIGNvZGUgdG8gWGZpcmVTZXNzaW9uIHRvIHN1cHBvcnQgY2hhbmdpbmcgZ2FtZSBzdGF0dXMuXAotIElmIHBvc3NpYmxlLCBhZGQgbW9uaXRvciB0byBnZXQgbW9yZSBpbmZvcm1hdGlvbiBhYm91dCBhIGdhbWUgKGUuZy4gd2hhdCBzZXJ2ZXIgeW91J3JlIGNvbm5lY3RlZCB0bykuXAotIEFkZCBjbGFzc2VzIHRvIHBpbmcgYW5kIG1vbml0b3IgcmVtb3RlIGdhbWUgc2VydmVycyB0byBnZXQgaW5mb3JtYXRpb24gZm9yIHRoZSBtYWluIHdpbmRvdy4gIEZvciBub3cgcmVtb3ZlIHRoZSAiR2FtZSBJbmZvIiBjb2x1bW4uXApcClNlZSBpdGVtICMyNiBmb3IgdGhlIHNlY29uZCAyIGl0ZW1zLn2G
+</attribute>
+        <attribute name="itemdone" type="bool">1</attribute>
+        <attribute name="itemduedate" type="date">218348122.76950100064277648926</attribute>
+        <attribute name="itemnumber" type="int32">11</attribute>
+        <attribute name="itempriority" type="string">Medium</attribute>
+        <attribute name="itemtitle" type="string">Embellish local game support</attribute>
+    </object>
+    <object type="TODOITEM" id="z102">
+        <attribute name="itemcompletiondate" type="date">219551789.00000000000000000000</attribute>
+        <attribute name="itemcreationdate" type="date">218342189.71150499582290649414</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgVIBhAZbMzM4Y117XHJ0ZjFcbWFjXGFuc2ljcGcxMDAwMFxjb2NvYXJ0ZjgyNFxjb2NvYXN1YnJ0ZjQyMAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0NzcgSGVsdmV0aWNhO30Ke1xjb2xvcnRibDtccmVkMjU1XGdyZWVuMjU1XGJsdWUyNTU7fQpccGFyZFx0eDU2MFx0eDExMjBcdHgxNjgwXHR4MjI0MFx0eDI4MDBcdHgzMzYwXHR4MzkyMFx0eDQ0ODBcdHg1MDQwXHR4NTYwMFx0eDYxNjBcdHg2NzIwXHFsXHFuYXR1cmFsXHBhcmRpcm5hdHVyYWwKClxmMFxmczI0IFxjZjAgQWRkIGRhdGEgYW5kIGNvZGUgZmlsZXMgbmVjZXNzYXJ5IHRvIG1vbml0b3IgbG9jYWwgZ2FtZXMuXApcCk1GR2FtZVJlZ2lzdHJ5fYY=
+</attribute>
+        <attribute name="itemdone" type="bool">1</attribute>
+        <attribute name="itemduedate" type="date">218342189.71150499582290649414</attribute>
+        <attribute name="itemnumber" type="int32">1</attribute>
+        <attribute name="itempriority" type="string">Low</attribute>
+        <attribute name="itemtitle" type="string">Add local Mac game support</attribute>
+    </object>
+    <object type="TODOITEM" id="z127">
+        <attribute name="itemcompletiondate" type="date">219547041.80090299248695373535</attribute>
+        <attribute name="itemcreationdate" type="date">219547041.80090299248695373535</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgfUBhAZbNTAxY117XHJ0ZjFcbWFjXGFuc2ljcGcxMDAwMFxjb2NvYXJ0ZjgyNFxjb2NvYXN1YnJ0ZjQyMAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0NzcgSGVsdmV0aWNhO30Ke1xjb2xvcnRibDtccmVkMjU1XGdyZWVuMjU1XGJsdWUyNTU7fQpccGFyZFx0eDU2MFx0eDExMjBcdHgxNjgwXHR4MjI0MFx0eDI4MDBcdHgzMzYwXHR4MzkyMFx0eDQ0ODBcdHg1MDQwXHR4NTYwMFx0eDYxNjBcdHg2NzIwXHFsXHFuYXR1cmFsXHBhcmRpcm5hdHVyYWwKClxmMFxmczI0IFxjZjAgLSBJZiBwb3NzaWJsZSwgYWRkIG1vbml0b3IgdG8gZ2V0IG1vcmUgaW5mb3JtYXRpb24gYWJvdXQgYSBnYW1lIChlLmcuIHdoYXQgc2VydmVyIHlvdSdyZSBjb25uZWN0ZWQgdG8pLlwKLSBBZGQgY2xhc3NlcyB0byBwaW5nIGFuZCBtb25pdG9yIHJlbW90ZSBnYW1lIHNlcnZlcnMgdG8gZ2V0IGluZm9ybWF0aW9uIGZvciB0aGUgbWFpbiB3aW5kb3cuICBGb3Igbm93IHJlbW92ZSB0aGUgIkdhbWUgSW5mbyIgY29sdW1uLn2G
+</attribute>
+        <attribute name="itemdone" type="bool">0</attribute>
+        <attribute name="itemduedate" type="date">219547041.80090299248695373535</attribute>
+        <attribute name="itemnumber" type="int32">26</attribute>
+        <attribute name="itempriority" type="string">Low</attribute>
+        <attribute name="itemtitle" type="string">Add support to query remote game servers or local stuff</attribute>
+    </object>
+    <object type="TODOITEM" id="z119">
+        <attribute name="itemcompletiondate" type="date">219212564.00000000000000000000</attribute>
+        <attribute name="itemcreationdate" type="date">218348564.17295700311660766602</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgaEBhAZbNDE3Y117XHJ0ZjFcbWFjXGFuc2ljcGcxMDAwMFxjb2NvYXJ0ZjgyNFxjb2NvYXN1YnJ0ZjQyMAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0NzcgSGVsdmV0aWNhO30Ke1xjb2xvcnRibDtccmVkMjU1XGdyZWVuMjU1XGJsdWUyNTU7fQpccGFyZFx0eDU2MFx0eDExMjBcdHgxNjgwXHR4MjI0MFx0eDI4MDBcdHgzMzYwXHR4MzkyMFx0eDQ0ODBcdHg1MDQwXHR4NTYwMFx0eDYxNjBcdHg2NzIwXHFsXHFuYXR1cmFsXHBhcmRpcm5hdHVyYWwKClxmMFxmczI0IFxjZjAgV2FybiB0aGUgdXNlciB0aGF0IGEgbmV3ZXIgdmVyc2lvbiBpcyBhdmFpbGFibGUuICBMZXQgdGhlbSBjaG9vc2Ugd2hldGhlciB0byBwcm9jZWVkIHdpdGggY29ubmVjdGluZy4gIE5lZWQgYWJpbGl0eSB0byBhbGxvdyBmYWtpbmcgWGZpcmUgc2Vzc2lvbiB2ZXJzaW9uLn2G
+</attribute>
+        <attribute name="itemdone" type="bool">1</attribute>
+        <attribute name="itemduedate" type="date">218348564.17295700311660766602</attribute>
+        <attribute name="itemnumber" type="int32">18</attribute>
+        <attribute name="itempriority" type="string">Low</attribute>
+        <attribute name="itemtitle" type="string">Add old version warning dialog</attribute>
+    </object>
+    <object type="TODOITEM" id="z128">
+        <attribute name="itemcompletiondate" type="date">245484869.38818359375000000000</attribute>
+        <attribute name="itemcreationdate" type="date">219654869.38817900419235229492</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgdYBhAZbNDcwY117XHJ0ZjFcYW5zaVxhbnNpY3BnMTI1Mlxjb2NvYXJ0Zjk0OVxjb2NvYXN1YnJ0ZjM1MAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0MCBIZWx2ZXRpY2E7fQp7XGNvbG9ydGJsO1xyZWQyNTVcZ3JlZW4yNTVcYmx1ZTI1NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccWxccW5hdHVyYWxccGFyZGlybmF0dXJhbAoKXGYwXGZzMjQgXGNmMCBBZGQgc3VwcG9ydCBmb3IgdGhlIG5ldyBtZW51IGl0ZW1zIGluIHRoZSBtYWluIG1lbnUgYmFyICh0aGUgRnJpZW5kcyBtZW51KS5cClwKNkp1bjA4IC0gTW9zdGx5IGltcGxlbWVudGVkLCBqdXN0IGEgZmV3IGhvbGVzIGxlZnQuXAoxMk9jdDA4IC0gRXZlcnl0aGluZyBleGNlcHQgIkludml0ZSBGcmllbmQiIGFuZCAiU2hvdyBDaGF0IExvZyIgYXJlIGhhbmRsZWQufYY=
+</attribute>
+        <attribute name="itemdone" type="bool">1</attribute>
+        <attribute name="itemduedate" type="date">219654869.38817900419235229492</attribute>
+        <attribute name="itemnumber" type="int32">27</attribute>
+        <attribute name="itempriority" type="string">Medium</attribute>
+        <attribute name="itemtitle" type="string">Implement the main menu handlers</attribute>
+    </object>
+    <object type="TODOITEM" id="z123">
+        <attribute name="itemcompletiondate" type="date">219644893.00000000000000000000</attribute>
+        <attribute name="itemcreationdate" type="date">218348893.35872098803520202637</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgTABhAZbMzA0Y117XHJ0ZjFcbWFjXGFuc2ljcGcxMDAwMFxjb2NvYXJ0ZjgyNFxjb2NvYXN1YnJ0ZjQyMAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0NzcgSGVsdmV0aWNhO30Ke1xjb2xvcnRibDtccmVkMjU1XGdyZWVuMjU1XGJsdWUyNTU7fQpccGFyZFx0eDU2MFx0eDExMjBcdHgxNjgwXHR4MjI0MFx0eDI4MDBcdHgzMzYwXHR4MzkyMFx0eDQ0ODBcdHg1MDQwXHR4NTYwMFx0eDYxNjBcdHg2NzIwXHFsXHFuYXR1cmFsXHBhcmRpcm5hdHVyYWwKClxmMFxmczI0IFxjZjAgTWFrZSBzdWl0YWJsZSBtZW51cyBpbiB0aGUgbWFpbiBtZW51IGJhci59hg==
+</attribute>
+        <attribute name="itemdone" type="bool">1</attribute>
+        <attribute name="itemduedate" type="date">218348893.35872098803520202637</attribute>
+        <attribute name="itemnumber" type="int32">22</attribute>
+        <attribute name="itempriority" type="string">High</attribute>
+        <attribute name="itemtitle" type="string">Main menu bar</attribute>
+    </object>
+    <object type="TODOITEM" id="z129">
+        <attribute name="itemcompletiondate" type="date">219823861.46214398741722106934</attribute>
+        <attribute name="itemcreationdate" type="date">219823861.46214398741722106934</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgTwBhAZbMzE2Y117XHJ0ZjFcbWFjXGFuc2ljcGcxMDAwMFxjb2NvYXJ0ZjgyNFxjb2NvYXN1YnJ0ZjQyMAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0NzcgSGVsdmV0aWNhO30Ke1xjb2xvcnRibDtccmVkMjU1XGdyZWVuMjU1XGJsdWUyNTU7fQpccGFyZFx0eDU2MFx0eDExMjBcdHgxNjgwXHR4MjI0MFx0eDI4MDBcdHgzMzYwXHR4MzkyMFx0eDQ0ODBcdHg1MDQwXHR4NTYwMFx0eDYxNjBcdHg2NzIwXHFsXHFuYXR1cmFsXHBhcmRpcm5hdHVyYWwKClxmMFxmczI0IFxjZjAgU3RvcmUgcGFzc3dvcmRzIGluIHRoZSBLZXljaGFpbiBhbmQgYWxsb3cgYXV0by1sb2dpbi59hg==
+</attribute>
+        <attribute name="itemdone" type="bool">0</attribute>
+        <attribute name="itemduedate" type="date">219823861.46214398741722106934</attribute>
+        <attribute name="itemnumber" type="int32">28</attribute>
+        <attribute name="itempriority" type="string">Low</attribute>
+        <attribute name="itemtitle" type="string">Store passwords in Keychain</attribute>
+    </object>
+    <object type="TODOITEM" id="z130">
+        <attribute name="itemcompletiondate" type="date">234410852.81844899058341979980</attribute>
+        <attribute name="itemcreationdate" type="date">219899252.81844899058341979980</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgdEBhAZbNDY1Y117XHJ0ZjFcYW5zaVxhbnNpY3BnMTI1Mlxjb2NvYXJ0Zjk0OVxjb2NvYXN1YnJ0ZjI3MAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0MCBIZWx2ZXRpY2E7fQp7XGNvbG9ydGJsO1xyZWQyNTVcZ3JlZW4yNTVcYmx1ZTI1NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccWxccW5hdHVyYWxccGFyZGlybmF0dXJhbAoKXGYwXGZzMjQgXGNmMCBOZWVkIGEgZ2FtZSBpY29uLiAgTm90IHN1cmUgd2hhdCBpdCBzaG91bGQgbG9vayBsaWtlLiAgUHJvYmFibHkgc2hvdWxkIGJlIHJlbWluaXNjZW50IG9mIHRoZSBYZmlyZSBpY29uLCB0aG91Z2ggdGhlIFhmaXJlIGxvZ28gaXMgY29weXJpZ2h0ZWQsIEknbSBzdXJlLlwKXAo2SnVuMDggLSBQcmVsaW1pbmFyeSBpY29uIGRvbmUuICBMZWF2ZSBmb3Igbm93Ln2G
+</attribute>
+        <attribute name="itemdone" type="bool">1</attribute>
+        <attribute name="itemduedate" type="date">219899252.81844899058341979980</attribute>
+        <attribute name="itemnumber" type="int32">29</attribute>
+        <attribute name="itempriority" type="string">Low</attribute>
+        <attribute name="itemtitle" type="string">Create MacFire game icon</attribute>
+    </object>
+    <object type="TODOITEM" id="z131">
+        <attribute name="itemcompletiondate" type="date">234412999.57836499810218811035</attribute>
+        <attribute name="itemcreationdate" type="date">221456599.57836499810218811035</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgcUBhAZbNDUzY117XHJ0ZjFcYW5zaVxhbnNpY3BnMTI1Mlxjb2NvYXJ0Zjk0OVxjb2NvYXN1YnJ0ZjI3MAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0MCBIZWx2ZXRpY2E7fQp7XGNvbG9ydGJsO1xyZWQyNTVcZ3JlZW4yNTVcYmx1ZTI1NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccWxccW5hdHVyYWxccGFyZGlybmF0dXJhbAoKXGYwXGZzMjQgXGNmMCBBZGQgZnJpZW5kIHN0YXR1cyB0byB0aGUgY2hhdCB3aW5kb3cgYmV5b25kIGp1c3QgdGhlIHdpbmRvdyB0aXRsZSwgdG8gaW5jbHVkZTpcCjEpIFVzZXIvbmljayBuYW1lcyAoICJOaWNrbmFtZSAodXNlcm5hbWUpIiApXAoyKSBJY29uIG9mIGdhbWUgc3RhdHVzXAozKSBTdGF0dXMgc3RyaW5nIChpbmNsdWRpbmcgcGxheWluZyBnYW1lKX2G
+</attribute>
+        <attribute name="itemdone" type="bool">1</attribute>
+        <attribute name="itemduedate" type="date">221456599.57836499810218811035</attribute>
+        <attribute name="itemnumber" type="int32">30</attribute>
+        <attribute name="itempriority" type="string">Medium</attribute>
+        <attribute name="itemtitle" type="string">Add friend status to chat window</attribute>
+    </object>
+    <object type="TODOITEM" id="z135">
+        <attribute name="itemcompletiondate" type="date">224142608.68801000714302062988</attribute>
+        <attribute name="itemcreationdate" type="date">222241808.68801000714302062988</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgX4ChAZbNjM4Y117XHJ0ZjFcYW5zaVxhbnNpY3BnMTI1Mlxjb2NvYXJ0Zjk0OQp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0MCBIZWx2ZXRpY2E7fQp7XGNvbG9ydGJsO1xyZWQyNTVcZ3JlZW4yNTVcYmx1ZTI1NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccWxccW5hdHVyYWxccGFyZGlybmF0dXJhbAoKXGYwXGZzMjQgXGNmMCBRdWV1ZSB0aGUgZ2FtZSBzdGF0dXMgc2VuZGluZywgb3IgZmluZCBzb21lIG90aGVyIHdheSB0byBlbnN1cmUgcGFja2V0cyBvdGhlciB0aGFuIHRoZSAyIHBvc3QtbG9naW4gcGFja2V0cyBhcmUgc2VudCAuLi4gdW50aWwgYWZ0ZXIgdGhlIDIgcG9zdC1sb2dpbiBwYWNrZXRzIGFyZSBzZW50LiAgTWF5YmUgYSBsb2dpbiBxdWV1ZS4gIFByb2JhYmx5IG5lZWQgYSBzdGF0ZSB2YXJpYWJsZSBmb3IgaXQuXApcCkZpeCB3YXMgdG8gbW92ZSBzZXR0aW5nIG9mIFhmaXJlU2Vzc2lvbiBzdGF0dXMgdG8gcHJvY2Vzc0ZyaWVuZExpc3RQYWNrZXQ6LCBhZnRlciB3ZSd2ZSBleGNoYW5nZWQgZW5vdWdoIGluZm9ybWF0aW9uIHdpdGggdGhlIHNlcnZlciB0byBnZXQgdGhlIGNvbm5lY3Rpb24gdXAufYY=
+</attribute>
+        <attribute name="itemdone" type="bool">1</attribute>
+        <attribute name="itemduedate" type="date">222241808.68801000714302062988</attribute>
+        <attribute name="itemnumber" type="int32">37</attribute>
+        <attribute name="itempriority" type="string">Medium</attribute>
+        <attribute name="itemtitle" type="string">Make sure initial game status is after login handshakes</attribute>
+    </object>
+    <object type="TODOITEM" id="z136">
+        <attribute name="itemcompletiondate" type="date">224142462.53443300724029541016</attribute>
+        <attribute name="itemcreationdate" type="date">222241662.53443300724029541016</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgUoBhAZbMzMwY117XHJ0ZjFcYW5zaVxhbnNpY3BnMTI1Mlxjb2NvYXJ0Zjk0OQp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0MCBIZWx2ZXRpY2E7fQp7XGNvbG9ydGJsO1xyZWQyNTVcZ3JlZW4yNTVcYmx1ZTI1NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccWxccW5hdHVyYWxccGFyZGlybmF0dXJhbAoKXGYwXGZzMjQgXGNmMCBBZGQgY29kZSB0byBYZmlyZVNlc3Npb24gaW4gZGVsZWdhdGUgaGFuZGxlci5cClwKVGhpcyB3YXMgc29sdmVkIGJ5IHNvbHZpbmcgU0NSIDQ0Ln2G
+</attribute>
+        <attribute name="itemdone" type="bool">1</attribute>
+        <attribute name="itemduedate" type="date">222241662.53443300724029541016</attribute>
+        <attribute name="itemnumber" type="int32">34</attribute>
+        <attribute name="itempriority" type="string">Medium</attribute>
+        <attribute name="itemtitle" type="string">Kill the keepalive timer when a login fails</attribute>
+    </object>
+    <object type="TODOITEM" id="z138">
+        <attribute name="itemcompletiondate" type="date">224142576.80483299493789672852</attribute>
+        <attribute name="itemcreationdate" type="date">222241776.80483299493789672852</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgVsBhAZbMzQ3Y117XHJ0ZjFcYW5zaVxhbnNpY3BnMTI1Mlxjb2NvYXJ0Zjk0OQp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0MCBIZWx2ZXRpY2E7fQp7XGNvbG9ydGJsO1xyZWQyNTVcZ3JlZW4yNTVcYmx1ZTI1NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccWxccW5hdHVyYWxccGFyZGlybmF0dXJhbAoKXGYwXGZzMjQgXGNmMCBBZGQgb2xkIGFuZCBuZXcgdmVyc2lvbnMgdG8gdGhlIFBvc2UgQXMgZGlhbG9nLlwKXApBZGRlZCBqdXN0IHRoZSBuZXcgdmVyc2lvbiB0byB0aGUgUG9zZSBBcyBkaWFsb2cufYY=
+</attribute>
+        <attribute name="itemdone" type="bool">1</attribute>
+        <attribute name="itemduedate" type="date">222241776.80483299493789672852</attribute>
+        <attribute name="itemnumber" type="int32">36</attribute>
+        <attribute name="itempriority" type="string">Medium</attribute>
+        <attribute name="itemtitle" type="string">Add version # to Pose As dialog</attribute>
+    </object>
+    <object type="TODOITEM" id="z116">
+        <attribute name="itemcompletiondate" type="date">218348400.05537000298500061035</attribute>
+        <attribute name="itemcreationdate" type="date">218348400.05537000298500061035</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgSkChAZbNTUzY117XHJ0ZjFcYW5zaVxhbnNpY3BnMTI1Mlxjb2NvYXJ0Zjk0OVxjb2NvYXN1YnJ0ZjI3MAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0MCBIZWx2ZXRpY2E7fQp7XGNvbG9ydGJsO1xyZWQyNTVcZ3JlZW4yNTVcYmx1ZTI1NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccWxccW5hdHVyYWxccGFyZGlybmF0dXJhbAoKXGYwXGZzMjQgXGNmMCBOZWVkIGN1c3RvbSBjaGF0IHdpbmRvdyBjb250cm9sbGVyLiBET05FIDdKYW4wOFwKTmVlZCBjdXN0b20gY2hhdCB2aWV3IC0gVEJEIHVzZSBOU1RleHRWaWV3IGZvciBub3cuXApUeXBpbmcgbW9uaXRvciAobmVlZCBzdXBwb3J0IGluIFhmaXJlU2Vzc2lvbiBvciBYZmlyZUNoYXQpLiAgTmVlZCBYZmlyZUNoYXQuXApcCjZKdW4wOCAtIE5TVGV4dFZpZXcgc2hvdWxkIGRvIGFsbCB3ZSBuZWVkIGZvciB0aGUgZm9yc2VlYWJsZSBmdXR1cmUuICBTdGlsbCBuZWVkIHR5cGluZyBtb25pdG9yICYgcHJlZmVyZW5jZS59hg==
+</attribute>
+        <attribute name="itemdone" type="bool">0</attribute>
+        <attribute name="itemduedate" type="date">218348400.05537000298500061035</attribute>
+        <attribute name="itemnumber" type="int32">15</attribute>
+        <attribute name="itempriority" type="string">High</attribute>
+        <attribute name="itemtitle" type="string">Implement Chat window</attribute>
+    </object>
+    <object type="TODOITEM" id="z118">
+        <attribute name="itemcompletiondate" type="date">218348537.65622898936271667480</attribute>
+        <attribute name="itemcreationdate" type="date">218348537.65622898936271667480</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgdQChAZbNzI0Y117XHJ0ZjFcYW5zaVxhbnNpY3BnMTI1Mlxjb2NvYXJ0Zjk0OVxjb2NvYXN1YnJ0ZjM1MAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0MCBIZWx2ZXRpY2E7fQp7XGNvbG9ydGJsO1xyZWQyNTVcZ3JlZW4yNTVcYmx1ZTI1NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccWxccW5hdHVyYWxccGFyZGlybmF0dXJhbAoKXGYwXGZzMjQgXGNmMCBUQkRcClRoaXMgcHJvYmFibHkgcmVxdWlyZXMgZmlndXJpbmcgb3V0IHRoZSBkb3dubG9hZCBzeXN0ZW0uXApUaGlzIHByb2JhYmx5IHJlcXVpcmVzIHVzaW5nIEhUVFAgcmVxdWVzdHMgdG8gZ2V0IGZpbGVzLlwKXAoxMiBEZWMgMDggLSBJIGNvdWxkIHBvc3QgdG8gbWFjZmlyZS5vcmcgVVJMIGFuZCB1c2UgTlNVUkxEb3dubG9hZCB0byBmZXRjaC4gIEl0IGxvb2tzIHByZXR0eSBlYXN5LiAgU3RpbGwgcmVxdWlyZXMgZWZmb3J0IG9uIG15IHBhcnQgYnV0IHNob3VsZCBiZSBlYXNpZXIuICBUaGUgZ2FtZSBmaWxlIHVwZGF0ZSBmaWxlIGxvb2tzIG5pY2UsIGJ1dCB0aGV5IGFwcGVhciB0byBnZXQgcmlkIG9mIGl0IHdoZW4gZG9pbmcgbWFpbiB1cGRhdGVzLiAgVGhhdCBtZWFucyBJJ2QgbmVlZCB0byB1bmRlcnN0YW5kIGhvdyB0byBleHRyYWN0IC5leGUgZmlsZXMuICBOb3QgbGlrZWx5IHRvIGhhcHBlbiA6KC59hg==
+</attribute>
+        <attribute name="itemdone" type="bool">0</attribute>
+        <attribute name="itemduedate" type="date">218348537.65622898936271667480</attribute>
+        <attribute name="itemnumber" type="int32">17</attribute>
+        <attribute name="itempriority" type="string">Low</attribute>
+        <attribute name="itemtitle" type="string">Add auto-update games and icon files</attribute>
+    </object>
+    <object type="TODOITEM" id="z113">
+        <attribute name="itemcompletiondate" type="date">218348197.42083099484443664551</attribute>
+        <attribute name="itemcreationdate" type="date">218348197.42083099484443664551</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgTgChAZbNTY4Y117XHJ0ZjFcbWFjXGFuc2ljcGcxMDAwMFxjb2NvYXJ0ZjgyNFxjb2NvYXN1YnJ0ZjQyMAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0NzcgSGVsdmV0aWNhO30Ke1xjb2xvcnRibDtccmVkMjU1XGdyZWVuMjU1XGJsdWUyNTU7fQpccGFyZFx0eDU2MFx0eDExMjBcdHgxNjgwXHR4MjI0MFx0eDI4MDBcdHgzMzYwXHR4MzkyMFx0eDQ0ODBcdHg1MDQwXHR4NTYwMFx0eDYxNjBcdHg2NzIwXHFsXHFuYXR1cmFsXHBhcmRpcm5hdHVyYWwKClxmMFxmczI0IFxjZjAgTmVlZCBhIHZpZXcgdG8gc2hvdyBhZGRpdGlvbmFsIGluZm9ybWF0aW9uIGFib3V0IGEgZnJpZW5kLiAgSWRlYWxseSBtb2RlbCBpdCBhZnRlciB0aGUgWGZpcmUgYXBwcm9hY2gsIGJ1dCB0aGF0IHdpbGwgdGFrZSBhZGRpdGlvbmFsIHdvcmsgdG8gaGFuZGxlIEhUTUwgc3R1ZmYgaW4gdGhlIHN1cHBvcnQgbGF5ZXIgKGUuZy4gZm9yIGF2YXRhcnMpLiAgVGhhdCBwYXJ0IGlzIGxvdyBwcmlvcml0eSA7KS5cClwKVGhpcyBwcm9iYWJseSByZXF1aXJlcyB1c2luZyBIVFRQIHJlcXVlc3RzIHRvIGdldCBmaWxlcyAoZS5nLiBhdmF0YXJzKS59hg==
+</attribute>
+        <attribute name="itemdone" type="bool">0</attribute>
+        <attribute name="itemduedate" type="date">218348197.42083099484443664551</attribute>
+        <attribute name="itemnumber" type="int32">12</attribute>
+        <attribute name="itempriority" type="string">Low</attribute>
+        <attribute name="itemtitle" type="string">Friend inspector view</attribute>
+    </object>
+    <object type="TODOITEM" id="z114">
+        <attribute name="itemcompletiondate" type="date">218348277.58799299597740173340</attribute>
+        <attribute name="itemcreationdate" type="date">218348277.58799299597740173340</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgVQBhAZbMzQwY117XHJ0ZjFcbWFjXGFuc2ljcGcxMDAwMFxjb2NvYXJ0ZjgyNFxjb2NvYXN1YnJ0ZjQyMAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0NzcgSGVsdmV0aWNhO30Ke1xjb2xvcnRibDtccmVkMjU1XGdyZWVuMjU1XGJsdWUyNTU7fQpccGFyZFx0eDU2MFx0eDExMjBcdHgxNjgwXHR4MjI0MFx0eDI4MDBcdHgzMzYwXHR4MzkyMFx0eDQ0ODBcdHg1MDQwXHR4NTYwMFx0eDYxNjBcdHg2NzIwXHFsXHFuYXR1cmFsXHBhcmRpcm5hdHVyYWwKClxmMFxmczI0IFxjZjAgQWRkIGVtb3RpY29uIGljb25zIChyZXNvdXJjZXMpLiAgTmVlZCBjaGF0IHdpbmRvdyBhbmQgY3VzdG9tIGNoYXQgdmlldyBmaXJzdC59hg==
+</attribute>
+        <attribute name="itemdone" type="bool">0</attribute>
+        <attribute name="itemduedate" type="date">218348277.58799299597740173340</attribute>
+        <attribute name="itemnumber" type="int32">13</attribute>
+        <attribute name="itempriority" type="string">Low</attribute>
+        <attribute name="itemtitle" type="string">Emoticons</attribute>
+    </object>
+    <object type="TODOITEM" id="z139">
+        <attribute name="itemcompletiondate" type="date">245566691.23623201251029968262</attribute>
+        <attribute name="itemcreationdate" type="date">222242291.23623201251029968262</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgR4ChAZbNTQyY117XHJ0ZjFcYW5zaVxhbnNpY3BnMTI1Mlxjb2NvYXJ0Zjk0OVxjb2NvYXN1YnJ0ZjM1MAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0MCBIZWx2ZXRpY2E7fQp7XGNvbG9ydGJsO1xyZWQyNTVcZ3JlZW4yNTVcYmx1ZTI1NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccWxccW5hdHVyYWxccGFyZGlybmF0dXJhbAoKXGYwXGZzMjQgXGNmMCBGaW5pc2ggdGhlIGRvY3VtZW50YXRpb24gZm9yIHdoYXQgSSBrbm93IGFib3V0IHNvIGZhci5cCjE2SmFuMDggLSBIYXZlIHNldmVyYWwgcGFja2V0cyBkb25lLiAgTmVlZCB0byBmaW5pc2ggdGhlbS4gIE5lZWQgZGF0YSBkdW1wIGZyb20gb2ZmaWNpYWwgWGZpcmUgY2xpZW50IHRvIGZpZ3VyZSBvdXQgbWlzc2luZyBzdHVmZi5cCjEyT2N0MDggLSBNYW55IGFyZSBjb21wbGV0ZSBhbmQgZG9jdW1lbnRlZC4gIFRoaXMgaXMgYW4gb25nb2luZyB0YXNrIHNvIHRoaXMgd2lsbCBiZSBjbG9zZWQufYY=
+</attribute>
+        <attribute name="itemdone" type="bool">1</attribute>
+        <attribute name="itemduedate" type="date">222242291.23623201251029968262</attribute>
+        <attribute name="itemnumber" type="int32">38</attribute>
+        <attribute name="itempriority" type="string">Medium</attribute>
+        <attribute name="itemtitle" type="string">Finish Protocol Documentation</attribute>
+    </object>
+    <object type="TODOITEM" id="z142">
+        <attribute name="itemcompletiondate" type="date">222242710.80307200551033020020</attribute>
+        <attribute name="itemcreationdate" type="date">222242710.80307200551033020020</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgSsBhAZbMjk5Y117XHJ0ZjFcbWFjXGFuc2ljcGcxMDAwMFxjb2NvYXJ0ZjgyNFxjb2NvYXN1YnJ0ZjQyMAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0NzcgSGVsdmV0aWNhO30Ke1xjb2xvcnRibDtccmVkMjU1XGdyZWVuMjU1XGJsdWUyNTU7fQpccGFyZFx0eDU2MFx0eDExMjBcdHgxNjgwXHR4MjI0MFx0eDI4MDBcdHgzMzYwXHR4MzkyMFx0eDQ0ODBcdHg1MDQwXHR4NTYwMFx0eDYxNjBcdHg2NzIwXHFsXHFuYXR1cmFsXHBhcmRpcm5hdHVyYWwKClxmMFxmczI0IFxjZjAgR3VhcmQgYWdhaW5zdCB3ZWlyZCBzdHVmZiBoYXBwZW5pbmcufYY=
+</attribute>
+        <attribute name="itemdone" type="bool">0</attribute>
+        <attribute name="itemduedate" type="date">222242710.80307200551033020020</attribute>
+        <attribute name="itemnumber" type="int32">41</attribute>
+        <attribute name="itempriority" type="string">Low</attribute>
+        <attribute name="itemtitle" type="string">Add attribute checks to XfirePacket</attribute>
+    </object>
+    <object type="TODOITEM" id="z143">
+        <attribute name="itemcompletiondate" type="date">222242751.55150800943374633789</attribute>
+        <attribute name="itemcreationdate" type="date">222242751.55150800943374633789</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgQsChAZbNTIzY117XHJ0ZjFcbWFjXGFuc2ljcGcxMDAwMFxjb2NvYXJ0ZjgyNFxjb2NvYXN1YnJ0ZjQyMAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0NzcgSGVsdmV0aWNhO30Ke1xjb2xvcnRibDtccmVkMjU1XGdyZWVuMjU1XGJsdWUyNTU7fQpccGFyZFx0eDU2MFx0eDExMjBcdHgxNjgwXHR4MjI0MFx0eDI4MDBcdHgzMzYwXHR4MzkyMFx0eDQ0ODBcdHg1MDQwXHR4NTYwMFx0eDYxNjBcdHg2NzIwXHFsXHFuYXR1cmFsXHBhcmRpcm5hdHVyYWwKClxmMFxmczI0IFxjZjAgQWRkIGNvZGUgc29tZXdoZXJlIHRvIGNoZWNrIHRoZSBjb250ZW50cyBvZiBhIHBhY2tldCBhZ2FpbnN0IGtub3duIHBhY2tldCBmb3Jtcy9JRHMuXApcCkxvdyBwcmlvcml0eSBiZWNhdXNlIFhmaXJlTXV0YWJsZVBhY2tldCBpcyB0aGUgcHJlZmVycmVkIHdheSB0byBjcmVhdGUgdGhlbSBhbmQgaXQgaGFzIGFsbCB0aGUgcGFja2V0cyB3ZSBuZWVkLiAgV291bGQgYmUgbmVjZXNzYXJ5IGlmIHNwYXduIFhmaXJlIHN1cHBvcnQgaW50byBhIGZyYW1ld29yay59hg==
+</attribute>
+        <attribute name="itemdone" type="bool">0</attribute>
+        <attribute name="itemduedate" type="date">222242751.55150800943374633789</attribute>
+        <attribute name="itemnumber" type="int32">42</attribute>
+        <attribute name="itempriority" type="string">Low</attribute>
+        <attribute name="itemtitle" type="string">Add packet content sanity checks</attribute>
+    </object>
+    <object type="TODOITEM" id="z144">
+        <attribute name="itemcompletiondate" type="date">222242892.46503999829292297363</attribute>
+        <attribute name="itemcreationdate" type="date">222242892.46503999829292297363</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgXoChAZbNjM0Y117XHJ0ZjFcYW5zaVxhbnNpY3BnMTI1Mlxjb2NvYXJ0Zjk0OQp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0MCBIZWx2ZXRpY2E7fQp7XGNvbG9ydGJsO1xyZWQyNTVcZ3JlZW4yNTVcYmx1ZTI1NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccWxccW5hdHVyYWxccGFyZGlybmF0dXJhbAoKXGYwXGZzMjQgXGNmMCAtW1hmaXJlTG9naW5Db25uZWN0aW9uIHByb2Nlc3NMb2dpblN1Y2Nlc3NQYWNrZXQ6XVwKXApDdXJyZW50bHkgYXNzdW1lcyAidXMiLiAgTmVlZCB0byBmaWd1cmUgb3V0IGFsbG93ZWQgbGFuZ3VhZ2VzIChtYXliZSB0aGVyZSdzIGEgaGludCBpbiB0aGUgWGZpcmUgaW5zdGFsbCBkaXJlY3RvcnkpLiAgVGhlbiBuZWVkIHRvIG1hcCBDb2NvYSBsb2NhbGUgdG8gdGhvc2UsIGlmIHBvc3NpYmxlLlwKXApERUZFUlJFRCAtIE5vdCBzdXJlIHdoYXQgZW5jb2RpbmcgWGZpcmUgdXNlcy4gIEl0IHVzZXMgInVzIiBmb3IgZW5fVVMsIG5vdCBzdXJlIGFib3V0IGFueXRoaW5nIGVsc2UuICBOZWVkIHRvIGZpZ3VyZSB0aG9zZSBvdXQgYmVmb3JlIGNoYW5naW5nIG5ldHdvcmsgdHJhZmZpYy59hg==
+</attribute>
+        <attribute name="itemdone" type="bool">0</attribute>
+        <attribute name="itemduedate" type="date">222242892.46503999829292297363</attribute>
+        <attribute name="itemnumber" type="int32">43</attribute>
+        <attribute name="itempriority" type="string">Low</attribute>
+        <attribute name="itemtitle" type="string">Put correct lang attribute in client info packet</attribute>
+    </object>
+    <object type="TODOITEM" id="z145">
+        <attribute name="itemcompletiondate" type="date">224057480.34651699662208557129</attribute>
+        <attribute name="itemcreationdate" type="date">222243080.34651699662208557129</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgZoChAZbNjY2Y117XHJ0ZjFcYW5zaVxhbnNpY3BnMTI1Mlxjb2NvYXJ0Zjk0OQp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0MCBIZWx2ZXRpY2E7fQp7XGNvbG9ydGJsO1xyZWQyNTVcZ3JlZW4yNTVcYmx1ZTI1NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccWxccW5hdHVyYWxccGFyZGlybmF0dXJhbAoKXGYwXGZzMjQgXGNmMCBJdCBkb2Vzbid0IHNlZW0gdG8gd29yayByaWdodC5cClwKVGhlIHByb2JsZW0gd2FzIGEgZGVhZGxvY2sgYmV0d2VlbiBzZXRTdGF0dXM6ICh3aGljaCBkaWQgYSBwZXJmb3JtU2VsZWN0b3JPbk1haW5UaHJlYWQpIGFuZCBkaXNjb25uZWN0X21haW50aHJlYWQsIHdoaWNoIGJsb2NrZWQgaW4gaXRzIGNhbGwgdG8gW19sb2dpbkNvbm5lY3Rpb24gZGlzY29ubmVjdF0sIHdoaWNoIHdhaXRzIGZvciB0aGUgY29ubmVjdGlvbiB0byBkaXNjb25uZWN0LiAgU29sdXRpb24gd2FzIHRvIGRpc3BhdGNoIHNldFN0YXR1cyBjaGFuZ2VzIHRvIHRoZSBtYWluIHRocmVhZCB2aWEgdGhlIHNhbWUgZGVsZWdhdGUgbWVjaGFuaXNtIGFzIG90aGVycywgYnV0IHRvIG5vdCB3YWl0IGZvciB0aGUgZGVsZWdhdGUgbm90aWZpY2F0aW9uIHRvIGNvbXBsZXRlLn2G
+</attribute>
+        <attribute name="itemdone" type="bool">1</attribute>
+        <attribute name="itemduedate" type="date">222243080.34651699662208557129</attribute>
+        <attribute name="itemnumber" type="int32">44</attribute>
+        <attribute name="itempriority" type="string">Low</attribute>
+        <attribute name="itemtitle" type="string">Fix Log Off function</attribute>
+    </object>
+    <object type="TODOITEM" id="z148">
+        <attribute name="itemcompletiondate" type="date">224136668.44751000404357910156</attribute>
+        <attribute name="itemcreationdate" type="date">224136668.44751000404357910156</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgaQBhAZbNDIwY117XHJ0ZjFcYW5zaVxhbnNpY3BnMTI1Mlxjb2NvYXJ0Zjk0OQp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0MCBIZWx2ZXRpY2E7fQp7XGNvbG9ydGJsO1xyZWQyNTVcZ3JlZW4yNTVcYmx1ZTI1NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccWxccW5hdHVyYWxccGFyZGlybmF0dXJhbAoKXGYwXGZzMjQgXGNmMCBGaXggdGhlIGxvc3QgcGFzc3dvcmQgd2hlbiBhIG5ldyB2ZXJzaW9uIGlzIGF2YWlsYWJsZS4gIENhbiBiZSBmaXhlZCBieSBtb3ZpbmcgdGhlIHRleHQgZmllbGQgY2xlYXIgY29kZSB0byB0aGUgbG9naW4gc3VjY2VzcyBhbmQgZmFpbHVyZSBoYW5kbGVycyBpbiBNRk1haW5XaW5kb3dDb250cm9sbGVyLn2G
+</attribute>
+        <attribute name="itemdone" type="bool">1</attribute>
+        <attribute name="itemduedate" type="date">224136668.44751000404357910156</attribute>
+        <attribute name="itemnumber" type="int32">48</attribute>
+        <attribute name="itempriority" type="string">High</attribute>
+        <attribute name="itemtitle" type="string">Fix lost password when new version available</attribute>
+    </object>
+    <object type="TODOITEM" id="z147">
+        <attribute name="itemcompletiondate" type="date">224277557.00000000000000000000</attribute>
+        <attribute name="itemcreationdate" type="date">222463157.13339799642562866211</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgVMChAZbNTk1Y117XHJ0ZjFcbWFjXGFuc2ljcGcxMDAwMFxjb2NvYXJ0ZjgyNFxjb2NvYXN1YnJ0ZjQyMAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0NzcgSGVsdmV0aWNhO30Ke1xjb2xvcnRibDtccmVkMjU1XGdyZWVuMjU1XGJsdWUyNTU7fQpccGFyZFx0eDU2MFx0eDExMjBcdHgxNjgwXHR4MjI0MFx0eDI4MDBcdHgzMzYwXHR4MzkyMFx0eDQ0ODBcdHg1MDQwXHR4NTYwMFx0eDYxNjBcdHg2NzIwXHFsXHFuYXR1cmFsXHBhcmRpcm5hdHVyYWwKClxmMFxmczI0IFxjZjAgWGZpcmVDb25uZWN0aW9uIHdpbGwgaGF2ZSB0byBkbyB0aGlzLlwKTmVlZCBuZXcgbWV0aG9kIGluIFhmaXJlUGFja2V0TG9nZ2VyLlwKXApBZGRlZCBuZXcgbWV0aG9kIHRvIFhmaXJlUGFja2V0TG9nZ2VyIGFuZCBleHRyYSBjb25kaXRpb25hbCBjaGVjayB0byBYZmlyZUNvbm5lY3Rpb24uICBGaXhlZCBidWcgaW4gWGZpcmVDb25uZWN0aW9uIHdoZXJlYnkgaXQgY291bGQgaGF2ZSB1bnByZWRpY3RhYmxlIGJlaGF2aW9yIChpZiBhbiBleGNlcHRpb24gd2FzIHRocm93biBpbiB0aGUgcGFja2V0IGRlY29kZXIsIHRoZXJlIHdhcyBhIHBvc3NpYmxlIGludmFsaWQgcG9pbnRlcikuXAp9hg==
+</attribute>
+        <attribute name="itemdone" type="bool">1</attribute>
+        <attribute name="itemduedate" type="date">222463157.13339799642562866211</attribute>
+        <attribute name="itemnumber" type="int32">47</attribute>
+        <attribute name="itempriority" type="string">Medium</attribute>
+        <attribute name="itemtitle" type="string">Add code to log raw, undecoded packets (if any)</attribute>
+    </object>
+    <object type="TODOITEM" id="z150">
+        <attribute name="itemcompletiondate" type="date">224388971.16231998801231384277</attribute>
+        <attribute name="itemcreationdate" type="date">224388971.16231998801231384277</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpga8BhAZbNDMxY117XHJ0ZjFcbWFjXGFuc2ljcGcxMDAwMFxjb2NvYXJ0ZjgyNFxjb2NvYXN1YnJ0ZjQyMAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0NzcgSGVsdmV0aWNhO30Ke1xjb2xvcnRibDtccmVkMjU1XGdyZWVuMjU1XGJsdWUyNTU7fQpccGFyZFx0eDU2MFx0eDExMjBcdHgxNjgwXHR4MjI0MFx0eDI4MDBcdHgzMzYwXHR4MzkyMFx0eDQ0ODBcdHg1MDQwXHR4NTYwMFx0eDYxNjBcdHg2NzIwXHFsXHFuYXR1cmFsXHBhcmRpcm5hdHVyYWwKClxmMFxmczI0IFxjZjAgVGhlIHJlYWRlciB0aHJlYWQgd2FzIG5lY2Vzc2FyeSBhdCBmaXJzdCB1bnRpbCBJIGZvdW5kIGFzeW5jIEkvTyB2aWEgQ0ZTb2NrZXQuICBJdCBpcyBub3QgYSBjb21wbGV4aXR5IHRoYXQgSSB3b3VsZCBwcmVmZXIgdG8gYXZvaWQuICBJdCBzaG91bGRuJ3QgYmUgbmVjZXNzYXJ5IGFueW1vcmUufYY=
+</attribute>
+        <attribute name="itemdone" type="bool">1</attribute>
+        <attribute name="itemduedate" type="date">224388971.16231998801231384277</attribute>
+        <attribute name="itemnumber" type="int32">50</attribute>
+        <attribute name="itempriority" type="string">High</attribute>
+        <attribute name="itemtitle" type="string">Rewrite to remove reader thread</attribute>
+    </object>
+    <object type="TODOITEM" id="z103">
+        <attribute name="itemcompletiondate" type="date">224391469.00000000000000000000</attribute>
+        <attribute name="itemcreationdate" type="date">218343469.94177401065826416016</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgZMBhAZbNDAzY117XHJ0ZjFcbWFjXGFuc2ljcGcxMDAwMFxjb2NvYXJ0ZjgyNFxjb2NvYXN1YnJ0ZjQyMAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0NzcgSGVsdmV0aWNhO30Ke1xjb2xvcnRibDtccmVkMjU1XGdyZWVuMjU1XGJsdWUyNTU7fQpccGFyZFx0eDU2MFx0eDExMjBcdHgxNjgwXHR4MjI0MFx0eDI4MDBcdHgzMzYwXHR4MzkyMFx0eDQ0ODBcdHg1MDQwXHR4NTYwMFx0eDYxNjBcdHg2NzIwXHFsXHFuYXR1cmFsXHBhcmRpcm5hdHVyYWwKClxmMFxmczI0IFxjZjAgSW1wbGVtZW50IGZyaWVuZHMgb2YgZnJpZW5kcyBkeW5hbWljIGdyb3VwLlwKTUZGcmllbmRHcm91cFwKXAoyLzEwLzA4IEFkZGVkIHByZWxpbWluYXJ5IHN1cHBvcnQuICBTaG91bGQgd29yaywgYnV0IEkgc3VzcGVjdCB0aGVyZSBhcmUgYnVncy59hg==
+</attribute>
+        <attribute name="itemdone" type="bool">1</attribute>
+        <attribute name="itemduedate" type="date">218343469.94177401065826416016</attribute>
+        <attribute name="itemnumber" type="int32">2</attribute>
+        <attribute name="itempriority" type="string">Low</attribute>
+        <attribute name="itemtitle" type="string">Implement friends of friends group</attribute>
+    </object>
+    <object type="TODOITEM" id="z151">
+        <attribute name="itemcompletiondate" type="date">224661030.00000000000000000000</attribute>
+        <attribute name="itemcreationdate" type="date">224401830.46333900094032287598</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgU0BhAZbMzMzY117XHJ0ZjFcbWFjXGFuc2ljcGcxMDAwMFxjb2NvYXJ0ZjgyNFxjb2NvYXN1YnJ0ZjQyMAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0NzcgSGVsdmV0aWNhO30Ke1xjb2xvcnRibDtccmVkMjU1XGdyZWVuMjU1XGJsdWUyNTU7fQpccGFyZFx0eDU2MFx0eDExMjBcdHgxNjgwXHR4MjI0MFx0eDI4MDBcdHgzMzYwXHR4MzkyMFx0eDQ0ODBcdHg1MDQwXHR4NTYwMFx0eDYxNjBcdHg2NzIwXHFsXHFuYXR1cmFsXHBhcmRpcm5hdHVyYWwKClxmMFxmczI0IFxjZjAgQWRkIGEgbWVudSBpdGVtIGFuZCBkaWFsb2cgdG8gY2hhbmdlIHRoZSB1c2VyJ3Mgbmlja25hbWUuXApcCkNvbXBsZXRlLn2G
+</attribute>
+        <attribute name="itemdone" type="bool">1</attribute>
+        <attribute name="itemduedate" type="date">224401830.46333900094032287598</attribute>
+        <attribute name="itemnumber" type="int32">51</attribute>
+        <attribute name="itempriority" type="string">Low</attribute>
+        <attribute name="itemtitle" type="string">Add ability to change nickname</attribute>
+    </object>
+    <object type="TODOITEM" id="z149">
+        <attribute name="itemcompletiondate" type="date">226126466.00000000000000000000</attribute>
+        <attribute name="itemcreationdate" type="date">224139266.49337199330329895020</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgUkBhAZbMzI5Y117XHJ0ZjFcbWFjXGFuc2ljcGcxMDAwMFxjb2NvYXJ0ZjgyNFxjb2NvYXN1YnJ0ZjQyMAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0NzcgSGVsdmV0aWNhO30Ke1xjb2xvcnRibDtccmVkMjU1XGdyZWVuMjU1XGJsdWUyNTU7fQpccGFyZFx0eDU2MFx0eDExMjBcdHgxNjgwXHR4MjI0MFx0eDI4MDBcdHgzMzYwXHR4MzkyMFx0eDQ0ODBcdHg1MDQwXHR4NTYwMFx0eDYxNjBcdHg2NzIwXHFsXHFuYXR1cmFsXHBhcmRpcm5hdHVyYWwKClxmMFxmczI0IFxjZjAgTm90IGV2ZXJ5Ym9keSB3YW50cyB0byB1c2UgdXAgdGhlaXIgZGlzayBzcGFjZSBsaWtlIHRoaXMuXApcCkRvbmUufYY=
+</attribute>
+        <attribute name="itemdone" type="bool">1</attribute>
+        <attribute name="itemduedate" type="date">224139266.49337199330329895020</attribute>
+        <attribute name="itemnumber" type="int32">49</attribute>
+        <attribute name="itempriority" type="string">Medium</attribute>
+        <attribute name="itemtitle" type="string">Add preference option to enable/disable packet logging</attribute>
+    </object>
+    <object type="TODOITEM" id="z146">
+        <attribute name="itemcompletiondate" type="date">226044777.00000000000000000000</attribute>
+        <attribute name="itemcreationdate" type="date">222243177.86709299683570861816</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgVcBhAZbMzQzY117XHJ0ZjFcbWFjXGFuc2ljcGcxMDAwMFxjb2NvYXJ0ZjgyNFxjb2NvYXN1YnJ0ZjQyMAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0NzcgSGVsdmV0aWNhO30Ke1xjb2xvcnRibDtccmVkMjU1XGdyZWVuMjU1XGJsdWUyNTU7fQpccGFyZFx0eDU2MFx0eDExMjBcdHgxNjgwXHR4MjI0MFx0eDI4MDBcdHgzMzYwXHR4MzkyMFx0eDQ0ODBcdHg1MDQwXHR4NTYwMFx0eDYxNjBcdHg2NzIwXHFsXHFuYXR1cmFsXHBhcmRpcm5hdHVyYWwKClxmMFxmczI0IFxjZjAgQ3VycmVudGx5IGRlZmF1bHRzIHRvIE1hY0ZpcmUgaW4gLVtYZmlyZUNvbm5lY3Rpb24gaW5pdFdpdGhIb3N0OnBvcnQ6XS5cClwKRG9uZS59hg==
+</attribute>
+        <attribute name="itemdone" type="bool">1</attribute>
+        <attribute name="itemduedate" type="date">222243177.86709299683570861816</attribute>
+        <attribute name="itemnumber" type="int32">45</attribute>
+        <attribute name="itempriority" type="string">Low</attribute>
+        <attribute name="itemtitle" type="string">Add logic to move the packet logger file path outside Xfire lib</attribute>
+    </object>
+    <object type="TODOITEM" id="z141">
+        <attribute name="itemcompletiondate" type="date">224575427.00000000000000000000</attribute>
+        <attribute name="itemcreationdate" type="date">222242627.51232200860977172852</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgaEBhAZbNDE3Y117XHJ0ZjFcbWFjXGFuc2ljcGcxMDAwMFxjb2NvYXJ0ZjgyNFxjb2NvYXN1YnJ0ZjQyMAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0NzcgSGVsdmV0aWNhO30Ke1xjb2xvcnRibDtccmVkMjU1XGdyZWVuMjU1XGJsdWUyNTU7fQpccGFyZFx0eDU2MFx0eDExMjBcdHgxNjgwXHR4MjI0MFx0eDI4MDBcdHgzMzYwXHR4MzkyMFx0eDQ0ODBcdHg1MDQwXHR4NTYwMFx0eDYxNjBcdHg2NzIwXHFsXHFuYXR1cmFsXHBhcmRpcm5hdHVyYWwKClxmMFxmczI0IFxjZjAgLVtYZmlyZVNlc3Npb24gbmV3U2Vzc2lvbl0uICBOZWVkIG5ldyBjb25zdHJ1Y3RvciBtZXRob2Qgd2l0aCBhcmd1bWVudHMuICBOZWVkIHRvIHJlYWQvd3JpdGUgZnJvbSBNRlByZWZlcmVuY2VzLiAgTmVlZCBuZXcga2V5IGZvciB1c2VyIGRlZmF1bHRzLlwKXApEb25lLn2G
+</attribute>
+        <attribute name="itemdone" type="bool">1</attribute>
+        <attribute name="itemduedate" type="date">222242627.51232200860977172852</attribute>
+        <attribute name="itemnumber" type="int32">40</attribute>
+        <attribute name="itempriority" type="string">Low</attribute>
+        <attribute name="itemtitle" type="string">Use NSUserDefaults for server name/port</attribute>
+    </object>
+    <object type="TODOITEM" id="z140">
+        <attribute name="itemcompletiondate" type="date">226044168.00000000000000000000</attribute>
+        <attribute name="itemcreationdate" type="date">222242568.93654501438140869141</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgccBhAZbNDU1Y117XHJ0ZjFcbWFjXGFuc2ljcGcxMDAwMFxjb2NvYXJ0ZjgyNFxjb2NvYXN1YnJ0ZjQyMAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0NzcgSGVsdmV0aWNhO30Ke1xjb2xvcnRibDtccmVkMjU1XGdyZWVuMjU1XGJsdWUyNTU7fQpccGFyZFx0eDU2MFx0eDExMjBcdHgxNjgwXHR4MjI0MFx0eDI4MDBcdHgzMzYwXHR4MzkyMFx0eDQ0ODBcdHg1MDQwXHR4NTYwMFx0eDYxNjBcdHg2NzIwXHFsXHFuYXR1cmFsXHBhcmRpcm5hdHVyYWwKClxmMFxmczI0IFxjZjAgLVtYZmlyZVNlc3Npb24gY29ubmVjdF0uICBQcm9iYWJseSBuZWVkcyBhbiBBUEkgYWNjZXNzb3IgcGFpci5cClwKQ0FOQ0VMXApOZXR3b3JrIGtlZXBhbGl2ZSBzaG91bGQgbm90IGJlIHRhbXBlcmVkIHdpdGguICBJIHRoaW5rIEkgbWVhbnQgaWRsZSBzdGF0dXMgbW9uaXRvci4gIEJ1dCwgdGhhdCdzIGFscmVhZHkgaW1wbGVtZW50ZWQufYY=
+</attribute>
+        <attribute name="itemdone" type="bool">1</attribute>
+        <attribute name="itemduedate" type="date">222242568.93654501438140869141</attribute>
+        <attribute name="itemnumber" type="int32">39</attribute>
+        <attribute name="itempriority" type="string">Low</attribute>
+        <attribute name="itemtitle" type="string">Use NSUserDefaults when setting keepalive interval</attribute>
+    </object>
+    <object type="TODOITEM" id="z137">
+        <attribute name="itemcompletiondate" type="date">226129701.00000000000000000000</attribute>
+        <attribute name="itemcreationdate" type="date">222241701.53968000411987304688</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgYMBhAZbMzg3Y117XHJ0ZjFcbWFjXGFuc2ljcGcxMDAwMFxjb2NvYXJ0ZjgyNFxjb2NvYXN1YnJ0ZjQyMAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0NzcgSGVsdmV0aWNhO30Ke1xjb2xvcnRibDtccmVkMjU1XGdyZWVuMjU1XGJsdWUyNTU7fQpccGFyZFx0eDU2MFx0eDExMjBcdHgxNjgwXHR4MjI0MFx0eDI4MDBcdHgzMzYwXHR4MzkyMFx0eDQ0ODBcdHg1MDQwXHR4NTYwMFx0eDYxNjBcdHg2NzIwXHFsXHFuYXR1cmFsXHBhcmRpcm5hdHVyYWwKClxmMFxmczI0IFxjZjAgQnkgZGF0ZSBpc24ndCBxdWl0ZSBlbm91Z2guICBNYXliZSBhbiBpbmRleCBvciBzb21lIHJlcHJlc2VudGF0aW9uIG9mIHRoZSB0aW1lIChISE1NU1MpLlwKXApEb25lLiAgUmV3cm90ZSBmaWxlIG5hbWluZyBjb2RlLn2G
+</attribute>
+        <attribute name="itemdone" type="bool">1</attribute>
+        <attribute name="itemduedate" type="date">222241701.53968000411987304688</attribute>
+        <attribute name="itemnumber" type="int32">35</attribute>
+        <attribute name="itempriority" type="string">Low</attribute>
+        <attribute name="itemtitle" type="string">Add index or other thing on cache file to keep ordered</attribute>
+    </object>
+    <object type="TODOITEM" id="z133">
+        <attribute name="itemcompletiondate" type="date">226122417.00000000000000000000</attribute>
+        <attribute name="itemcreationdate" type="date">221456817.61921501159667968750</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgYcBhAZbMzkxY117XHJ0ZjFcbWFjXGFuc2ljcGcxMDAwMFxjb2NvYXJ0ZjgyNFxjb2NvYXN1YnJ0ZjQyMAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0NzcgSGVsdmV0aWNhO30Ke1xjb2xvcnRibDtccmVkMjU1XGdyZWVuMjU1XGJsdWUyNTU7fQpccGFyZFx0eDU2MFx0eDExMjBcdHgxNjgwXHR4MjI0MFx0eDI4MDBcdHgzMzYwXHR4MzkyMFx0eDQ0ODBcdHg1MDQwXHR4NTYwMFx0eDYxNjBcdHg2NzIwXHFsXHFuYXR1cmFsXHBhcmRpcm5hdHVyYWwKClxmMFxmczI0IFxjZjAgTmVlZCBhYmlsaXR5IHRvIHNlYXJjaCBYZmlyZSB1c2VycywgZm9yIHB1cnBvc2VzIG9mIHNlbmRpbmcgZnJpZW5kIHJlcXVlc3RzLlwKXApGb3Igd2hlbiB5b3UgZG9uJ3Qga25vdyB0aGVpciB1c2VybmFtZS5cClwKRG9uZS59hg==
+</attribute>
+        <attribute name="itemdone" type="bool">1</attribute>
+        <attribute name="itemduedate" type="date">221456817.61921501159667968750</attribute>
+        <attribute name="itemnumber" type="int32">32</attribute>
+        <attribute name="itempriority" type="string">Medium</attribute>
+        <attribute name="itemtitle" type="string">Xfire user search window</attribute>
+    </object>
+    <object type="TODOITEM" id="z132">
+        <attribute name="itemcompletiondate" type="date">226208773.00000000000000000000</attribute>
+        <attribute name="itemcreationdate" type="date">221456773.25885298848152160645</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgU4BhAZbMzM0Y117XHJ0ZjFcbWFjXGFuc2ljcGcxMDAwMFxjb2NvYXJ0ZjgyNFxjb2NvYXN1YnJ0ZjQyMAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0NzcgSGVsdmV0aWNhO30Ke1xjb2xvcnRibDtccmVkMjU1XGdyZWVuMjU1XGJsdWUyNTU7fQpccGFyZFx0eDU2MFx0eDExMjBcdHgxNjgwXHR4MjI0MFx0eDI4MDBcdHgzMzYwXHR4MzkyMFx0eDQ0ODBcdHg1MDQwXHR4NTYwMFx0eDYxNjBcdHg2NzIwXHFsXHFuYXR1cmFsXHBhcmRpcm5hdHVyYWwKClxmMFxmczI0IFxjZjAgTmVlZCB0byBiZSBhYmxlIHRvIGhhbmRsZSBhZGQtZnJpZW5kIHJlcXVlc3RzIChzaW1wbGUgeWVzL25vKS5cClwKRE9ORS59hg==
+</attribute>
+        <attribute name="itemdone" type="bool">1</attribute>
+        <attribute name="itemduedate" type="date">221456773.25885298848152160645</attribute>
+        <attribute name="itemnumber" type="int32">31</attribute>
+        <attribute name="itempriority" type="string">High</attribute>
+        <attribute name="itemtitle" type="string">Add-friend request handling</attribute>
+    </object>
+    <object type="TODOITEM" id="z134">
+        <attribute name="itemcompletiondate" type="date">221456841.85073900222778320312</attribute>
+        <attribute name="itemcreationdate" type="date">221456841.85073900222778320312</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgc8BhAZbNDYzY117XHJ0ZjFcbWFjXGFuc2ljcGcxMDAwMFxjb2NvYXJ0ZjgyNFxjb2NvYXN1YnJ0ZjQyMAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0NzcgSGVsdmV0aWNhO30Ke1xjb2xvcnRibDtccmVkMjU1XGdyZWVuMjU1XGJsdWUyNTU7fQpccGFyZFx0eDU2MFx0eDExMjBcdHgxNjgwXHR4MjI0MFx0eDI4MDBcdHgzMzYwXHR4MzkyMFx0eDQ0ODBcdHg1MDQwXHR4NTYwMFx0eDYxNjBcdHg2NzIwXHFsXHFuYXR1cmFsXHBhcmRpcm5hdHVyYWwKClxmMFxmczI0IFxjZjAgTmVlZCB0byBhZGQgYSB3aW5kb3cgKHByb2JhYmx5IGJ1bmRsZWQgd2l0aCB0aGUgc2VhcmNoKSB0byBiZSBhYmxlIHRvIHNldCBjdXN0b20gQWRkIEZyaWVuZCBSZXF1ZXN0IG1lc3NhZ2VzLlwKXApGb3Igd2hlbiB5b3UgYWxyZWFkeSBrbm93IHRoZWlyIHVzZXJuYW1lLlwKXApERUZFUlJFRCAtIG1heSBqdXN0IHVzZSB0aGUgc2VhcmNoIHdpbmRvdy59hg==
+</attribute>
+        <attribute name="itemdone" type="bool">0</attribute>
+        <attribute name="itemduedate" type="date">221456841.85073900222778320312</attribute>
+        <attribute name="itemnumber" type="int32">33</attribute>
+        <attribute name="itempriority" type="string">Low</attribute>
+        <attribute name="itemtitle" type="string">Xfire friend add window</attribute>
+    </object>
+    <object type="TODOITEM" id="z152">
+        <attribute name="itemtitle" type="string">Fix Hang if no Network Connection</attribute>
+        <attribute name="itempriority" type="string">High</attribute>
+        <attribute name="itemnumber" type="int32">52</attribute>
+        <attribute name="itemduedate" type="date">236534641.40461701154708862305</attribute>
+        <attribute name="itemdone" type="bool">0</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgX8BhAZbMzgzY117XHJ0ZjFcYW5zaVxhbnNpY3BnMTI1Mlxjb2NvYXJ0Zjk0OVxjb2NvYXN1YnJ0ZjM1MAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0MCBIZWx2ZXRpY2E7fQp7XGNvbG9ydGJsO1xyZWQyNTVcZ3JlZW4yNTVcYmx1ZTI1NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccWxccW5hdHVyYWxccGFyZGlybmF0dXJhbAoKXGYwXGZzMjQgXGNmMCB2MC43IHdpbGwgaGFuZyBvbiBOU0hvc3QgaWYgdGhlcmUgaXMgbm8gbmV0d29yayBjb25uZWN0aW9uLiAgTG9va3MgbGlrZSBETlMgcmVzb2x2ZS4gIE5vdCBzdXJlIGhvdyB0byB3b3JrIGFyb3VuZCB0aGlzLi4ufYY=
+</attribute>
+        <attribute name="itemcreationdate" type="date">236534641.40461701154708862305</attribute>
+        <attribute name="itemcompletiondate" type="date">236534641.40461701154708862305</attribute>
+    </object>
+    <object type="TODOITEM" id="z153">
+        <attribute name="itemtitle" type="string">Add Custom Friend Groups</attribute>
+        <attribute name="itempriority" type="string">High</attribute>
+        <attribute name="itemnumber" type="int32">53</attribute>
+        <attribute name="itemduedate" type="date">244346460.66100400686264038086</attribute>
+        <attribute name="itemdone" type="bool">1</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgckBhAZbNDU3Y117XHJ0ZjFcYW5zaVxhbnNpY3BnMTI1Mlxjb2NvYXJ0Zjk0OVxjb2NvYXN1YnJ0ZjM1MAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0MCBIZWx2ZXRpY2E7fQp7XGNvbG9ydGJsO1xyZWQyNTVcZ3JlZW4yNTVcYmx1ZTI1NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccWxccW5hdHVyYWxccGFyZGlybmF0dXJhbAoKXGYwXGZzMjQgXGNmMCBBZGQgc3VwcG9ydCBmb3IgY3VzdG9tIGZyaWVuZCBncm91cHMuICBUaGlzIHJlcXVpcmVzIG5ldHdvcmsgcHJvdG9jb2wgc3VwcG9ydC4gIFRoaXMgd2lsbCBnZXQga2luZCBvZiBtZXNzeSBzaW5jZSB0aGUgcHJvdG9jb2wgcHV0cyBmcmllbmQgZ3JvdXAgZGlzcGxheSBwYWNrZXQgYmVmb3JlIHRoZSBmcmllbmQgcGFja2V0LiAgT2ggd2VsbC59hg==
+</attribute>
+        <attribute name="itemcreationdate" type="date">244346460.66100400686264038086</attribute>
+        <attribute name="itemcompletiondate" type="date">245469660.66100400686264038086</attribute>
+    </object>
+    <object type="TODOITEM" id="z154">
+        <attribute name="itemtitle" type="string">Fix custom status message / AFK</attribute>
+        <attribute name="itempriority" type="string">Medium</attribute>
+        <attribute name="itemnumber" type="int32">54</attribute>
+        <attribute name="itemduedate" type="date">244346540.74212199449539184570</attribute>
+        <attribute name="itemdone" type="bool">1</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpge4BhAZbNDk0Y117XHJ0ZjFcYW5zaVxhbnNpY3BnMTI1Mlxjb2NvYXJ0Zjk0OVxjb2NvYXN1YnJ0ZjM1MAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0MCBIZWx2ZXRpY2E7fQp7XGNvbG9ydGJsO1xyZWQyNTVcZ3JlZW4yNTVcYmx1ZTI1NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccWxccW5hdHVyYWxccGFyZGlybmF0dXJhbAoKXGYwXGZzMjQgXGNmMCBGaXggdGhlIGZhY3QgdGhhdCBpdCBhdXRvbWF0aWNhbGx5IHJlbW92ZXMgQUZLIHN0YXR1cyB3aGVuIEFGSyB3YXMgc2V0IG1hbnVhbGx5LiAgQXQgbGVhc3QsIHByb2JhYmx5IG5lZWRzIGFuIGV4cGxpY2l0IGluc3RhbmNlIHZhcmlhYmxlIHRvIGluZGljYXRlIHdoZW4gc29tZXRoaW5nIHdhcyBzZXQgbWFudWFsbHkuICBOZWVkIHRvIHRoaW5rIG9uIHRoaXMgb25lLlwKXApDb21wbGV0ZWQgMTAvMTIvMDgufYY=
+</attribute>
+        <attribute name="itemcreationdate" type="date">244346540.74212199449539184570</attribute>
+        <attribute name="itemcompletiondate" type="date">245556140.74212199449539184570</attribute>
+    </object>
+    <object type="TODOITEM" id="z155">
+        <attribute name="itemtitle" type="string">Add a link to user profile page on Add Friend window</attribute>
+        <attribute name="itempriority" type="string">Medium</attribute>
+        <attribute name="itemnumber" type="int32">55</attribute>
+        <attribute name="itemduedate" type="date">244346620.83554700016975402832</attribute>
+        <attribute name="itemdone" type="bool">1</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgVQBhAZbMzQwY117XHJ0ZjFcYW5zaVxhbnNpY3BnMTI1Mlxjb2NvYXJ0Zjk0OVxjb2NvYXN1YnJ0ZjM1MAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0MCBIZWx2ZXRpY2E7fQp7XGNvbG9ydGJsO1xyZWQyNTVcZ3JlZW4yNTVcYmx1ZTI1NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccWxccW5hdHVyYWxccGFyZGlybmF0dXJhbAoKXGYwXGZzMjQgXGNmMCBPbiB0aGUgaW5jb21pbmcgRnJpZW5kIFJlcXVlc3Qgd2luZG93LCBhZGQgYSBsaW5rIHRvIHRoYXQgdXNlcidzIHByb2ZpbGUgcGFnZS59hg==
+</attribute>
+        <attribute name="itemcreationdate" type="date">244346620.83554700016975402832</attribute>
+        <attribute name="itemcompletiondate" type="date">245556220.83554700016975402832</attribute>
+    </object>
+    <object type="TODOITEM" id="z156">
+        <attribute name="itemtitle" type="string">Add a user-specific setting window</attribute>
+        <attribute name="itempriority" type="string">High</attribute>
+        <attribute name="itemnumber" type="int32">56</attribute>
+        <attribute name="itemduedate" type="date">244346650.29036000370979309082</attribute>
+        <attribute name="itemdone" type="bool">1</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgTEChAZbNTYxY117XHJ0ZjFcYW5zaVxhbnNpY3BnMTI1Mlxjb2NvYXJ0Zjk0OVxjb2NvYXN1YnJ0ZjM1MAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0MCBIZWx2ZXRpY2E7fQp7XGNvbG9ydGJsO1xyZWQyNTVcZ3JlZW4yNTVcYmx1ZTI1NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccWxccW5hdHVyYWxccGFyZGlybmF0dXJhbAoKXGYwXGZzMjQgXGNmMCBTZXZlcmFsIHNldHRpbmdzIGFwcGVhciB0byBiZSB0aWVkIHRvIG5ldHdvcmsgc3R1ZmYgdGhhdCBjYW4gb25seSBiZSBjaGFuZ2VkIGFmdGVyIGxvZ2dpbmcgaW4uICBOZWVkIGEgY2xlYW4gd2F5IHRvIGRlYWwgd2l0aCB0aGF0LiAgSSBkb24ndCBsaWtlIGEgc3luY2luZyBvcGVyYXRpb24sIHNvIGEgc3BlY2lhbCBwcmVmZXJlbmNlcyB3aW5kb3cgKFVzZXIgUHJlZmVyZW5jZXMpIHdpbGwgcHJvYmFibHkgYmUgcmVxdWlyZWQuXApcCjExIERlYyAwOCBGaW5pc2hlZCB0aGUgcHJlbGltaW5hcnkgc3VwcG9ydCBpbiB2MC44Ln2G
+</attribute>
+        <attribute name="itemcreationdate" type="date">244346650.29036000370979309082</attribute>
+        <attribute name="itemcompletiondate" type="date">250743850.29036000370979309082</attribute>
+    </object>
+    <object type="TODOITEM" id="z157">
+        <attribute name="itemtitle" type="string">Ability to block incoming friend requests</attribute>
+        <attribute name="itempriority" type="string">Low</attribute>
+        <attribute name="itemnumber" type="int32">58</attribute>
+        <attribute name="itemduedate" type="date">244346744.66221699118614196777</attribute>
+        <attribute name="itemdone" type="bool">0</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgV0BhAZbMzQ5Y117XHJ0ZjFcYW5zaVxhbnNpY3BnMTI1Mlxjb2NvYXJ0Zjk0OVxjb2NvYXN1YnJ0ZjM1MAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0MCBIZWx2ZXRpY2E7fQp7XGNvbG9ydGJsO1xyZWQyNTVcZ3JlZW4yNTVcYmx1ZTI1NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccWxccW5hdHVyYWxccGFyZGlybmF0dXJhbAoKXGYwXGZzMjQgXGNmMCBBZGQgdGhlIGFiaWxpdHkgdG8gYmxvY2sgaW5jb21pbmcgZnJpZW5kIHJlcXVlc3RzLiAgTmVlZCB0byBmaWd1cmUgb3V0IGhvdyB0byB1bi1ibG9jay59hg==
+</attribute>
+        <attribute name="itemcreationdate" type="date">244346744.66221699118614196777</attribute>
+        <attribute name="itemcompletiondate" type="date">244346744.66221699118614196777</attribute>
+    </object>
+    <object type="TODOITEM" id="z158">
+        <attribute name="itemtitle" type="string">Add more preferences network protocol support</attribute>
+        <attribute name="itempriority" type="string">High</attribute>
+        <attribute name="itemnumber" type="int32">57</attribute>
+        <attribute name="itemduedate" type="date">244346717.14039200544357299805</attribute>
+        <attribute name="itemdone" type="bool">1</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgXABhAZbMzY4Y117XHJ0ZjFcYW5zaVxhbnNpY3BnMTI1Mlxjb2NvYXJ0Zjk0OVxjb2NvYXN1YnJ0ZjM1MAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0MCBIZWx2ZXRpY2E7fQp7XGNvbG9ydGJsO1xyZWQyNTVcZ3JlZW4yNTVcYmx1ZTI1NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccWxccW5hdHVyYWxccGFyZGlybmF0dXJhbAoKXGYwXGZzMjQgXGNmMCBGaWd1cmUgb3V0IG1vcmUgb2YgdGhlIHBhY2tldCAxMCBzZXR0aW5ncyBhbmQgYWRkIHN1cHBvcnQgZm9yIHRoZW0uXApcCjExIERlYyAwOCAtIEltcGxlbWVudGVkIGFzIG9mIHYwLjgufYY=
+</attribute>
+        <attribute name="itemcreationdate" type="date">244346717.14039200544357299805</attribute>
+        <attribute name="itemcompletiondate" type="date">250743917.14039200544357299805</attribute>
+    </object>
+    <object type="TODOITEM" id="z159">
+        <attribute name="itemtitle" type="string">Timeout connecting to server</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgVsBhAZbMzQ3Y117XHJ0ZjFcYW5zaVxhbnNpY3BnMTI1Mlxjb2NvYXJ0Zjk0OVxjb2NvYXN1YnJ0ZjM1MAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0MCBIZWx2ZXRpY2E7fQp7XGNvbG9ydGJsO1xyZWQyNTVcZ3JlZW4yNTVcYmx1ZTI1NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccWxccW5hdHVyYWxccGFyZGlybmF0dXJhbAoKXGYwXGZzMjQgXGNmMCBBZGQgYSB0aW1lb3V0IHdoZW4gY29ubmVjdGluZyB0byB0aGUgc2VydmVyLiAgVGhpcyBpcyB0aWVkIGluIHdpdGggaXRlbSA1MiAoaW4gcGFydCkufYY=
+</attribute>
+        <attribute name="itempriority" type="string">Low</attribute>
+        <attribute name="itemnumber" type="int32">59</attribute>
+        <attribute name="itemduedate" type="date">244346771.63136699795722961426</attribute>
+        <attribute name="itemdone" type="bool">0</attribute>
+        <attribute name="itemcreationdate" type="date">244346771.63136699795722961426</attribute>
+        <attribute name="itemcompletiondate" type="date">244346771.63136699795722961426</attribute>
+    </object>
+    <object type="TODOITEM" id="z160">
+        <attribute name="itemtitle" type="string">Chat - don't show window</attribute>
+        <attribute name="itempriority" type="string">Medium</attribute>
+        <attribute name="itemnumber" type="int32">60</attribute>
+        <attribute name="itemduedate" type="date">244442220.08457100391387939453</attribute>
+        <attribute name="itemdone" type="bool">0</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgZcBhAZbNDA3Y117XHJ0ZjFcYW5zaVxhbnNpY3BnMTI1Mlxjb2NvYXJ0Zjk0OVxjb2NvYXN1YnJ0ZjM1MAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0MCBIZWx2ZXRpY2E7fQp7XGNvbG9ydGJsO1xyZWQyNTVcZ3JlZW4yNTVcYmx1ZTI1NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccWxccW5hdHVyYWxccGFyZGlybmF0dXJhbAoKXGYwXGZzMjQgXGNmMCBDaGFuZ2UgY2hhdCBtZXNzYWdlIGhhbmRsaW5nIHNvIGEgd2luZG93IGlzbid0IHNob3duIHVudGlsIGFuIGFjdHVhbCBtZXNzYWdlIGlzIGZpcnN0IHJlY2VpdmVkLCBpbnN0ZWFkIG9mIHRoZSBpbml0aWFsIGhhbmRzaGFrZS4gIEl0J3MgYW5ub3lpbmcufYY=
+</attribute>
+        <attribute name="itemcreationdate" type="date">244442220.08457100391387939453</attribute>
+        <attribute name="itemcompletiondate" type="date">244442220.08457100391387939453</attribute>
+    </object>
+    <object type="TODOITEM" id="z161">
+        <attribute name="itemtitle" type="string">Fix column width size creep</attribute>
+        <attribute name="itempriority" type="string">High</attribute>
+        <attribute name="itemnumber" type="int32">61</attribute>
+        <attribute name="itemduedate" type="date">244700835.40977799892425537109</attribute>
+        <attribute name="itemdone" type="bool">1</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgaUBhAZbNDIxY117XHJ0ZjFcYW5zaVxhbnNpY3BnMTI1Mlxjb2NvYXJ0Zjk0OVxjb2NvYXN1YnJ0ZjM1MAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0MCBIZWx2ZXRpY2E7fQp7XGNvbG9ydGJsO1xyZWQyNTVcZ3JlZW4yNTVcYmx1ZTI1NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccWxccW5hdHVyYWxccGFyZGlybmF0dXJhbAoKXGYwXGZzMjQgXGNmMCBBZnRlciByZXBlYXRlZCBvcGVuL2Nsb3NlIHRoZSBjb2x1bW4gd2lkdGhzIGFyZSBzbG93bHkgY3JlZXBpbmcgdXAgKHdpZGVyIGNvbHVtbnMpLlwKXAoxMS8zMC8wOCAtIEFkZGVkIGNhbGwgc28gW2ZyaWVuZE91dGxpbmUgc2V0QXV0b3Jlc2l6ZXNPdXRsaW5lQ29sdW1uOk5PXS59hg==
+</attribute>
+        <attribute name="itemcreationdate" type="date">244700835.40977799892425537109</attribute>
+        <attribute name="itemcompletiondate" type="date">249802035.40977799892425537109</attribute>
+    </object>
+    <object type="TODOITEM" id="z162">
+        <attribute name="itemtitle" type="string">Friend tooltip order common friends</attribute>
+        <attribute name="itempriority" type="string">High</attribute>
+        <attribute name="itemnumber" type="int32">62</attribute>
+        <attribute name="itemduedate" type="date">244855134.66755500435829162598</attribute>
+        <attribute name="itemdone" type="bool">1</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgU0BhAZbMzMzY117XHJ0ZjFcYW5zaVxhbnNpY3BnMTI1Mlxjb2NvYXJ0Zjk0OVxjb2NvYXN1YnJ0ZjM1MAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0MCBIZWx2ZXRpY2E7fQp7XGNvbG9ydGJsO1xyZWQyNTVcZ3JlZW4yNTVcYmx1ZTI1NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccWxccW5hdHVyYWxccGFyZGlybmF0dXJhbAoKXGYwXGZzMjQgXGNmMCBDaGFuZ2UgZnJpZW5kIHRvb2x0aXAgaGFuZGxpbmcgdG8gc29ydCBmcmllbmQgbmFtZXMuXApcCkZpeGVkIDEwLzEyLzA4Ln2G
+</attribute>
+        <attribute name="itemcreationdate" type="date">244855134.66755500435829162598</attribute>
+        <attribute name="itemcompletiondate" type="date">245546334.66755500435829162598</attribute>
+    </object>
+    <object type="TODOITEM" id="z163">
+        <attribute name="itemtitle" type="string">Fix multiple incoming friend requests</attribute>
+        <attribute name="itempriority" type="string">Medium</attribute>
+        <attribute name="itemnumber" type="int32">63</attribute>
+        <attribute name="itemduedate" type="date">245393250.11896300315856933594</attribute>
+        <attribute name="itemdone" type="bool">1</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgUgDhAZbODQwY117XHJ0ZjFcYW5zaVxhbnNpY3BnMTI1Mlxjb2NvYXJ0Zjk0OVxjb2NvYXN1YnJ0ZjM1MAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0MCBIZWx2ZXRpY2E7fQp7XGNvbG9ydGJsO1xyZWQyNTVcZ3JlZW4yNTVcYmx1ZTI1NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccWxccW5hdHVyYWxccGFyZGlybmF0dXJhbAoKXGYwXGZzMjQgXGNmMCBGaXggZGlzcGxheSBvZiBtdWx0aXBsZSBpbmNvbWluZyBmcmllbmRzaGlwIHJlcXVlc3RzIGluIGEgc2luZ2xlIHNpdHRpbmcuICBUaGUgY3VycmVudCB2ZXJzaW9uIGNhbid0IGRpc3BsYXkgbW9yZSB0aGFuIG9uZSBiZWNhdXNlIHRoZSBmcmllbmQgcmVxdWVzdCBjb250cm9sbGVyIHJ1bk1vZGFsRm9yV2luZG93IHdpbGwgZ28gdGhyb3VnaCB0aGUgbG9vcCBtb3JlIHRoYW4gb25jZS5cClwKVHdvIGFsdGVybmF0aXZlcyBwcmVzZW50IHRoZW1zZWx2ZXM6XAoxKSBBdWdtZW50IHRoZSBsaXN0IHRvIHNob3cgYWxsIHBlbmRpbmcgcmVxdWVzdHMgYW5kIHRoZSB1c2VyIHBpY2tzIHRoZW0gb2ZmIG9uZSBhdCBhIHRpbWUuXAoyKSBBZGQgY29kZSB0byBlaXRoZXIgdGhlIGZyaWVuZCByZXF1ZXN0IGNvbnRyb2xsZXIgb3IgdGhlIG1haW4gd2luZG93IHRvIGRpc3BsYXkgdGhlIG5leHQgcmVxdWVzdCBvbmNlIHRoZSBjdXJyZW50IHJlcXVlc3QgaXMgYWNjZXB0ZWQvZGVjbGluZWQvZGVmZXJyZWQuXApcCjEwLzEyIC0gQ3VycmVudCBzb2x1dGlvbiBpcyB0byBzaG93IGEgbmV3IHNoZWV0IGZvciBldmVyeSByZXF1ZXN0Ln2G
+</attribute>
+        <attribute name="itemcreationdate" type="date">245393250.11896300315856933594</attribute>
+        <attribute name="itemcompletiondate" type="date">245566050.11896300315856933594</attribute>
+    </object>
+    <object type="TODOITEM" id="z164">
+        <attribute name="itemtitle" type="string">Fix display of the outline view with custom groups</attribute>
+        <attribute name="itempriority" type="string">Medium</attribute>
+        <attribute name="itemnumber" type="int32">64</attribute>
+        <attribute name="itemduedate" type="date">245393392.40870800614356994629</attribute>
+        <attribute name="itemdone" type="bool">0</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgS8ChAZbNTU5Y117XHJ0ZjFcYW5zaVxhbnNpY3BnMTI1Mlxjb2NvYXJ0Zjk0OVxjb2NvYXN1YnJ0ZjM1MAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0MCBIZWx2ZXRpY2E7fQp7XGNvbG9ydGJsO1xyZWQyNTVcZ3JlZW4yNTVcYmx1ZTI1NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccWxccW5hdHVyYWxccGFyZGlybmF0dXJhbAoKXGYwXGZzMjQgXGNmMCBJdCBsb29rcyBsaWtlIE5TT3V0bGluZVZpZXcgb25seSB1cGRhdGVzIG9uZSBvY2N1cnJlbmNlIG9mIGFuIG9iamVjdCBpZiBpdCBhcHBlYXJzIGluIHRoZSB2aWV3IG1vcmUgdGhhbiBvbmNlLiAgVGhhdCdzIG9rYXkgdW50aWwgeW91IGFkZCBjdXN0b20gZnJpZW5kIGdyb3VwcyB3aGVyZSBhIHBlcnNvbiBhcHBlYXJzIGluIHRoZSB3aW5kb3cgbW9yZSB0aGFuIG9uY2UuXApcCjEwLzExIC0gSW50ZXJpbSB3b3JrYXJvdW5kIGlzIHRvIHJlbG9hZCB0aGUgZW50aXJlIG91dGxpbmUgdmlldyBpbnN0ZWFkIG9mIG90aGVycy59hg==
+</attribute>
+        <attribute name="itemcreationdate" type="date">245393392.40870800614356994629</attribute>
+        <attribute name="itemcompletiondate" type="date">245393392.40870800614356994629</attribute>
+    </object>
+    <object type="TODOITEM" id="z165">
+        <attribute name="itemtitle" type="string">Drag friend causes invite</attribute>
+        <attribute name="itempriority" type="string">Low</attribute>
+        <attribute name="itemnumber" type="int32">65</attribute>
+        <attribute name="itemduedate" type="date">245393503.25723299384117126465</attribute>
+        <attribute name="itemdone" type="bool">0</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgZwBhAZbNDEyY117XHJ0ZjFcYW5zaVxhbnNpY3BnMTI1Mlxjb2NvYXJ0Zjk0OVxjb2NvYXN1YnJ0ZjM1MAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0MCBIZWx2ZXRpY2E7fQp7XGNvbG9ydGJsO1xyZWQyNTVcZ3JlZW4yNTVcYmx1ZTI1NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccWxccW5hdHVyYWxccGFyZGlybmF0dXJhbAoKXGYwXGZzMjQgXGNmMCBXaGVuIGRyYWdnaW5nIGEgZnJpZW5kLW9mLWZyaWVuZCBvbnRvIGEgY3VzdG9tIGdyb3VwLCBhdXRvbWF0aWNhbGx5IG9wZW4gYSBmcmllbmQgaW52aXRhdGlvbiB3aW5kb3cuICBOZWVkIGEgZGVkaWNhdGVkIGZyaWVuZCBpbnZpdGF0aW9uIHdpbmRvdyBmaXJzdC59hg==
+</attribute>
+        <attribute name="itemcreationdate" type="date">245393503.25723299384117126465</attribute>
+        <attribute name="itemcompletiondate" type="date">245393503.25723299384117126465</attribute>
+    </object>
+    <object type="TODOITEM" id="z166">
+        <attribute name="itemtitle" type="string">Context Menu to Remove Friend from Group</attribute>
+        <attribute name="itempriority" type="string">Low</attribute>
+        <attribute name="itemnumber" type="int32">66</attribute>
+        <attribute name="itemduedate" type="date">245475076.69343999028205871582</attribute>
+        <attribute name="itemdone" type="bool">1</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgWIBhAZbMzU0Y117XHJ0ZjFcYW5zaVxhbnNpY3BnMTI1Mlxjb2NvYXJ0Zjk0OVxjb2NvYXN1YnJ0ZjM1MAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0MCBIZWx2ZXRpY2E7fQp7XGNvbG9ydGJsO1xyZWQyNTVcZ3JlZW4yNTVcYmx1ZTI1NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccWxccW5hdHVyYWxccGFyZGlybmF0dXJhbAoKXGYwXGZzMjQgXGNmMCBOZWVkIHRvIGZpZ3VyZSBvdXQgaG93IHRvIGRldGVybWluZSB3aGljaCBzcGVjaWZpYyBpbnN0YW5jZSBvZiB0aGUgZnJpZW5kIHdlJ3JlIGNsaWNraW5nIG9uLn2G
+</attribute>
+        <attribute name="itemcreationdate" type="date">245475076.69343999028205871582</attribute>
+        <attribute name="itemcompletiondate" type="date">245475076.69343999028205871582</attribute>
+    </object>
+    <object type="TODOITEM" id="z167">
+        <attribute name="itemtitle" type="string">Window for Add Friends to Group</attribute>
+        <attribute name="itempriority" type="string">Medium</attribute>
+        <attribute name="itemnumber" type="int32">67</attribute>
+        <attribute name="itemduedate" type="date">245475253.35931599140167236328</attribute>
+        <attribute name="itemdone" type="bool">0</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgUsBhAZbMzMxY117XHJ0ZjFcYW5zaVxhbnNpY3BnMTI1Mlxjb2NvYXJ0Zjk0OVxjb2NvYXN1YnJ0ZjM1MAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0MCBIZWx2ZXRpY2E7fQp7XGNvbG9ydGJsO1xyZWQyNTVcZ3JlZW4yNTVcYmx1ZTI1NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccWxccW5hdHVyYWxccGFyZGlybmF0dXJhbAoKXGYwXGZzMjQgXGNmMCBKdXN0IGEgY2hlY2stYm94ZWQgbGlzdCAoc29ydCBvZiBsaWtlIFhmaXJlIGNsaWVudCwgYnV0IGp1c3QgYSBsaXN0KS59hg==
+</attribute>
+        <attribute name="itemcreationdate" type="date">245475253.35931599140167236328</attribute>
+        <attribute name="itemcompletiondate" type="date">245475253.35931599140167236328</attribute>
+    </object>
+    <object type="TODOITEM" id="z169">
+        <attribute name="itemtitle" type="string">Confirmation before removing friend</attribute>
+        <attribute name="itempriority" type="string">High</attribute>
+        <attribute name="itemnumber" type="int32">69</attribute>
+        <attribute name="itemduedate" type="date">245477163.05734899640083312988</attribute>
+        <attribute name="itemdone" type="bool">1</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgTcBhAZbMzExY117XHJ0ZjFcYW5zaVxhbnNpY3BnMTI1Mlxjb2NvYXJ0Zjk0OVxjb2NvYXN1YnJ0ZjM1MAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0MCBIZWx2ZXRpY2E7fQp7XGNvbG9ydGJsO1xyZWQyNTVcZ3JlZW4yNTVcYmx1ZTI1NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccWxccW5hdHVyYWxccGFyZGlybmF0dXJhbAoKXGYwXGZzMjQgXGNmMCBDb25maXJtIGJlZm9yZSByZW1vdmluZyBmcmllbmRzIG9yIGZyaWVuZCBncm91cHMufYY=
+</attribute>
+        <attribute name="itemcreationdate" type="date">245477163.05734899640083312988</attribute>
+        <attribute name="itemcompletiondate" type="date">245477163.05734899640083312988</attribute>
+    </object>
+    <object type="TODOITEM" id="z170">
+        <attribute name="itemtitle" type="string">Consider moving game name to the Game Info column</attribute>
+        <attribute name="itempriority" type="string">Low</attribute>
+        <attribute name="itemnumber" type="int32">70</attribute>
+        <attribute name="itemduedate" type="date">245647683.97253000736236572266</attribute>
+        <attribute name="itemdone" type="bool">0</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgRABhAZbMjcyY117XHJ0ZjFcYW5zaVxhbnNpY3BnMTI1Mlxjb2NvYXJ0Zjk0OVxjb2NvYXN1YnJ0ZjM1MAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0MCBIZWx2ZXRpY2E7fQp7XGNvbG9ydGJsO1xyZWQyNTVcZ3JlZW4yNTVcYmx1ZTI1NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccWxccW5hdHVyYWxccGFyZGlybmF0dXJhbAoKXGYwXGZzMjQgXGNmMCBTZWUgdGl0bGUufYY=
+</attribute>
+        <attribute name="itemcreationdate" type="date">245647683.97253000736236572266</attribute>
+        <attribute name="itemcompletiondate" type="date">245647683.97253000736236572266</attribute>
+    </object>
+    <object type="TODOITEM" id="z171">
+        <attribute name="itemtitle" type="string">Add context menu to add friend</attribute>
+        <attribute name="itempriority" type="string">Low</attribute>
+        <attribute name="itemnumber" type="int32">71</attribute>
+        <attribute name="itemduedate" type="date">248064224.48215600848197937012</attribute>
+        <attribute name="itemdone" type="bool">0</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgVIBhAZbMzM4Y117XHJ0ZjFcYW5zaVxhbnNpY3BnMTI1Mlxjb2NvYXJ0Zjk0OVxjb2NvYXN1YnJ0ZjM1MAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0MCBIZWx2ZXRpY2E7fQp7XGNvbG9ydGJsO1xyZWQyNTVcZ3JlZW4yNTVcYmx1ZTI1NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccWxccW5hdHVyYWxccGFyZGlybmF0dXJhbAoKXGYwXGZzMjQgXGNmMCBXaGVuIHJpZ2h0IGNsaWNraW5nIG9uIGEgRm9GLCBhZGQgYSBtZW51IGl0ZW0gdG8gc2VuZCBhbiBBZGQgRnJpZW5kIHJlcXVlc3QufYY=
+</attribute>
+        <attribute name="itemcreationdate" type="date">248064224.48215600848197937012</attribute>
+        <attribute name="itemcompletiondate" type="date">248064224.48215600848197937012</attribute>
+    </object>
+    <object type="TODOITEM" id="z172">
+        <attribute name="itemtitle" type="string">Fix FoF Double-Entry</attribute>
+        <attribute name="itempriority" type="string">Low</attribute>
+        <attribute name="itemnumber" type="int32">72</attribute>
+        <attribute name="itemduedate" type="date">248323867.33116200566291809082</attribute>
+        <attribute name="itemdone" type="bool">1</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgZQDhAZbOTE2Y117XHJ0ZjFcYW5zaVxhbnNpY3BnMTI1Mlxjb2NvYXJ0Zjk0OVxjb2NvYXN1YnJ0ZjM1MAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0MCBIZWx2ZXRpY2E7fQp7XGNvbG9ydGJsO1xyZWQyNTVcZ3JlZW4yNTVcYmx1ZTI1NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccWxccW5hdHVyYWxccGFyZGlybmF0dXJhbAoKXGYwXGZzMjQgXGNmMCBJIGhhZCBhbiBpc3N1ZSB3aXRoIGEgbWVtYmVyIChBUn5HcmltZXp5KSBvbiAxMyBOb3YgMjAwOCB3aGVyZSBoZSBhcHBlYXJlZCBpbiB0aGUgRm9GIGxpc3QgdHdpY2UuICBGaXJzdCB3aXRoIG5vIGVudHJ5LCBzZWNvbmQgd2l0aCBhICJIYWxvIiBsaW5lLiAgRml4IGl0LlwKXAoxMS8zMC8wOCAtIEkgdGhpbmsgSSBoYXZlIGZpeGVkIHRoaXMgYnkgYWRqdXN0aW5nIGhvdyB0aGUgZ2FtZSBzdGF0dXMgaW5mbyBwYWNrZXQgaXMgaGFuZGxlZC4gIEl0IGxvb2tzIGxpa2UgeW91IGNhbiBnZXQgaW50byBhIHNpdHVhdGlvbiB3aGVyZSB5b3UgZ2V0IGEgc2VxdWVuY2UgbGlrZSB0aGlzOlwKMSkgRm9GIGdhbWUgaW5mbyBwYWNrZXQgKGluIGdhbWUpXAoyKSBNRiBzZW5kcyBHZXQgRm9GIGluZm9cCjMpIEZvRiBnYW1lIGluZm8gcGFja2V0IChsZWF2ZXMgZ2FtZSlcCjQpIE1GIGFkZHMgYW5vdGhlciBGb0YgaW5mbyByZXF1ZXN0LlwKU28sIEkgZml4ZWQgaXQgdG8gY2hlY2sgZm9yIGV4aXN0aW5nIHBlbmRpbmcgRm9GIHJlcXVlc3RzIGJlZm9yZSBhZGRpbmcgYW5vdGhlciwgYW5kIGNhbmNlbGluZyBpZiB3ZSBnZXQgb25lLlwKXApNYXJrZWQgRE9ORSBwZW5kaW5nIHRoYXQgaXQgbG9va3MgbGlrZSB0aGUgaXNzdWUgaGFzIHRydWx5IGdvbmUgYXdheS59hg==
+</attribute>
+        <attribute name="itemcreationdate" type="date">248323867.33116200566291809082</attribute>
+        <attribute name="itemcompletiondate" type="date">249792667.33116200566291809082</attribute>
+    </object>
+    <object type="TODOITEM" id="z173">
+        <attribute name="itemtitle" type="string">Add iTunes status option</attribute>
+        <attribute name="itempriority" type="string">Low</attribute>
+        <attribute name="itemnumber" type="int32">73</attribute>
+        <attribute name="itemduedate" type="date">249440480.29655098915100097656</attribute>
+        <attribute name="itemdone" type="bool">0</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgZsBhAZbNDExY117XHJ0ZjFcYW5zaVxhbnNpY3BnMTI1Mlxjb2NvYXJ0Zjk0OVxjb2NvYXN1YnJ0ZjM1MAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0MCBIZWx2ZXRpY2E7fQp7XGNvbG9ydGJsO1xyZWQyNTVcZ3JlZW4yNTVcYmx1ZTI1NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccWxccW5hdHVyYWxccGFyZGlybmF0dXJhbAoKXGYwXGZzMjQgXGNmMCBJIGZpZ3VyZWQgb3V0IGhvdyB0byBxdWVyeSBpVHVuZXMgdmlhIGFuIEFwcGxlU2NyaXB0LiAgU2hvdWxkIGFkZCBhbiBvcHRpb24gZm9yIGF1dG9tYXRpY2FsbHkgc2V0dGluZyBzdGF0dXMgdGV4dCBiYXNlZCBvbiB0aGUgY3VycmVudCBpVHVuZXMgc3RhdHVzLn2G
+</attribute>
+        <attribute name="itemcreationdate" type="date">249440480.29655098915100097656</attribute>
+        <attribute name="itemcompletiondate" type="date">249440480.29655098915100097656</attribute>
+    </object>
+    <object type="TODOITEM" id="z174">
+        <attribute name="itemtitle" type="string">Fix Text Display?</attribute>
+        <attribute name="itempriority" type="string">High</attribute>
+        <attribute name="itemnumber" type="int32">74</attribute>
+        <attribute name="itemduedate" type="date">249440535.44519999623298645020</attribute>
+        <attribute name="itemdone" type="bool">0</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgdkBhAZbNDczY117XHJ0ZjFcYW5zaVxhbnNpY3BnMTI1Mlxjb2NvYXJ0Zjk0OVxjb2NvYXN1YnJ0ZjM1MAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0MCBIZWx2ZXRpY2E7fQp7XGNvbG9ydGJsO1xyZWQyNTVcZ3JlZW4yNTVcYmx1ZTI1NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccWxccW5hdHVyYWxccGFyZGlybmF0dXJhbAoKXGYwXGZzMjQgXGNmMCAyMDA4MTEyNlwKRGlzcGxheSBvZiBhbiBGb0YgaW5mbyBkaWQgbm90IHByb3Blcmx5IHNob3cgdGhlIGN1c3RvbSBVbmljb2RlIGNoYXJhY3RlciBhdCB0aGUgc3RhcnQgb2YgdGhlIG5hbWUgaW4gdGhlIE5TT3V0bGluZVZpZXcuICBJdCBkaWQgZGlzcGxheSBwcm9wZXJseSBpbiB0aGUgYXNzb2NpYXRlZCB0b29sdGlwLiAgTm90IHN1cmUgdGhpcyBpcyBhIHByb2JsZW0ufYY=
+</attribute>
+        <attribute name="itemcreationdate" type="date">249440535.44519999623298645020</attribute>
+        <attribute name="itemcompletiondate" type="date">249440535.44519999623298645020</attribute>
+    </object>
+    <object type="TODOITEM" id="z175">
+        <attribute name="itemtitle" type="string">Chat window auto-scroll</attribute>
+        <attribute name="itempriority" type="string">Medium</attribute>
+        <attribute name="itemnumber" type="int32">75</attribute>
+        <attribute name="itemduedate" type="date">250140881.22362700104713439941</attribute>
+        <attribute name="itemdone" type="bool">1</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgWkBhAZbMzYxY117XHJ0ZjFcYW5zaVxhbnNpY3BnMTI1Mlxjb2NvYXJ0Zjk0OVxjb2NvYXN1YnJ0ZjM1MAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0MCBIZWx2ZXRpY2E7fQp7XGNvbG9ydGJsO1xyZWQyNTVcZ3JlZW4yNTVcYmx1ZTI1NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccWxccW5hdHVyYWxccGFyZGlybmF0dXJhbAoKXGYwXGZzMjQgXGNmMCBTY3JvbGwgdGhlIGNoYXQgdGV4dCB2aWV3IHVwb24gYWRkaXRpb24gb2YgbmV3IG1lc3NhZ2VzLiAgU2hvdyB0aGUgbGF0ZXN0IG1lc3NhZ2UuXApcCjVEZWMwOCBmaXhlZC59hg==
+</attribute>
+        <attribute name="itemcreationdate" type="date">250140881.22362700104713439941</attribute>
+        <attribute name="itemcompletiondate" type="date">250227281.22362700104713439941</attribute>
+    </object>
+    <object type="TODOITEM" id="z176">
+        <attribute name="itemtitle" type="string">Chat Rooms</attribute>
+        <attribute name="itempriority" type="string">Low</attribute>
+        <attribute name="itemnumber" type="int32">76</attribute>
+        <attribute name="itemduedate" type="date">250141095.59497600793838500977</attribute>
+        <attribute name="itemdone" type="bool">0</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgTABhAZbMzA0Y117XHJ0ZjFcYW5zaVxhbnNpY3BnMTI1Mlxjb2NvYXJ0Zjk0OVxjb2NvYXN1YnJ0ZjM1MAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0MCBIZWx2ZXRpY2E7fQp7XGNvbG9ydGJsO1xyZWQyNTVcZ3JlZW4yNTVcYmx1ZTI1NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccWxccW5hdHVyYWxccGFyZGlybmF0dXJhbAoKXGYwXGZzMjQgXGNmMCBBZGQgc3VwcG9ydCBmb3IgY2hhdCByb29tcyAodXNlciByZXF1ZXN0KS59hg==
+</attribute>
+        <attribute name="itemcreationdate" type="date">250141095.59497600793838500977</attribute>
+        <attribute name="itemcompletiondate" type="date">250141095.59497600793838500977</attribute>
+    </object>
+    <object type="TODOITEM" id="z177">
+        <attribute name="itemtitle" type="string">Auto-expand friend groups</attribute>
+        <attribute name="itempriority" type="string">Medium</attribute>
+        <attribute name="itemnumber" type="int32">77</attribute>
+        <attribute name="itemduedate" type="date">250141225.60302099585533142090</attribute>
+        <attribute name="itemdone" type="bool">0</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgWwBhAZbMzY0Y117XHJ0ZjFcYW5zaVxhbnNpY3BnMTI1Mlxjb2NvYXJ0Zjk0OVxjb2NvYXN1YnJ0ZjM1MAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0MCBIZWx2ZXRpY2E7fQp7XGNvbG9ydGJsO1xyZWQyNTVcZ3JlZW4yNTVcYmx1ZTI1NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccWxccW5hdHVyYWxccGFyZGlybmF0dXJhbAoKXGYwXGZzMjQgXGNmMCBSaWdodCBub3cgaXQgZXhwYW5kcyBldmVyeSBpc3N1ZSBhdXRvbWF0aWNhbGx5LCBhbmQgbm90IGNvbnNpc3RlbnRseS4gIFNvbWUgdGltZXMgaXQgZG9lc24ndC4gIEZpeCBpdC59hg==
+</attribute>
+        <attribute name="itemcreationdate" type="date">250141225.60302099585533142090</attribute>
+        <attribute name="itemcompletiondate" type="date">250141225.60302099585533142090</attribute>
+    </object>
+    <object type="TODOITEM" id="z178">
+        <attribute name="itemtitle" type="string">Login elsewhere abort error</attribute>
+        <attribute name="itempriority" type="string">Low</attribute>
+        <attribute name="itemnumber" type="int32">78</attribute>
+        <attribute name="itemduedate" type="date">250301937.02146399021148681641</attribute>
+        <attribute name="itemdone" type="bool">1</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgW0BhAZbMzY1Y117XHJ0ZjFcYW5zaVxhbnNpY3BnMTI1Mlxjb2NvYXJ0Zjk0OVxjb2NvYXN1YnJ0ZjM1MAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0MCBIZWx2ZXRpY2E7fQp7XGNvbG9ydGJsO1xyZWQyNTVcZ3JlZW4yNTVcYmx1ZTI1NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccWxccW5hdHVyYWxccGFyZGlybmF0dXJhbAoKXGYwXGZzMjQgXGNmMCBqYXNhcmllbidzIHJlcG9ydCAtIHdoZW4gbG9nZ2luZyBpbiBlbHNld2hlcmUgaXQgZG9lc24ndCBkaXNjb25uZWN0LlwKXAoyMDA4MTIwOCAtIFNob3VsZCBiZSBmaXhlZCBub3cufYY=
+</attribute>
+        <attribute name="itemcreationdate" type="date">250301937.02146399021148681641</attribute>
+        <attribute name="itemcompletiondate" type="date">250388337.02146399021148681641</attribute>
+    </object>
+    <object type="TODOITEM" id="z179">
+        <attribute name="itemtitle" type="string">Friend of Friend -\u3e00 Friend</attribute>
+        <attribute name="itempriority" type="string">High</attribute>
+        <attribute name="itemnumber" type="int32">79</attribute>
+        <attribute name="itemduedate" type="date">250327502.91196700930595397949</attribute>
+        <attribute name="itemdone" type="bool">1</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgdMBhAZbNDY3Y117XHJ0ZjFcYW5zaVxhbnNpY3BnMTI1Mlxjb2NvYXJ0Zjk0OVxjb2NvYXN1YnJ0ZjM1MAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0MCBIZWx2ZXRpY2E7fQp7XGNvbG9ydGJsO1xyZWQyNTVcZ3JlZW4yNTVcYmx1ZTI1NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccWxccW5hdHVyYWxccGFyZGlybmF0dXJhbAoKXGYwXGZzMjQgXGNmMCBOZWVkIGNvZGUgdG8gaGFuZGxlIHdoZW4gYSBmcmllbmQgaXMgbW92ZWQgZnJvbSBGcmllbmQgb2YgRnJpZW5kIHRvIEZyaWVuZCBzdGF0dXMgdmlhIGFuIGFjY2VwdGFuY2UuICBDdXJyZW50bHkgdGhleSB3aWxsIHN0YXkgRnJpZW5kIG9mIEZyaWVuZC4gIFNwZWNpZmljIGxvZyAyMDA4MTIwNi05LlwKXAoyMDA4MTIwNyAtIFNob3VsZCBiZSBmaXhlZCBub3cufYY=
+</attribute>
+        <attribute name="itemcreationdate" type="date">250327502.91196700930595397949</attribute>
+        <attribute name="itemcompletiondate" type="date">250327502.91196700930595397949</attribute>
+    </object>
+    <object type="TODOITEM" id="z180">
+        <attribute name="itemtitle" type="string">Sort Search Results Window</attribute>
+        <attribute name="itempriority" type="string">Low</attribute>
+        <attribute name="itemnumber" type="int32">80</attribute>
+        <attribute name="itemduedate" type="date">250488192.57815200090408325195</attribute>
+        <attribute name="itemdone" type="bool">0</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgTQBhAZbMzA4Y117XHJ0ZjFcYW5zaVxhbnNpY3BnMTI1Mlxjb2NvYXJ0Zjk0OVxjb2NvYXN1YnJ0ZjM1MAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0MCBIZWx2ZXRpY2E7fQp7XGNvbG9ydGJsO1xyZWQyNTVcZ3JlZW4yNTVcYmx1ZTI1NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccWxccW5hdHVyYWxccGFyZGlybmF0dXJhbAoKXGYwXGZzMjQgXGNmMCBBZGQgc29ydGluZyBvZiB0aGUgc2VhcmNoIHJlc3VsdHMgd2luZG93IHBhbmUufYY=
+</attribute>
+        <attribute name="itemcreationdate" type="date">250488192.57815200090408325195</attribute>
+        <attribute name="itemcompletiondate" type="date">250488192.57815200090408325195</attribute>
+    </object>
+    <object type="TODOITEM" id="z181">
+        <attribute name="itemtitle" type="string">Add timeout check for keepalive response</attribute>
+        <attribute name="itempriority" type="string">High</attribute>
+        <attribute name="itemnumber" type="int32">81</attribute>
+        <attribute name="itemduedate" type="date">250570958.17207700014114379883</attribute>
+        <attribute name="itemdone" type="bool">1</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgVIBhAZbMzM4Y117XHJ0ZjFcYW5zaVxhbnNpY3BnMTI1Mlxjb2NvYXJ0Zjk0OVxjb2NvYXN1YnJ0ZjM1MAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0MCBIZWx2ZXRpY2E7fQp7XGNvbG9ydGJsO1xyZWQyNTVcZ3JlZW4yNTVcYmx1ZTI1NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccWxccW5hdHVyYWxccGFyZGlybmF0dXJhbAoKXGYwXGZzMjQgXGNmMCBXaGVuIHRoZSBjb25uZWN0aW9uIGlzIGxvc3QgeW91IHdvbid0IHNlZSBhIHJlc3BvbnNlLlwKXAoxLzEvMDkgLSBDb21wbGV0ZWQufYY=
+</attribute>
+        <attribute name="itemcreationdate" type="date">250570958.17207700014114379883</attribute>
+        <attribute name="itemcompletiondate" type="date">252558157.17207717895507812500</attribute>
+    </object>
+    <object type="TODOITEM" id="z182">
+        <attribute name="itemtitle" type="string">Make text in the list copy-able</attribute>
+        <attribute name="itempriority" type="string">Medium</attribute>
+        <attribute name="itemnumber" type="int32">82</attribute>
+        <attribute name="itemduedate" type="date">250895309.31871899962425231934</attribute>
+        <attribute name="itemdone" type="bool">0</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgWgBhAZbMzYwY117XHJ0ZjFcYW5zaVxhbnNpY3BnMTI1Mlxjb2NvYXJ0Zjk0OVxjb2NvYXN1YnJ0ZjM1MAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0MCBIZWx2ZXRpY2E7fQp7XGNvbG9ydGJsO1xyZWQyNTVcZ3JlZW4yNTVcYmx1ZTI1NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccWxccW5hdHVyYWxccGFyZGlybmF0dXJhbAoKXGYwXGZzMjQgXGNmMCBTZXJhcGgncyByZXF1ZXN0IHRvIGJlIGFibGUgdG8gY29weSBJUCBhZGRyZXNzLiAgTmVlZCB0byBiZSBhYmxlIHRvIGRvIHdpdGhvdXQgbW9kaWZ5aW5nIHRoZSB0ZXh0Ln2G
+</attribute>
+        <attribute name="itemcreationdate" type="date">250895309.31871899962425231934</attribute>
+        <attribute name="itemcompletiondate" type="date">250895309.31871899962425231934</attribute>
+    </object>
+    <object type="TODOITEM" id="z183">
+        <attribute name="itemtitle" type="string">Add "tag contact"</attribute>
+        <attribute name="itempriority" type="string">Low</attribute>
+        <attribute name="itemnumber" type="int32">83</attribute>
+        <attribute name="itemduedate" type="date">250934615.35439300537109375000</attribute>
+        <attribute name="itemdone" type="bool">0</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgcgBhAZbNDU2Y117XHJ0ZjFcYW5zaVxhbnNpY3BnMTI1Mlxjb2NvYXJ0Zjk0OVxjb2NvYXN1YnJ0ZjM1MAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0MCBIZWx2ZXRpY2E7fQp7XGNvbG9ydGJsO1xyZWQyNTVcZ3JlZW4yNTVcYmx1ZTI1NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccWxccW5hdHVyYWxccGFyZGlybmF0dXJhbAoKXGYwXGZzMjQgXGNmMCBMaWtlIE1TIE9mZmljZSBDb21tdW5pY2F0b3IsIGFkZCB0aGUgYWJpbGl0eSB0byAidGFnIiBhIGNvbnRhY3Qgc28geW91IGdldCBhIG5vdGlmaWNhdGlvbiB3aGVuIHRoZSBmcmllbmQgZG9lcyBzb21ldGhpbmcgKHN0YXJ0cyBwbGF5aW5nIGEgZ2FtZSwgc3RvcHMgcGxheWluZyBhIGdhbWUsIGNoYW5nZXMgc3RhdHVzIHRleHQsIGV0Yy4pLn2G
+</attribute>
+        <attribute name="itemcreationdate" type="date">250934615.35439300537109375000</attribute>
+        <attribute name="itemcompletiondate" type="date">250934615.35439300537109375000</attribute>
+    </object>
+    <object type="TODOITEM" id="z184">
+        <attribute name="itemtitle" type="string">Last time seen online</attribute>
+        <attribute name="itempriority" type="string">Medium</attribute>
+        <attribute name="itemnumber" type="int32">84</attribute>
+        <attribute name="itemduedate" type="date">251518440.52886301279067993164</attribute>
+        <attribute name="itemdone" type="bool">1</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgXMBhAZbMzcxY117XHJ0ZjFcYW5zaVxhbnNpY3BnMTI1Mlxjb2NvYXJ0Zjk0OVxjb2NvYXN1YnJ0ZjM1MAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0MCBIZWx2ZXRpY2E7fQp7XGNvbG9ydGJsO1xyZWQyNTVcZ3JlZW4yNTVcYmx1ZTI1NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccWxccW5hdHVyYWxccGFyZGlybmF0dXJhbAoKXGYwXGZzMjQgXGNmMCBSZWNvcmQgdGhlIGxhc3QgdGltZSB5b3Ugc2F3IHNvbWVvbmUgb25saW5lLiAgUmVxdWlyZXMgYSBsb2NhbCBjYWNoZSBvZiBrbm93biBmcmllbmRzLlwKXAoxLzEvMDkgLSBDb21wbGV0ZWQufYY=
+</attribute>
+        <attribute name="itemcreationdate" type="date">251518440.52886301279067993164</attribute>
+        <attribute name="itemcompletiondate" type="date">252555240.52886301279067993164</attribute>
+    </object>
+    <object type="TODOITEM" id="z185">
+        <attribute name="itemtitle" type="string">Beep for new message</attribute>
+        <attribute name="itempriority" type="string">Medium</attribute>
+        <attribute name="itemnumber" type="int32">85</attribute>
+        <attribute name="itemduedate" type="date">251620759.65267100930213928223</attribute>
+        <attribute name="itemdone" type="bool">0</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgTAChAZbNTYwY117XHJ0ZjFcYW5zaVxhbnNpY3BnMTI1Mlxjb2NvYXJ0Zjk0OVxjb2NvYXN1YnJ0ZjM1MAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0MCBIZWx2ZXRpY2E7fQp7XGNvbG9ydGJsO1xyZWQyNTVcZ3JlZW4yNTVcYmx1ZTI1NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccWxccW5hdHVyYWxccGFyZGlybmF0dXJhbAoKXGYwXGZzMjQgXGNmMCBQbGF5IHRoZSBzeXN0ZW0gYmVlcCB3aGVuIGEgbmV3IG1lc3NhZ2UgaXMgcmVjZWl2ZWQuICBJZiB3ZSBoYWQgb3RoZXIgc291bmRzIHRoYXQgd291bGQgYmUgbmljZSBidXQgc3lzdGVtIGJlZXAgd2lsbCBzdWZmaWNlIGZvciBub3cuXApcCkxvb2sgYXQgK1tOU1NvdW5kIHNvdW5kV2l0aE5hbWU6XSBmb3IgYSBsaXN0IG9mIGtub3duIHN5c3RlbSBzb3VuZCBsb2NhdGlvbnMuICBNYXliZSBhZGQgYSBsaXN0IHRvIHRoZSBwcmVmZXJlbmNlcyB3aW5kb3cgdG8gbGV0IHRoZSB1c2VyIHBpY2sgd2hhdCBzb3VuZCB0byB1c2UufYY=
+</attribute>
+        <attribute name="itemcreationdate" type="date">251620759.65267100930213928223</attribute>
+        <attribute name="itemcompletiondate" type="date">251620759.65267100930213928223</attribute>
+    </object>
+    <object type="TODOITEM" id="z186">
+        <attribute name="itemtitle" type="string">Tabbed Chat Window</attribute>
+        <attribute name="itempriority" type="string">Low</attribute>
+        <attribute name="itemnumber" type="int32">86</attribute>
+        <attribute name="itemduedate" type="date">252208384.50545400381088256836</attribute>
+        <attribute name="itemdone" type="bool">0</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgT4BhAZbMzE4Y117XHJ0ZjFcYW5zaVxhbnNpY3BnMTI1Mlxjb2NvYXJ0Zjk0OVxjb2NvYXN1YnJ0ZjM1MAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0MCBIZWx2ZXRpY2E7fQp7XGNvbG9ydGJsO1xyZWQyNTVcZ3JlZW4yNTVcYmx1ZTI1NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccWxccW5hdHVyYWxccGFyZGlybmF0dXJhbAoKXGYwXGZzMjQgXGNmMCBIYXZlIHRoZSBvcHRpb24gdG8gcHV0IGFsbCBjaGF0cyBpbnRvIG9uZSB0YWJiZWQgd2luZG93Ln2G
+</attribute>
+        <attribute name="itemcreationdate" type="date">252208384.50545400381088256836</attribute>
+        <attribute name="itemcompletiondate" type="date">252208384.50545400381088256836</attribute>
+    </object>
+    <object type="TODOITEM" id="z187">
+        <attribute name="itemtitle" type="string">Applescript</attribute>
+        <attribute name="itempriority" type="string">Low</attribute>
+        <attribute name="itemnumber" type="int32">87</attribute>
+        <attribute name="itemduedate" type="date">252709171.66002699732780456543</attribute>
+        <attribute name="itemdone" type="bool">0</attribute>
+        <attribute name="itemdescription" type="binary">BAtzdHJlYW10eXBlZIHoA4QBQISEhA1OU011dGFibGVEYXRhAISEBk5TRGF0YQCEhAhOU09iamVj
+dACFhAFpgTwBhAZbMzE2Y117XHJ0ZjFcYW5zaVxhbnNpY3BnMTI1Mlxjb2NvYXJ0Zjk0OVxjb2NvYXN1YnJ0ZjM1MAp7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0MCBIZWx2ZXRpY2E7fQp7XGNvbG9ydGJsO1xyZWQyNTVcZ3JlZW4yNTVcYmx1ZTI1NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccWxccW5hdHVyYWxccGFyZGlybmF0dXJhbAoKXGYwXGZzMjQgXGNmMCBFdmFsdWF0ZSB0aGUgZGlmZmljdWx0eSBvZiBhZGRpbmcgQXBwbGVzY3JpcHQgc3VwcG9ydC59hg==
+</attribute>
+        <attribute name="itemcreationdate" type="date">252709171.66002699732780456543</attribute>
+        <attribute name="itemcompletiondate" type="date">252709171.66002699732780456543</attribute>
+    </object>
+</database>
