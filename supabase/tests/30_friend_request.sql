@@ -18,4 +18,13 @@ SELECT accept_friend_request((
     AND receiver_id = '22222222-2222-4222-8222-222222222222'
 ));
 
+-- The friendship has to be visible to each side through friends_select, not
+-- only to the table owner.
+SELECT 'receiver_sees_friend=' || count(*) FROM friends
+WHERE friend_id = '11111111-1111-4111-8111-111111111111';
+
+SELECT set_config('request.jwt.claim.sub', '11111111-1111-4111-8111-111111111111', false);
+SELECT 'sender_sees_friend=' || count(*) FROM friends
+WHERE friend_id = '22222222-2222-4222-8222-222222222222';
+
 RESET ROLE;

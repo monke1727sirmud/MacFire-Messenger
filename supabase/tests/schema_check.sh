@@ -18,6 +18,7 @@ MIGRATIONS=("$ROOT"/supabase/migrations/*.sql)
 # The pre-trigger accounts seeded by 10_pre_trigger_accounts.sql.
 SENDER=11111111-1111-4111-8111-111111111111
 RECEIVER=22222222-2222-4222-8222-222222222222
+BYSTANDER=33333333-3333-4333-8333-333333333333
 
 if [ -n "${PG_BIN:-}" ]; then
   export PATH="$PG_BIN:$PATH"
@@ -77,6 +78,19 @@ run_sql() {
   fi
 }
 
+# Like run_sql, but keeps the output so a test can assert on what a signed-in
+# user sees; a failure is reported without stopping the remaining checks.
+run_capture() {
+  local file=$1 log=$2 label=$3
+  if PSQL -tA -d "$DB" -v ON_ERROR_STOP=1 --single-transaction -f "$file" > "$WORK/$log" 2>&1; then
+    echo "ok    $label"
+  else
+    echo "FAIL  $label"
+    tail -20 "$WORK/$log"
+    FAILED=1
+  fi
+}
+
 # SQL that must be refused, with the message the function raises.
 rejects() {
   local expected=$1 label=$2 sql=$3
@@ -133,19 +147,16 @@ check "4" "$(q "select count(*) from pg_publication_tables where pubname='supaba
 check "1" "$(q "select count(*) from pg_trigger where tgrelid='auth.users'::regclass and not tgisinternal")" "auth.users trigger"
 
 echo "--- RLS smoke test (previously recursed) ---"
-if PSQL -tA -d "$DB" -v ON_ERROR_STOP=1 --single-transaction -f "$TESTS/20_rls_smoke.sql" > "$WORK/rls.log" 2>&1; then
-  check "members=1,rooms=1,messages=1" "$(grep '^members=' "$WORK/rls.log")" "authenticated user sees room, membership and messages"
-else
-  echo "FAIL  RLS smoke test"
-  tail -20 "$WORK/rls.log"
-  FAILED=1
-fi
+run_capture "$TESTS/20_rls_smoke.sql" rls.log "RLS smoke test"
+check "members=1,rooms=1,messages=1" "$(grep '^members=' "$WORK/rls.log")" "authenticated user sees room, membership and messages"
 
 # A pending request from SENDER to RECEIVER, accepted by RECEIVER.
 echo "--- accept_friend_request end to end ---"
-run_sql "$TESTS/30_friend_request.sql" "friend request: sender asks, receiver accepts"
+run_capture "$TESTS/30_friend_request.sql" friend.log "friend request: sender asks, receiver accepts"
 check "accepted" "$(q "select status from friend_requests where sender_id = '$SENDER' and receiver_id = '$RECEIVER'")" "request marked accepted"
 check "2" "$(q "select count(*) from friends where (user_id, friend_id) in (('$SENDER','$RECEIVER'), ('$RECEIVER','$SENDER'))")" "friendship written in both directions"
+check "receiver_sees_friend=1" "$(grep '^receiver_sees_friend=' "$WORK/friend.log")" "receiver sees the friendship through RLS"
+check "sender_sees_friend=1" "$(grep '^sender_sees_friend=' "$WORK/friend.log")" "sender sees the friendship through RLS"
 
 echo "--- accept_friend_request guards ---"
 REQUEST="(select id from friend_requests where sender_id = '$SENDER' and receiver_id = '$RECEIVER')"
@@ -153,6 +164,10 @@ rejects "only the receiver can accept this request" "sender cannot accept their 
   "begin; set local role authenticated; select set_config('request.jwt.claim.sub', '$SENDER', true); select accept_friend_request($REQUEST); commit;"
 rejects "friend request already handled" "an accepted request cannot be accepted twice" \
   "begin; set local role authenticated; select set_config('request.jwt.claim.sub', '$RECEIVER', true); select accept_friend_request($REQUEST); commit;"
+# With no claim auth.uid() is NULL, which must fail rather than satisfy the
+# receiver check.
+rejects "only the receiver can accept this request" "a session without a JWT claim cannot accept" \
+  "begin; insert into friend_requests (id, sender_id, receiver_id) values ('eeeeeeee-1111-4111-8111-eeeeeeeeeeee', '$SENDER', '$BYSTANDER'); set local role authenticated; select accept_friend_request('eeeeeeee-1111-4111-8111-eeeeeeeeeeee'); commit;"
 
 if [ "$FAILED" -eq 0 ]; then echo "RESULT: all checks passed"; else echo "RESULT: failures present"; fi
 exit "$FAILED"

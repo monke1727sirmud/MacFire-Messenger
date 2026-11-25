@@ -109,7 +109,9 @@ BEGIN
   IF r.id IS NULL THEN
     RAISE EXCEPTION 'friend request not found';
   END IF;
-  IF r.receiver_id <> auth.uid() THEN
+  -- IS DISTINCT FROM so a missing claim (auth.uid() is NULL) is refused rather
+  -- than silently skipped by the NULL comparison.
+  IF r.receiver_id IS DISTINCT FROM auth.uid() THEN
     RAISE EXCEPTION 'only the receiver can accept this request';
   END IF;
   IF r.status <> 'pending' THEN
