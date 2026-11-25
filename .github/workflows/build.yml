@@ -51,10 +51,15 @@ jobs:
             -derivedDataPath build-Debug \
             CODE_SIGNING_ALLOWED=NO \
             analyze 2>&1 | tee analyze.log
-          findings=$(grep -Ec ':[0-9]+:[0-9]+: (warning|error):' analyze.log || true)
-          if [ "$findings" -gt 0 ]; then
-            echo "::error::Clang static analyzer reported ${findings} finding(s); see the analyze.log artifact."
-            grep -m 20 -E ':[0-9]+:[0-9]+: (warning|error):' analyze.log
+          # Compiler diagnostics carry their warning flag ([-Wdeprecated-declarations]
+          # etc.); analyzer findings carry a checker name ([unix.Malloc]) or no
+          # flag at all. Keep only the latter so deprecation warnings stay green.
+          grep -E ':[0-9]+:[0-9]+: (warning|error): ' analyze.log \
+            | grep -Ev '\[-W[A-Za-z0-9_,-]+\][[:space:]]*$' > analyzer-findings.txt || true
+          if [ -s analyzer-findings.txt ]; then
+            findings=$(wc -l < analyzer-findings.txt | tr -d ' ')
+            echo "::error::Clang static analyzer reported ${findings} finding(s); see analyzer-findings.txt and analyze.log."
+            sed -n '1,20p' analyzer-findings.txt
             exit 1
           fi
 
@@ -66,4 +71,5 @@ jobs:
           path: |
             build-${{ matrix.configuration }}.log
             analyze.log
+            analyzer-findings.txt
           if-no-files-found: ignore
