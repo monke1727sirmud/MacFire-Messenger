@@ -36,13 +36,10 @@ NSString *kMFOutgoingKey = @"Outgoing";
 
 - (void)dealloc
 {
-	[_log release];
-	[_path release];
 	
 	_log = nil;
 	_path = nil;
 	
-	[super dealloc];
 }
 
 - (void)addMessage:(NSString *)msg fromFriend:(XfireFriend *)fr outgoing:(BOOL)outgoing
@@ -74,7 +71,7 @@ NSString *kMFOutgoingKey = @"Outgoing";
 
 - (void)setPath:(NSString *)logFilePath
 {
-	_path = [[logFilePath copy] retain];
+	_path = [logFilePath copy];
 	if( [_log count] > 0 )
 	{
 		[self updateLogFile];

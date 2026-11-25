@@ -69,8 +69,8 @@ extern NSString *MFPreferencesChangedNotificationName;
 - (NSColor *)myNameChatColor; // JA ( http://xblaze.co.uk ) Allow user to choose colours for the names shown in the chat history
 
 // notifications
-- (BOOL)shouldPostGrowlNotifications; // default YES
-- (BOOL)postGrowlNotificationsWhileActive; // default NO
+- (BOOL)shouldPostNotifications; // default YES
+- (BOOL)postNotificationsWhileActive; // default NO
 
 // official Xfire stuff
 - (BOOL)poseAsNewerXfireClient;
@@ -104,8 +104,8 @@ extern NSString *MFPreferencesChangedNotificationName;
 - (void)setShowTimeStampsInChats:(BOOL)show;
 - (void)setLogChats:(BOOL)log;
 - (void)setChatTextFont:(NSFont *)font;
-- (void)setShouldPostGrowlNotifications:(BOOL)post;
-- (void)setPostGrowlNotificationsWhileActive:(BOOL)post;
+- (void)setShouldPostNotifications:(BOOL)post;
+- (void)setPostNotificationsWhileActive:(BOOL)post;
 - (void)setPoseAsNewerXfireClient:(BOOL)pose;
 - (void)setPosingXfireClientVersion:(unsigned int)version;
 - (void)setDefaultChatColorForFriendsName:(NSColor *)aColor; // JA ( http://xblaze.co.uk ) Allow user to choose colours for the names shown in the chat history

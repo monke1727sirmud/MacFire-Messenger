@@ -16,8 +16,10 @@ Documentation/   Contains Release notes and a sub-folder containing my understan
                  of the Xfire network protocol (HTML format).  Both are continually
                  updated.
 
-Frameworks/      Contains external frameworks (as of this writing just the Growl client
-                 framework) used by MacFire.
+Frameworks/      Previously contained the bundled Growl client framework.  That framework
+                 was 32-bit only and is no longer usable, so it has been removed;
+                 notifications are now posted through the system UserNotifications
+                 framework instead.
 
 Games/           Contains the Games.plist file used by MacFire, the packaged icons file,
                  and code for a utility used to help build the Games.plist file using

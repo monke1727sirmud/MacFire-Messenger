@@ -48,13 +48,6 @@ XfireSkin *gTheSkin = nil;
 	return self;
 }
 
-- (void)dealloc
-{
-	[_skinName release];
-	[_themeName release];
-	[super dealloc];
-}
-
 - (NSString *)name
 {
 	return _skinName;

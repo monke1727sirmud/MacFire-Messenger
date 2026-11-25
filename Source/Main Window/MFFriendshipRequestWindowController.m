@@ -26,24 +26,17 @@
 
 @implementation MFFriendshipRequestWindowController
 
-- (id)initWithSession:(XfireSession *)session requestor:(XfireFriend *)fr message:(NSString *)msg mainWindow:(MFMainWindowController *)mainWindow
+- (instancetype)initWithSession:(XfireSession *)session requestor:(XfireFriend *)fr message:(NSString *)msg mainWindow:(MFMainWindowController *)mainWindow
 {
 	self = [super initWithWindowNibName:@"FriendshipRequestWindow"];
 	if( self )
 	{
 		_xfSession = session;
-		_requestor = [fr retain];
-		_message = [msg retain];
+		_requestor = fr;
+		_message = [msg copy];
 		_mainWindow = mainWindow;
 	}
 	return self;
-}
-
-- (void)dealloc
-{
-	[_requestor release];
-	[_message release];
-	[super dealloc];
 }
 
 - (void)runModalForWindow:(NSWindow *)win
@@ -96,8 +89,11 @@
 		[_xfSession acceptFriendRequest:_requestor];
 	}
 	
+	// Keep this controller alive while the main window drops its reference to it.
+	MFFriendshipRequestWindowController *keepAlive = self;
+	[_mainWindow friendRequestControllerDidFinish:self];
 	[_mainWindow friendRequestSheetDidEnd];
-	[self autorelease];
+	(void)keepAlive;
 }
 
 @end

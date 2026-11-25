@@ -25,12 +25,12 @@
 
 + (id)emitter
 {
-	return [[[MFDataEmitter alloc] init] autorelease];
+	return [[MFDataEmitter alloc] init];
 }
 
 + (id)emitterWithCapacity:(unsigned long)cap
 {
-	return [[[MFDataEmitter alloc] initWithCapacity:cap] autorelease];
+	return [[MFDataEmitter alloc] initWithCapacity:cap];
 }
 
 - (id)init
@@ -51,12 +51,6 @@
 		_data = [[NSMutableData alloc] initWithCapacity:cap];
 	}
 	return self;
-}
-
-- (void)dealloc
-{
-	[_data release];
-	[super dealloc];
 }
 
 - (NSData *)data

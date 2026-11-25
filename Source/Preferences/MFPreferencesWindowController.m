@@ -20,13 +20,13 @@
 
 #import "MFPreferencesWindowController.h"
 #import "MFPreferences.h"
-#import "MFGrowlHelper.h"
+#import "MFNotificationHelper.h"
 #import "MFUserIdleMonitor.h"
 #import "MFSoundManager.h"
 
 @implementation MFPreferencesWindowController
 
-- (id)init
+- (instancetype)init
 {
 	self = [super initWithWindowNibName:@"PreferencesWindow"];
 	if( self )
@@ -60,14 +60,14 @@
 	
 	SET_CHECKBOX( _setIdleAutomaticallyButton, [prefs showIdleStatusAutomatically] );
 	SET_CHECKBOX( _poseAsRecentXfireClientButton, [prefs poseAsNewerXfireClient] );
-	SET_CHECKBOX( _notifyUsingGrowlButton, [prefs shouldPostGrowlNotifications] );
-	SET_CHECKBOX( _notifyWhenInFrontButton, [prefs postGrowlNotificationsWhileActive] );
+	SET_CHECKBOX( _notifyUsingGrowlButton, [prefs shouldPostNotifications] );
+	SET_CHECKBOX( _notifyWhenInFrontButton, [prefs postNotificationsWhileActive] );
 	SET_CHECKBOX( _showWhenTypingInChatButton, [prefs showWhenTyping] );
 	SET_CHECKBOX( _showChatTimeStampsButton, [prefs showTimeStampsInChats] );
 	SET_CHECKBOX( _logChatsButton, [prefs logChats] );
 	SET_CHECKBOX( _logXfireNetworkTrafficButton, [prefs logXfireNetworkTraffic] );
 	
-	if( ! [[MFGrowlHelper helper] isGrowlInstalled] )
+	if( ! [[MFNotificationHelper helper] isNotificationCenterAvailable] )
 	{
 		[_notifyUsingGrowlButton setEnabled:NO];
 		[_notifyWhenInFrontButton setEnabled:NO];
@@ -123,8 +123,8 @@
 	[prefs setNameDisplayStyle:[_nameDisplayStyle selectedTag]];
 	[prefs setShowIdleStatusAutomatically:GET_CHECKBOX(_setIdleAutomaticallyButton)];
 	[prefs setPoseAsNewerXfireClient:GET_CHECKBOX(_poseAsRecentXfireClientButton)];
-	[prefs setShouldPostGrowlNotifications:GET_CHECKBOX(_notifyUsingGrowlButton)];
-	[prefs setPostGrowlNotificationsWhileActive:GET_CHECKBOX(_notifyWhenInFrontButton)];
+	[prefs setShouldPostNotifications:GET_CHECKBOX(_notifyUsingGrowlButton)];
+	[prefs setPostNotificationsWhileActive:GET_CHECKBOX(_notifyWhenInFrontButton)];
 	[prefs setShowWhenTyping:GET_CHECKBOX(_showWhenTypingInChatButton)];
 	[prefs setShowTimeStampsInChats:GET_CHECKBOX(_showChatTimeStampsButton)];
 	[prefs setLogChats:GET_CHECKBOX(_logChatsButton)];
@@ -169,8 +169,7 @@
 
 - (IBAction)resetChatFont:(id)sender
 {
-	[_selectedFont release];
-	_selectedFont = [[MFPreferences defaultChatTextFont] retain];
+	_selectedFont = [MFPreferences defaultChatTextFont];
 	[_chatFontField setStringValue:[NSString stringWithFormat:@"%@ - %.0f", [_selectedFont displayName], [_selectedFont pointSize]]];
 }
 
@@ -200,7 +199,7 @@
 	NSFontManager *mgr = sender;
 	NSFont *newFont = [mgr convertFont:[[MFPreferences preferences] chatTextFont]];
 	[_chatFontField setStringValue:[NSString stringWithFormat:@"%@ - %.0f", [newFont displayName], [newFont pointSize]]];
-	_selectedFont = [newFont retain];
+	_selectedFont = newFont;
 }
 
 @end

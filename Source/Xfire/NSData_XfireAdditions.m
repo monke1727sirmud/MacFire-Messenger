@@ -17,20 +17,17 @@
 *******************************************************************/
 
 #import "NSData_XfireAdditions.h"
-#include <openssl/sha.h>
+#import <CommonCrypto/CommonDigest.h>
 
 @implementation NSData (XfireAdditions)
 
 - (NSData*)sha1Hash
 {
-	SHA_CTX			ctx;
-	unsigned char	hash[SHA_DIGEST_LENGTH];
+	unsigned char hash[CC_SHA1_DIGEST_LENGTH];
 	
-	SHA1_Init(&ctx);
-	SHA1_Update(&ctx,[self bytes],[self length]);
-	SHA1_Final(hash,&ctx);
+	CC_SHA1([self bytes], (CC_LONG)[self length], hash);
 	
-	return [NSData dataWithBytes:hash length:SHA_DIGEST_LENGTH];
+	return [NSData dataWithBytes:hash length:CC_SHA1_DIGEST_LENGTH];
 }
 
 // prints all bytes as consecutive strings

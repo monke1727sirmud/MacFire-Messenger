@@ -26,7 +26,7 @@
 
 + (id)map
 {
-	return [[[XfirePacketAttributeMap alloc] init] autorelease];
+	return [[XfirePacketAttributeMap alloc] init];
 }
 
 - (id)init
@@ -34,19 +34,16 @@
 	self = [super init];
 	if( self )
 	{
-		_orderedKeys = [[NSMutableArray array] retain];
-		_data = [[NSMutableDictionary dictionary] retain];
+		_orderedKeys = [NSMutableArray array];
+		_data = [NSMutableDictionary dictionary];
 	}
 	return self;
 }
 
 - (void)dealloc
 {
-	[_orderedKeys release];
-	[_data release];
 	_orderedKeys = nil;
 	_data = nil;
-	[super dealloc];
 }
 
 - (void)setObject:(XfirePacketAttributeValue *)value forKey:(id)aKey

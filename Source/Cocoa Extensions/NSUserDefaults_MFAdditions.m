@@ -10,57 +10,79 @@
 		Useful additions to NSUserDefaults.
 	
 	HISTORY:
+		2026 11 25  Replaced NSArchiver/NSUnarchiver with NSKeyedArchiver.
 		2009 01 01  Created.
 *******************************************************************/
 
 #import "NSUserDefaults_MFAdditions.h"
 
+// Decodes a keyed archive written by -setFont:forKey: or -setColor:forKey:.
+// The archives are created with requiringSecureCoding:NO so that all of the
+// NSFont/NSColor representations the system can produce are supported.
+static id MFUnarchiveObjectOfClass(NSData *data, Class cls)
+{
+	if( ![data isKindOfClass:[NSData class]] )
+		return nil;
+	
+	NSError *error = nil;
+	NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingFromData:data error:&error];
+	if( unarchiver == nil )
+		return nil;
+	
+	unarchiver.requiresSecureCoding = NO;
+	id obj = [unarchiver decodeObjectOfClass:cls forKey:NSKeyedArchiveRootObjectKey];
+	[unarchiver finishDecoding];
+	
+	if( ![obj isKindOfClass:cls] )
+		return nil;
+	
+	return obj;
+}
+
 @implementation NSUserDefaults (MFAdditions)
 
 - (NSFont *)fontForKey:(NSString *)key
 {
-	NSData		*data;
-	NSFont		*font;
-	
-	data = [self objectForKey:key];
-	font = [NSUnarchiver unarchiveObjectWithData:data];
-	if( ! [font isKindOfClass:[NSFont class]] )
-	{
-		font = nil;
-	}
-	
-	return font;
+	return MFUnarchiveObjectOfClass([self objectForKey:key], [NSFont class]);
 }
 
 - (void)setFont:(NSFont *)font forKey:(NSString *)key
 {
-	NSData		*data;
-	data = [NSArchiver archivedDataWithRootObject:font];
-	[self setObject:data forKey:key];
+	if( font == nil )
+	{
+		[self removeObjectForKey:key];
+		return;
+	}
+	
+	NSError *error = nil;
+	NSData *data = [NSKeyedArchiver archivedDataWithRootObject:font requiringSecureCoding:NO error:&error];
+	if( data )
+		[self setObject:data forKey:key];
+	else
+		NSLog(@"[MacFire] Unable to archive the chat font: %@", error);
 }
 
 // JA ( http://xblaze.co.uk ) Allow user to choose colours for the names shown in the chat history
 - (NSColor *)colorForKey:(NSString *)key
 {
-	NSData		*data;
-	NSColor		*color;
-	
-	data = [self objectForKey:key];
-	color= [NSUnarchiver unarchiveObjectWithData:data];
-	if( ! [color isKindOfClass:[NSColor class]] )
-	{
-		color = nil;
-	}
-	
-	return color;
+	return MFUnarchiveObjectOfClass([self objectForKey:key], [NSColor class]);
 }
 
 // JA ( http://xblaze.co.uk ) Allow user to choose colours for the names shown in the chat history
 - (void)setColor:(NSColor *)color forKey:(NSString *)key
 {
-	NSData		*data;
-	data = [NSArchiver archivedDataWithRootObject:color];
-	[self setObject:data forKey:key];
+	if( color == nil )
+	{
+		[self removeObjectForKey:key];
+		return;
+	}
+	
+	NSError *error = nil;
+	NSData *data = [NSKeyedArchiver archivedDataWithRootObject:color requiringSecureCoding:NO error:&error];
+	if( data )
+		[self setObject:data forKey:key];
+	else
+		NSLog(@"[MacFire] Unable to archive the chat color: %@", error);
 }
 
 @end

@@ -173,8 +173,7 @@
 			NSDate *seenOnline = [cacheInfo objectForKey:kMFLastSeenOnlineKey];
 			if( seenOnline )
 			{
-				NSDateFormatter *dfmt = [[[NSDateFormatter alloc] init] autorelease];
-				[dfmt setFormatterBehavior:NSDateFormatterBehavior10_4];
+				NSDateFormatter *dfmt = [[NSDateFormatter alloc] init];
 				[dfmt setDateStyle:NSDateFormatterShortStyle];
 				[dfmt setTimeStyle:NSDateFormatterMediumStyle];
 				

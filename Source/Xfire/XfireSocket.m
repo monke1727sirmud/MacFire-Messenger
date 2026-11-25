@@ -14,6 +14,7 @@
 		interface logic.
 	
 	HISTORY:
+		2026 11 25  Replaced NSHost with hostname resolution via getaddrinfo.
 		2008 04 06  Changed copyright to BSD license.
 		2008 01 12  Rewrote using CFSocket and a delegate approach.
 		2007 11 17  Created.
@@ -23,13 +24,15 @@
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
+#include <arpa/inet.h>
+#include <netdb.h>
 
 static void _XfireSocketCallback(CFSocketRef sock, CFSocketCallBackType cbType, CFDataRef address, const void *data, void *info);
 
 @interface XfireSocket (Private)
 - (unsigned int)addressIntegerForPeer:(BOOL)peer;
 - (void)receiveData:(NSData *)data fromAddress:(NSData *)address;
-- (BOOL)getAddress:(struct sockaddr_in*)addr forHost:(NSHost *)aHost;
+- (BOOL)resolveHostName:(NSString *)hostName intoAddress:(struct sockaddr_in *)addr;
 - (void)closeWithReason:(int)reasonCode;
 - (void)_close;
 @end
@@ -40,7 +43,6 @@ static void _XfireSocketCallback(CFSocketRef sock, CFSocketCallBackType cbType, 
 - (void)dealloc
 {
 	[self _close];
-	[super dealloc];
 }
 
 - (void)setDelegate:(id)aDelegate
@@ -55,7 +57,7 @@ static void _XfireSocketCallback(CFSocketRef sock, CFSocketCallBackType cbType, 
 
 - (NSString *)ourAddress
 {
-	unsigned long addrInt = [self ourAddressInteger];
+	unsigned int addrInt = [self ourAddressInteger];
 	if( addrInt == 0 )
 		return nil;
 	
@@ -64,7 +66,7 @@ static void _XfireSocketCallback(CFSocketRef sock, CFSocketCallBackType cbType, 
 	iaddr.s_addr = htonl(addrInt);
 	if( inet_ntop( PF_INET, &iaddr, bfr, 64 ) )
 	{
-		return [NSString stringWithCString:bfr];
+		return [NSString stringWithUTF8String:bfr];
 	}
 	return nil;
 }
@@ -76,34 +78,25 @@ static void _XfireSocketCallback(CFSocketRef sock, CFSocketCallBackType cbType, 
 
 - (unsigned int)addressIntegerForPeer:(BOOL)peer
 {
-	NSData *addrObj;
 	const struct sockaddr_in *addr;
-	unsigned long addrInt;
+	unsigned int addrInt;
 	
 	if( _sock == NULL )
 		return 0;
 	
-	if( peer )
-		addrObj = (NSData*)CFSocketCopyPeerAddress( _sock );
-	else
-		addrObj = (NSData*)CFSocketCopyAddress( _sock );
-	if( addrObj == nil )
+	CFDataRef addrRef = peer ? CFSocketCopyPeerAddress(_sock) : CFSocketCopyAddress(_sock);
+	if( addrRef == NULL )
 		return 0;
+	NSData *addrObj = CFBridgingRelease(addrRef);
 	
 	if( [addrObj length] != sizeof(struct sockaddr_in) )
-	{
-		CFRelease(addrObj);
 		return 0;
-	}
-	addr = (const struct sockaddr_in*) [addrObj bytes];
+	
+	addr = (const struct sockaddr_in *)[addrObj bytes];
 	if( addr->sin_family != PF_INET )
-	{
-		CFRelease(addrObj);
 		return 0;
-	}
 	
 	addrInt = ntohl( addr->sin_addr.s_addr );
-	CFRelease(addrObj);
 	
 	return addrInt;
 }
@@ -122,29 +115,37 @@ static void _XfireSocketCallback(CFSocketRef sock, CFSocketCallBackType cbType, 
 	}
 }
 
-- (BOOL)getAddress:(struct sockaddr_in*)addr forHost:(NSHost *)aHost
+// Resolve the host name to an IPv4 address.  This replaces the
+// deprecated NSHost class.  Only IPv4 is supported by the Xfire protocol.
+- (BOOL)resolveHostName:(NSString *)hostName intoAddress:(struct sockaddr_in *)addr
 {
-	NSArray *addresses = [aHost addresses];
-	const char *addrString;
-	int i, cnt;
+	struct addrinfo hints;
+	struct addrinfo *results = NULL;
+	BOOL resolved = NO;
 	
-	// Some addresses are valid, others are not.  For example, it will return IPv6 address first for 'localhost'
-	// For now, we're only using the IPv4 address.  So, we just check all of them until inet_pton succeeds and gives
-	// us something.
-	cnt = [addresses count];
-	for( i = 0; i < cnt; i++ )
+	if( [hostName length] == 0 )
+		return NO;
+	
+	memset(&hints, 0, sizeof(hints));
+	hints.ai_family = AF_INET;
+	hints.ai_socktype = SOCK_STREAM;
+	hints.ai_protocol = IPPROTO_TCP;
+	
+	if( getaddrinfo([hostName UTF8String], NULL, &hints, &results) != 0 )
+		return NO;
+	
+	for( struct addrinfo *ai = results; ai != NULL; ai = ai->ai_next )
 	{
-		addrString = [[addresses objectAtIndex:i] UTF8String];
-		if( addrString != NULL )
+		if( (ai->ai_family == AF_INET) && (ai->ai_addrlen == sizeof(struct sockaddr_in)) )
 		{
-			if( inet_pton( addr->sin_family, addrString, &(addr->sin_addr) ) == 1 )
-			{
-				return YES;
-			}
+			memcpy(addr, ai->ai_addr, sizeof(struct sockaddr_in));
+			resolved = YES;
+			break;
 		}
 	}
 	
-	return NO;
+	freeaddrinfo(results);
+	return resolved;
 }
 
 - (void)close
@@ -175,12 +176,12 @@ static void _XfireSocketCallback(CFSocketRef sock, CFSocketCallBackType cbType, 
 		{
 			CFRunLoopRemoveSource( [_runLoop getCFRunLoop], _runLoopSource, kCFRunLoopDefaultMode );
 			CFRelease(_runLoopSource);
-			_runLoop = nil;
 		}
 		CFRelease(_sock);
 	}
 	_sock = NULL;
 	_runLoopSource = NULL;
+	_runLoop = nil;
 }
 
 - (BOOL)isConnected
@@ -192,7 +193,7 @@ static void _XfireSocketCallback(CFSocketRef sock, CFSocketCallBackType cbType, 
 
 @implementation XfireSocket (TCPSocket)
 
-- (id)initWithTCPConnectionToHost:(NSHost *)aHost port:(unsigned short)aPort
+- (instancetype)initWithTCPConnectionToHostName:(NSString *)hostName port:(unsigned short)aPort
 {
 	self = [super init];
 	if( self )
@@ -215,16 +216,18 @@ static void _XfireSocketCallback(CFSocketRef sock, CFSocketCallBackType cbType, 
 		addr.sin_family = AF_INET;
 		addr.sin_port = htons(aPort);
 		
-		if( ![self getAddress:&addr forHost:aHost] )
+		if( ![self resolveHostName:hostName intoAddress:&addr] )
 		{
-			[self release];
+			NSLog(@"Unable to resolve Xfire server host \"%@\"", hostName);
 			return nil;
 		}
-		sig.address = (CFDataRef)[NSData dataWithBytes:&addr length:sizeof(addr)];
+		
+		NSData *addressData = [NSData dataWithBytes:&addr length:sizeof(addr)];
+		sig.address = (__bridge CFDataRef)addressData;
 		
 		// Set up socket context (callbacks)
 		cxt.version = 0;
-		cxt.info = self;
+		cxt.info = (__bridge void *)self;
 		cxt.retain = nil;
 		cxt.release = nil;
 		cxt.copyDescription = nil;
@@ -235,10 +238,9 @@ static void _XfireSocketCallback(CFSocketRef sock, CFSocketCallBackType cbType, 
 			_XfireSocketCallback,
 			&cxt,
 			0.0);
-		if( _sock == nil )
+		if( _sock == NULL )
 		{
 			NSLog(@"failed to create socket");
-			[self release];
 			return nil;
 		}
 	}
@@ -249,7 +251,7 @@ static void _XfireSocketCallback(CFSocketRef sock, CFSocketCallBackType cbType, 
 {
 	if( _sock )
 	{
-		CFSocketError err = CFSocketSendData(_sock, NULL, (CFDataRef)data, 1.0); // wait up to 1 sec
+		CFSocketError err = CFSocketSendData(_sock, NULL, (__bridge CFDataRef)data, 1.0); // wait up to 1 sec
 		if( err == kCFSocketSuccess )
 		{
 			return YES;
@@ -269,7 +271,7 @@ static void _XfireSocketCallback(CFSocketRef sock, CFSocketCallBackType cbType, 
 
 - (NSString *)peerAddress
 {
-	unsigned long addrInt = [self addressIntegerForPeer:YES];
+	unsigned int addrInt = [self addressIntegerForPeer:YES];
 	if( addrInt == 0 )
 		return nil;
 	
@@ -278,7 +280,7 @@ static void _XfireSocketCallback(CFSocketRef sock, CFSocketCallBackType cbType, 
 	iaddr.s_addr = htonl(addrInt);
 	if( inet_ntop( PF_INET, &iaddr, bfr, 64 ) )
 	{
-		return [NSString stringWithCString:bfr];
+		return [NSString stringWithUTF8String:bfr];
 	}
 	return nil;
 }
@@ -302,30 +304,13 @@ static void _XfireSocketCallback(CFSocketRef sock, CFSocketCallBackType cbType, 
 
 void _XfireSocketCallback(CFSocketRef sock, CFSocketCallBackType cbType, CFDataRef address, const void *data, void *info)
 {
-	XfireSocket *xfsock = (XfireSocket*)info;
+	XfireSocket *xfsock = (__bridge XfireSocket *)info;
 	if( cbType == kCFSocketDataCallBack )
 	{
-		[xfsock receiveData:(NSData*)data fromAddress:(NSData*)address];
+		[xfsock receiveData:(__bridge NSData *)data fromAddress:(__bridge NSData *)address];
 	}
 	else
 	{
-		NSLog(@"_XfireSocketCallback received unknown callback type %d",cbType);
+		NSLog(@"_XfireSocketCallback received unknown callback type %u",(unsigned)cbType);
 	}
 }
-
-
-
-/*
-Future interfaces - not yet implemented
-*/
-//@interface XfireSocket (TCPSocket)
-//- (id)initTCPListeningOnPort:(unsigned short)aPort;
-//- (XfireSocket *)listen; // listening only
-//@end
-//
-//@interface XfireSocket (UDPSocket)
-//- (id)initUDPClient;
-//- (id)initUDPServerOnPort:(unsigned short)aPort;
-//- (void)sendData:(NSData *)data toHost:(NSHost *)aHost port:(unsigned short)aPort;
-//@end
-

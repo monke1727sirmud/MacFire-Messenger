@@ -246,7 +246,7 @@
 
 + (id)fileWithPath:(NSString *)path data:(NSData *)d
 {
-	return [[[ArchiveFile alloc] initWithPath:path data:d] autorelease];
+	return [[ArchiveFile alloc] initWithPath:path data:d];
 }
 
 - (id)initWithPath:(NSString *)aPath data:(NSData *)aData
@@ -254,17 +254,10 @@
 	self = [super init];
 	if( self )
 	{
-		_path = [aPath retain];
-		_data = [aData retain];
+		_path = [aPath copy];
+		_data = aData;
 	}
 	return self;
-}
-
-- (void)dealloc
-{
-	[_path release];
-	[_data release];
-	[super dealloc];
 }
 
 - (NSString *)path { return _path; }

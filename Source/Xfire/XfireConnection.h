@@ -36,9 +36,9 @@ typedef enum
 @interface XfireConnection : NSObject
 {
 	// Unchanging once created
-	NSHost					*_host;
+	NSString				*_hostName;
 	unsigned short			_port;
-	XfireSession			*_session; // not retained
+	__weak XfireSession		*_session; // owned by the session
 	
 	XfireSocket				*_socket;
 	XfireConnectionStatus	_status;
@@ -46,9 +46,8 @@ typedef enum
 }
 
 // The login connection is the initial connection to the Xfire server
-// NOTE: This does not autorelease the result.
 // TODO: Later: Connections to other things (peers, HTTP servers, etc.)
-+ (id)loginConnectionToHost:(NSHost *)host port:(unsigned short)portNumber;
++ (instancetype)loginConnectionToHostName:(NSString *)hostName port:(unsigned short)portNumber;
 
 
 // Get/set -- don't change this after set!

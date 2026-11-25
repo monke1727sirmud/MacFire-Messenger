@@ -21,7 +21,7 @@
 
 @interface XfireConnection (Private)
 
-- (id)initWithHost:(NSHost *)aHost port:(unsigned short)aPort;
+- (instancetype)initWithHostName:(NSString *)hostName port:(unsigned short)aPort;
 
 // Send arbitrary data
 // Should only be used by external classes (XfireLoginConnection) to send the "UA01" key!!!

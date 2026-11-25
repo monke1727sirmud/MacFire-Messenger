@@ -10,6 +10,8 @@
 		Useful methods for the NSFileManager class.
 	
 	HISTORY:
+		2026 11 25  Replaced the deprecated directoryContentsAtPath: and
+		            createDirectoryAtPath:attributes: calls.
 		2008 12 27  Created.
 *******************************************************************/
 
@@ -20,48 +22,42 @@
 + (BOOL)ensureDirectoryExistsAtPath:(NSString *)path attributes:(NSDictionary *)attrs
 {
 	NSFileManager *mgr = [self defaultManager];
-	BOOL isDir;
+	BOOL isDir = NO;
 	
 	if( [mgr fileExistsAtPath:path isDirectory:&isDir] )
 	{
-		if( isDir ) // something exists, is it a directory?
-		{
-			return YES;
-		}
-	}
-	else
-	{
-		// Does not exist, try to create it
-		if( [mgr createDirectoryAtPath:path attributes:attrs] )
-		{
-			return YES;
-		}
+		// something exists, is it a directory?
+		return isDir;
 	}
 	
-	// If we fall through to here, we failed to create the desired folder
+	// Does not exist, try to create it (including any missing parents)
+	NSError *error = nil;
+	if( [mgr createDirectoryAtPath:path withIntermediateDirectories:YES attributes:attrs error:&error] )
+	{
+		return YES;
+	}
+	
+	NSLog(@"[MacFire] Unable to create directory at %@: %@", path, error);
 	return NO;
 }
 
 - (NSArray *)fullSubpathsAtPath:(NSString *)folder
 {
-	if( folder )
+	if( folder == nil )
+		return nil;
+	
+	NSError *error = nil;
+	NSArray *dirList = [self contentsOfDirectoryAtPath:folder error:&error];
+	if( dirList == nil )
+		return nil;
+	
+	NSMutableArray *paths = [NSMutableArray arrayWithCapacity:[dirList count]];
+	for( NSString *name in dirList )
 	{
-		NSArray *dirList = [self directoryContentsAtPath:folder];
-		NSMutableArray *paths = nil;
-		if( dirList )
-		{
-			paths = [NSMutableArray array];
-			int i, cnt;
-			cnt = [dirList count];
-			for( i = 0; i < cnt; i++ )
-			{
-				[paths addObject:[folder stringByAppendingPathComponent:[dirList objectAtIndex:i]]];
-			}
-		}
-		return paths;
+		[paths addObject:[folder stringByAppendingPathComponent:name]];
 	}
 	
-	return nil;
+	return paths;
 }
 
 @end

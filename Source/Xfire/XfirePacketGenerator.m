@@ -62,7 +62,7 @@
 
 + (id)generatorWithID:(XfirePacketID)anID attributes:(XfirePacketAttributeMap *)attrs
 {
-	return [[[XfirePacketGenerator alloc] initWithID:anID attributes:attrs] autorelease];
+	return [[XfirePacketGenerator alloc] initWithID:anID attributes:attrs];
 }
 
 - (id)initWithID:(XfirePacketID)anID attributes:(XfirePacketAttributeMap *)attrs
@@ -70,22 +70,19 @@
 	self = [super init];
 	if( self )
 	{
-		_data = [[NSMutableData dataWithCapacity:65536] retain];
+		_data = [NSMutableData dataWithCapacity:65536];
 		_pktID = anID;
-		_attributes = [attrs retain];
+		_attributes = attrs;
 	}
 	return self;
 }
 
 - (void)dealloc
 {
-	[_data release];
-	[_attributes release];
 	
 	_data = nil;
 	_attributes = nil;
 	
-	[super dealloc];
 }
 
 //------------------------------------------------------------------------------------------------
@@ -227,12 +224,11 @@
 	
 	NSMutableData *tmp = _data;
 	
-	_data = [[NSMutableData data] retain];
+	_data = [NSMutableData data];
 	[self generateUInt16:finalLen];
 	[self generateUInt16:_pktID];
 	[_data appendData:tmp];
 	
-	[tmp release];
 	
 	return _data;
 }

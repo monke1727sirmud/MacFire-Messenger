@@ -42,9 +42,9 @@
 // helper
 + (NSString *)longNameForGameID:(int)gid;
 
-// pass the dictionary containing keys as populated by NSWorkspace
-+ (NSDictionary *)infoForMacApplication:(NSDictionary *)appInfo;
-- (NSDictionary *)infoForMacApplication:(NSDictionary *)appInfo;
+// pass the running application as reported by NSWorkspace
++ (NSDictionary *)infoForRunningApplication:(NSRunningApplication *)app;
+- (NSDictionary *)infoForRunningApplication:(NSRunningApplication *)app;
 
 - (NSImage *)defaultImage;
 

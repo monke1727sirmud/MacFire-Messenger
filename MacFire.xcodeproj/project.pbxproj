@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 42;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -36,10 +36,6 @@
 		249B65CA0E9310C000DA2654 /* XfireFriendGroupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 249B65C90E9310C000DA2654 /* XfireFriendGroupController.m */; };
 		249C0A640E947764000B902E /* XfireFriendGroup_MacFireAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 249C0A630E947764000B902E /* XfireFriendGroup_MacFireAdditions.m */; };
 		24AAF6B00D090C65002996AB /* PreferencesWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = 24AAF6AE0D090C65002996AB /* PreferencesWindow.nib */; };
-		24AB3D420D038A0A00049A5C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 24AB3D410D038A0A00049A5C /* libz.dylib */; };
-		24AB3D440D038A1D00049A5C /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 24AB3D430D038A1D00049A5C /* libcrypto.dylib */; };
-		24AB3D4B0D038A6400049A5C /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24AB3D4A0D038A6400049A5C /* Growl.framework */; };
-		24AB3D540D038A6A00049A5C /* Growl.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 24AB3D4A0D038A6400049A5C /* Growl.framework */; };
 		24AB3D5A0D038AB600049A5C /* icons.mar in Resources */ = {isa = PBXBuildFile; fileRef = 24AB3D570D038AB600049A5C /* icons.mar */; };
 		24AB3D870D038B6E00049A5C /* ui.strings in Resources */ = {isa = PBXBuildFile; fileRef = 24AB3D860D038B6E00049A5C /* ui.strings */; };
 		24AB3DE70D0390A500049A5C /* MFMainWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = 24AB3DE50D0390A500049A5C /* MFMainWindow.nib */; };
@@ -54,7 +50,7 @@
 		24AB3F700D03AE7900049A5C /* MFMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24AB3F6E0D03AE7900049A5C /* MFMainWindowController.m */; };
 		24AB3FA90D03AF9100049A5C /* MFImageAndTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 24AB3FA70D03AF9100049A5C /* MFImageAndTextCell.m */; };
 		24AB40040D03B12400049A5C /* MFApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 24AB40020D03B12400049A5C /* MFApplicationDelegate.m */; };
-		24AB40EB0D03BF3C00049A5C /* MFGrowlHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 24AB40E90D03BF3C00049A5C /* MFGrowlHelper.m */; };
+		24AB40EB0D03BF3C00049A5C /* MFNotificationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 24AB40E90D03BF3C00049A5C /* MFNotificationHelper.m */; };
 		24AD74070D7BA32D0071C794 /* FriendshipRequestWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = 24AD74050D7BA32D0071C794 /* FriendshipRequestWindow.nib */; };
 		24AD740D0D7BA3570071C794 /* MFFriendshipRequestWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24AD740B0D7BA3570071C794 /* MFFriendshipRequestWindowController.m */; };
 		24BA2FE60EFDC36900CD90F3 /* Games.plist in Resources */ = {isa = PBXBuildFile; fileRef = 24BA2FE50EFDC36900CD90F3 /* Games.plist */; };
@@ -71,20 +67,6 @@
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		24AB3D470D038A2D00049A5C /* Copy Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				24AB3D540D038A6A00049A5C /* Growl.framework in Copy Frameworks */,
-			);
-			name = "Copy Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -147,9 +129,6 @@
 		249C0A620E947764000B902E /* XfireFriendGroup_MacFireAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XfireFriendGroup_MacFireAdditions.h; path = "Source/Main Window/XfireFriendGroup_MacFireAdditions.h"; sourceTree = "<group>"; };
 		249C0A630E947764000B902E /* XfireFriendGroup_MacFireAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XfireFriendGroup_MacFireAdditions.m; path = "Source/Main Window/XfireFriendGroup_MacFireAdditions.m"; sourceTree = "<group>"; };
 		24AAF6AF0D090C65002996AB /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/PreferencesWindow.nib; sourceTree = "<group>"; };
-		24AB3D410D038A0A00049A5C /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = /usr/lib/libz.dylib; sourceTree = "<absolute>"; };
-		24AB3D430D038A1D00049A5C /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = /usr/lib/libcrypto.dylib; sourceTree = "<absolute>"; };
-		24AB3D4A0D038A6400049A5C /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = Frameworks/Growl.framework; sourceTree = "<group>"; };
 		24AB3D570D038AB600049A5C /* icons.mar */ = {isa = PBXFileReference; comments = "Custom archive of Xfire icons.  Retrieved from XBlaze (all except XF_EVILG.ICO which appears corrupted).  I don't know where they got them, but I suspect from Xfire's Icons.dll."; lastKnownFileType = file; name = icons.mar; path = Games/icons.mar; sourceTree = "<group>"; };
 		24AB3D7D0D038B5200049A5C /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/ui.strings; sourceTree = "<group>"; };
 		24AB3DE60D0390A500049A5C /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MFMainWindow.nib; sourceTree = "<group>"; };
@@ -175,8 +154,8 @@
 		24AB3FA70D03AF9100049A5C /* MFImageAndTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MFImageAndTextCell.m; path = "Source/Custom Views/MFImageAndTextCell.m"; sourceTree = "<group>"; };
 		24AB40010D03B12400049A5C /* MFApplicationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MFApplicationDelegate.h; path = Source/Application/MFApplicationDelegate.h; sourceTree = "<group>"; };
 		24AB40020D03B12400049A5C /* MFApplicationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MFApplicationDelegate.m; path = Source/Application/MFApplicationDelegate.m; sourceTree = "<group>"; };
-		24AB40E80D03BF3C00049A5C /* MFGrowlHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MFGrowlHelper.h; path = Source/Application/MFGrowlHelper.h; sourceTree = "<group>"; };
-		24AB40E90D03BF3C00049A5C /* MFGrowlHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MFGrowlHelper.m; path = Source/Application/MFGrowlHelper.m; sourceTree = "<group>"; };
+		24AB40E80D03BF3C00049A5C /* MFNotificationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MFNotificationHelper.h; path = Source/Application/MFNotificationHelper.h; sourceTree = "<group>"; };
+		24AB40E90D03BF3C00049A5C /* MFNotificationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MFNotificationHelper.m; path = Source/Application/MFNotificationHelper.m; sourceTree = "<group>"; };
 		24AD74060D7BA32D0071C794 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/FriendshipRequestWindow.nib; sourceTree = "<group>"; };
 		24AD740A0D7BA3570071C794 /* MFFriendshipRequestWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MFFriendshipRequestWindowController.h; path = "Source/Main Window/MFFriendshipRequestWindowController.h"; sourceTree = "<group>"; };
 		24AD740B0D7BA3570071C794 /* MFFriendshipRequestWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MFFriendshipRequestWindowController.m; path = "Source/Main Window/MFFriendshipRequestWindowController.m"; sourceTree = "<group>"; };
@@ -212,9 +191,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
-				24AB3D420D038A0A00049A5C /* libz.dylib in Frameworks */,
-				24AB3D440D038A1D00049A5C /* libcrypto.dylib in Frameworks */,
-				24AB3D4B0D038A6400049A5C /* Growl.framework in Frameworks */,
 				240ACC160D0FB5ED0073B151 /* IOKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,23 +281,6 @@
 				249B65C90E9310C000DA2654 /* XfireFriendGroupController.m */,
 			);
 			name = Groups;
-			sourceTree = "<group>";
-		};
-		24AB3D400D0389F300049A5C /* Libraries */ = {
-			isa = PBXGroup;
-			children = (
-				24AB3D430D038A1D00049A5C /* libcrypto.dylib */,
-				24AB3D410D038A0A00049A5C /* libz.dylib */,
-			);
-			name = Libraries;
-			sourceTree = "<group>";
-		};
-		24AB3D490D038A4F00049A5C /* Private Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				24AB3D4A0D038A6400049A5C /* Growl.framework */,
-			);
-			name = "Private Frameworks";
 			sourceTree = "<group>";
 		};
 		24AB3D560D038AA600049A5C /* Games */ = {
@@ -477,8 +436,8 @@
 			children = (
 				24AB40010D03B12400049A5C /* MFApplicationDelegate.h */,
 				24AB40020D03B12400049A5C /* MFApplicationDelegate.m */,
-				24AB40E80D03BF3C00049A5C /* MFGrowlHelper.h */,
-				24AB40E90D03BF3C00049A5C /* MFGrowlHelper.m */,
+				24AB40E80D03BF3C00049A5C /* MFNotificationHelper.h */,
+				24AB40E90D03BF3C00049A5C /* MFNotificationHelper.m */,
 				240ACB310D0FA79B0073B151 /* MFUserIdleMonitor.h */,
 				240ACB320D0FA79B0073B151 /* MFUserIdleMonitor.m */,
 				24E3EB950F0720F500071C3F /* MFApplicationSupportController.h */,
@@ -588,8 +547,6 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks & Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				24AB3D400D0389F300049A5C /* Libraries */,
-				24AB3D490D038A4F00049A5C /* Private Frameworks */,
 				1058C7A0FEA54F0111CA2CBB /* System Frameworks */,
 			);
 			name = "Frameworks & Libraries";
@@ -603,7 +560,6 @@
 			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "MacFire" */;
 			buildPhases = (
 				8D1107290486CEB800E47090 /* Resources */,
-				24AB3D470D038A2D00049A5C /* Copy Frameworks */,
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
 			);
@@ -623,8 +579,9 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "MacFire" */;
-			compatibilityVersion = "Xcode 2.4";
+			compatibilityVersion = "Xcode 14.0";
 			hasScannedForEncodings = 1;
+			LastUpgradeCheck = 1500;
 			mainGroup = 29B97314FDCFA39411CA2CEA /* MacFire */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -674,7 +631,7 @@
 				24AB3F700D03AE7900049A5C /* MFMainWindowController.m in Sources */,
 				24AB3FA90D03AF9100049A5C /* MFImageAndTextCell.m in Sources */,
 				24AB40040D03B12400049A5C /* MFApplicationDelegate.m in Sources */,
-				24AB40EB0D03BF3C00049A5C /* MFGrowlHelper.m in Sources */,
+				24AB40EB0D03BF3C00049A5C /* MFNotificationHelper.m in Sources */,
 				240ACB340D0FA79B0073B151 /* MFUserIdleMonitor.m in Sources */,
 				240ACB7C0D0FAC460073B151 /* MFPreferences.m in Sources */,
 				240ACB7E0D0FAC460073B151 /* MFPreferencesWindowController.m in Sources */,
@@ -798,64 +755,125 @@
 		C01FCF4B08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_1)",
-				);
-				FRAMEWORK_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/Frameworks\"";
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "$(HOME)/Applications";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				OTHER_LDFLAGS = (
+					"-lz",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.MacFire;
 				PRODUCT_NAME = MacFire;
-				WRAPPER_EXTENSION = app;
-				ZERO_LINK = YES;
 			};
 			name = Debug;
 		};
 		C01FCF4C08A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_1)",
-				);
-				FRAMEWORK_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/Frameworks\"";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_MODEL_TUNING = G5;
 				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "$(HOME)/Applications";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				OTHER_LDFLAGS = (
+					"-lz",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.MacFire;
 				PRODUCT_NAME = MacFire;
-				WRAPPER_EXTENSION = app;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				PREBINDING = NO;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				PREBINDING = NO;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};

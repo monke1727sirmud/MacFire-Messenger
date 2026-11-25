@@ -47,7 +47,7 @@
 	unsigned int		_publicIP;
 	unsigned short		_publicPort;
 	
-	XfireSession		*_session;
+	__weak XfireSession	*_session;
 }
 
 // create using usual -init

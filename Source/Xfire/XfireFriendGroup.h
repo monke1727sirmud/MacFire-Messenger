@@ -34,7 +34,7 @@ typedef enum {
 	NSMutableArray			*_members;
 	NSMutableArray			*_pendingMembers;
 	XfireFriendGroupType	_groupType;
-	XfireSession			*_session;
+	__weak XfireSession		*_session;
 	SEL						_friendSortSelector;
 }
 

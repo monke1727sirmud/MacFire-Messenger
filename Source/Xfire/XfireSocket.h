@@ -14,6 +14,7 @@
 		interface logic.
 	
 	HISTORY:
+		2026 11 25  Replaced NSHost with hostname resolution via getaddrinfo.
 		2008 04 06  Changed copyright to BSD license.
 		2008 01 12  Rewrote using CFSocket and a delegate approach.
 		2007 11 17  Created.
@@ -26,7 +27,7 @@
 	CFSocketRef _sock;
 	CFRunLoopSourceRef _runLoopSource;
 	NSRunLoop *_runLoop;
-	id _delegate;
+	__weak id _delegate;
 }
 - (void)setDelegate:(id)aDelegate;
 - (id)delegate;
@@ -42,7 +43,7 @@
 @end
 
 @interface XfireSocket (TCPSocket)
-- (id)initWithTCPConnectionToHost:(NSHost *)aHost port:(unsigned short)aPort;
+- (instancetype)initWithTCPConnectionToHostName:(NSString *)hostName port:(unsigned short)aPort;
 - (BOOL)sendData:(NSData *)data;
 - (NSString *)peerAddress;
 @end

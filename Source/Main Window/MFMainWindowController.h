@@ -35,6 +35,7 @@ typedef enum
 @class MFUserSearchWindowController;
 @class MFXfirePrefsWindowController;
 @class MFChatWindowController;
+@class MFFriendshipRequestWindowController;
 
 @interface MFMainWindowController : NSWindowController
 {
@@ -69,9 +70,10 @@ typedef enum
 	MFXfirePrefsWindowController        *xfireOptionsController;
 	
 	XfireSession   *xfSession;
-	NSTimer        *growlSuppressionTimer;
+	NSTimer        *notificationSuppressionTimer;
 	MacFireUIMode  currentMode;
 	NSMutableArray *outstandingFriendRequests;
+	NSMutableArray *friendRequestControllers;
 	NSMutableArray *chatWindows;
 	BOOL           statusMessageWasAutoSet;
 	
@@ -93,20 +95,21 @@ typedef enum
 - (MFChatWindowController *)chatWindowForFriend:(XfireFriend *)fr;
 - (MFChatWindowController *)chatWindowForChat:(XfireChat *)chat;
 
-- (int)activeRow; // in the friend outline view
+- (NSInteger)activeRow; // in the friend outline view
 - (XfireFriend *)selectedFriend; // get the selected friend (if any), or nil
 - (XfireFriend *)selectedFriendNotFoF; // get selected friend that isn't a Friend of Friend (or nil), online or offline
 - (XfireFriend *)selectedOnlineFriend; // get the friend in the list that is online (if any); returns nil if no selection or selection is offline
 - (XfireFriend *)selectedOnlineFriendNotFoF; // get selected friend that isn't FoF, but only if they're online
 - (XfireFriendGroup *)selectedFriendGroup;
 - (XfireFriendGroup *)selectedCustomFriendGroup; // only custom friend groups; ignore standard dynamic groups
-- (XfireFriendGroup *)friendGroupForItemAtRow:(int)row;
+- (XfireFriendGroup *)friendGroupForItemAtRow:(NSInteger)row;
 
 - (NSString *)folderCachePathForName:(NSString *)aName;
 
 - (void)queueReloadData;
 
 - (void)friendRequestSheetDidEnd;
+- (void)friendRequestControllerDidFinish:(MFFriendshipRequestWindowController *)controller;
 
 // the simple string prompt aux window (used as a sheet)
 - (IBAction)stringPromptAccept:(id)sender;

@@ -22,10 +22,10 @@
 
 @interface XfireChat : NSObject
 {
-	XfireFriend			*remoteFriend; // not retained; it and us are owned by the controlling XfireSession
-	XfireConnection		*conn; // not retained
+	XfireFriend			*remoteFriend;
+	XfireConnection		*conn;
 	unsigned int		sendSeqNo;
-	id					_delegate;
+	__weak id				_delegate;
 }
 
 // This is the friend you will chat with
@@ -46,7 +46,7 @@
 - (void)setDelegate:(id)aDelegate;
 - (id)delegate;
 
-// This will cause the chat to be autoreleased
+// This tells the owning session to drop its reference to the chat
 - (void)closeChat;
 
 @end

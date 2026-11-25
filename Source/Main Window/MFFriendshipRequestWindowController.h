@@ -31,7 +31,7 @@
 	XfireSession *_xfSession;
 	XfireFriend *_requestor;
 	NSString *_message;
-	MFMainWindowController *_mainWindow;
+	__weak MFMainWindowController *_mainWindow;
 }
 
 - (id)initWithSession:(XfireSession *)session requestor:(XfireFriend *)fr message:(NSString *)msg mainWindow:(MFMainWindowController *)mainWindow;

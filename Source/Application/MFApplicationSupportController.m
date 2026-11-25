@@ -90,7 +90,7 @@ Contacts property list:
 		NSArray *appSupportFolders = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory,NSUserDomainMask,YES);
 		if( appSupportFolders && ([appSupportFolders count] > 0) )
 		{
-			_basePath = [[[appSupportFolders objectAtIndex:0] stringByAppendingPathComponent:@"MacFire"] retain];
+			_basePath = [[appSupportFolders objectAtIndex:0] stringByAppendingPathComponent:@"MacFire"];
 		}
 		
 		if( ! [NSFileManager ensureDirectoryExistsAtPath:_basePath attributes:nil] )
@@ -330,11 +330,9 @@ Contacts property list:
 	
 	NSDateFormatter *dateFormatter;
 	dateFormatter = [[NSDateFormatter alloc] init];
-	[dateFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
 	[dateFormatter setTimeStyle:NSDateFormatterNoStyle];
 	[dateFormatter setDateFormat:@"yyyyMMdd"];
 	str = [dateFormatter stringFromDate:[NSDate date]];
-	[dateFormatter release];
 	
 	return str;
 }

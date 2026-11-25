@@ -22,7 +22,7 @@
 
 @implementation MFUserSearchWindowController
 
-- (id)initWithSession:(XfireSession *)session
+- (instancetype)initWithSession:(XfireSession *)session
 {
 	self = [super initWithWindowNibName:@"UserSearchWindow"];
 	if( self )
@@ -31,12 +31,6 @@
 		_results = nil;
 	}
 	return self;
-}
-
-- (void)dealloc
-{
-	[_results release];
-	[super dealloc];
 }
 
 - (void)windowDidLoad
@@ -63,7 +57,7 @@
 
 - (IBAction)sendAddRequest:(id)sender
 {
-	int selRow = [_resultsTable selectedRow];
+	NSInteger selRow = [_resultsTable selectedRow];
 	if( selRow >= 0 )
 	{
 		XfireFriend *fr = [_results objectAtIndex:selRow];
@@ -105,18 +99,17 @@
 {
 	[_progressIndicator stopAnimation:self];
 	
-	[_results release];
-	_results = [results retain];
+	_results = results;
 	
 	[_resultsTable reloadData];
 }
 
-- (int)numberOfRowsInTableView:(NSTableView *)tableView
+- (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
 {
 	return [_results count];
 }
 
-- (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(int)row
+- (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
 	if( [[tableColumn identifier] isEqualToString:@"Name"] )
 	{

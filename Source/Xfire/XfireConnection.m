@@ -11,6 +11,7 @@
 		connection to some kind of IP socket.
 	
 	HISTORY:
+		2026 11 25  Converted to ARC; connections now take a host name.
 		2008 04 06  Changed copyright to BSD license.
 		2008 03 01  Changed to use external packet log cache file
 					path with new session delegate method.
@@ -31,18 +32,17 @@
 @implementation XfireConnection
 
 // The login connection is the initial connection to the Xfire server
-// NOTE: This does not autorelease the result.
-+ (id)loginConnectionToHost:(NSHost *)host port:(unsigned short)portNumber
++ (instancetype)loginConnectionToHostName:(NSString *)hostName port:(unsigned short)portNumber
 {
-	return [[XfireLoginConnection alloc] initWithHost:host port:portNumber];
+	return [[XfireLoginConnection alloc] initWithHostName:hostName port:portNumber];
 }
 
-- (id)initWithHost:(NSHost *)aHost port:(unsigned short)aPort
+- (instancetype)initWithHostName:(NSString *)hostName port:(unsigned short)aPort
 {
 	self = [super init];
 	if( self )
 	{
-		_host = [aHost retain];
+		_hostName = [hostName copy];
 		_port = aPort;
 		_status = kXfireConnectionDisconnected;
 		_socket = nil;
@@ -53,14 +53,17 @@
 
 - (void)dealloc
 {
-	[self disconnect];
-	
-	[_host release];
-	_host = nil;
+	// Detach the delegate first so closing the socket doesn't call back
+	// into an object that is being deallocated.
+	if( _socket )
+	{
+		[_socket setDelegate:nil];
+		[_socket close];
+		_socket = nil;
+	}
+	_packetLogger = nil;
+	_hostName = nil;
 	_session = nil;
-	_port = 0;
-	
-	[super dealloc];
 }
 
 // Start a connection
@@ -69,7 +72,7 @@
 	if( [self status] != kXfireConnectionDisconnected )
 		return;
 	
-	NSString* logPath = [[self session] delegate_sessionLogPath];
+	NSString *logPath = [[self session] delegate_sessionLogPath];
 	if( logPath )
 	{
 		_packetLogger = [[XfirePacketLogger alloc] initWithCacheFolderName:logPath];
@@ -79,7 +82,7 @@
 	_status = kXfireConnectionStarting;
 	
 	// Get set up
-	_socket = [[XfireSocket alloc] initWithTCPConnectionToHost:_host port:_port];
+	_socket = [[XfireSocket alloc] initWithTCPConnectionToHostName:_hostName port:_port];
 	if( _socket )
 	{
 		[_socket setDelegate:self];
@@ -92,7 +95,6 @@
 	}
 	else
 	{
-		[_packetLogger release];
 		_packetLogger = nil;
 		_status = kXfireConnectionDisconnected;
 		[[self session] loginFailed:kXfireNetworkErrorReason];
@@ -109,10 +111,10 @@
 	
 	[self connectionWillDisconnect];
 	
-	[_socket release]; // causes the socket to disconnect
+	[_socket setDelegate:nil]; // causes the socket to disconnect
+	[_socket close];
 	_socket = nil;
 	
-	[_packetLogger release];
 	_packetLogger = nil;
 	
 	_status = kXfireConnectionDisconnected;
@@ -184,10 +186,9 @@
 	
 	[self connectionWillDisconnect];
 	
-	[_socket release]; // The socket is already disconnected
+	[_socket setDelegate:nil]; // The socket is already disconnected
 	_socket = nil;
 	
-	[_packetLogger release];
 	_packetLogger = nil;
 	
 	_status = kXfireConnectionDisconnected;

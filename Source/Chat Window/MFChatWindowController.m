@@ -17,7 +17,7 @@
 
 #import "MFChatWindowController.h"
 #import "MFPreferences.h"
-#import "MFGrowlHelper.h"
+#import "MFNotificationHelper.h"
 #import "XfireFriend.h"
 #import "XfireChat.h"
 #import "XfireSession.h"
@@ -43,7 +43,6 @@ static NSColor *gDateColor = nil;
 		// see http://developer.apple.com/documentation/Cocoa/Conceptual/DataFormatting/Articles/dfDateFormatting10_4.html#//apple_ref/doc/uid/TP40002369
 		
 		gChatTimeStampFormatter = [[NSDateFormatter alloc] init];
-		[gChatTimeStampFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
 		[gChatTimeStampFormatter setDateFormat:@"[hh:mm:ss aa] "];
 	}
 	
@@ -54,12 +53,12 @@ static NSColor *gDateColor = nil;
 {
 	if( gDateColor == nil )
 	{
-		gDateColor = [[NSColor colorWithCalibratedRed:(154.0/255.0) green:(145.0/255.0) blue:(151.0/255.0) alpha:1.0] retain];
+		gDateColor = [NSColor colorWithCalibratedRed:(154.0/255.0) green:(145.0/255.0) blue:(151.0/255.0) alpha:1.0];
 	}
 	return gDateColor;
 }
 
-- (id)initWithChat:(XfireChat *)aChat
+- (instancetype)initWithChat:(XfireChat *)aChat
 {
 	self = [super initWithWindowNibName:@"ChatWindow"];
 	if( self )
@@ -88,17 +87,7 @@ static NSColor *gDateColor = nil;
 	return self;
 }
 
-- (void)dealloc
-{
-	_chat = nil;
-	
-	[_log release];
-	_log = nil;
-	
-	[super dealloc];
-}
-
-// There is no -dealloc because the XfireSession owns the _chat and everything else is a nib reference
+// The XfireSession owns the _chat and everything else is a nib reference
 
 - (XfireChat *)chat
 {
@@ -188,7 +177,7 @@ static NSColor *gDateColor = nil;
 	if( dateStyleRange.length > 0 )
 		[fmtMsg addAttribute:NSForegroundColorAttributeName value:[[self class] dateColor] range:dateStyleRange];
 	
-	return [fmtMsg autorelease];
+	return fmtMsg;
 }
 
 - (void)appendMessage:(NSAttributedString *)msg
@@ -230,7 +219,7 @@ static NSColor *gDateColor = nil;
 	if( _log )
 		[_log addMessage:msg fromFriend:[aChat remoteFriend] outgoing:NO];
 	
-	[[MFGrowlHelper helper] postFriend:[aChat remoteFriend] chatMessage:msg];
+	[[MFNotificationHelper helper] postFriend:[aChat remoteFriend] chatMessage:msg];
 }
 
 - (void)updateFriendSummary
@@ -253,8 +242,12 @@ static NSColor *gDateColor = nil;
 
 - (void)windowWillClose:(NSNotification *)aNote
 {
+	// Keep this controller alive while the session and main window drop
+	// their references to it.
+	MFChatWindowController *keepAlive = self;
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
 	[_chat closeChat];
+	(void)keepAlive;
 }
 
 - (void)friendDidChange:(NSNotification *)aNote

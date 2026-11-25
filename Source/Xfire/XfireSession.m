@@ -26,7 +26,7 @@
 #import "XfireFriendGroupController.h"
 
 @interface XfireSession (Private2)
-- (id)initWithHost:(NSHost *)xfireHost port:(unsigned short)portNumber;
+- (instancetype)initWithHostName:(NSString *)hostName port:(unsigned short)portNumber;
 @end
 
 NSString *kXfireVersionTooOldReason = @"Version too old";
@@ -112,20 +112,19 @@ static inline void _SetDeltaOption( NSDictionary *defaults, NSDictionary *curren
 	
 	// Create the login connection
 	[self setStatus:kXfireSessionStatusLoggingOn];
-	_loginConnection = [XfireConnection loginConnectionToHost:_xfireHost port:_xfirePort];
+	_loginConnection = [XfireConnection loginConnectionToHostName:_xfireHostName port:_xfirePort];
 	[_loginConnection setSession:self];
 	_connections = [[NSMutableArray alloc] init];
 	_friendGroupController = [[XfireFriendGroupController alloc] initWithSession:self];
-	[_connections addObject:[_loginConnection autorelease]]; // so we don't have too many references to the connection
+	[_connections addObject:_loginConnection];
 	
 	_userOptions = [[NSMutableDictionary alloc] initWithDictionary:[XfireSession defaultUserOptions]];
 	
 	// Start the keep-alive timer to expire every minute.
-	_keepAliveTimer = [NSTimer scheduledTimerWithTimeInterval:60.0
-		target:self
-		selector:@selector(keepAliveTimerExpired:)
-		userInfo:nil
-		repeats:YES];
+	__weak typeof(self) weakSelf = self;
+	_keepAliveTimer = [NSTimer scheduledTimerWithTimeInterval:60.0 repeats:YES block:^(NSTimer *timer) {
+		[weakSelf keepAliveTimerExpired:timer];
+	}];
 	
 	[_loginConnection connect];
 }
@@ -143,31 +142,17 @@ static inline void _SetDeltaOption( NSDictionary *defaults, NSDictionary *curren
 	[_keepAliveTimer invalidate];
 	_keepAliveTimer = nil;
 	
-	// this ensures the login connection object isn't released right away
-	// this may have been called from a delegate method so we don't want to invoke
+	// Keep the connection objects alive until this method returns.  This may
+	// have been called from a delegate method, so we don't want to invoke
 	// something on an object that's just been deallocated.
-	[_connections makeObjectsPerformSelector:@selector(retain)];
-	[_connections makeObjectsPerformSelector:@selector(autorelease)];
-	[_connections autorelease];
+	NSArray *oldConnections = _connections;
 	_connections = nil;
+	(void)oldConnections;
 	
-	[_friendGroupController autorelease];
+	// The friend list and open chats stay around so that any delegate
+	// callbacks triggered by the disconnect can still see them.
 	_friendGroupController = nil;
-	
-	[_userOptions autorelease];
 	_userOptions = nil;
-	
-	//[_friends release];
-	//_friends = nil;
-	
-	//[_pendingFriends release];
-	//_pendingFriends = nil;
-	
-	//[_chats release];
-	//_chats = nil;
-	
-	//[_loginIdent release];
-	//_loginIdent = nil;
 	
 	[self setStatus:kXfireSessionStatusOffline];
 }
@@ -188,7 +173,7 @@ static inline void _SetDeltaOption( NSDictionary *defaults, NSDictionary *curren
 
 - (NSArray *)friends
 {
-	return [[_friends copy] autorelease];
+	return [_friends copy];
 }
 
 - (NSArray *)friendsOnline
@@ -560,7 +545,7 @@ static inline void _SetDeltaOption( NSDictionary *defaults, NSDictionary *curren
 - (XfireChat *)beginChatWithFriend:(XfireFriend *)fr
 {
 	XfireChat *chat = [[XfireChat alloc] initWithRemoteFriend:fr connection:_loginConnection];
-	[_chats addObject:[chat autorelease]];
+	[_chats addObject:chat];
 	[self delegate_didBeginChat:chat];
 	return chat;
 }
@@ -585,10 +570,10 @@ static inline void _SetDeltaOption( NSDictionary *defaults, NSDictionary *curren
 
 - (void)closeChat:(XfireChat*)aChat
 {
-	[[aChat retain] autorelease]; // make sure the chat object doesn't go away quite yet
+	XfireChat *chat = aChat; // make sure the chat object doesn't go away quite yet
 	[_chats removeObject:aChat];
 	
-	[self delegate_chatDidEnd:aChat];
+	[self delegate_chatDidEnd:chat];
 }
 
 /***********************************************************************************************************************/
@@ -596,18 +581,18 @@ static inline void _SetDeltaOption( NSDictionary *defaults, NSDictionary *curren
 /***********************************************************************************************************************/
 
 // TBD, eventually may expose this as a public interface
-+ (XfireSession *)newSessionWithHost:(NSHost *)host port:(unsigned short)portNumber
++ (XfireSession *)newSessionWithHostName:(NSString *)hostName port:(unsigned short)portNumber
 {
-	return [[XfireSession alloc] initWithHost:host port:portNumber];
+	return [[XfireSession alloc] initWithHostName:hostName port:portNumber];
 }
 
-- (id)initWithHost:(NSHost *)host port:(unsigned short)portNumber
+- (instancetype)initWithHostName:(NSString *)hostName port:(unsigned short)portNumber
 {
 	self = [super init];
 	if( self )
 	{
 		_status = kXfireSessionStatusOffline;
-		_xfireHost = [host retain];
+		_xfireHostName = [hostName copy];
 		_xfirePort = portNumber;
 		_delegate = nil;
 		_loginConnection = nil;
@@ -639,26 +624,18 @@ static inline void _SetDeltaOption( NSDictionary *defaults, NSDictionary *curren
 	NSNotificationCenter *center = [[NSWorkspace sharedWorkspace] notificationCenter];
 	[center removeObserver:self];
 	
-	[_connections release];
+	[_keepAliveTimer invalidate];
+	_keepAliveTimer = nil;
 	_connections = nil;
 	_loginConnection = nil;
-	
-	[_xfireHost release];
-	_xfireHost = nil;
-	
-	[_friends release];
+	_xfireHostName = nil;
 	_friends = nil;
-	
-	[_pendingFriends release];
 	_pendingFriends = nil;
-	
-	[_loginIdent release];
 	_loginIdent = nil;
-	
-	[_chats release];
 	_chats = nil;
-	
-	[super dealloc];
+	_friendGroupController = nil;
+	_userOptions = nil;
+	_delegate = nil;
 }
 
 - (void)workspaceWillPowerOff:(NSNotification *)aNote

@@ -66,9 +66,9 @@ typedef enum
 @interface XfireSession : NSObject
 {
 	XfireSessionStatus			_status;
-	NSHost						*_xfireHost;
+	NSString					*_xfireHostName;
 	unsigned short				_xfirePort;
-	id							_delegate;
+	__weak id					_delegate;
 	NSMutableArray				*_connections;
 	XfireLoginConnection		*_loginConnection;
 	NSMutableArray				*_friends; // array of XfireFriend
@@ -87,8 +87,7 @@ typedef enum
 //------------------------------------------------------------------
 // Creating a new session
 
-// Return value is not autoreleased
-+ (XfireSession *)newSessionWithHost:(NSHost *)host port:(unsigned short)portNumber;
++ (XfireSession *)newSessionWithHostName:(NSString *)hostName port:(unsigned short)portNumber;
 
 //------------------------------------------------------------------
 // Accessors

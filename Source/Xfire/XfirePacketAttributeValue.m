@@ -38,7 +38,7 @@
 		initWithValue:str
 		typeID:kXfirePacketAttributeStringType
 		arrayType:kXfirePacketAttributeInvalidType
-		] autorelease];
+		];
 }
 
 + (id)attributeValueWithInt:(unsigned int)val
@@ -47,7 +47,7 @@
 		initWithValue:[NSNumber numberWithUnsignedInt:val]
 		typeID:kXfirePacketAttributeUInt32Type
 		arrayType:kXfirePacketAttributeInvalidType
-		] autorelease];
+		];
 }
 
 + (id)attributeValueWithInt64:(unsigned long long)val
@@ -56,7 +56,7 @@
 		initWithValue:[NSNumber numberWithUnsignedLongLong:val]
 		typeID:kXfirePacketAttributeUInt64Type
 		arrayType:kXfirePacketAttributeInvalidType
-		] autorelease];
+		];
 }
 
 + (id)attributeValueWithByte:(unsigned char)val
@@ -65,7 +65,7 @@
 		initWithValue:[NSNumber numberWithUnsignedChar:val]
 		typeID:kXfirePacketAttributeUInt8Type
 		arrayType:kXfirePacketAttributeInvalidType
-		] autorelease];
+		];
 }
 
 + (id)attributeValueWithNumber:(NSNumber *)nbr
@@ -79,7 +79,7 @@
 				initWithValue:nbr
 				typeID:kXfirePacketAttributeUInt32Type
 				arrayType:kXfirePacketAttributeInvalidType
-				] autorelease];
+				];
 		}
 	}
 	return nil;
@@ -93,7 +93,7 @@
 			initWithValue:uuid
 			typeID:kXfirePacketAttributeUUIDType
 			arrayType:kXfirePacketAttributeInvalidType
-			] autorelease];
+			];
 	}
 	return nil;
 }
@@ -106,7 +106,7 @@
 			initWithValue:did
 			typeID:kXfirePacketAttributeDIDType
 			arrayType:kXfirePacketAttributeInvalidType
-			] autorelease];
+			];
 	}
 	return nil;
 }
@@ -130,7 +130,7 @@
 			initWithValue:arr
 			typeID:kXfirePacketAttributeArrayType
 			arrayType:et
-			] autorelease];
+			];
 	}
 	
 	// Max array size supported by Xfire protocol is technically 65535, though in practice you would
@@ -171,7 +171,7 @@
 			initWithValue:arr
 			typeID:kXfirePacketAttributeArrayType
 			arrayType:objType
-			] autorelease];
+			];
 	}
 	// else don't try
 	
@@ -184,7 +184,7 @@
 		initWithValue:map
 		typeID:[self typeIDForObject:map]
 		arrayType:kXfirePacketAttributeInvalidType
-		] autorelease];
+		];
 }
 
 + (int)typeIDForObject:(id)obj
@@ -277,17 +277,11 @@
 	{
 		_typeID = tid;
 		_arrayElementType = atid;
-		_value = [aVal retain];
+		_value = aVal;
 		
 		//NSLog(@"XfirePacketAttributeValue -initWithValue:%@ typeID:%d arrayType:%d",aVal,tid,atid);
 	}
 	return self;
-}
-
-- (void)dealloc
-{
-	[_value release];
-	[super dealloc];
 }
 
 - (int)typeID

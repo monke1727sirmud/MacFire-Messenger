@@ -45,7 +45,7 @@ static MFUserIdleMonitor *gSharedMonitor = nil;
 	return gSharedMonitor;
 }
 
-- (id)initWithIdleTimeout:(double)aTimeout
+- (instancetype)initWithIdleTimeout:(double)aTimeout
 {
 	self = [super init];
 	if( self )
@@ -56,12 +56,10 @@ static MFUserIdleMonitor *gSharedMonitor = nil;
 		kern_return_t err = IOServiceGetMatchingServices( kIOMasterPortDefault, IOServiceMatching("IOHIDSystem"), &hidIter );
 		if( err != 0 )
 		{
-			[self release];
 			[NSException raise:@"MFUserIdleMonitorException" format:@"Kernel returned error %d", (int)err];
 		}
 		if( hidIter == nil )
 		{
-			[self release];
 			[NSException raise:@"MFUserIdleMonitorException" format:@"Kernel returned nil HID iterator"];
 		}
 		
@@ -69,7 +67,6 @@ static MFUserIdleMonitor *gSharedMonitor = nil;
 		IOObjectRelease(hidIter);
 		if( _hidEntry == nil )
 		{
-			[self release];
 			[NSException raise:@"MFUserIdleMonitorException" format:@"HID iterator could not find IOHIDSystem object"];
 		}
 		
@@ -77,11 +74,10 @@ static MFUserIdleMonitor *gSharedMonitor = nil;
 			aTimeout = 120.0;
 		_idleNotificationTimeout = aTimeout;
 		
-		_monitorTimer = [NSTimer scheduledTimerWithTimeInterval:1.0
-			target:self
-			selector:@selector(timerExpired:)
-			userInfo:nil
-			repeats:YES];
+		__weak typeof(self) weakSelf = self;
+		_monitorTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 repeats:YES block:^(NSTimer *timer) {
+			[weakSelf timerExpired:timer];
+		}];
 		_idle = NO;
 	}
 	return self;
@@ -93,7 +89,6 @@ static MFUserIdleMonitor *gSharedMonitor = nil;
 		IOObjectRelease(_hidEntry);
 	_hidEntry = nil;
 	[_monitorTimer invalidate];
-	[super dealloc];
 }
 
 // We only care about the one value: the HIDIdleTime.
@@ -102,7 +97,11 @@ static MFUserIdleMonitor *gSharedMonitor = nil;
 - (uint64_t)idleTime
 {
 	uint64_t result = 0ULL;
-	id idleTimeObj = (id)IORegistryEntryCreateCFProperty(_hidEntry,(CFStringRef)@"HIDIdleTime",kCFAllocatorDefault,0);
+	CFTypeRef idleTimeRef = IORegistryEntryCreateCFProperty(_hidEntry, CFSTR("HIDIdleTime"), kCFAllocatorDefault, 0);
+	if( idleTimeRef == NULL )
+		return 0;
+	
+	id idleTimeObj = CFBridgingRelease(idleTimeRef);
 	
 	if( [idleTimeObj isKindOfClass:[NSData class]] )
 	{
@@ -117,9 +116,6 @@ static MFUserIdleMonitor *gSharedMonitor = nil;
 		NSNumber *nbr = idleTimeObj;
 		result = [nbr unsignedLongLongValue];
 	}
-	
-	if( idleTimeObj != nil )
-		CFRelease((CFTypeRef)idleTimeObj);
 	
 	return result;
 }

@@ -73,14 +73,14 @@
 #define MF_UISTR_RENAME_GROUP_PROMPT    NSLocalizedStringFromTable(@"MFRenameFriendGroupPrompt", @"ui", @"Friend group's new name:")
 #define MF_UISTR_RENAME_GROUP_BUTTON    NSLocalizedStringFromTable(@"MFRenameFriendGroupButton", @"ui", @"Change")
 
-/* Growl notification strings */
+/* Notification strings (the ui.strings keys predate UserNotifications) */
 
-#define MF_UISTR_GROWL_ONLINE_MAJ  NSLocalizedStringFromTable(@"MFGrowlFriendCameOnlineMajor", @"ui", @"Xfire friend came online")
-#define MF_UISTR_GROWL_ONLINE_MIN  NSLocalizedStringFromTable(@"MFGrowlFriendCameOnlineMinor", @"ui", @"%@ came online")
-#define MF_UISTR_GROWL_OFFLINE_MAJ NSLocalizedStringFromTable(@"MFGrowlFriendWentOfflineMajor", @"ui", @"Xfire friend went offline")
-#define MF_UISTR_GROWL_OFFLINE_MIN NSLocalizedStringFromTable(@"MFGrowlFriendWentOfflineMinor", @"ui", @"%@ went offline")
-#define MF_UISTR_GROWL_CHAT_MAJ    NSLocalizedStringFromTable(@"MFGrowlFriendSentMessageMajor", @"ui", @"%@ sent a message")
-#define MF_UISTR_GROWL_CHAT_MIN    NSLocalizedStringFromTable(@"MFGrowlFriendSentMessageMinor", @"ui", @"Message: %@")
+#define MF_UISTR_NOTIFICATION_ONLINE_MAJ  NSLocalizedStringFromTable(@"MFGrowlFriendCameOnlineMajor", @"ui", @"Xfire friend came online")
+#define MF_UISTR_NOTIFICATION_ONLINE_MIN  NSLocalizedStringFromTable(@"MFGrowlFriendCameOnlineMinor", @"ui", @"%@ came online")
+#define MF_UISTR_NOTIFICATION_OFFLINE_MAJ NSLocalizedStringFromTable(@"MFGrowlFriendWentOfflineMajor", @"ui", @"Xfire friend went offline")
+#define MF_UISTR_NOTIFICATION_OFFLINE_MIN NSLocalizedStringFromTable(@"MFGrowlFriendWentOfflineMinor", @"ui", @"%@ went offline")
+#define MF_UISTR_NOTIFICATION_CHAT_MAJ    NSLocalizedStringFromTable(@"MFGrowlFriendSentMessageMajor", @"ui", @"%@ sent a message")
+#define MF_UISTR_NOTIFICATION_CHAT_MIN    NSLocalizedStringFromTable(@"MFGrowlFriendSentMessageMinor", @"ui", @"Message: %@")
 
 /* Remove Friend, Group */
 

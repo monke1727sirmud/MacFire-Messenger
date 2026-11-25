@@ -67,7 +67,6 @@
 		}
 		else
 		{
-			[self release];
 			return nil;
 		}
 	}
@@ -76,13 +75,9 @@
 
 - (void)dealloc
 {
-	[_name release];
-	[_members release];
-	[_pendingMembers release];
 	_name = nil;
 	_members = nil;
 	_pendingMembers = nil;
-	[super dealloc];
 }
 
 - (XfireFriendGroupType)groupType
@@ -92,9 +87,7 @@
 
 - (void)setGroupName:(NSString *)aName
 {
-	[aName retain];
-	[_name release];
-	_name = aName;
+	_name = [aName copy];
 }
 
 - (NSString *)groupName

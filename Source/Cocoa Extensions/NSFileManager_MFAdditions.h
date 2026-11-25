@@ -22,8 +22,9 @@
 + (BOOL)ensureDirectoryExistsAtPath:(NSString *)path attributes:(NSDictionary *)attrs;
 
 // Pass this the full path of a folder
-// The returned array includes full paths (the folder), in contrast to -directoryContentsAtPath: or -subpathsAtPath:
-// which only include one name.  This method uses -directoryContentsAtPath: so has those semantics for symlinks/aliases.
+// The returned array includes full paths (the folder), in contrast to -contentsOfDirectoryAtPath:error:
+// or -subpathsAtPath:, which only include one name.  This method uses -contentsOfDirectoryAtPath:error:,
+// so it has those semantics for symlinks/aliases.
 // May return 'nil' if the folder does not exist, or has no contents.
 - (NSArray *)fullSubpathsAtPath:(NSString *)folder;
 

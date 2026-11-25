@@ -24,7 +24,7 @@
 
 @implementation XfireChat
 
-- (id)initWithRemoteFriend:(XfireFriend *)aFriend connection:(XfireConnection *)aConn
+- (instancetype)initWithRemoteFriend:(XfireFriend *)aFriend connection:(XfireConnection *)aConn
 {
 	self = [super init];
 	if( self )
@@ -36,12 +36,6 @@
 	return self;
 }
 
-- (void)dealloc
-{
-	remoteFriend = nil;
-	_delegate = nil;
-	[super dealloc];
-}
 
 
 - (XfireFriend *)remoteFriend

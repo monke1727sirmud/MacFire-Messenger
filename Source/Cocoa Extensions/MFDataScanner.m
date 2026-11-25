@@ -25,7 +25,7 @@
 
 + (id)scannerWithData:(NSData *)data
 {
-	return [[[MFDataScanner alloc] initWithData:data] autorelease];
+	return [[MFDataScanner alloc] initWithData:data];
 }
 
 - (id)initWithData:(NSData *)data
@@ -33,18 +33,12 @@
 	self = [super init];
 	if( self )
 	{
-		_data = [data retain];
+		_data = data;
 		_start = [_data bytes];
 		_cur = _start;
 		_end = _start + [_data length];
 	}
 	return self;
-}
-
-- (void)dealloc
-{
-	[_data release];
-	[super dealloc];
 }
 
 - (UInt8)scanUInt8
@@ -96,7 +90,7 @@
 	{
 		s = [[[NSString alloc] initWithBytes:_cur
 			length:len
-			encoding:NSUTF8StringEncoding] autorelease];
+			encoding:NSUTF8StringEncoding];
 		_cur += len;
 	}
 	else

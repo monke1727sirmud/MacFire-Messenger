@@ -25,7 +25,7 @@
 @interface XfireFriendGroupController : NSObject
 {
 	NSMutableArray		*_groups;
-	XfireSession		*_session;
+	__weak XfireSession	*_session;
 	SEL					_groupSortSelector;
 }
 

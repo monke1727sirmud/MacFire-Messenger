@@ -28,7 +28,7 @@
 #import "XfireFriendGroup_MacFireAdditions.h"
 #import "MFGameRegistry.h"
 #import "MFImageAndTextCell.h"
-#import "MFGrowlHelper.h"
+#import "MFNotificationHelper.h"
 #import "MFPreferences.h"
 #import "MFUserIdleMonitor.h"
 #import "MFGameMonitor.h"
@@ -55,12 +55,13 @@ static NSString *kMFXfireFriendDragType = @"MFXfireFriendDragType";
 	{
 		xfSession = nil;
 		currentMode = kMacFireUIModeUninitialized;
-		growlSuppressionTimer = nil;
+		notificationSuppressionTimer = nil;
 		chatWindows = nil;
 		userSearchController = nil;
 		xfireOptionsController = nil;
 		outlineReloadQueued = NO;
 		outstandingFriendRequests = nil;
+		friendRequestControllers = nil;
 		
 		[[NSNotificationCenter defaultCenter] addObserver:self
 			selector:@selector(userBecameIdle:)
@@ -94,16 +95,12 @@ static NSString *kMFXfireFriendDragType = @"MFXfireFriendDragType";
 {
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
 	
-	[chatWindows release];
-	[xfSession release];
-	if( growlSuppressionTimer )
-		[growlSuppressionTimer invalidate];
+	[notificationSuppressionTimer invalidate];
+	notificationSuppressionTimer = nil;
 	
 	chatWindows = nil;
 	xfSession = nil;
-	growlSuppressionTimer = nil;
-	
-	[super dealloc];
+	friendRequestControllers = nil;
 }
 
 - (void)windowDidLoad
@@ -111,7 +108,7 @@ static NSString *kMFXfireFriendDragType = @"MFXfireFriendDragType";
 	[super windowDidLoad];
 	
 	NSTableColumn *col = [friendOutline tableColumnWithIdentifier:kMFNameColID];
-	MFImageAndTextCell *cell = [[[MFImageAndTextCell alloc] init] autorelease];
+	MFImageAndTextCell *cell = [[MFImageAndTextCell alloc] init];
 	[cell setEditable:NO];
 	[cell setDisplayImageSize:NSMakeSize(16.0f,16.0f)];
 	[col setDataCell:cell];
@@ -191,11 +188,9 @@ static NSString *kMFXfireFriendDragType = @"MFXfireFriendDragType";
 			}
 			
 			[[userSearchController window] orderOut:self];
-			[userSearchController release];
 			userSearchController = nil;
 			
 			[[xfireOptionsController window] orderOut:self];
-			[xfireOptionsController release];
 			xfireOptionsController = nil;
 			break;
 		
@@ -269,10 +264,9 @@ static NSString *kMFXfireFriendDragType = @"MFXfireFriendDragType";
 
 - (void)startSession
 {
-	[xfSession release];
-	xfSession = [XfireSession newSessionWithHost:[NSHost hostWithName:[[MFPreferences preferences] xfireServerHostName]]
+	xfSession = [XfireSession newSessionWithHostName:[[MFPreferences preferences] xfireServerHostName]
 		port:[[MFPreferences preferences] xfireServerPortNumber]];
-//	xfSession = [XfireSession newSessionWithHost:[NSHost hostWithName:@"localhost"] port:13987];
+//	xfSession = [XfireSession newSessionWithHostName:@"localhost" port:13987];
 	[xfSession setDelegate:self];
 	
 	// Set posing version if the user wants to pose
@@ -288,21 +282,20 @@ static NSString *kMFXfireFriendDragType = @"MFXfireFriendDragType";
 	chatWindows = [[NSMutableArray alloc] init];
 	statusMessageWasAutoSet = NO;
 	
-	// Suspend growl notifications for the 1st two seconds to avoid spamming lots of
+	// Suspend notifications for the first few seconds to avoid spamming lots of
 	// notifications as the friends list gets populated
-	[[MFGrowlHelper helper] setSuspendsNotifications:YES];
-	growlSuppressionTimer = [NSTimer scheduledTimerWithTimeInterval:5.0f
-		target:self
-		selector:@selector(startAllowingGrowlNotifications:)
-		userInfo:nil
-		repeats:NO];
+	[[MFNotificationHelper helper] setSuspendsNotifications:YES];
+	__weak typeof(self) weakSelf = self;
+	notificationSuppressionTimer = [NSTimer scheduledTimerWithTimeInterval:5.0f repeats:NO block:^(NSTimer *timer) {
+		[weakSelf startAllowingNotifications:timer];
+	}];
 	
 	[xfSession connect];
 }
 
-- (void)startAllowingGrowlNotifications:(NSTimer *)aTimer
+- (void)startAllowingNotifications:(NSTimer *)aTimer
 {
-	[[MFGrowlHelper helper] setSuspendsNotifications:NO];
+	[[MFNotificationHelper helper] setSuspendsNotifications:NO];
 }
 
 - (IBAction)changeStatusText:(id)sender
@@ -441,9 +434,9 @@ static NSString *kMFXfireFriendDragType = @"MFXfireFriendDragType";
 }
 
 // in the friend outline view
-- (int)activeRow
+- (NSInteger)activeRow
 {
-	int selRow, clickRow, row;
+	NSInteger selRow, clickRow, row;
 	
 	// first check the selected row
 	selRow = [friendOutline selectedRow];
@@ -467,7 +460,7 @@ static NSString *kMFXfireFriendDragType = @"MFXfireFriendDragType";
 
 - (XfireFriend *)selectedFriend
 {
-	int row = [self activeRow];
+	NSInteger row = [self activeRow];
 	
 	if( row >= 0 )
 	{
@@ -507,7 +500,7 @@ static NSString *kMFXfireFriendDragType = @"MFXfireFriendDragType";
 // only custom friend groups; ignore standard dynamic groups
 - (XfireFriendGroup *)selectedFriendGroup
 {
-	int row = [self activeRow];
+	NSInteger row = [self activeRow];
 	
 	if( row >= 0 )
 	{
@@ -531,10 +524,10 @@ static NSString *kMFXfireFriendDragType = @"MFXfireFriendDragType";
 	return nil;
 }
 
-- (XfireFriendGroup *)friendGroupForItemAtRow:(int)row
+- (XfireFriendGroup *)friendGroupForItemAtRow:(NSInteger)row
 {
-	int rowLvl = [friendOutline levelForRow:row];
-	int lvl;
+	NSInteger rowLvl = [friendOutline levelForRow:row];
+	NSInteger lvl;
 	id item;
 	id friendAtRow = [friendOutline itemAtRow:row];
 	
@@ -607,7 +600,7 @@ static NSString *kMFXfireFriendDragType = @"MFXfireFriendDragType";
 	{
 		if( [outstandingFriendRequests count] > 0 )
 		{
-			XfireFriend *fr = [[outstandingFriendRequests objectAtIndex:0] retain];
+			XfireFriend *fr = [outstandingFriendRequests objectAtIndex:0];
 			if( fr )
 			{
 				[outstandingFriendRequests removeObjectAtIndex:0];
@@ -617,25 +610,31 @@ static NSString *kMFXfireFriendDragType = @"MFXfireFriendDragType";
 					requestor:fr
 					message:[fr statusString]
 					mainWindow:self];
-				[fr autorelease];
+				if( friendRequestControllers == nil )
+					friendRequestControllers = [NSMutableArray array];
+				[friendRequestControllers addObject:friendRequestController];
 				[friendRequestController runModalForWindow:[self window]];
 			}
 		}
 		else
 		{
-			[outstandingFriendRequests release];
 			outstandingFriendRequests = nil;
 		}
 	}
+}
+
+- (void)friendRequestControllerDidFinish:(MFFriendshipRequestWindowController *)controller
+{
+	[friendRequestControllers removeObject:controller];
 }
 
 /***********************************************************************************************************************/
 #pragma mark Combo Box Data Source
 /***********************************************************************************************************************/
 
-- (int)numberOfItemsInComboBox:(NSComboBox *)aComboBox
+- (NSInteger)numberOfItemsInComboBox:(NSComboBox *)aComboBox
 {
-	int tag = [aComboBox tag];
+	NSInteger tag = [aComboBox tag];
 	if( tag == 1 )
 	{
 		return [[[MFPreferences preferences] userNameHistory] count];
@@ -651,9 +650,9 @@ static NSString *kMFXfireFriendDragType = @"MFXfireFriendDragType";
 	return 0;
 }
 
-- (id)comboBox:(NSComboBox *)aComboBox objectValueForItemAtIndex:(int)index
+- (id)comboBox:(NSComboBox *)aComboBox objectValueForItemAtIndex:(NSInteger)index
 {
-	int tag = [aComboBox tag];
+	NSInteger tag = [aComboBox tag];
 	if( tag == 1 )
 	{
 		return [[[MFPreferences preferences] userNameHistory] objectAtIndex:index];
@@ -736,7 +735,6 @@ static NSString *kMFXfireFriendDragType = @"MFXfireFriendDragType";
 		[self changeToMode:kMacFireUIModeLoginEntry];
 		[ourNameView setStringValue:MF_UISTR_OFFLINE];
 		
-		[chatWindows release];
 		chatWindows = nil;
 	}
 }
@@ -745,8 +743,8 @@ static NSString *kMFXfireFriendDragType = @"MFXfireFriendDragType";
 // XfireSession either calls -xfireSession:didChangeStatus:kXfireSessionStatusOnline or xfireSessionLoginFailed:reason:
 - (void)xfireSessionLoginFailed:(XfireSession *)session reason:(NSString *)reason
 {
-	[growlSuppressionTimer invalidate];
-	growlSuppressionTimer = nil;
+	[notificationSuppressionTimer invalidate];
+	notificationSuppressionTimer = nil;
 	
 	if( [reason isEqualToString:kXfireVersionTooOldReason] )
 	{
@@ -869,7 +867,7 @@ static NSString *kMFXfireFriendDragType = @"MFXfireFriendDragType";
 {
 	if( currentMode == kMacFireUIModeFriendList )
 	{
-		outstandingFriendRequests = [requestors retain];
+		outstandingFriendRequests = [requestors mutableCopy];
 		
 		// roundabout but it works
 		[self friendRequestSheetDidEnd];
@@ -908,9 +906,9 @@ static NSString *kMFXfireFriendDragType = @"MFXfireFriendDragType";
 		
 		case kXfireFriendOnlineStatusDidChange:
 			if( [fr isOnline] )
-				[[MFGrowlHelper helper] postFriendCameOnline:fr];
+				[[MFNotificationHelper helper] postFriendCameOnline:fr];
 			else
-				[[MFGrowlHelper helper] postFriendWentOffline:fr];
+				[[MFNotificationHelper helper] postFriendWentOffline:fr];
 			break;
 		
 		case kXfireFriendStatusStringDidChange:
@@ -960,7 +958,6 @@ static NSString *kMFXfireFriendDragType = @"MFXfireFriendDragType";
 	[chat setDelegate:ctl];
 	[ctl showWindow:self];
 	[chatWindows addObject:ctl];
-	[ctl release]; // don't leak
 }
 
 - (void)xfireSession:(XfireSession *)session chatDidEnd:(XfireChat *)aChat
@@ -974,7 +971,7 @@ static NSString *kMFXfireFriendDragType = @"MFXfireFriendDragType";
 #pragma mark Friends Outline View Delegation/DataSource
 /***********************************************************************************************************************/
 
-- (id)outlineView:(NSOutlineView *)olView child:(int)index ofItem:(id)item
+- (id)outlineView:(NSOutlineView *)olView child:(NSInteger)index ofItem:(id)item
 {
 	if( currentMode != kMacFireUIModeFriendList )
 		return @"";
@@ -1011,7 +1008,7 @@ static NSString *kMFXfireFriendDragType = @"MFXfireFriendDragType";
 	return NO;
 }
 
-- (int)outlineView:(NSOutlineView *)outlineView numberOfChildrenOfItem:(id)item
+- (NSInteger)outlineView:(NSOutlineView *)outlineView numberOfChildrenOfItem:(id)item
 {
 	if( currentMode != kMacFireUIModeFriendList )
 		return 0;
@@ -1112,7 +1109,7 @@ static NSString *kMFXfireFriendDragType = @"MFXfireFriendDragType";
 	}
 }
 
-- (float)outlineView:(NSOutlineView *)outlineView heightOfRowByItem:(id)item
+- (CGFloat)outlineView:(NSOutlineView *)outlineView heightOfRowByItem:(id)item
 {
 	return 26.0f; // icon is 24x24, want 1px margin around it
 }
@@ -1179,7 +1176,7 @@ static NSString *kMFXfireFriendDragType = @"MFXfireFriendDragType";
 			[pasteboard declareTypes:[NSArray arrayWithObject:kMFXfireFriendDragType] owner:self];
 			if( [pasteboard setData:d forType:kMFXfireFriendDragType] )
 			{
-				[pasteboard setString:[fr displayNameString] forType:NSStringPboardType];
+				[pasteboard setString:[fr displayNameString] forType:NSPasteboardTypeString];
 				return YES;
 			}
 		}
@@ -1190,7 +1187,7 @@ static NSString *kMFXfireFriendDragType = @"MFXfireFriendDragType";
 }
 
 // Check that we can recieve this drop, retarget as necessary
-- (NSDragOperation)outlineView:(NSOutlineView *)ov validateDrop:(id <NSDraggingInfo>)info proposedItem:(id)proposedItem proposedChildIndex:(int)index
+- (NSDragOperation)outlineView:(NSOutlineView *)ov validateDrop:(id <NSDraggingInfo>)info proposedItem:(id)proposedItem proposedChildIndex:(NSInteger)index
 {
 	if( proposedItem == nil )
 	{
@@ -1210,7 +1207,7 @@ static NSString *kMFXfireFriendDragType = @"MFXfireFriendDragType";
 	return NSDragOperationNone;
 }
 
-- (BOOL)outlineView:(NSOutlineView *)ov acceptDrop:(id <NSDraggingInfo>)info item:(id)item childIndex:(int)index
+- (BOOL)outlineView:(NSOutlineView *)ov acceptDrop:(id <NSDraggingInfo>)info item:(id)item childIndex:(NSInteger)index
 {
 	NSPasteboard *pboard = [info draggingPasteboard];
 	NSData       *d = [pboard dataForType:kMFXfireFriendDragType];

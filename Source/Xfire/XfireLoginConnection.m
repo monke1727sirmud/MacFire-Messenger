@@ -42,12 +42,12 @@ static void _XfireCopyPreference( NSString *pktKey, NSString *dictKey, XfirePack
 
 @implementation XfireLoginConnection
 
-- (id)initWithHost:(NSHost *)host port:(unsigned short)portNumber
+- (instancetype)initWithHostName:(NSString *)hostName port:(unsigned short)portNumber
 {
-	self = [super initWithHost:host port:portNumber];
+	self = [super initWithHostName:hostName port:portNumber];
 	if( self )
 	{
-		_availableData = [[NSMutableData data] retain];
+		_availableData = [NSMutableData data];
 		_keepAliveResponseTimer = nil;
 	}
 	return self;
@@ -55,16 +55,9 @@ static void _XfireCopyPreference( NSString *pktKey, NSString *dictKey, XfirePack
 
 - (void)dealloc
 {
-	[_availableData release];
 	_availableData = nil;
-	
-	if( _keepAliveResponseTimer )
-	{
-		[_keepAliveResponseTimer invalidate];
-		_keepAliveResponseTimer = nil;
-	}
-	
-	[super dealloc];
+	[_keepAliveResponseTimer invalidate];
+	_keepAliveResponseTimer = nil;
 }
 
 - (void)disconnect
@@ -85,11 +78,10 @@ static void _XfireCopyPreference( NSString *pktKey, NSString *dictKey, XfirePack
 	[self sendPacket:pkt];
 	
 	// wait 10 secs for the response before hanging up
-	_keepAliveResponseTimer = [NSTimer scheduledTimerWithTimeInterval:10.0
-		target:self
-		selector:@selector(keepAliveResponseTimeout:)
-		userInfo:nil
-		repeats:NO];
+	__weak typeof(self) weakSelf = self;
+	_keepAliveResponseTimer = [NSTimer scheduledTimerWithTimeInterval:10.0 repeats:NO block:^(NSTimer *timer) {
+		[weakSelf keepAliveResponseTimeout:timer];
+	}];
 }
 
 - (void)keepAliveResponseTimeout:(NSTimer *)aTimer
@@ -118,7 +110,6 @@ static void _XfireCopyPreference( NSString *pktKey, NSString *dictKey, XfirePack
 - (void)connectionWillDisconnect
 {
 	[[self session] setStatus:kXfireSessionStatusOffline];
-	[_availableData release];
 	_availableData = nil;
 }
 
@@ -495,8 +486,6 @@ static void _XfireCopyPreference( NSString *pktKey, NSString *dictKey, XfirePack
 		password:hashedPassword
 		flags:0];
 	
-	[username release];
-	[password release];
 	[self sendPacketSafe:loginPkt];
 }
 
@@ -602,7 +591,6 @@ SCR 37 - Don't set status to Online here, wait until we get the friends list (we
 			[fr setUserID:  [[userids objectAtIndex:i] unsignedIntValue]];
 			
 			[arr addObject:fr];
-			[fr release]; // avoid leak
 			
 			[[self session] addFriend:fr];
 			
@@ -612,11 +600,9 @@ SCR 37 - Don't set status to Online here, wait until we get the friends list (we
 		{
 			// We can get this on a friend we already know about if they accept a friendship invitation (or we do)
 			// This should have the effect of moving groups from FoF to Online or Offline friend group.
-			[fr retain];
 			[[self session] removeFriend:fr];
 			[fr setIsFriendOfFriend:NO];
 			[[self session] addFriend:fr];
-			[fr release];
 			
 			[[self session] delegate_friendDidChange:fr attribute:kXfireFriendWasAdded];
 		}
@@ -772,7 +758,6 @@ SCR 37 - Don't set status to Online here, wait until we get the friends list (we
 			// Did a FoF leave a game?  If so, remove from our FoF list
 			if( ([gid unsignedIntValue] == 0) && [fr isFriendOfFriend] )
 			{
-				[[fr retain] autorelease];
 				[fr setIsOnline:NO];
 				[[self session] removeFriend:fr];
 				
@@ -972,7 +957,6 @@ SCR 37 - Don't set status to Online here, wait until we get the friends list (we
 		[fr setLastName:[lastNames objectAtIndex:i]];
 		
 		[friends addObject:fr];
-		[fr release];
 	}
 	
 	[[self session] delegate_searchResults:friends];
@@ -998,8 +982,6 @@ SCR 37 - Don't set status to Online here, wait until we get the friends list (we
 		fr = [sess friendForUserID:[userID unsignedIntValue]];
 		if( fr )
 		{
-			[[fr retain] autorelease]; // make sure it stays around for a little while longer
-			
 			[sess removeFriend:fr];
 			[self raiseFriendNotification:fr attribute:kXfireFriendWasRemoved];
 		}
@@ -1031,7 +1013,6 @@ SCR 37 - Don't set status to Online here, wait until we get the friends list (we
 		[fr setStatusString:[messages objectAtIndex:i]];
 		
 		[friends addObject:fr];
-		[fr release];
 	}
 	
 	[[self session] delegate_didReceiveFriendshipRequests:friends];
@@ -1120,7 +1101,7 @@ SCR 37 - Don't set status to Online here, wait until we get the friends list (we
 		return;
 	}
 	
-	NSMutableDictionary *options = [[[XfireSession defaultUserOptions] mutableCopy] autorelease];
+	NSMutableDictionary *options = [[XfireSession defaultUserOptions] mutableCopy];
 	
 	_XfireCopyPreference( @"0x01", kXfireShowMyFriendsOption, map, options );
 	_XfireCopyPreference( @"0x02", kXfireShowMyGameServerDataOption, map, options );

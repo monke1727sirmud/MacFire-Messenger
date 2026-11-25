@@ -23,21 +23,13 @@
 - (id)copyWithZone:(NSZone *)zone
 {
 	MFImageAndTextCell *c = (MFImageAndTextCell*)[super copyWithZone:zone];
-	c->_image = [_image retain];
+	c->_image = _image;
 	c->_displayImageSize = _displayImageSize;
 	return c;
 }
 
-- (void)dealloc
-{
-	[_image release];
-	[super dealloc];
-}
-
 - (void)setImage:(NSImage *)anImage
 {
-	[anImage retain];
-	[_image release];
 	_image = anImage;
 }
 
@@ -48,7 +40,7 @@
 
 // we draw the image
 // let the superview (NSTextFieldCell) draw the image
-- (void)drawInteriorWithFrame:(NSRect)cellFrame inView:(NSView *)controlView;
+- (void)drawInteriorWithFrame:(NSRect)cellFrame inView:(NSView *)controlView
 {
 	if( [self image] )
 	{
@@ -69,7 +61,7 @@
 		else
 			imageFrame.origin.y += (ceil(cellFrame.size.height-imageFrame.size.height)/2.0f);
 		[[self image] setSize:[self displayImageSize]];
-		[[self image] compositeToPoint:imageFrame.origin operation:NSCompositeSourceOver];
+		[[self image] drawAtPoint:imageFrame.origin fromRect:NSZeroRect operation:NSCompositingOperationSourceOver fraction:1.0];
 	}
 	
 	// all this is just so we can draw vertically centered in the bounding box

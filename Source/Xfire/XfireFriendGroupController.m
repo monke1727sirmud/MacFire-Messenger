@@ -46,11 +46,9 @@
 
 - (void)dealloc
 {
-	[_groups release];
 	_groups = nil;
 	_session = nil;
 	
-	[super dealloc];
 }
 
 - (NSArray*)groups
@@ -71,7 +69,6 @@
 	
 	grp = [[XfireFriendGroup alloc] initCustomWithID:groupID name:aName session:_session];
 	[_groups addObject:grp];
-	[grp release];
 	[self sortGroups];
 	
 	[_session delegate_friendGroupWasAdded:grp];
@@ -89,7 +86,6 @@
 		{
 			grp = [self createStandardGroupOfType:kXfireFriendGroupOnline];
 			[_groups addObject:grp];
-			[grp release];
 			
 			[_session delegate_friendGroupWasAdded:grp];
 			[grp sortMembers];
@@ -102,7 +98,6 @@
 		{
 			grp = [self createStandardGroupOfType:kXfireFriendGroupOffline];
 			[_groups addObject:grp];
-			[grp release];
 			
 			[_session delegate_friendGroupWasAdded:grp];
 			[grp sortMembers];
@@ -115,7 +110,6 @@
 		{
 			grp = [self createStandardGroupOfType:kXfireFriendGroupFriendOfFriends];
 			[_groups addObject:grp];
-			[grp release];
 			
 			[_session delegate_friendGroupWasAdded:grp];
 			[grp sortMembers];
@@ -169,7 +163,6 @@
 			{
 				grp = [self createStandardGroupOfType:kXfireFriendGroupOnline];
 				[_groups addObject:grp];
-				[grp release];
 				
 				[_session delegate_friendGroupWasAdded:grp];
 			}
@@ -179,7 +172,6 @@
 				{
 					grp = [self createStandardGroupOfType:kXfireFriendGroupOffline];
 					[_groups addObject:grp];
-					[grp release];
 					
 					[_session delegate_friendGroupWasAdded:grp];
 				}
@@ -190,7 +182,6 @@
 				{
 					grp = [self createStandardGroupOfType:kXfireFriendGroupFriendOfFriends];
 					[_groups addObject:grp];
-					[grp release];
 					
 					[_session delegate_friendGroupWasAdded:grp];
 				}
@@ -275,7 +266,6 @@
 			grp = [self createStandardGroupOfType:kXfireFriendGroupOnline];
 			[newGroups addObject:grp];
 			[_session delegate_friendGroupWasAdded:grp];
-			[grp release];
 		}
 		else if( newID == kXfireFriendGroupOfflineID )
 		{
@@ -283,14 +273,12 @@
 			grp = [self createStandardGroupOfType:kXfireFriendGroupOffline];
 			[newGroups addObject:grp];
 			[_session delegate_friendGroupWasAdded:grp];
-			[grp release];
 		}
 		else if( newID == kXfireFriendGroupFriendOfFriendsID )
 		{
 			// not a current group, but now we are adding one of the standard groups
 			grp = [self createStandardGroupOfType:kXfireFriendGroupFriendOfFriends];
 			[newGroups addObject:grp];
-			[grp release];
 			
 			[_session delegate_friendGroupWasAdded:grp];
 		}
@@ -316,7 +304,6 @@
 	}
 	
 	// assign the new group list and re-sort
-	[_groups release];
 	_groups = newGroups;
 	if( _groupSortSelector )
 		[_groups sortUsingSelector:_groupSortSelector];

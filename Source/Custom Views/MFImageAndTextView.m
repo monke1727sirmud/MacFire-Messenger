@@ -32,12 +32,6 @@
 	return self;
 }
 
-- (void)dealloc
-{
-	[_text release];
-	[super dealloc];
-}
-
 - (void)setImageValue:(NSImage *)anImage
 {
 	[_cell setImage:anImage];
@@ -45,8 +39,6 @@
 
 - (void)setStringValue:(NSString *)string
 {
-	[string retain];
-	[_text release];
 	_text = string;
 }
 

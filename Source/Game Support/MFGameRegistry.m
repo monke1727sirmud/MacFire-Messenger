@@ -69,14 +69,12 @@ NSString *kMFGameRegistryMacAppPathsKey = @"MacAppPaths";
 		{
 			// TODO: need to get some kind of warning up to the user
 			NSLog(@"Game information file is missing");
-			[self release];
 			return nil;
 		}
 		if( ! [self loadGamesFile:path] )
 		{
 			// TODO: need to get some kind of warning up to the user
 			NSLog(@"Could not load game information file");
-			[self release];
 			return nil;
 		}
 		
@@ -86,14 +84,12 @@ NSString *kMFGameRegistryMacAppPathsKey = @"MacAppPaths";
 		{
 			// TODO: need to get some kind of warning up to the user
 			NSLog(@"Game icons file is missing");
-			[self release];
 			return nil;
 		}
 		if( ! [self loadIconsFile:path] )
 		{
 			// TODO: need to get some kind of warning up to the user
 			NSLog(@"Could not load game icons file");
-			[self release];
 			return nil;
 		}
 	}
@@ -103,15 +99,11 @@ NSString *kMFGameRegistryMacAppPathsKey = @"MacAppPaths";
 // This should never get called, but just in case...
 - (void)dealloc
 {
-	[_games release];
-	[_macGames release];
-	[_defaultImage release];
 	
 	_games = nil;
 	_macGames = nil;
 	_defaultImage = nil;
 	
-	[super dealloc];
 }
 
 /*
@@ -273,14 +265,16 @@ keys are:
 	return [[self infoForGameID:gid] objectForKey:kMFGameRegistryLongNameKey];
 }
 
-+ (NSDictionary *)infoForMacApplication:(NSDictionary *)appInfo
++ (NSDictionary *)infoForRunningApplication:(NSRunningApplication *)app
 {
-	return [[self registry] infoForMacApplication:appInfo];
+	return [[self registry] infoForRunningApplication:app];
 }
 
-- (NSDictionary *)infoForMacApplication:(NSDictionary *)appInfo
+- (NSDictionary *)infoForRunningApplication:(NSRunningApplication *)app
 {
-	NSString *appPath = [[[appInfo objectForKey:@"NSApplicationPath"] lastPathComponent] uppercaseString];
+	NSString *appPath = [[[[app bundleURL] path] lastPathComponent] uppercaseString];
+	if( appPath == nil )
+		return nil;
 	return [_macGames objectForKey:appPath];
 }
 

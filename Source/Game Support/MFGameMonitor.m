@@ -17,7 +17,7 @@
 *******************************************************************/
 
 #import "MFGameMonitor.h"
-#import "MFGAmeRegistry.h"
+#import "MFGameRegistry.h"
 
 NSString *kMFGameDidLaunch = @"MFGameDidLaunch";
 NSString *kMFGameDidExit = @"MFGameDidExit";
@@ -33,7 +33,7 @@ static MFGameMonitor *gSharedMonitor = nil;
 
 @implementation MFGameMonitor
 
-+ (id)sharedMonitor
++ (instancetype)sharedMonitor
 {
 	if( gSharedMonitor == nil )
 	{
@@ -43,7 +43,7 @@ static MFGameMonitor *gSharedMonitor = nil;
 	return gSharedMonitor;
 }
 
-- (id)init
+- (instancetype)init
 {
 	self = [super init];
 	if( self )
@@ -58,9 +58,7 @@ static MFGameMonitor *gSharedMonitor = nil;
 - (void)dealloc
 {
 	[[[NSWorkspace sharedWorkspace] notificationCenter] removeObserver:self];
-	[_runningGames release];
 	_runningGames = nil;
-	[super dealloc];
 }
 
 - (NSArray *)runningGames
@@ -72,14 +70,11 @@ static MFGameMonitor *gSharedMonitor = nil;
 - (void)startMonitoring
 {
 	NSWorkspace *workspace = [NSWorkspace sharedWorkspace];
-	NSArray *runningApps = [workspace launchedApplications];
-	NSEnumerator *enumer = [runningApps objectEnumerator];
-	NSDictionary *theApp;
-	NSDictionary *gameInfo;
+	NSArray *runningApps = [workspace runningApplications];
 	
-	while( (theApp = [enumer nextObject]) != nil )
+	for( NSRunningApplication *theApp in runningApps )
 	{
-		gameInfo = [MFGameRegistry infoForMacApplication:theApp];
+		NSDictionary *gameInfo = [MFGameRegistry infoForRunningApplication:theApp];
 		if( gameInfo )
 		{
 			[_runningGames addObject:gameInfo];
@@ -102,7 +97,8 @@ static MFGameMonitor *gSharedMonitor = nil;
 // then route kMFGameDidLaunch
 - (void)workspaceAppDidLaunch:(NSNotification *)aNote
 {
-	NSDictionary *gameInfo = [MFGameRegistry infoForMacApplication:[aNote userInfo]];
+	NSRunningApplication *app = [[aNote userInfo] objectForKey:NSWorkspaceApplicationKey];
+	NSDictionary *gameInfo = [MFGameRegistry infoForRunningApplication:app];
 	if( gameInfo )
 	{
 		// it's a valid game, add it to our list
@@ -129,7 +125,8 @@ static MFGameMonitor *gSharedMonitor = nil;
 // then route kMFGameDidExit
 - (void)workspaceAppDidExit:(NSNotification *)aNote
 {
-	NSDictionary *gameInfo = [MFGameRegistry infoForMacApplication:[aNote userInfo]];
+	NSRunningApplication *app = [[aNote userInfo] objectForKey:NSWorkspaceApplicationKey];
+	NSDictionary *gameInfo = [MFGameRegistry infoForRunningApplication:app];
 	
 	// it's a valid game, remove it from our list
 	if( gameInfo && [_runningGames containsObject:gameInfo] )

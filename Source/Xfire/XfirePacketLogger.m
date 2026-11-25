@@ -46,16 +46,14 @@
 	
 	NSDateFormatter *dateFormatter;
 	dateFormatter = [[NSDateFormatter alloc] init];
-	[dateFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
 	[dateFormatter setTimeStyle:NSDateFormatterNoStyle];// NSDateFormatterShortStyle];
 	[dateFormatter setDateFormat:@"yyyyMMdd"];
 	str = [dateFormatter stringFromDate:[NSDate date]];
-	[dateFormatter release];
 	
 	return str;
 }
 
-- (id)initWithCacheFolderName:(NSString *)aName;
+- (instancetype)initWithCacheFolderName:(NSString *)aName
 {
 	self = [super init];
 	if( self )
@@ -65,25 +63,20 @@
 		
 		// Now create a new log file name
 		_cacheFileName = [self unusedCacheFileNameAtPath:_cacheFolderPath];
-		[_cacheFileName retain];
 		
 		// NSFileHandle-fileHandleForWritingAtPath: requires the file to exist   grr
 		[[NSData data] writeToFile:_cacheFileName atomically:NO];
 		
 		// Then create a new file to contain the log
-		_cacheFileHandle = [[NSFileHandle fileHandleForWritingAtPath:_cacheFileName] retain];
+		_cacheFileHandle = [NSFileHandle fileHandleForWritingAtPath:_cacheFileName];
 	}
 	return self;
 }
 
 - (void)dealloc
 {
-	[_cacheFolderPath release];
-	[_cacheFileName release];
 	[_cacheFileHandle closeFile];
-	[_cacheFileHandle release];
 	
-	[super dealloc];
 }
 
 - (NSString *)unusedCacheFileNameAtPath:(NSString *)path

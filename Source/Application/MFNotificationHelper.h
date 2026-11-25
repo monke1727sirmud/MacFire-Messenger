@@ -1,36 +1,41 @@
 /*******************************************************************
-	FILE:		MFGrowlHelper.h
+	FILE:		MFNotificationHelper.h
 	
 	COPYRIGHT:
-		Copyright 2007-2008, the MacFire.org team.
+		Copyright 2007-2009, the MacFire.org team.
 		Use of this software is governed by the license terms
 		indicated in the License.txt file (a BSD license).
 	
 	DESCRIPTION:
-		Helps support Growl notifications we use.
+		Posts user notifications (friends coming online/offline and
+		incoming chat messages) using the UserNotifications framework.
 	
 	HISTORY:
+		2026 11 25  Replaced the retired Growl framework with
+		            UserNotifications.
 		2008 04 06  Changed copyright to BSD license.
 		2007 12 02  Created.
 *******************************************************************/
 
 #import <Cocoa/Cocoa.h>
-#import <Growl/GrowlApplicationBridge.h>
+#import <UserNotifications/UserNotifications.h>
 
 @class XfireFriend;
 
-@interface MFGrowlHelper : NSObject <GrowlApplicationBridgeDelegate>
+@interface MFNotificationHelper : NSObject <UNUserNotificationCenterDelegate>
 {
-	NSData *_icon;
-	BOOL   _suspendNotifications;
-	BOOL   _postsWhileActive;
+	BOOL _suspendNotifications;
+	BOOL _postsWhileActive;
 }
 
 // Shared object
-+ (MFGrowlHelper *)helper;
++ (instancetype)helper;
 
-// Detect whether Growl is installed
-- (BOOL)isGrowlInstalled;
+// Request notification authorization from the user (safe to call more than once)
+- (void)requestAuthorizationIfNeeded;
+
+// Whether the system notification center is available
+- (BOOL)isNotificationCenterAvailable;
 
 // Suspend notifications (useful when logging on)
 - (void)setSuspendsNotifications:(BOOL)suspends;

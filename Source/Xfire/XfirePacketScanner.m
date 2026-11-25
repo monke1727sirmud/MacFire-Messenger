@@ -81,7 +81,7 @@ typedef enum  {
 
 + (id)scannerWithData:(NSData *)data
 {
-	return [[[XfirePacketScanner alloc] initWithData:data] autorelease];
+	return [[XfirePacketScanner alloc] initWithData:data];
 }
 
 - (id)initWithData:(NSData *)dat
@@ -210,7 +210,7 @@ typedef enum  {
 	
 	NSString *s = [[[NSString alloc] initWithBytes:&_bytes[_idx]
 		length:len
-		encoding:NSUTF8StringEncoding] autorelease];
+		encoding:NSUTF8StringEncoding];
 	
 #if SCANNER_VEBOSE_LOG
 	NSLog(@"XfirePacketScanner: scanned attr key string \"%@\"",s);
@@ -233,7 +233,7 @@ typedef enum  {
 	{
 		s = [[[NSString alloc] initWithBytes:&_bytes[_idx]
 			length:len
-			encoding:NSUTF8StringEncoding] autorelease];
+			encoding:NSUTF8StringEncoding];
 		
 #if SCANNER_VEBOSE_LOG
 		NSLog(@"XfirePacketScanner: scanned string \"%@\"",s);

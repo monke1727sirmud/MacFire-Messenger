@@ -111,7 +111,7 @@ withheld
 		{
 			if( [scanner scan:&packetID attributes:&attrs] )
 			{
-				return [[[XfirePacket alloc] initWithID:packetID attributeMap:attrs raw:data] autorelease];
+				return [[XfirePacket alloc] initWithID:packetID attributeMap:attrs raw:data];
 			}
 		}
 		@catch( NSException *e )
@@ -130,7 +130,7 @@ withheld
 	if( self )
 	{
 		_packetID = pktID;
-		_attributes = [attrs retain];
+		_attributes = attrs;
 		_raw = [raw copy];
 	}
 	return self;
@@ -138,12 +138,9 @@ withheld
 
 - (void)dealloc
 {
-	if( _attributes ) [_attributes release];
-	if( _raw ) [_raw release];
 	_attributes = nil;
 	_raw = nil;
 	
-	[super dealloc];
 }
 
 - (XfirePacketID)packetID
@@ -151,7 +148,7 @@ withheld
 	return _packetID;
 }
 
-- (NSData*)raw;
+- (NSData*)raw
 {
 	return _raw;
 }
@@ -227,7 +224,7 @@ withheld
 
 + (id)packet
 {
-	return [[[XfireMutablePacket alloc] init] autorelease];
+	return [[XfireMutablePacket alloc] init];
 }
 
 // username/password packet (ID 1)
@@ -640,7 +637,7 @@ withheld
 	if( self )
 	{
 		_packetID = 0;
-		_attributes = [[XfirePacketAttributeMap map] retain];
+		_attributes = [XfirePacketAttributeMap map];
 		_raw = nil;
 	}
 	return self;
@@ -681,8 +678,7 @@ withheld
 			NSData *dat = [generator generate];
 			if( dat )
 			{
-				[_raw release];
-				_raw = [dat retain];
+				_raw = dat;
 				return YES;
 			}
 		}

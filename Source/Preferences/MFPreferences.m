@@ -47,8 +47,8 @@ static NSString*	kMFShowWhenTypingPrefKey			= @"ShowWhenTyping"					; //	BOOL
 static NSString*	kMFShowTimeStampsPrefKey			= @"ShowTimeStamps"					; //	BOOL
 static NSString*	kMFLogChatsPrefKey					= @"LogChats"						; //	BOOL
 static NSString*	kMFChatTextFontPrefKey				= @"ChatTextFont"					; //	NSData (archived NSFont)
-static NSString*	kMFPostGrowlNotesPrefKey			= @"PostGrowlNotifications"			; //	BOOL
-static NSString*	kMFPostGrowlWhileActivePrefKey		= @"PostGrowlWhileActive"			; //	BOOL
+static NSString*	kMFPostNotificationsPrefKey		= @"PostGrowlNotifications"			; //	BOOL (key kept for compatibility with existing preferences)
+static NSString*	kMFPostNotificationsWhileActivePrefKey = @"PostGrowlWhileActive"			; //	BOOL (key kept for compatibility with existing preferences)
 static NSString*	kMFPoseAsNewerXfirePrefKey			= @"PoseAsNewerXfire"				; //	BOOL
 static NSString*	kMFPosingXfireVersionPrefKey		= @"PosingXfireVersion"				; //	int
 static NSString*	kMFXfireServerHostNamePrefKey		= @"XfireServerHostName"			; //	NSString
@@ -66,9 +66,9 @@ static MFPreferences *gPrefs = nil;
 #define SETDEF( _key, _value ) [defaults setObject:(_value) forKey:(_key)]
 #define SETBOOL( _key, _value ) [defaults setObject:[NSNumber numberWithBool:(_value)] forKey:(_key)]
 #define SETFLOAT( _key, _value ) [defaults setObject:[NSString stringWithFormat:@"%g", (_value)] forKey:(_key)]
-#define SETFONT( _key, _name, _size) [defaults setObject:[NSArchiver archivedDataWithRootObject:[NSFont fontWithName:(_name) size:(_size)]] forKey:(_key)]
-#define SETFONT2( _key, _font ) [defaults setObject:[NSArchiver archivedDataWithRootObject:(_font)] forKey:(_key)]
-#define SETCOLOR( _key, _color ) [defaults setObject:[NSArchiver archivedDataWithRootObject:(_color)] forKey:(_key)]
+#define SETFONT( _key, _name, _size) [defaults setObject:[NSKeyedArchiver archivedDataWithRootObject:[NSFont fontWithName:(_name) size:(_size)] requiringSecureCoding:NO error:NULL] forKey:(_key)]
+#define SETFONT2( _key, _font ) [defaults setObject:[NSKeyedArchiver archivedDataWithRootObject:(_font) requiringSecureCoding:NO error:NULL] forKey:(_key)]
+#define SETCOLOR( _key, _color ) [defaults setObject:[NSKeyedArchiver archivedDataWithRootObject:(_color) requiringSecureCoding:NO error:NULL] forKey:(_key)]
 + (NSMutableDictionary *)defaultPreferences
 {
 	NSMutableDictionary		*defaults;
@@ -91,8 +91,8 @@ static MFPreferences *gPrefs = nil;
 	SETBOOL( kMFShowTimeStampsPrefKey,			YES );
 	SETBOOL( kMFLogChatsPrefKey,				NO  );
 	SETFONT2( kMFChatTextFontPrefKey,			[self defaultChatTextFont] );
-	SETBOOL( kMFPostGrowlNotesPrefKey,			YES );
-	SETBOOL( kMFPostGrowlWhileActivePrefKey,	NO  );
+	SETBOOL( kMFPostNotificationsPrefKey,		YES );
+	SETBOOL( kMFPostNotificationsWhileActivePrefKey, NO );
 	SETBOOL( kMFPoseAsNewerXfirePrefKey,		NO  );
 	SETDEF(  kMFPosingXfireVersionPrefKey,		[NSNumber numberWithInt:0] );
 	SETDEF(  kMFXfireServerHostNamePrefKey,		@"cs.xfire.com" );
@@ -379,22 +379,22 @@ static MFPreferences *gPrefs = nil;
 }
 
 
-- (void)setShouldPostGrowlNotifications:(BOOL)post
+- (void)setShouldPostNotifications:(BOOL)post
 {
-	[[NSUserDefaults standardUserDefaults] setBool:post forKey:kMFPostGrowlNotesPrefKey];
+	[[NSUserDefaults standardUserDefaults] setBool:post forKey:kMFPostNotificationsPrefKey];
 }
-- (BOOL)shouldPostGrowlNotifications
+- (BOOL)shouldPostNotifications
 {
-	return [[NSUserDefaults standardUserDefaults] boolForKey:kMFPostGrowlNotesPrefKey];
+	return [[NSUserDefaults standardUserDefaults] boolForKey:kMFPostNotificationsPrefKey];
 }
 
-- (void)setPostGrowlNotificationsWhileActive:(BOOL)post
+- (void)setPostNotificationsWhileActive:(BOOL)post
 {
-	[[NSUserDefaults standardUserDefaults] setBool:post forKey:kMFPostGrowlWhileActivePrefKey];
+	[[NSUserDefaults standardUserDefaults] setBool:post forKey:kMFPostNotificationsWhileActivePrefKey];
 }
-- (BOOL)postGrowlNotificationsWhileActive
+- (BOOL)postNotificationsWhileActive
 {
-	return [[NSUserDefaults standardUserDefaults] boolForKey:kMFPostGrowlWhileActivePrefKey];
+	return [[NSUserDefaults standardUserDefaults] boolForKey:kMFPostNotificationsWhileActivePrefKey];
 }
 
 - (void)setPoseAsNewerXfireClient:(BOOL)pose

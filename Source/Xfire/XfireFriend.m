@@ -48,23 +48,6 @@
 	return self;
 }
 
-- (void)dealloc
-{
-	[_username release];
-	[_nickname release];
-	[_sessionID release];
-	[_statusString release];
-	[_commonFriendIDs release];
-	
-	_username = nil;
-	_nickname = nil;
-	_sessionID = nil;
-	_statusString = nil;
-	_commonFriendIDs = nil;
-	
-	[super dealloc];
-}
-
 - (void)setUserID:(unsigned int)newID
 {
 	_userID = newID;
@@ -76,9 +59,7 @@
 
 - (void)setUserName:(NSString *)aName
 {
-	NSString *tmp = [aName copy];
-	[_username release];
-	_username = tmp;
+	_username = [aName copy];
 }
 - (NSString *)userName
 {
@@ -87,9 +68,7 @@
 
 - (void)setNickName:(NSString *)aName
 {
-	NSString *tmp = [aName copy];
-	[_nickname release];
-	_nickname = tmp;
+	_nickname = [aName copy];
 }
 - (NSString *)nickName
 {
@@ -98,9 +77,7 @@
 
 - (void)setFirstName:(NSString *)aName
 {
-	NSString *tmp = [aName copy];
-	[_firstName release];
-	_firstName = tmp;
+	_firstName = [aName copy];
 }
 - (NSString *)firstName
 {
@@ -109,9 +86,7 @@
 
 - (void)setLastName:(NSString *)aName
 {
-	NSString *tmp = [aName copy];
-	[_lastName release];
-	_lastName = tmp;
+	_lastName = [aName copy];
 }
 - (NSString *)lastName
 {
@@ -139,9 +114,7 @@
 
 - (void)setSessionID:(NSData *)anID
 {
-	NSData *tmp = [anID copy];
-	[_sessionID release];
-	_sessionID = tmp;
+	_sessionID = [anID copy];
 }
 - (NSData *)sessionID
 {
@@ -168,9 +141,7 @@
 
 - (void)setStatusString:(NSString *)aString
 {
-	NSString *tmp = [aString copy];
-	[_statusString release];
-	_statusString = tmp;
+	_statusString = [aString copy];
 }
 - (NSString *)statusString
 {

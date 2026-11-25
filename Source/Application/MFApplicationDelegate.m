@@ -19,7 +19,7 @@
 
 #import "MFApplicationDelegate.h"
 #import "MFMainWindowController.h"
-#import "MFGrowlHelper.h"
+#import "MFNotificationHelper.h"
 #import "MFPreferences.h"
 #import "MFGameRegistry.h"
 #import "MFUserIdleMonitor.h"
@@ -29,7 +29,7 @@
 
 @implementation MFApplicationDelegate
 
-- (id)init
+- (instancetype)init
 {
 	self = [super init];
 	if( self )
@@ -57,8 +57,8 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-	// Forces Growl to load
-	[MFGrowlHelper helper];
+	// Sets up the notification center delegate and requests authorization
+	[[MFNotificationHelper helper] requestAuthorizationIfNeeded];
 	
 	// Forces application support folders to be created if they don't yet exist
 	[MFApplicationSupportController sharedController];
