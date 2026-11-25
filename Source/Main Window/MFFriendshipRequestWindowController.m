@@ -49,51 +49,45 @@
 	
 	[_messageTextField setStringValue:_message];
 	
-	[NSApp beginSheet:[self window]
-		modalForWindow:win
-		modalDelegate:self
-		didEndSelector:@selector(theSheetDidEnd:returnCode:contextInfo:)
-		contextInfo:nil];
+	NSWindow *sheet = [self window];
+	[win beginSheet:sheet completionHandler:^(NSModalResponse returnCode) {
+		[sheet orderOut:self];
+
+		if( returnCode == -1 )
+		{
+			[self->_xfSession declineFriendRequest:self->_requestor];
+		}
+		else if( returnCode == 1 )
+		{
+			[self->_xfSession acceptFriendRequest:self->_requestor];
+		}
+
+		// Keep this controller alive while the main window drops its reference to it.
+		MFFriendshipRequestWindowController *keepAlive = self;
+		[self->_mainWindow friendRequestControllerDidFinish:self];
+		[self->_mainWindow friendRequestSheetDidEnd];
+		(void)keepAlive;
+	}];
 }
 
 - (IBAction)deferRequest:(id)sender
 {
-	[NSApp endSheet:[self window] returnCode:0];
+	[[[self window] sheetParent] endSheet:[self window] returnCode:0];
 }
 
 - (IBAction)declineRequest:(id)sender
 {
-	[NSApp endSheet:[self window] returnCode:-1];
+	[[[self window] sheetParent] endSheet:[self window] returnCode:-1];
 }
 
 - (IBAction)acceptRequest:(id)sender
 {
-	[NSApp endSheet:[self window] returnCode:1];
+	[[[self window] sheetParent] endSheet:[self window] returnCode:1];
 }
 
 - (IBAction)showProfile:(id)sender
 {
 	[_requestor showProfile];
-}
-
-- (void)theSheetDidEnd:(NSWindow *)sheet returnCode:(int)returnCode contextInfo:(void *)contextInfo
-{
-	[[self window] orderOut:self];
-	
-	if( returnCode == -1 )
-	{
-		[_xfSession declineFriendRequest:_requestor];
-	}
-	else if( returnCode == 1 )
-	{
-		[_xfSession acceptFriendRequest:_requestor];
-	}
-	
-	// Keep this controller alive while the main window drops its reference to it.
-	MFFriendshipRequestWindowController *keepAlive = self;
-	[_mainWindow friendRequestControllerDidFinish:self];
-	[_mainWindow friendRequestSheetDidEnd];
-	(void)keepAlive;
 }
 
 @end

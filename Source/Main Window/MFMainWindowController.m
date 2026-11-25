@@ -230,22 +230,28 @@ static NSString *kMFXfireFriendDragType = @"MFXfireFriendDragType";
 	}
 }
 
+// App-modal alert with a single OK button; replacement for NSRunAlertPanel.
+- (void)runAlertWithTitle:(NSString *)title message:(NSString *)message
+{
+	NSAlert *alert = [[NSAlert alloc] init];
+	[alert setMessageText:(title ? title : @"")];
+	[alert setInformativeText:(message ? message : @"")];
+	[alert addButtonWithTitle:MF_UISTR_OK];
+	[alert runModal];
+}
+
 - (IBAction)beginLogin:(id)sender
 {
 	if( currentMode == kMacFireUIModeLoginEntry )
 	{
 		if( [[usernameBox stringValue] length] == 0 )
 		{
-			NSRunAlertPanel(MF_UISTR_NEED_UNAME, MF_UISTR_PROVIDE_UN,
-				MF_UISTR_OK, // default button
-				nil, nil); // alt, other buttons
+			[self runAlertWithTitle:MF_UISTR_NEED_UNAME message:MF_UISTR_PROVIDE_UN];
 			return;
 		}
 		if( [[passwordField stringValue] length] == 0 )
 		{
-			NSRunAlertPanel(MF_UISTR_NEED_PWORD, MF_UISTR_PROVIDE_PW,
-				MF_UISTR_OK, // default button
-				nil, nil); // alt, other buttons
+			[self runAlertWithTitle:MF_UISTR_NEED_PWORD message:MF_UISTR_PROVIDE_PW];
 			return;
 		}
 		
@@ -742,18 +748,17 @@ static NSString *kMFXfireFriendDragType = @"MFXfireFriendDragType";
 	
 	if( [reason isEqualToString:kXfireVersionTooOldReason] )
 	{
-		int result;
-		
 		// SCR 36 - added new client version # to the pose-as dialog
 		NSString *fmtStr = MF_UISTR_VERSIONOLD;
 		NSString *alertPanelDetail = [NSString stringWithFormat:fmtStr, [xfSession latestClientVersion]];
-		result = NSRunAlertPanel(MF_UISTR_LOGINFAIL,
-			alertPanelDetail,
-			MF_UISTR_POSE, // default button (result 1)
-			nil,
-			MF_UISTR_CANCEL // other button (result 0)
-			);
-		if( result == 1 )
+
+		NSAlert *alert = [[NSAlert alloc] init];
+		[alert setMessageText:MF_UISTR_LOGINFAIL];
+		[alert setInformativeText:alertPanelDetail];
+		[alert addButtonWithTitle:MF_UISTR_POSE];
+		[alert addButtonWithTitle:MF_UISTR_CANCEL];
+
+		if( [alert runModal] == NSAlertFirstButtonReturn )
 		{
 			// Pose as newer version always
 			// try again
@@ -773,9 +778,7 @@ static NSString *kMFXfireFriendDragType = @"MFXfireFriendDragType";
 		[self changeToMode:kMacFireUIModeLoginEntry];
 		[passwordField setStringValue:@""];
 		
-		NSRunAlertPanel( MF_UISTR_LOGINFAIL, MF_UISTR_BADPASSWD,
-			MF_UISTR_OK, // default button
-			nil, nil); // alternate button, other button
+		[self runAlertWithTitle:MF_UISTR_LOGINFAIL message:MF_UISTR_BADPASSWD];
 	}
 	else if( [reason isEqualToString:kXfireNetworkErrorReason] )
 	{
@@ -783,9 +786,7 @@ static NSString *kMFXfireFriendDragType = @"MFXfireFriendDragType";
 		[passwordField setStringValue:@""];
 		
 		// TODO: Localize this
-		NSRunAlertPanel( MF_UISTR_LOGINFAIL, @"An error occurred.",
-			MF_UISTR_OK, // default button (result 1)
-			nil, nil);
+		[self runAlertWithTitle:MF_UISTR_LOGINFAIL message:@"An error occurred."];
 	}
 }
 
@@ -801,19 +802,11 @@ static NSString *kMFXfireFriendDragType = @"MFXfireFriendDragType";
 	
 	if( [reason isEqualToString:kXfireServerHungUpReason] )
 	{
-		NSRunAlertPanel(MF_UISTR_DISCONNECTED,
-			MF_UISTR_SERVER_HUNG_UP,
-			MF_UISTR_OK,
-			nil,
-			nil);
+		[self runAlertWithTitle:MF_UISTR_DISCONNECTED message:MF_UISTR_SERVER_HUNG_UP];
 	}
 	else if( [reason isEqualToString:kXfireOtherSessionReason] )
 	{
-		NSRunAlertPanel(MF_UISTR_DISCONNECTED,
-			MF_UISTR_LOGGED_IN_ELSEWHERE,
-			MF_UISTR_OK,
-			nil,
-			nil);
+		[self runAlertWithTitle:MF_UISTR_DISCONNECTED message:MF_UISTR_LOGGED_IN_ELSEWHERE];
 	}
 	else if( [reason isEqualToString:kXfireNormalDisconnectReason] )
 	{
@@ -821,19 +814,11 @@ static NSString *kMFXfireFriendDragType = @"MFXfireFriendDragType";
 	}
 	else if( [reason isEqualToString:kXfireServerStoppedRespondingReason] )
 	{
-		NSRunAlertPanel(MF_UISTR_DISCONNECTED,
-			MF_UISTR_SERVER_STOPPED_RESPONDING,
-			MF_UISTR_OK,
-			nil,
-			nil);
+		[self runAlertWithTitle:MF_UISTR_DISCONNECTED message:MF_UISTR_SERVER_STOPPED_RESPONDING];
 	}
 	else
 	{
-		NSRunAlertPanel(MF_UISTR_DISCONNECTED,
-			MF_UISTR_UNKNOWN_REASON,
-			MF_UISTR_OK,
-			nil,
-			nil);
+		[self runAlertWithTitle:MF_UISTR_DISCONNECTED message:MF_UISTR_UNKNOWN_REASON];
 	}
 }
 
@@ -1084,7 +1069,8 @@ static NSString *kMFXfireFriendDragType = @"MFXfireFriendDragType";
 				}
 			}
 			
-			[dispImg setScalesWhenResized:YES]; // for some reason most of the .ICOs default to NO
+			// MFImageAndTextCell sets the image's size explicitly when it draws, so
+			// the deprecated setScalesWhenResized: call is no longer needed.
 			[ic setImage:dispImg];
 		}
 #if 0 /* 10.5 ONLY */
@@ -1232,8 +1218,12 @@ static NSString *kMFXfireFriendDragType = @"MFXfireFriendDragType";
 	[self runStringPrompt:MF_UISTR_CHANGE_NICK_PROMPT
 		defaultValue:[[xfSession loginIdentity] nickName]
 		acceptButton:MF_UISTR_CHANGE_NICK_BUTTON
-		didEndSelector:@selector(changeNicknameSheetDidEnd:returnCode:contextInfo:)
-		contextInfo:nil];
+		completionHandler:^(NSModalResponse returnCode) {
+			if( returnCode == NSModalResponseOK )
+			{
+				[self->xfSession setNickname:[self->stringPromptText stringValue]];
+			}
+		}];
 }
 
 - (void)runAddCustomGroupSheet
@@ -1241,79 +1231,60 @@ static NSString *kMFXfireFriendDragType = @"MFXfireFriendDragType";
 	[self runStringPrompt:MF_UISTR_ADD_GROUP_PROMPT
 		defaultValue:@""
 		acceptButton:MF_UISTR_ADD_GROUP_BUTTON
-		didEndSelector:@selector(addFriendGroupSheetDidEnd:returnCode:contextInfo:)
-		contextInfo:nil];
+		completionHandler:^(NSModalResponse returnCode) {
+			if( returnCode == NSModalResponseOK )
+			{
+				NSString *str = [self->stringPromptText stringValue];
+				if( [str length] > 0 )
+				{
+					[self->xfSession requestNewFriendGroup:str];
+				}
+			}
+		}];
 }
 
 - (void)runRenameCustomGroupSheet
 {
+	XfireFriendGroup *grp = [self selectedCustomFriendGroup];
+
 	[self runStringPrompt:MF_UISTR_RENAME_GROUP_PROMPT
-		defaultValue:[[self selectedCustomFriendGroup] displayName]
+		defaultValue:[grp displayName]
 		acceptButton:MF_UISTR_RENAME_GROUP_BUTTON
-		didEndSelector:@selector(renameFriendGroupSheetDidEnd:returnCode:contextInfo:)
-		contextInfo:[self selectedCustomFriendGroup]];
+		completionHandler:^(NSModalResponse returnCode) {
+			if( returnCode == NSModalResponseOK )
+			{
+				NSString *str = [self->stringPromptText stringValue];
+				if( ([str length] > 0) && grp )
+				{
+					[self->xfSession renameFriendGroup:grp newName:str];
+				}
+			}
+		}];
 }
 
-- (void)runStringPrompt:(NSString *)prompt defaultValue:(NSString *)value acceptButton:(NSString *)acceptString didEndSelector:(SEL)aSelector contextInfo:(id)info
+- (void)runStringPrompt:(NSString *)prompt defaultValue:(NSString *)value acceptButton:(NSString *)acceptString completionHandler:(void (^)(NSModalResponse returnCode))handler
 {
 	[stringPromptField setStringValue:prompt];
 	[stringPromptText  setStringValue:value];
 	[stringPromptAcceptButton setTitle:acceptString];
 	
-	[NSApp beginSheet:stringPromptWindow
-		modalForWindow:[self window]
-		modalDelegate:self
-		didEndSelector:aSelector
-		contextInfo:info];
+	[[self window] beginSheet:stringPromptWindow completionHandler:^(NSModalResponse returnCode) {
+		[self->stringPromptWindow orderOut:self];
+		if( handler )
+		{
+			handler(returnCode);
+		}
+	}];
 }
 
 - (IBAction)stringPromptAccept:(id)sender
 {
-	[NSApp endSheet:stringPromptWindow returnCode:0];
+	[[self window] endSheet:stringPromptWindow returnCode:NSModalResponseOK];
 }
 
 - (IBAction)stringPromptCancel:(id)sender
 {
-	[NSApp endSheet:stringPromptWindow returnCode:-1];
-}
-
-- (void)changeNicknameSheetDidEnd:(NSWindow *)sheet returnCode:(int)returnCode contextInfo:(void *)contextInfo
-{
-	[stringPromptWindow orderOut:self];
-	
-	if( returnCode == 0 )
-	{
-		[xfSession setNickname:[stringPromptText stringValue]];
-	}
-}
-
-- (void)addFriendGroupSheetDidEnd:(NSWindow *)sheet returnCode:(int)returnCode contextInfo:(void *)contextInfo
-{
-	[stringPromptWindow orderOut:self];
-	
-	if( returnCode == 0 )
-	{
-		NSString *str = [stringPromptText stringValue];
-		if( [str length] > 0 )
-		{
-			[xfSession requestNewFriendGroup:str];
-		}
-	}
-}
-
-- (void)renameFriendGroupSheetDidEnd:(NSWindow *)sheet returnCode:(int)returnCode contextInfo:(void *)contextInfo
-{
-	[stringPromptWindow orderOut:self];
-	
-	if( returnCode == 0 )
-	{
-		NSString *str = [stringPromptText stringValue];
-		XfireFriendGroup *grp = contextInfo;
-		if( ([str length] > 0) && grp )
-		{
-			[xfSession renameFriendGroup:grp newName:str];
-		}
-	}
+	[[self window] endSheet:stringPromptWindow returnCode:NSModalResponseCancel];
 }
 
 /***********************************************************************************************************************/
@@ -1425,32 +1396,22 @@ static NSString *kMFXfireFriendDragType = @"MFXfireFriendDragType";
 
 - (void)removeFriend:(id)sender
 {
+	XfireFriend *fr = [self selectedFriendNotFoF];
 	NSString *alertmsg = [NSString stringWithFormat:MF_UISTR_REMOVE_FRIEND_PROMPT,
-		[[self selectedFriendNotFoF] displayNameString]];
+		[fr displayNameString]];
 	
-	NSAlert *alert = [NSAlert alertWithMessageText:nil
-		defaultButton:MF_UISTR_CANCEL
-		alternateButton:MF_UISTR_REMOVE_FRIEND_BUTTON
-		otherButton:nil
-		informativeTextWithFormat:alertmsg];
-	[alert setAlertStyle:NSWarningAlertStyle];
+	NSAlert *alert = [[NSAlert alloc] init];
+	[alert setAlertStyle:NSAlertStyleWarning];
+	[alert addButtonWithTitle:MF_UISTR_CANCEL];
+	[alert addButtonWithTitle:MF_UISTR_REMOVE_FRIEND_BUTTON];
+	[alert setInformativeText:alertmsg];
 	
-	[alert beginSheetModalForWindow:[self window]
-		modalDelegate:self
-		didEndSelector:@selector(removeFriendSheetDidEnd:returnCode:contextInfo:)
-		contextInfo:[self selectedFriendNotFoF]];
-}
-
-- (void)removeFriendSheetDidEnd:(NSWindow *)sheet returnCode:(int)returnCode contextInfo:(void *)contextInfo
-{
-	if( returnCode == NSAlertAlternateReturn )
-	{
-		XfireFriend *fr = contextInfo;
-		if( fr )
+	[alert beginSheetModalForWindow:[self window] completionHandler:^(NSModalResponse returnCode) {
+		if( (returnCode == NSAlertSecondButtonReturn) && fr )
 		{
-			[xfSession sendRemoveFriend:fr];
+			[self->xfSession sendRemoveFriend:fr];
 		}
-	}
+	}];
 }
 
 - (void)addCustomFriendGroup:(id)sender
@@ -1465,20 +1426,24 @@ static NSString *kMFXfireFriendDragType = @"MFXfireFriendDragType";
 
 - (void)removeCustomFriendGroup:(id)sender
 {
+	XfireFriendGroup *grp = [self selectedCustomFriendGroup];
 	NSString *alertmsg = [NSString stringWithFormat:MF_UISTR_REMOVE_GROUP_PROMPT,
-		[[self selectedCustomFriendGroup] displayName]];
+		[grp displayName]];
 	
-	NSAlert *alert = [NSAlert alertWithMessageText:nil
-		defaultButton:MF_UISTR_CANCEL
-		alternateButton:MF_UISTR_REMOVE_GROUP_BUTTON
-		otherButton:nil
-		informativeTextWithFormat:alertmsg];
-	[alert setAlertStyle:NSWarningAlertStyle];
+	NSAlert *alert = [[NSAlert alloc] init];
+	[alert setAlertStyle:NSAlertStyleWarning];
+	[alert addButtonWithTitle:MF_UISTR_CANCEL];
+			[alert addButtonWithTitle:MF_UISTR_REMOVE_GROUP_BUTTON];
+		[alert setInformativeText:alertmsg];
+
+
 	
-	[alert beginSheetModalForWindow:[self window]
-		modalDelegate:self
-		didEndSelector:@selector(removeGroupSheetDidEnd:returnCode:contextInfo:)
-		contextInfo:[self selectedCustomFriendGroup]];
+	[alert beginSheetModalForWindow:[self window] completionHandler:^(NSModalResponse returnCode) {
+		if( (returnCode == NSAlertSecondButtonReturn) && grp )
+		{
+			[self->xfSession removeFriendGroup:grp];
+		}
+	}];
 }
 
 // Not irreparable so we don't prompt
@@ -1498,18 +1463,6 @@ static NSString *kMFXfireFriendDragType = @"MFXfireFriendDragType";
 	}
 	
 	[xfireOptionsController showWindow:sender];
-}
-
-- (void)removeGroupSheetDidEnd:(NSWindow *)sheet returnCode:(int)returnCode contextInfo:(void *)contextInfo
-{
-	if( returnCode == NSAlertAlternateReturn )
-	{
-		XfireFriendGroup *grp = contextInfo;
-		if( grp )
-		{
-			[xfSession removeFriendGroup:grp];
-		}
-	}
 }
 
 // Returns a folder path name under ~/Library/Caches, if possible

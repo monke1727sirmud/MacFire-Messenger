@@ -53,7 +53,14 @@ static MFUserIdleMonitor *gSharedMonitor = nil;
 		_hidEntry = nil;
 		
 		io_iterator_t hidIter;
-		kern_return_t err = IOServiceGetMatchingServices( kIOMasterPortDefault, IOServiceMatching("IOHIDSystem"), &hidIter );
+		// kIOMainPortDefault replaced kIOMasterPortDefault on macOS 12; both are
+		// MACH_PORT_NULL, so older systems behave exactly as before.
+		mach_port_t masterPort = MACH_PORT_NULL;
+		if( @available(macOS 12.0, *) )
+		{
+			masterPort = kIOMainPortDefault;
+		}
+		kern_return_t err = IOServiceGetMatchingServices( masterPort, IOServiceMatching("IOHIDSystem"), &hidIter );
 		if( err != 0 )
 		{
 			[NSException raise:@"MFUserIdleMonitorException" format:@"Kernel returned error %d", (int)err];

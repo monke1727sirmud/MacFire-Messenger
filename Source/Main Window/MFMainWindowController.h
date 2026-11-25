@@ -113,7 +113,7 @@ typedef enum
 // the simple string prompt aux window (used as a sheet)
 - (IBAction)stringPromptAccept:(id)sender;
 - (IBAction)stringPromptCancel:(id)sender;
-- (void)runStringPrompt:(NSString *)prompt defaultValue:(NSString *)value acceptButton:(NSString *)acceptString didEndSelector:(SEL)aSelector contextInfo:(id)info;
+- (void)runStringPrompt:(NSString *)prompt defaultValue:(NSString *)value acceptButton:(NSString *)acceptString completionHandler:(void (^)(NSModalResponse returnCode))handler;
 - (void)runChangeNicknameSheet;
 - (void)runAddCustomGroupSheet;
 - (void)runRenameCustomGroupSheet;
