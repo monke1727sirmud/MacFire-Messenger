@@ -18,16 +18,37 @@
 #import "MFImageAndTextView.h"
 #import "MFImageAndTextCell.h"
 
+@interface MFImageAndTextView ()
+- (void)_commonInit;
+@end
+
 @implementation MFImageAndTextView
+
+- (void)_commonInit
+{
+	_cell = [[MFImageAndTextCell alloc] initTextCell:@"default"];
+	_text = nil;
+}
 
 - (id)initWithFrame:(NSRect)frame
 {
 	self = [super initWithFrame:frame];
 	if( self )
 	{
-		// Initialization code here.
-		_cell = [[MFImageAndTextCell alloc] initTextCell:@"default"];
-		_text = nil;
+		[self _commonInit];
+	}
+	return self;
+}
+
+// Nib loading (including nibs recompiled by current ibtool) decodes the view
+// with initWithCoder:, so the cell has to be built here too or the view draws
+// nothing.
+- (id)initWithCoder:(NSCoder *)coder
+{
+	self = [super initWithCoder:coder];
+	if( self )
+	{
+		[self _commonInit];
 	}
 	return self;
 }
