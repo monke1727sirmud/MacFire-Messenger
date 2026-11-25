@@ -266,7 +266,7 @@
 
 - (NSString *)description
 {
-	return [NSString stringWithFormat:@"ArchiveFile{ path = %@, length = %u }", _path, [_data length]];
+	return [NSString stringWithFormat:@"ArchiveFile{ path = %@, length = %lu }", _path, (unsigned long)[_data length]];
 }
 
 @end

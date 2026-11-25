@@ -21,6 +21,7 @@
 *******************************************************************/
 
 #import <Cocoa/Cocoa.h>
+#import <CoreFoundation/CFSocket.h>
 
 @interface XfireSocket : NSObject
 {

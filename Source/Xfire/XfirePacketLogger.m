@@ -221,11 +221,11 @@
 				NSArray *arr = [val value];
 				cnt = [arr count];
 				
-				[desc appendFormat:@" element type = %@, count = %u\n", [self nameForTypeID:[val arrayElementType]], cnt];
+				[desc appendFormat:@" element type = %@, count = %d\n", [self nameForTypeID:[val arrayElementType]], cnt];
 				
 				for( i = 0; i < cnt; i++ )
 				{
-					[desc appendFormat:@"%@[%3u]  ", indent, i];
+					[desc appendFormat:@"%@[%3d]  ", indent, i];
 					[self logMessageForValue:[arr objectAtIndex:i] indent:newIndent string:desc];
 				}
 			}
@@ -251,7 +251,7 @@
 		case 9:
 			{
 				XfirePacketAttributeMap *newMap = [val value];
-				[desc appendFormat:@" #attrs = %u\n",[newMap count]];
+				[desc appendFormat:@" #attrs = %lu\n", (unsigned long)[newMap count]];
 				[self logMessageForMap:[val value] indent:newIndent string:desc];
 			}
 			break;

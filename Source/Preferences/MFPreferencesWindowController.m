@@ -51,7 +51,7 @@
 	[super showWindow:sender];
 }
 
-#define SET_CHECKBOX( _name_, _state_ ) [(_name_) setState:((_state_) ? NSOnState : NSOffState)]
+#define SET_CHECKBOX( _name_, _state_ ) [(_name_) setState:((_state_) ? NSControlStateValueOn : NSControlStateValueOff)]
 - (void)synchronizeControlsWithDefaults
 {
 	MFPreferences *prefs = [MFPreferences preferences];
@@ -80,7 +80,7 @@
 	NSFont *f = [prefs chatTextFont];
 	_selectedFont = f;
 	[_chatFontField setStringValue:[NSString stringWithFormat:@"%@ - %.0f", [f displayName], [f pointSize]]];
-	[_idleDelayField setStringValue:[NSString stringWithFormat:@"%d", [prefs idleStatusDelay]]];
+	[_idleDelayField setStringValue:[NSString stringWithFormat:@"%u", [prefs idleStatusDelay]]];
 	
 	// TODO: figure out how to handle notification sounds
 #if 0
@@ -116,7 +116,7 @@
 	[[self window] orderOut:sender];
 }
 
-#define GET_CHECKBOX( _name_ ) (([(_name_) state] == NSOnState)?YES:NO)
+#define GET_CHECKBOX( _name_ ) (([(_name_) state] == NSControlStateValueOn)?YES:NO)
 - (IBAction)apply:(id)sender
 {
 	MFPreferences *prefs = [MFPreferences preferences];

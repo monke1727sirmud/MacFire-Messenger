@@ -101,18 +101,18 @@ static inline void _SetOptionButton( NSDictionary *options, NSString *key, NSBut
 	NSNumber *opt = [options objectForKey:key];
 	if( opt && [opt boolValue] )
 	{
-		[but setState:NSOnState];
+		[but setState:NSControlStateValueOn];
 	}
 	else
 	{
-		[but setState:NSOffState];
+		[but setState:NSControlStateValueOff];
 	}
 }
 
 static inline void _SetOptionDictionary( NSButton *but, NSDictionary *currentOptions, NSMutableDictionary *newOptions, NSString *key )
 {
 	BOOL val = NO;
-	if( [but state] == NSOnState )
+	if( [but state] == NSControlStateValueOn )
 		val = YES;
 	NSNumber *valObj = [NSNumber numberWithBool:val];
 	

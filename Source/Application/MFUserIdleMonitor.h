@@ -17,6 +17,7 @@
 *******************************************************************/
 
 #import <Cocoa/Cocoa.h>
+#import <IOKit/IOKitLib.h>
 
 extern NSString *kMFUserBecameIdleNotification;
 extern NSString *kMFUserBecameActiveNotification;

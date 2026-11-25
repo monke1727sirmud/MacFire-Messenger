@@ -226,11 +226,11 @@
 	[str appendFormat:@"  user name   = %@\n",_username];
 	[str appendFormat:@"  nick name   = %@\n",_nickname];
 	[str appendFormat:@"  status      = %@\n",_statusString];
-	[str appendFormat:@"  game ID     = %d\n",_gameID];
+	[str appendFormat:@"  game ID     = %u\n",_gameID];
 	[str appendFormat:@"  session ID  = %@\n",_sessionID];
 	[str appendFormat:@"  is online   = %@\n", (_isOnline?@"Yes":@"No")];
-	[str appendFormat:@"  public IP   = %d (0x%08x)\n",_publicIP,_publicIP];
-	[str appendFormat:@"  public port = %d\n",_publicPort];
+	[str appendFormat:@"  public IP   = %u (0x%08x)\n",_publicIP,_publicIP];
+	[str appendFormat:@"  public port = %u\n", (unsigned)_publicPort];
 	
 	return str;
 }

@@ -778,6 +778,8 @@
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_LDFLAGS = (
 					"-lz",
+					"-framework",
+					UserNotifications,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.MacFire;
 				PRODUCT_NAME = MacFire;
@@ -806,6 +808,8 @@
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_LDFLAGS = (
 					"-lz",
+					"-framework",
+					UserNotifications,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.MacFire;
 				PRODUCT_NAME = MacFire;

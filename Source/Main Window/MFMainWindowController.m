@@ -1567,5 +1567,5 @@ NSString* MFStringFromIPAddress(unsigned int addr)
 	t3 = (addr >>  8) & 0xFF;
 	t4 = (addr      ) & 0xFF;
 	
-	return [NSString stringWithFormat:@"%u.%u.%u.%u",t1,t2,t3,t4];
+	return [NSString stringWithFormat:@"%u.%u.%u.%u", (unsigned)t1, (unsigned)t2, (unsigned)t3, (unsigned)t4];
 }
