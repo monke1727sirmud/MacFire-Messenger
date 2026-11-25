@@ -77,6 +77,7 @@
 		AA00000000000000000018 /* MFDataEmitter.m in Sources */ = {isa = PBXBuildFile; fileRef = 24AB3E350D0393AA00049A5C /* MFDataEmitter.m */; };
 		AA00000000000000000019 /* NSData_MFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 24AB3E330D0393AA00049A5C /* NSData_MFAdditions.m */; };
 		AA0000000000000000001A /* NSMutableData_XfireAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2469AB3B0D39770900A902CB /* NSMutableData_XfireAdditions.m */; };
+		AA0000000000000000001B /* NSData_XfireAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2469AB390D39770900A902CB /* NSData_XfireAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -736,6 +737,7 @@
 				AA00000000000000000018 /* MFDataEmitter.m in Sources */,
 				AA00000000000000000019 /* NSData_MFAdditions.m in Sources */,
 				AA0000000000000000001A /* NSMutableData_XfireAdditions.m in Sources */,
+				AA0000000000000000001B /* NSData_XfireAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -962,6 +964,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Manual;
 				ENABLE_TESTING_SEARCH_PATHS = YES;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
@@ -999,6 +1002,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Manual;
 				ENABLE_TESTING_SEARCH_PATHS = YES;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
